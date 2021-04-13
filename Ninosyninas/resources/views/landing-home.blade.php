@@ -2,6 +2,12 @@
 
 @section('pageTitle', "Niños y niñas de Mexico")
 
+@section('header')
+    <header>
+        <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
+    </header>
+@endsection
+
 @section('mainContent')
     <div class="container-fluid">
         <div class="container position-relative" style="width: 60%">
@@ -56,6 +62,7 @@
             <br>
         </div>
         <br>
+    <div class="bottom-half">
         <div class="grid-2">
             <div class="text-center">
                 <h2>Misión</h2>
@@ -87,19 +94,21 @@
             </div>
         </div>
         <br>
-    </div>
-    <br>
-    <br>
-    <div class="position-relative">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <table class="text-center center">
-                <tr>
-                <th><h1>Noticias recientes</h1></th><th><a class="btn btn-outline-primary" href="{{ url('/nosotros')}}" role="button">Ver más</a></th>
-                </tr>
-            </table>
+        <br>
+        <br>
+        <div class="position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <table class="text-center">
+                    <tr>
+                    <th><h1>Noticias recientes</h1></th><th><a class="btn btn-outline-primary" href="{{ url('/nosotros')}}" role="button">Ver más</a></th>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
         </div>
-    </div>
+
     <br>
     <br>
-    
+</div>
 @endsection
