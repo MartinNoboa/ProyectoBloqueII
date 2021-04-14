@@ -81,3 +81,7 @@ Route::get('/nosotros', function(){
     ];
     return view("landing-nosotros", ["textos" => $textos]);
 });
+
+Route::get('/contactanos', function(){
+    return view("landing-contacto");
+});

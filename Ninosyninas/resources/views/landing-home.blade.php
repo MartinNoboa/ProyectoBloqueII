@@ -3,9 +3,12 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
+<div class='upper-half'>  
     <header>
         <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
     </header>
+    <br>
+    <br>
 @endsection
 
 @section('mainContent')
@@ -62,6 +65,7 @@
             <br>
         </div>
         <br>
+</div>
     <div class="bottom-half">
         <div class="grid-2">
             <div class="text-center">

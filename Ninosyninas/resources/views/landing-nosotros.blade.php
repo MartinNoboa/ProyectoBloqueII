@@ -5,10 +5,10 @@
 
 @section('mainContent')
 <div class='upper-half'>
-<br>
-<br>
+
 <div class="container-fluid">
-    
+<br>
+<br>
     <div class="position-relative">
         <div class="position-absolute top-50 start-50 translate-middle">
             <table class="text-center table-wt">
