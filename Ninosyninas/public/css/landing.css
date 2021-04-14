@@ -4,6 +4,12 @@
     width: 100%;
 }
 
+.upper-half{
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(247, 184, 184, 0.144));
+    top:0;
+    width: 100%;
+}
+
 .table-wt{
     background-color: white;
     color: #000;

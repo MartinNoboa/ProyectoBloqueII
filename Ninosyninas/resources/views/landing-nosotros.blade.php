@@ -4,9 +4,11 @@
 
 
 @section('mainContent')
+<div class='upper-half'>
 <br>
 <br>
 <div class="container-fluid">
+    
     <div class="position-relative">
         <div class="position-absolute top-50 start-50 translate-middle">
             <table class="text-center table-wt">
@@ -33,9 +35,11 @@
     </hgroup>
     <br>
     <br>
+    </div>
+    <div class='bottom-half'>
     <div class="container-fluid lower-half">
         <div class="container position-relative" style="width: 60%">
-            <div class="grid-3 text-center ">
+            <div class="grid-3 text-center">
                 <div class="card">
                     <div class="card-body">
                         <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
@@ -129,6 +133,6 @@
 <br>
 <br>
 
-
+</div>
 
 @endsection
