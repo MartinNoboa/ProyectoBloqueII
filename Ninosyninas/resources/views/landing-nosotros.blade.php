@@ -11,9 +11,9 @@
 <br>
     <div class="position-relative">
         <div class="position-absolute top-50 start-50 translate-middle">
-            <table class="text-center table-wt">
+            <table class="text-center table-wt zelda">
                 <tr>
-                    <th>Areas de atención</th><th>Logros</th><th>Ayudar</th>
+                    <th><a href="{{url('/nosotros-areas')}}">Areas de atención</a></th><th><a href="{{url('/nosotros-logros')}}">Logros</a></th><th><a href="{{url('/nosotros-ayuda')}}">Ayudar</a></th>
                 </tr>
             </table>
         </div>
