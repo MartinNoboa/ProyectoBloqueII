@@ -15,26 +15,34 @@
 
       </head>
       <body class="bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{url('/')}}">Ninos y ninas de México</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{url('/landing')}}"> </a> <img src="{{asset('img/logo.png')}}" class="img-fluid" alt="cuadro responsive" width="100">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/nosotros')}}">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/contactanos')}}">Contáctanos</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        
-                    </span>
-                </div>
-            </div>
+            </button>
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="navbar-nav">
+            
+                            
+                            <li class="nav-item" >
+                            <a class="nav-link "  href="{{url('/nosotros')}}">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Galería</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Calendario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Noticias</a>
+                            </li>
+                </ul>
+
+            </div> <img src="{{asset('img/user.jpg')}}" class="img-fluid" alt="cuadro responsive" width="100">
         </nav>
 
         @yield('header')
