@@ -85,3 +85,50 @@ Route::get('/nosotros', function(){
 Route::get('/contactanos', function(){
     return view("landing-contacto");
 });
+
+Route::get('/nosotros-areas', function(){
+    
+    $areas = [
+        "1" => "Alimentación.",
+        "2" => "Asesorías y acompañamiento.",
+        "3" => "Salud.",
+        "4" => "Desarrollo Humano."
+        
+    ];
+
+    $programas = [
+        "1" => "Programa de Estimulación Psicopedagógica",
+        "2" => "Programa de Integración, Desarrollo Humano.",
+        "3" => "Programa de formación preescolar.",
+        "4" => "Ayúdame a estudiar. Apoyo académico, apoyo con tareas etc. a niños escolarizados",
+        "5" => "Programa 10-14 para niños desertores de la escuela.",
+        "6" => "Alfabetización y educación básica para niños no escolarizados",
+        "7" => "Taller de computación.",
+        "8" => "Actividades de verano."
+
+    ];
+    
+    return view("nosotros-area", ["areas" => $areas], ["programas" => $programas]);
+});
+
+Route::get('/nosotros-logros', function(){
+
+    $logro = "Contamos con un espacio construido especialmente para el desarrollo de nuestro proyecto, en un terreno donado por Gobierno del Estado y la construcción por CEDAR FOUNDATION una fundación Canadiense.
+    Atendemos a 130 niños y niñas desde los diferentes programas.
+    
+    A 20 años hemos servido alrededor de 500,000 almuerzos.
+    
+    Tenemos al 95% de los niños y niñas inscrito en alguna modalidad educativa oficial.
+    
+    Se han reducido los índices de inasistencia y deserción escolar, elevando de 2 o 3 años escolares a por lo menos a 8, están concluyendo la primaria.
+    
+    Hemos logrado una importante participación de las madres de familia en el proceso de escolarización y educación de sus hijos.
+    
+    El 60 % de los niños y niñas que pasan por la Institución ya no regresan a la calle, se integran al trabajo formal.";
+    return view("nosotros-logros", ["logro" => $logro]);
+});
+
+Route::get('/nosotros-ayuda', function(){
+
+    return view("nosotros-ayuda");
+});
