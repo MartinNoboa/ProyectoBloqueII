@@ -17,7 +17,7 @@
       <body class="bg-light">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{url('/landing')}}"> </a> <img src="{{asset('img/logo.png')}}" class="img-fluid" alt="cuadro responsive" width="100">
+            <a class="navbar-brand" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid" alt="cuadro responsive" width="100"></a> 
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                     <span class="navbar-toggler-icon"></span>
             </button>
