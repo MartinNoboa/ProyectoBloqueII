@@ -6,7 +6,7 @@
 <div class='upper-half'> 
 <br>
 <br>
-<h1 class='text-center'>¡Ponte en contacto con nosotros!</h1>
+<h1 class='text-center titulo'>¡Ponte en contacto con nosotros!</h1>
 <br>
 <br>
 @endsection
@@ -16,22 +16,22 @@
     <br>
     <br>
     <label for='nombre'>Nombre</label><br>
-    <input placeholder='Juan Perez Rodríguez' id='nombre' class='form-input text-center'>
+    <input placeholder='Juan Perez Rodríguez' id='nombre' class='form-input'>
     <br>
     <br>
     <label for='email'>Email</label><br>
-    <input placeholder='ejemplo@correo.com' type='email' id='email' class='form-input text-center'>
+    <input placeholder='ejemplo@correo.com' type='email' id='email' class='form-input'>
     <br>
     <br>
     <label for='tema'>Tema</label><br>
-    <input placeholder='Tema' id='tema' class='form-input text-center'>
+    <input placeholder='Tema' id='tema' class='form-input'>
     <br>
     <br>
     <label for='mensaje'>Mensaje</label><br>
-    <input placeholder='Escriba su mensaje aqui' id='mensaje' class='form-input text-center' style='height:300px'>
+    <input placeholder='Escriba su mensaje aqui' id='mensaje' class='form-input' style='height:300px'>
     <br>
     <br>
-    <button type="submit" class="center btn btn-primary">Contáctanos</button>
+    <button type="submit" class="center btn btn-outline-primary">Contáctanos</button>
     <br>
 </div>
 <br>

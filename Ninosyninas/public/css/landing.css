@@ -4,6 +4,12 @@
     width: 100%;
 }
 
+.titulo{
+    color: purple;
+    font-weight: bold;
+}
+
+
 .upper-half{
     background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(247, 184, 184, 0.082));
     top:0;
