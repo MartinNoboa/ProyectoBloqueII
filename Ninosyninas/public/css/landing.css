@@ -27,7 +27,7 @@
 }
 
 .form-input{
-    width: 65%;
+    width: 95%;
     position: auto;
     padding: 7px 7px 7px 7px;
     display: block;
@@ -91,11 +91,7 @@ label{
     width: 80%;
 }
 
-@media only screen and (max-width: 768px) {
-    .grid-3, .grid-2 {
-        grid-template-columns: 1fr;
-      }
-  }
+
 
 .center table{
     position: auto;
@@ -132,4 +128,7 @@ th, td {
     [class*="col-"] {
       width: 100%;
     }
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
   }

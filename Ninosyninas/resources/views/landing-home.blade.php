@@ -93,7 +93,7 @@
         <br>
         <br>
         <br>
-        <div class="text-center">
+        <div class="text-center center">
             <h1>Acerca de nosotros</h1>
             <br>
             <p>{{$textos["aNosotros"]}}</p>
