@@ -9,8 +9,11 @@ class MessagesController extends Controller
     public function store()
     {
         request()-> validate ([
-            'nombre'=> 'required'
+            'nombre'=> 'required',
+            'email'=> 'required',
+            'mensaje'=> 'required',
+            'tema'=> 'required'
         ]);
-        
+
     }
 }
