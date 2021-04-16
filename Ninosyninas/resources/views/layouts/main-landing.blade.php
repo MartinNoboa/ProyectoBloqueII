@@ -28,22 +28,22 @@
     <div class="collapse navbar-collapse" id="collapse_target">
         <ul class="navbar-nav">
 
-
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link " href="{{url('/nosotros')}}">Nosotros</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="#">Galería</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Calendario</a>
+            <li class="nav-item mx-2">
+                <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="#">Noticias</a>
             </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="#">Calendario</a>
+            </li>
+
         </ul>
 
     </div> <img src="{{asset('img/account_circle_black_48dp.svg')}}" class="img-fluid mx-4" id="user-icon" alt="cuadro responsive">
