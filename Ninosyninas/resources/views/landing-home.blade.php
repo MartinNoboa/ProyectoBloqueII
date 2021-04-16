@@ -3,18 +3,15 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'>  
+<div class='bottom-half'>  
     <header>
         <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
     </header>
     <br>
     <br>
-@endsection
-
-@section('mainContent')
     <div class="container-fluid">
         <div class="container position-relative" style="width: 60%">
-            <div class="grid-3 text-center ">
+            <div class="grid-3 text-center">
                 <div class="card">
                     <div class="card-body">
                         <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
@@ -53,6 +50,9 @@
                 </div>
             </div>
         </div>
+@endsection
+
+@section('mainContent')
         <br>
         <br>
         <br>
@@ -66,7 +66,7 @@
         </div>
         <br>
 </div>
-    <div class="bottom-half">
+    <div>
         <div class="grid-2">
             <div class="text-center">
                 <h2>Misión</h2>

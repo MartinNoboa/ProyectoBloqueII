@@ -41,7 +41,7 @@
     <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
     <table class='center'>
         <tr><th><h3>¡LLámanos!</h3></th><th></th><th>+52 442 182 7987</th></tr>
-        <tr><th><h3>¡Visítanos!</h3></th><th></th><th></th></tr>
+        <tr><th><h3>¡Visítanos!</h3></th></tr>
     </table>
     <div class='center'>
         <p>Calle Francisco González de Cosío 110, Plaza de las Americas, 76050 Santiago de Querétaro, Qro., México</p>
