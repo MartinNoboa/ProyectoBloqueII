@@ -83,9 +83,9 @@ Route::get('/nosotros', function(){
     return view("landing-nosotros", ["textos" => $textos]);
 });
 
-Route::get('/contactanos', function(){
-    return view("landing-contacto");
-});
+Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
+
+Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
 Route::get('/home', function(){
     $textos = [

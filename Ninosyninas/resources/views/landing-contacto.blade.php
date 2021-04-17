@@ -15,24 +15,34 @@
 <div class='table-wt center'>
     <br>
     <br>
-    <label for='nombre'>Nombre</label><br>
-    <input placeholder='Juan Perez Rodríguez' id='nombre' class='form-input'>
-    <br>
-    <br>
-    <label for='email'>Email</label><br>
-    <input placeholder='ejemplo@correo.com' type='email' id='email' class='form-input'>
-    <br>
-    <br>
-    <label for='tema'>Tema</label><br>
-    <input placeholder='Tema' id='tema' class='form-input'>
-    <br>
-    <br>
-    <label for='mensaje'>Mensaje</label><br>
-    <input placeholder='Escriba su mensaje aqui' id='mensaje' class='form-input' style='height:300px'>
-    <br>
-    <br>
-    <button type="submit" class="center btn btn-outline-primary">Contáctanos</button>
-    <br>
+    @if($errors ->any())
+        @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+            {{$error}}
+        </div>
+        @endforeach
+    @endif
+
+    <form method="POST" action= "{{ url('landing-contacto') }}">
+        @csrf
+        <label for='nombre'>Nombre</label><br>
+        <input placeholder='Juan Perez Rodríguez' id='nombre' name="nombre" class='form-input text-center' value= "{{old('nombre')}}" required  >
+        <br>
+        <br>
+        <label for='email'>Email</label><br>
+        <input placeholder='ejemplo@correo.com' type='email' id='email' name='email' class='form-input text-center' value= "{{old('email')}}" required>
+        <br>
+        <br>
+        <label for='tema'>Tema</label><br>
+        <input placeholder='Tema' id='tema' name='tema' class='form-input text-center' value= "{{old('tema')}}"required>
+        <label for='mensaje'>Mensaje</label><br>
+        <input placeholder='Escriba su mensaje aqui' id='mensaje' name='mensaje' class='form-input text-center' style='height:300px' value= "{{old('mensaje')}}" required>
+        <br>
+        <br>
+        <button type="submit" class="center btn btn-primary">Contáctanos</button>
+        <br>
+    </form>
+
 </div>
 <br>
 <br>
