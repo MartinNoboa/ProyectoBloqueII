@@ -43,7 +43,7 @@
 
 <div class="row">
     <div class="col-4">
-        <div class="container center" style='width:400px'>
+        <div class="container center">
             <br>
             <table class='content-table'>
             @foreach($areas as $id => $areas)
