@@ -13,6 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            //Tablas sin llaves foráneas
+            UserSeeder::class,
+            RoleSeeder::class,
+            PermitSeeder::class,
+           
+            //Tablas de relacion
+            PermitRoleSeeder::class,
+            RoleUserSeeder::class,
+            
+        ]);
     }
 }
