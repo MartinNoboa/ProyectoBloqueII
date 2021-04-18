@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -149,3 +150,5 @@ Route::get('/nosotros-ayuda', function(){
     return view("nosotros-ayuda");
 
 });
+Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
+Route::post('/registrar-usuario',[RegisterController::class,'store']);
