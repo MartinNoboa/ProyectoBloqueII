@@ -97,6 +97,11 @@ Route::get('/donaciones', function(){
     return view("landing-donaciones");
 });
 
+Route::get('/registro/donador', function(){
+    
+    return view("landing-registro-don");
+});
+
 Route::get('/nosotros-areas', function(){
     
     $areas = [
