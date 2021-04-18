@@ -48,7 +48,7 @@
 <br>
 </div>
 <div class="bottom-half">
-    <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
+    <img src="{{url('img/32.jpg')}}" alt="home photo" class="center">
     <table class='center'>
         <tr><th><h3>¡LLámanos!</h3></th><th></th><th>+52 442 182 7987</th></tr>
         <tr><th><h3>¡Visítanos!</h3></th></tr>

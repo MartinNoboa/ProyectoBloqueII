@@ -152,3 +152,5 @@ Route::get('/nosotros-ayuda', function(){
 });
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
+
+Route::resource('usuario',UsuariosController::class);

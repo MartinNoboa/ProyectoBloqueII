@@ -26,7 +26,7 @@
         <p>{{$logro}}</p>
     </div>
     <div>
-        <img src="{{url('img/fondo1.jpg')}}">
+        <img src="{{url('img/23.png')}}" width="80%">
     </div>
 
 </div>

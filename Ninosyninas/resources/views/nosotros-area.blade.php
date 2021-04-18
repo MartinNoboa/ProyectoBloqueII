@@ -36,7 +36,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/17.jpg')}}" width="80%">
         <br>
     </div>
 </div>
@@ -59,7 +59,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/13.jpg')}}"  width="80%">
         <br>
     </div>
 </div>
@@ -78,20 +78,20 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/16.png')}}"  width="80%">
         <br>
     </div>
 </div>
 <div class="row">
     <div class="col-4">
-        <div class="container center" style='width:400px'>
+        <div class="container center">
             <br>
             <h3 class="text-center">Programa de educación</h3>
             <br>
             <p>Apoya y fortalece el acceso a alguna modalidad educativa, motiva el interés tanto de los niños como de 
                 los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
             <br>
-            <table class='content-table' >
+            <table class='content-table'>
             @foreach($programas as $id => $programas)
                 <tr>
                     <td>{{$programas}}</td>
@@ -105,7 +105,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/30.jpg')}}"  width="80%">
         <br>
     </div>
 </div>

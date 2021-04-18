@@ -62,7 +62,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/25.jpeg')}}"  width="80%">
         <br>
     </div>
 </div>
@@ -85,7 +85,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/24.jpg')}}"  width="80%">
         <br>
     </div>
 </div>
@@ -110,7 +110,7 @@
     <div class="col-8 text-center">
         <br>
         <br>
-            <img src="{{url('img/fondo1.jpg')}}">
+            <img src="{{url('img/14.jpg')}}" width="80%">
         <br>
     </div>
 </div>

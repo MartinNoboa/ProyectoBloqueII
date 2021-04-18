@@ -34,9 +34,9 @@
 </nav>
 @endsection
 @section('header')
-<div class='bottom-half'>  
+<div class='upper-half'>  
     <header>
-        <img src="{{url('img/fondo1.jpg')}}" alt="home photo" class="center">
+        <img src="{{url('img/16.jpg')}}" alt="home photo" class="center">
     </header>
     <br>
     <br>

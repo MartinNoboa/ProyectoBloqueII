@@ -27,7 +27,7 @@
         <p>{{$textos["aNosotros"]}}</p>
     </div>
 
-    <img class="center" src="{{url('img/fondo1.jpg')}}">
+    <img class="center" src="{{url('img/29.png')}}">
     <br>
     <br>
     <hgroup class="text-center">
