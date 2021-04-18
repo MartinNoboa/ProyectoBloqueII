@@ -122,14 +122,26 @@
         </div>
         </div>
     </div>
-    <br>
+    <div class="col-12 col-md-4 ">
+        <div class="card w-100 h-100 shadow">
+        <div class="card-body text-center">
+            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
+            <h3>Edit content</h3>
+            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
+            <button type="button" class="btn btn-light">Abrir</button>
+        </div>
+        </div>
     </div>
+    <br>
     <br>
     <br>
 
 
 
 </div>
+<br>
+<br>
+<br>
 
 
 
