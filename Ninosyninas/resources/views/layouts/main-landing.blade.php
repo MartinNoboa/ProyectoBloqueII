@@ -43,6 +43,9 @@
             <li class="nav-item mx-2">
                 <a class="nav-link" href="#">Calendario</a>
             </li>
+            <li class="nav-item mx-2">
+                <a class="button-donar text-light nav-link btn-lg rounded" href="{{url('/donaciones')}}" role="button">Donar</a>
+            </li>
 
         </ul>
 

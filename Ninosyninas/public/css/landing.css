@@ -1,3 +1,11 @@
+:root {
+    --purple: purple;
+    --white: white;
+    --black: black;
+    --background-color:#4eb3f1
+}
+
+
 .bottom-half{
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #4eb3f1);
     width: 100%;
@@ -132,3 +140,21 @@ th, td {
         grid-template-columns: 1fr;
       }
   }
+
+
+/*
+CSS para donaciones
+*/
+
+.button-donar{
+    background-color: purple;
+    color: white;
+   /* border-radius: 10px;
+   */
+    
+}
+
+
+.titles{
+    color: purple;
+}
