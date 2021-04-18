@@ -25,17 +25,17 @@
 
     <form method="POST" action= "{{ url('landing-contacto') }}">
         @csrf
-        <label for='nombre'>Nombre</label><br>
+        <label for='nombre'>Nombre <span aria-hidden="true" class="required">*</span></label><br>
         <input placeholder='Juan Perez Rodríguez' id='nombre' name="nombre" class='form-input text-center' value= "{{old('nombre')}}" required  >
         <br>
         <br>
-        <label for='email'>Email</label><br>
+        <label for='email'>Email <span aria-hidden="true" class="required">*</span></label><br>
         <input placeholder='ejemplo@correo.com' type='email' id='email' name='email' class='form-input text-center' value= "{{old('email')}}" required>
         <br>
         <br>
-        <label for='tema'>Tema</label><br>
+        <label for='tema'>Tema <span aria-hidden="true" class="required">*</span></label><br>
         <input placeholder='Tema' id='tema' name='tema' class='form-input text-center' value= "{{old('tema')}}"required>
-        <label for='mensaje'>Mensaje</label><br>
+        <label for='mensaje'>Mensaje <span aria-hidden="true" class="required">*</span></label><br>
         <input placeholder='Escriba su mensaje aqui' id='mensaje' name='mensaje' class='form-input text-center' style='height:300px' value= "{{old('mensaje')}}" required>
         <br>
         <br>
