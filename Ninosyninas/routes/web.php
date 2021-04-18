@@ -149,3 +149,5 @@ Route::get('/nosotros-ayuda', function(){
     return view("nosotros-ayuda");
 
 });
+
+Route::resource('usuario',UsuariosController::class);
