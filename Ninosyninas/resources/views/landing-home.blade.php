@@ -36,7 +36,7 @@
 @section('header')
 <div class='upper-half'>  
     <header>
-        <img src="{{url('img/16.jpg')}}" alt="home photo" class="center">
+        <img src="{{url('img/16.jpg')}}" alt="home photo" class="center" width="100">
     </header>
     <br>
     <br>
