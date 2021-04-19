@@ -15,10 +15,12 @@ class RegisterController extends Controller
     public function store(Request $request){
         $this->validate($request,[
             'name'=>'required|max:255',
-            'lastname'=>'required|max:255',
+            'apellido_paterno'=>'required|max:255',
+            'apellido_materno'=>'required|max:255',
+            'phone'=>'required|numeric',
+            'birthday'=>'required|date',
+            'contratacion'=>'required|date',
             'email'=>'required|email|max:255',
-            'password'=>'required|confirmed|min:6',
-            'password'=>'required|confirmed|min:6',
             'password'=>'required|confirmed|min:6',
 
         ]);
