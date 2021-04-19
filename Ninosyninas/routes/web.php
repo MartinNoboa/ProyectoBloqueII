@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,8 +153,12 @@ Route::get('/nosotros-ayuda', function(){
 
 });
 
+Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
+Route::post('/registrar-usuario',[RegisterController::class,'store']);
 
-
+Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
+Route::post('/usuarioadd',[UsuariosController::class,'addUsuario']);
+Route::resource('usuario',UsuariosController::class);
 
 /*
 * Funcion para probar si la conecxion es correcta
@@ -165,3 +172,4 @@ Route::get('test-db', function(){
         die("Error" . $e);
     }
 });
+

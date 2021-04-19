@@ -51,7 +51,7 @@
 
     </div> <img src="{{asset('img/account_circle_black_48dp.svg')}}" class="img-fluid mx-4" id="user-icon" alt="cuadro responsive">
 </nav>
-
+    @yield('register')
     @yield('header')
 
     <main class="containers-fluid">
