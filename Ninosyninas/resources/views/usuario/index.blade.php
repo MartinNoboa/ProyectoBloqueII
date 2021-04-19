@@ -12,7 +12,7 @@
 
     <div class="class="col-md-">
      
-        <a href="{{url('usuario/create')}}"  class="btn btn-success">Registrar nuevo usuario</a>
+        <a href="{{url('/registrar-usuario')}}"  class="btn btn-success">Registrar nuevo usuario</a>
 
 
         
@@ -127,7 +127,7 @@
         <tbody>
             @foreach($usuarios as $usuario)
             <tr scope="row">
-                <td >{{ $usuario->id }}</td>
+                <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->Nombre }}</td>
                 <td>{{ $usuario->ApellidoMaterno }}</td>
                 <td>{{ $usuario->ApellidoPaterno }}</td>
