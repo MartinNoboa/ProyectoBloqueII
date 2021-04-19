@@ -163,7 +163,6 @@ Route::resource('usuario',UsuariosController::class);
 /*
 * Funcion para probar si la conecxion es correcta
 *
-*/
 Route::get('test-db', function(){
     try{
        DB::connection() -> getPdo();
@@ -172,4 +171,15 @@ Route::get('test-db', function(){
         die("Error" . $e);
     }
 });
+*/
+
+
+
+//rutas para el controlador de login y logout
+use App\Http\Controllers\UserAuthController;
+
+Route::get('login',[UserAuthController::class,'login']);
+Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
+Route::get('sesionIniciada',[UserAuthController::class,'sesionIniciada']);
+
 
