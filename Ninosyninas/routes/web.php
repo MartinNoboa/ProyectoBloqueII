@@ -157,3 +157,19 @@ Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/usuarios',[UsuariosController::class,'index']);
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario']);
 Route::resource('usuario',UsuariosController::class);
+
+
+
+
+/*
+* Funcion para probar si la conecxion es correcta
+*
+*/
+Route::get('test-db', function(){
+    try{
+       DB::connection() -> getPdo();
+        echo "Conectado correctamente a " . DB::connection() -> getDatabaseName();
+    }catch(\Exception $e){
+        die("Error" . $e);
+    }
+});
