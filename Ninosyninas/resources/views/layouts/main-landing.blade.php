@@ -15,40 +15,13 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid" alt="cuadro responsive" width="150"></a> 
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-                    <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapse_target">
-                <ul class="navbar-nav">
-            
-                            
-                            <li class="nav-item" >
-                            <a class="nav-link"  href="{{url('/nosotros')}}">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="{{url('/contactanos')}}">Contáctanos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Galería</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Calendario</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Noticias</a>
-                            </li>
-                </ul>
-            </div>
-    </nav>
 </head>
 
 <body class="bg-light">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid"
-            alt="cuadro responsive" width="100"> </a>
+            alt="cuadro responsive" width="150"> </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
