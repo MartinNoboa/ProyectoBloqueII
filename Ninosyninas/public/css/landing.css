@@ -162,3 +162,10 @@ CSS para donaciones
 .titles{
     color: purple;
 }
+#table-usr{
+    max-width: 95%;
+    min-height: 800px;
+}
+.white-icon{
+    color:white;
+}

@@ -157,19 +157,24 @@ Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('regi
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
+Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario']);
 Route::resource('usuario',UsuariosController::class);
+Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editUser');
+Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
+
 
 /*
 * Funcion para probar si la conecxion es correcta
 *
 */
-Route::get('test-db', function(){
-    try{
-       DB::connection() -> getPdo();
-        echo "Conectado correctamente a " . DB::connection() -> getDatabaseName();
-    }catch(\Exception $e){
-        die("Error" . $e);
-    }
-});
+// Route::get('test-db', function(){
+//     try{
+//        DB::connection() -> getPdo();
+//         echo "Conectado correctamente a " . DB::connection() -> getDatabaseName();
+//     }catch(\Exception $e){
+//         die("Error" . $e);
+//     }
+// });
 

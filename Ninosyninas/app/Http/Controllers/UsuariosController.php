@@ -2,166 +2,120 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\usuarios;
+
+use App\Models\users;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class UsuariosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
-        $datos['usuarios']=usuarios::paginate(5);
-        return view('usuario.index', $datos);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('usuario.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-        //Esta madre anda marcando un error pero si los registra()
-        /*
-        $campos=[
-
-            'Nombre'=> 'required|string|max:100',
-            'ApellidoMaterno'=> 'required|string|max:100',
-            'ApellidoPaterno'=> 'required|string|max:100',
-            'Telefono'=> 'required|char|max:15',
-            'FechaContratacion'=> 'required|date',
-            'FechaNacimiento'=> 'required|date'
-
-
-        ];
-
-        $mensaje=[
-
-
-            'required'=>'El :attribute es requerido '
-
-
-        ];
-
-
-        $this->validate($request,$campos,$mensaje);
-
-        */
-        $datosUsuario = request()->except('_token');
-        //$datosUsuario = request()->all();
+        //return view('usuario.index');ajax busqueda es solo esta linea
         
-        usuarios::insert($datosUsuario);
-
-        return redirect('usuario')->with('mensaje','Usuario registrado con éxito');
+        $users=users::paginate(10);
+        return view('usuario.index',[
+            'users'=>$users,
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\usuarios  $usuarios
-     * @return \Illuminate\Http\Response
-     */
-    public function show(usuarios $usuarios)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\usuarios  $usuarios
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
         
-        $usuario=usuarios::findOrFail($id);
-        return view('usuario.edit',compact('usuario'));
-
+        $v_user=users::findOrFail($id);
+        
+        return view('usuario.edit',compact('v_user'));
 
 
         
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\usuarios  $usuarios
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
-     
-          $campos=[
-
-            'Nombre'=> 'required|string|max:100',
-            'ApellidoMaterno'=> 'required|string|max:100',
-            'ApellidoPaterno'=> 'required|string|max:100',
-            'Telefono'=> 'required|string|max:15',
-            'FechaContratacion'=> 'required|date',
-            'FechaNacimiento'=> 'required|date'
-
-
-        ];
-
-        $mensaje=[
-
-
-            'required'=>'Llena todos los atributos '
-
-
-        ];
-
-        $this->validate($request,$campos,$mensaje);
         
-        $datosUsuario = request()->except(['_token','_method']);
-        usuarios::where('id','=',$id)->update($datosUsuario);
-
-        $usuario=Usuarios::findOrFail($id);
+        $this->validate($request,[
+            'name'=>'required|max:255',
+            'apellido_paterno'=>'required|max:255',
+            'apellido_materno'=>'max:255',
+            'birthday'=>'required|date',
+            'contratacion'=>'required|date',
+            'ocupacion'=>'required|max:255',
+            'phone'=>'required|numeric',
+            'email'=>'required|email|max:255',
+        ]);
+        $input = $request->all();
+        $usr = users::find($id);
+        $usr->nombre = $input['name'];
+        $usr->apellido_paterno = $input['apellido_paterno'];
+        $usr->apellido_materno = $input['apellido_materno'];
+        $usr->fecha_nacimiento = $input['birthday'];
+        $usr->fecha_inicio = $input['contratacion'];
+        $usr->ocupacion = $input['ocupacion'];
+        $usr->telefono = $input['phone'];
+        $usr->mail = $input['email'];
         
-        //return view('usuario',compact('usuario'));
+        $usr->save();
 
-        return redirect('usuario')->with('mensaje','Usuario editado con éxito');
-        
-      
 
+        return redirect()->route('lista_usuarios');
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\usuarios  $usuarios
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
         
-        usuarios::destroy($id);
+        users::destroy($id);
 
         return redirect('usuario');
         
+    }
+
+    public function search(Request $request){
+        if ($request->ajax()) {
+            $output='';
+            $query = $request->get('query');
+            if($query != ''){
+                $data = DB::table('users')
+                        ->where('nombre','like','%'.$query.'%')
+                        ->orWhere('apellido_paterno','like','%'.$query.'%')
+                        ->orWhere('apellido_materno','like','%'.$query.'%')
+                        ->get();
+
+            }
+            else{
+                $data = DB::table('users')
+                        ->orderBy('id','desc')
+                        ->get();
+
+            }
+            $num_rows = $data->count();
+            if ($num_rows>0) {
+                foreach($data as $user){
+                    $output .='
+                    <tr>
+                    <td>'.$user->nombre.'</td>
+                    <td>'.$user->apellido_paterno.'</td>
+                    <td>'.$user->apellido_materno.'</td>
+                    <td>'.$user->fecha_nacimiento.'</td>
+                    <td>'.$user->fecha_inicio.'</td>
+                    <td>'.$user->ocupacion.'</td>
+                    <td>'.$user->telefono.'</td>
+                    <td>'.$user->mail.'</td>
+                    </tr>
+                    ';
+                }
+            }
+            else{
+                $output .='
+                <tr>
+                <td class=""> No se encontro usuario</td>
+            
+                </tr>
+                ';
+            }
+        }
     }
 }

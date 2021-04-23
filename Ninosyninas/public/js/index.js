@@ -7,6 +7,7 @@ $(document).ready(function () {
         }
         }).trigger('resize');
 
-
+    
 
 });
+document.addEventListener("touchstart", function(){}, true);
