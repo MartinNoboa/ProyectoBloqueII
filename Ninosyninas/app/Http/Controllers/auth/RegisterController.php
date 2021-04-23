@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +16,7 @@ class RegisterController extends Controller
         $this->validate($request,[
             'name'=>'required|max:255',
             'apellido_paterno'=>'required|max:255',
-            'apellido_materno'=>'required|max:255',
+            'apellido_materno'=>'max:255',
             'birthday'=>'required|date',
             'contratacion'=>'required|date',
             'ocupacion'=>'required|max:255',
