@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid"
-            alt="cuadro responsive" width="100"> </a>
+            alt="cuadro responsive" width="150"> </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
