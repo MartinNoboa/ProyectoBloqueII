@@ -35,7 +35,7 @@
                                 <a class="nav-link" href="#">Galería</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Calendario</a>
+                                <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Noticias</a>
