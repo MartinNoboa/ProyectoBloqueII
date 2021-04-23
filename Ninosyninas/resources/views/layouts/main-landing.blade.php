@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="{{ url('css/landing.css')}}">
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <!-- Google Icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       </head>
       <body class="bg-light">

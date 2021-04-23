@@ -20,14 +20,11 @@ Route::get('/welcome', function () {
 
 Route::get('/', function(){
     $textos = [
-        "card1" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-            Mexico",
+        "card1" => "Nos acompañamos en la bella tarea de vivir la vida",
         "cardt1" => "Título de la tarjeta1",
-        "card2" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-        Mexico",
+        "card2" => "Para que en la calle no sea su futuro acompáñanos a hacer la diferencia",
         "cardt2" => "Título de la tarjeta2",
-        "card3" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-        Mexico",
+        "card3" => "Niños resilientes aprendiendo a vivir, enfrentando retos en la vida",
         "cardt3" => "Título de la tarjeta3",
         "aNosotros" => "Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven 
                         muchos niños y sus familias al hacer de la calle su lugar de trabajo. La calle es un medio agresivo
@@ -131,4 +128,8 @@ Route::get('/nosotros-logros', function(){
 Route::get('/nosotros-ayuda', function(){
 
     return view("nosotros-ayuda");
+});
+
+Route::get('/calendario', function(){
+    return view("landing-calendario");
 });
