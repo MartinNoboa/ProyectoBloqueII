@@ -150,6 +150,7 @@ Route::get('/nosotros-ayuda', function(){
 
 });
 
+
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 
@@ -164,16 +165,34 @@ Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 Route::get('/calendario', function(){
     return view("landing-calendario");
 });
+
+
+
+
+
+
+
+//rutas para el controlador de login y logout
+use App\Http\Controllers\UserAuthController;
+
+Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada');
+Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
+Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
+Route::get('logout',[UserAuthController::class,'logout']);
+
+
+
+
 /*
 * Funcion para probar si la conecxion es correcta
 *
+Route::get('test-db', function(){
+    try{
+       DB::connection() -> getPdo();
+        echo "Conectado correctamente a " . DB::connection() -> getDatabaseName();
+    }catch(\Exception $e){
+        die("Error" . $e);
+    }
+});
 */
-// Route::get('test-db', function(){
-//     try{
-//        DB::connection() -> getPdo();
-//         echo "Conectado correctamente a " . DB::connection() -> getDatabaseName();
-//     }catch(\Exception $e){
-//         die("Error" . $e);
-//     }
-// });
 

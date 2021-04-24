@@ -26,7 +26,7 @@
                             <p>Donación única a través de tu cuenta de paypal</p>
                         </div>
                         <div class="col-12 col-md-6 text-center" >
-                            <a class=" btn button-donar text-light rounded" href="#" role="button">Donar por paypal</a>
+                            <a class=" btn button-donar text-light rounded" href="https://www.paypal.com/paypalme/ninosyninas" target="_blank" rel="noreferrer noopener" role="button">Donar por paypal</a>
                         </div>
                     </div>
                     <hr>
