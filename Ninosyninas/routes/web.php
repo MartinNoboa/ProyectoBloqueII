@@ -24,14 +24,11 @@ Route::get('/home', function(){
 
 Route::get('/', function(){
     $textos = [
-        "card1" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-            Mexico",
+        "card1" => "Nos acompañamos en la bella tarea de vivir la vida",
         "cardt1" => "Título de la tarjeta1",
-        "card2" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-        Mexico",
+        "card2" => "Para que en la calle no sea su futuro acompáñanos a hacer la diferencia",
         "cardt2" => "Título de la tarjeta2",
-        "card3" => "En esta tarjeta irá información importante para desplegar en la página principal de Niños y Niñas de
-        Mexico",
+        "card3" => "Niños resilientes aprendiendo a vivir, enfrentando retos en la vida",
         "cardt3" => "Título de la tarjeta3",
         "aNosotros" => "Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven 
                         muchos niños y sus familias al hacer de la calle su lugar de trabajo. La calle es un medio agresivo
@@ -157,8 +154,32 @@ Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('regi
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
+Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario']);
 Route::resource('usuario',UsuariosController::class);
+Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editUser');
+Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
+
+Route::get('/calendario', function(){
+    return view("landing-calendario");
+});
+
+
+
+
+
+
+
+//rutas para el controlador de login y logout
+use App\Http\Controllers\UserAuthController;
+
+Route::get('login',[UserAuthController::class,'login']);
+Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
+Route::get('sesionIniciada',[UserAuthController::class,'sesionIniciada']);
+
+
+
 
 /*
 * Funcion para probar si la conecxion es correcta
@@ -172,14 +193,4 @@ Route::get('test-db', function(){
     }
 });
 */
-
-
-
-//rutas para el controlador de login y logout
-use App\Http\Controllers\UserAuthController;
-
-Route::get('login',[UserAuthController::class,'login']);
-Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
-Route::get('sesionIniciada',[UserAuthController::class,'sesionIniciada']);
-
 

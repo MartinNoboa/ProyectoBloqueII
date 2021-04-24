@@ -1,164 +1,102 @@
-
-
 @extends('layouts.main-landing')
 
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-
-<div class="container mt-5">
-        <h3 class="text-center mb-3">Usuarios Registrados</h3>
-    <div class="table-responsive">
-
-    <div class="class="col-md-">
-     
-        <a href="{{url('/registrar-usuario')}}"  class="btn btn-success">Registrar nuevo usuario</a>
-
-
-        
-        <!-- Modal -->
-        <div class="modal fade" id="usuarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-          
-
-            <form id="UsuarioForm">
-                            <div class="modal-body">
-                            {{ csrf_field()}}
-
-                                <div class="form-group">
-                                    <label for="Nombre">Nombre</label>
-                                    <input type="text" class="form-control" id="Nombre" /> 
-                                </div>
-
-                            <div class="form-group">
-                                    <label for="ApellidoPaterno">Apellido Paterno</label>
-                                    <input type="text" class="form-control" id="ApellidoPaterno" /> 
-                                </div>
-    
-                                <div class="form-group">
-                                    <label for="ApellidoMaterno">Apellido Materno</label>
-                                    <input type="text" class="form-control" id="ApellidoMaterno" /> 
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Telefono">Telefono</label>
-                                    <input type="text" class="form-control" id="Telefono" /> 
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="FechaContratacion">Fecha de Contratacion</label>
-                                    <input type="date" class="form-control" id="FechaContratacion" /> 
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="FechaNacimiento">Fecha de Nacimiento</label>
-                                    <input type="date" class="form-control" id="FechaNacimiento" /> 
-                                </div>
-                            
-                            
-                                <div class="form-group">
-                                    <label for="email">email</label>
-                                    <input type="text" class="form-control" id="email" /> 
-                                </div>
-
-                            
-                                    <br>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-                 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save data</button>
-            </div>
-            </div>
+<div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
+    <div class="d-flex border-bottom mb-3">
+        <div class="me-auto p-2">
+            <h1 class="text-left fs-4">Lista de Usuarios Registrados</h3>
         </div>
+        <div class="align-self-center p-2">
+            <a href="{{url('/registrar-usuario')}}" class="btn btn-success mw-25">Registrar</a>
         </div>
-
-
- 
-
-    <div class="container">
-    
-        <div class="jumbotron">
-          <div class="row">
-              
-              <h1>Laravel crud</h1>
-              
+        <div class="align-self-center p-2">
+            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
+            {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
+            <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
+                search
+                </span></label>
             
-          </div>
         </div>
     </div>
+    <div>
+        <table class="table table-hover px-3">
+            <thead>
+                <tr>
+                    <th class="text-wrap" scope="col">Nombre</th>
+                    <th class="text-wrap" scope="col">Apellido Paterno</th>
+                    <th class="text-wrap" scope="col">Apellido Materno</th>
+                    <th class="text-wrap" scope="col">Fecha Nacimiento</th>
+                    <th class="text-wrap" scope="col">Fecha Contratación</th>
+                    <th class="text-wrap" scope="col">Ocupacion</th>
+                    <th class="text-wrap" scope="col">Telefono</th>
+                    <th class="text-wrap" scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($users as $user)
+                <tr scope="row">
+                    <td class="fs-6 text-wrap">{{ $user->nombre}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->apellido_paterno}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->apellido_materno}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->fecha_nacimiento}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->fecha_inicio}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->ocupacion}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->telefono}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->mail}}</td>
+                    <td>
+
+                        <a href="{{ url('/usuario/'.$user->id.'/edit') }}">
 
 
-     </div>
-<!--
-     <div class="class="col-md-">
+                            <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                        </a>
 
-     <a href="{{url('usuario/forms/create')}}"  class="btn btn-success">Registrar nuevo usuario</a>
+                        <form action="{{ url('/usuario/'.$user->id) }}" method="post">
+                            @csrf
+                            {{ method_field('DELETE')}}
 
-     
-     
+                            <button type="submit" class="btn btn-danger my-1 d-flex justify-content-center align-items-center"
+                                value="Borrar"><i class="bi bi-trash"></i>
+                            
+                            </button>
 
-  </div>
-    -->
+                        </form>
 
-    <table class="table table-striped">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido Materno</th>
-                <th scope="col">Apellido Paterno</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Fecha Contratación</th>
-                <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Email</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($usuarios as $usuario)
-            <tr scope="row">
-                <td>{{ $usuario->id }}</td>
-                <td>{{ $usuario->Nombre }}</td>
-                <td>{{ $usuario->ApellidoMaterno }}</td>
-                <td>{{ $usuario->ApellidoPaterno }}</td>
-                <td>{{ $usuario->Telefono }}</td>
-                <td>{{ $usuario->FechaContratacion}}</td>
-                <td>{{ $usuario->FechaNacimiento }}</td>
-                <td>{{ $usuario->Email }}</td>
-                <td>
-                
-                <a href="{{ url('/usuario/'.$usuario->id.'/edit') }}">
-                
-                    
-                        <button type="button" class="btn btn-success">Editar</button>         
-                </a>
-
-                <form action="{{ url('/usuario/'.$usuario->id) }}" method="post">
-                @csrf
-                {{ method_field('DELETE')}}
-
-                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Quieres borrar?')" value="Borrar">Borrar</button>
-                
-                </form>
-
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+
 </div>
 
+{{-- <script>
+    script para poder usar busqueda ajax
+    $(document).ready(function(){
+    function fetchUsersData(query =''){
+        fetch_custumer_data();
+        $.ajax({
+            url:{{route('UsuariosController.search')}},
+            method:'GET',
+            data:{query:query},
+            dataType:'json'
+            success:function(data){
+                $('tbody').html(data.table_data);
+               
+            }
+        })
+    }
+    $document.on('keyup','#search-user',function(){
+        let query = $(this).val();
+        fetch_custumer_data(query);
+    });
+});
+</script> --}}
 
 
 @endsection
