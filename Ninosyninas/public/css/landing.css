@@ -131,4 +131,7 @@ th, td {
     .grid-3, .grid-2 {
         grid-template-columns: 1fr;
       }
+    .calendar {
+        height: 400px;
+    }
   }
