@@ -31,6 +31,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{url('/contactanos')}}">Contáctanos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{url('/calendario')}}">Calendario</a>
+                        </li>
                     </ul>
                     <span class="navbar-text">
                         
