@@ -51,6 +51,6 @@ class UserAuthController extends Controller
     
     
     function sesionIniciada(){
-        return view('registrado.landing');
+        return view('registrado.panel');
     }
 }
