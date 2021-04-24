@@ -1,8 +1,9 @@
 @extends('layouts.main-landing')
-@section('register')
-<div class="d-flex align-items-center justify-content-center flex-column">
+@section('login')
+
+<div class="d-flex align-items-center justify-content-center flex-column" style="margin-top:50px">
     <div class="p-4 w-50 bg-light container">
-        <h3 class = "text-center" style = "margin: 10% 0 0 10%">Login</h3>
+    <h3 class = "text-center">Login</h3>
         <form action=" {{ route('auth.check')}}" method="POST">
             <hr>
             @csrf

@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class UserAuthController extends Controller
 {   
+    
     /*
     * Funcion para manejar el login
     */
     function login(){
-        return view('auth.login');
+        return view("auth.login");
     }
     
     function check(Request $request){
@@ -24,15 +25,12 @@ class UserAuthController extends Controller
             'password'=>'required', //puede cambiar de acuerdo a las especificaciones de contraseña
         ]);
         
-        //verificar si usuario existe en la base de datos
-        //$usuario = User::where('mail','=',;
+        //recuperar mail y contraseña
         $usuario = DB::table('users')
                 ->where('mail', '=', $request->email)
                 ->first();
         
-        
-       
-
+        //verificar si usuario existe en la base de datos
         if($usuario){
             //chequear si la contraseña es correcta
             //hay que agregar hash luego

@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <!-- Google Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Font awesome-->
+    <script src="https://kit.fontawesome.com/76fa277871.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-light">
@@ -53,10 +56,14 @@
 
         </ul>
 
-    </div> <img src="{{asset('img/account_circle_black_48dp.svg')}}" class="img-fluid mx-4" id="user-icon" alt="cuadro responsive">
+    </div> 
+    <!-- Revisar para poner iconos -->
+    <span id = "loginIcon"><a id = "linkLogin" href = "#"><i class="fas fa-user fa-2x"></i></a></span>
+    
 </nav>
     @yield('form')
     @yield('header')
+    @yield('login')
 
     <main class="containers-fluid">
         @yield('mainContent')
