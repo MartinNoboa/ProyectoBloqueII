@@ -12,7 +12,7 @@
 @endsection
 
 @section('mainContent')
-<div class="container">
+    <div class="container">
     <div class="row">
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">

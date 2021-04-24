@@ -8,9 +8,9 @@
             <hr>
             @csrf
             <div class = "result">
-                @if (Session::get('fail')){
+                @if (Session::get('fail'))
                     <div class = "alert alert-danger">
-                        {{ Session::get('fail')}}
+                        {{ Session::get('fail') }}
                     </div>
                 @endif
             </div>

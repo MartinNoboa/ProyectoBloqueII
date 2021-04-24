@@ -177,7 +177,8 @@ use App\Http\Controllers\UserAuthController;
 
 Route::get('login',[UserAuthController::class,'login']);
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
-Route::get('sesionIniciada',[UserAuthController::class,'sesionIniciada']);
+Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
+Route::get('logout',[UserAuthController::class,'logout']);
 
 
 

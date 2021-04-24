@@ -35,8 +35,8 @@ class UserAuthController extends Controller
             //chequear si la contraseña es correcta
             //hay que agregar hash luego
             if($request->password == $usuario->contrasenia){
-                $request->session()->put('UsuarioLogeado', $usuario->id);
-                return redirect('sesionIniciada');
+                $request->session()->put('sesionUsuario', $usuario->id);
+                return redirect('panel');
             }else{
                 return back()->with('fail','El usuario o la contraseña están incorrectos.');
             }
@@ -48,7 +48,14 @@ class UserAuthController extends Controller
     }
     
     
-    function sesionIniciada(){
+    function panel(){
         return view('registrado.panel');
+    }
+    
+    function logout(){
+        if(session()->has('sesionUsuario')){
+            session()->pull('sesionUsuario');
+            return redirect('login');
+        }
     }
 }
