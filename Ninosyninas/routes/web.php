@@ -133,3 +133,7 @@ Route::get('/nosotros-ayuda', function(){
 Route::get('/calendario', function(){
     return view("landing-calendario");
 });
+
+Route::get('/noticias', function(){
+    return view("landing-noticias");
+});

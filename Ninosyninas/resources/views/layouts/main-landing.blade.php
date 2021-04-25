@@ -34,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{url('/calendario')}}">Calendario</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{url('/noticias')}}">Noticias</a>
+                        </li>
                     </ul>
                     <span class="navbar-text">
                         
