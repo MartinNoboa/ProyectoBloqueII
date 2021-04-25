@@ -17,6 +17,10 @@ class UserAuthController extends Controller
         return view("auth.login");
     }
     
+    
+    /*
+    * Funcion para 
+    */
     function check(Request $request){
         //return $request->input();
         //validar inputs del login
