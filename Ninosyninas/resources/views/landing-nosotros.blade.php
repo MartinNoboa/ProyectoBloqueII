@@ -22,11 +22,9 @@
     <br>
     <br>
     <br>
-
     <div class="text-center center">
         <p>{{$textos["aNosotros"]}}</p>
     </div>
-
     <img class="center" src="{{url('img/29.png')}}">
     <br>
     <br>
@@ -38,7 +36,7 @@
     </div>
     <div class='bottom-half'>
     <div class="container-fluid lower-half">
-        <div class="container position-relative" style="width: 60%">
+        <div class="container position-relative " style="width: 60%">
             <div class="grid-3 text-center">
                 <div class="card">
                     <div class="card-body">
