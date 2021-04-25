@@ -35,20 +35,18 @@
 @endsection
 @section('header')
 <div class='upper-half'>  
-    <header>
-        <img src="{{url('img/16.jpg')}}" alt="home photo" class="center" width="100">
-    </header>
+    <img src="{{url('img/16.jpg')}}" alt="home photo" class="center" width="100">
     <br>
     <br>
-    <div class="container-fluid">
-        <div class="container position-relative" style="width: 60%">
-            <div class="grid-3 text-center">
-                <div class="card">
+    <div class="container">
+        <div class="center">
+            <div class="grid-3 center">
+                <div class="card text-center">
                     <div class="card-body">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                        <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                        </svg>
                         <br>
                         <br>
                         <h5 class="card-title">{{$textos["cardt1"]}}</h5>
@@ -56,11 +54,11 @@
                         <p class="card-text">{{$textos["card1"]}}</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-body">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg>
                         <br>
                         <br>
                         <h5 class="card-title">{{$textos["cardt2"]}}</h5>
@@ -68,9 +66,11 @@
                         <p class="card-text">{{$textos["card2"]}}</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-body">
-                    <span class="material-icons md-48">sports_soccer</span>
+                        <span class="material-icons" style="font-size: 70px">
+                            sports_soccer
+                        </span>
                         <br>
                         <br>
                         <h5 class="card-title">{{$textos["cardt3"]}}</h5>
@@ -80,12 +80,15 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 @endsection
 
 @section('mainContent')
-        <br>
-        <br>
-        <br>
+<br>
+<br>
+<br>
+    <div class="bottom-half">
         <div class="text-center center">
             <h1>Acerca de nosotros</h1>
             <br>
@@ -95,8 +98,6 @@
             <br>
         </div>
         <br>
-</div>
-    <div>
         <div class="grid-2">
             <div class="text-center">
                 <h2>Misión</h2>
@@ -155,4 +156,4 @@
         <br>
         <br>
     </div>
-    @endsection
+@endsection
