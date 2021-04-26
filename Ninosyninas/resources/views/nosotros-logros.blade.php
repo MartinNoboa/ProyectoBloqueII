@@ -3,7 +3,7 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class="container-fluid bottom-half">
+<div class="container-fluid upper-half">
 <br>
 <br>
     <div class="position-relative">
@@ -18,14 +18,15 @@
     <br>
     <br>
     <br>
+</div>
 @endsection
 @section('mainContent')
-<div class="grid-2">
+<div class="grid-2 bottom-half">
     <div>
         <h3 class="text-center">Logros</h3>
         <p>{{$logro}}</p>
     </div>
-    <div>
+    <div class="text-center">
         <img src="{{url('img/23.png')}}" width="80%">
     </div>
 

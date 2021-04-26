@@ -38,7 +38,7 @@
                             <p>Nos pondremos en contacto contigo en cuanto termines tu registro.</p>
                         </div>
                         <div class="col-12 col-md-6 text-center" >
-                            <a class=" btn button-donar text-light rounded" href="{{url('/registro/donador')}}" role="button">Regístrate</a>
+                            <a class=" btn button-donar text-light rounded" href="{{url('/donador')}}" role="button">Regístrate</a>
                         </div>
                     </div>
                     <br>
@@ -51,7 +51,7 @@
                             <p>Al registrarte como donador puedes domiciliar tu tarjeta con nosotros. Solo selecciona "Tarjeta (Domiciliado)" como metodo de pago.</p>
                         </div>
                         <div class="col-12 col-md-6 text-center" >
-                            <a class=" btn button-donar text-light rounded" href="{{url('/registro/donador')}}" role="button">Regístrate</a>
+                            <a class=" btn button-donar text-light rounded" href="{{url('/donador')}}" role="button">Regístrate</a>
                         </div>
                     </div>
                     <br>
