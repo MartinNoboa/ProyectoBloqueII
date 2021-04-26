@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\landingController;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +19,17 @@ Route::get('/welcome', function () {
 });
 
 
-Route::get('/', [landingController::class, 'homeTexts']);
+Route::get('/', [LandingController::class, 'homeTexts']);
 
-Route::get('/nosotros', [landingController::class, 'nosotrosTexts']);
+Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
 Route::get('/contactanos', function(){
     return view("landing-contacto");
 });
 
-Route::get('/nosotros-areas', [landingController::class, 'areasTexts']);
+Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
-Route::get('/nosotros-logros', [landingController::class, 'logroText']);
+Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 
 Route::get('/nosotros-ayuda', function(){
 
@@ -40,4 +40,4 @@ Route::get('/calendario', function(){
     return view("landing-calendario");
 });
 
-Route::get('/noticias', [landingController::class, 'noticiasTexts']);
+Route::get('/noticias', [LandingController::class, 'noticiasTexts']);
