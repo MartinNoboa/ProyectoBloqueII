@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class landingController extends Controller{
+class LandingController extends Controller{
     public function homeTexts(){
         
         $textos = [

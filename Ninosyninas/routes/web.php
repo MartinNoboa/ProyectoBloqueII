@@ -4,7 +4,7 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\landingController;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +23,9 @@ Route::get('/home', function(){
 });
 
 
-Route::get('/', [landingController::class, 'homeTexts']);
+Route::get('/', [LandingController::class, 'homeTexts']);
 
-Route::get('/nosotros', [landingController::class, 'nosotrosTexts']);
+Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
 Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
 
@@ -46,9 +46,9 @@ Route::get('/registro/donador', function(){
     return view("landing-registro-don");
 });
 
-Route::get('/nosotros-areas', [landingController::class, 'areasTexts']);
+Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
-Route::get('/nosotros-logros', [landingController::class, 'logroText']);
+Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 
 Route::get('/nosotros-ayuda', function(){
 
@@ -56,7 +56,7 @@ Route::get('/nosotros-ayuda', function(){
 
 });
 
-Route::get('/noticias', [landingController::class, 'noticiasTexts']);
+Route::get('/noticias', [LandingController::class, 'noticiasTexts']);
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
