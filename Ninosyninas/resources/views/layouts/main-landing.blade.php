@@ -45,7 +45,7 @@
                 <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link" href="#">Noticias</a>
+                <a class="nav-link" href="{{url('/noticias')}}">Noticias</a>
             </li>
             <li class="nav-item mx-2">
                 <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
