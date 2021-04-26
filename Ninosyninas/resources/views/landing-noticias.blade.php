@@ -14,4 +14,9 @@
 
 @section('mainContent')
 <p>Aqui iran todas las noticias.</p>
+
+@foreach($noticia as $id => $noticia)
+<x-card-noticia :titulo="$noticia['titulo']" :cuerpo="$noticia['cuerpo']" :foto="$noticia['foto']" :id="$noticia['id']"/>
+@endforeach
+
 @endsection

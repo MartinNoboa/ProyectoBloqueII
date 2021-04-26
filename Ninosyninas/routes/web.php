@@ -135,5 +135,14 @@ Route::get('/calendario', function(){
 });
 
 Route::get('/noticias', function(){
-    return view("landing-noticias");
+    $noticia = [
+        "1" => [
+            "id" => "1",
+            "titulo" => "Titulo de prueba",
+            "cuerpo" => "Este es un texto de prueba para demostrar el funcionamiento de esta funcion.",
+            "foto" => "ejemplo"
+        ]
+    ];
+
+    return view("landing-noticias", ["noticia" => $noticia]);
 });
