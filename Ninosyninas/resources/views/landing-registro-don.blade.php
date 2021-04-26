@@ -22,9 +22,8 @@
          Phasellus non tortor enim. Vesbulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
          Class aptent taci sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos (informacion acerca del registro de donadores).</p>
     
-    <form method="POST" action= "{{ url('') }}">
+    <form method="POST" action= "{{ url('/donador/') }}">
         @csrf
-    
     <br>
     <div class="container">
         <div class="row">
@@ -36,64 +35,63 @@
             </div>
             <br>       
             <div class="col-12 col-md-4 ">
-                <label for='apellidoPaterno'>Apellido parterno <span aria-hidden="true" class="required">*</span></label><br>
-                <input placeholder='Rodríguez' id='apellidoPaterno' name="apellidoPaterno" class='form-input text-center' value= "{{old('apellidoPaterno')}}" required  >
+                <label for='apellido_paterno'>Apellido parterno <span aria-hidden="true" class="required">*</span></label><br>
+                <input placeholder='Rodríguez' id='apellido_paterno' name="apellido_paterno" class='form-input text-center' value= "{{old('apellido_paterno')}}" required  >
                 <br>
                 <br>
             </div>
             <br>
             <div class="col-12 col-md-4">
-                <label for='apellidoPaterno'>Apellido materno <span aria-hidden="true" class="required">*</span></label><br>
-                <input placeholder='Perez' id='apellidoPaterno' name="apellidoPaterno" class='form-input text-center' value= "{{old('nombre')}}" required  >
+                <label for='apellido_materno'>Apellido materno <span aria-hidden="true" class="required">*</span></label><br>
+                <input placeholder='Perez' id='apellido_materno' name="apellido_materno" class='form-input text-center' value= "{{old('apellido_materno')}}" required  >
                 <br>
                 <br>
             </div>
         </div>
         
 
-
         <div class="row">
-            <div class="col-12 col-md-4" >
+            <div class="col-12 col-md-6" >
                 <label for='email'>Email <span aria-hidden="true" class="required">*</span></label><br>
                 <input placeholder='ejemplo@correo.com' type='email' id='email' name='email' class='form-input text-center' value= "{{old('email')}}" required>
                 <br>
                 <br>
             </div>
             <br>       
-            <div class="col-12 col-md-4 ">
-                <label for='telfono'>Telefono</label><br>
-                <input placeholder='Juan Perez Rodríguez' id='telfono' name="telfono" class='form-input text-center' value= "{{old('telfono')}}"  >
+            <div class="col-12 col-md-6 ">
+                <label for='telefono'>Telefono <span aria-hidden="true" class="required">*</span></label><br>
+                <input placeholder='4424587458' id='telefono' name="telefono" class='form-input text-center' value= "{{old('telefono')}}" required >
                 <br>
                 <br>
             </div>
             <br>
-            <div class="col-12 col-md-4">
-                <label for='rfc'>RFC</label><br>
-                <input placeholder='AAAA00001A1' type='text' id='rfc' name='rfc' class='form-input text-center' minlength="12" maxlength="13" value= "{{old('rfc')}}" >
-                <br>
-                <br>
-            </div>
+            
         </div>
     </div>
 
         <h4 class="text-center">Dirección</h4>
-        <label for='direccion'>Dirección <span aria-hidden="true" class="required">*</span></label><br>
-        <input placeholder='Avenida de la luz 112, int 15.'  id='direccion' name='direccion' class='form-input text-center' value= "{{old('direccion')}}" required>
+        <label for='calle_principal'>Calle principal <span aria-hidden="true" class="required">*</span></label><br>
+        <input placeholder='Avenida de la luz 112, int 15.'  id='calle_principal' name='calle_principal' class='form-input text-center' value= "{{old('calle_principal')}}" required>
+        <br>
+        <br>
+
+        <label for='calle_secundaria'>Calle secuandaria</label><br>
+        <input placeholder='Calle cerrito viejo.'  id='calle_secundaria' name='calle_secundaria' class='form-input text-center' value= "{{old('calle_secundaria')}}" >
         <br>
         <br>
 
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6" >
-                    <label for='codigoPostal'>Código postal <span aria-hidden="true" class="required">*</span></label><br>
-                    <input placeholder='15455' type="number"  id='codigoPostal' name='codigoPostal' class='form-input text-center' value= "{{old('codigoPostal')}}" required>
+                    <label for='codigo_postal'>Código postal <span aria-hidden="true" class="required">*</span></label><br>
+                    <input placeholder='15455' type="number"  id='codigo_postal' name='codigo_postal' class='form-input text-center' value= "{{old('codigo_postal')}}" required>
                     <br>
                     <br>
                 </div>
                 <br>       
                 <div class="col-12 col-md-6 ">
-                    <label for='colonia'>Colonia</label><br>
-                    <input placeholder='Los moros'  id='colonia' name='colonia' class='form-input text-center' value= "{{old('colonia')}}" >
+                    <label for='colonia'>Colonia <span aria-hidden="true" class="required">*</span></label><br>
+                    <input placeholder='Los moros'  id='colonia' name='colonia' class='form-input text-center' value= "{{old('colonia')}}" required>
                     <br>
                     <br>
                 </div>
@@ -102,18 +100,19 @@
 
             <div class="row">
                 <div class="col-12 col-md-6" >
-                    <label for='cuidad'>Ciudad <span aria-hidden="true" class="required">*</span></label><br>
-                    <input placeholder='Querétaro'  id='cuidad' name='cuidad' class='form-input text-center' value= "{{old('cuidad')}}" required>
+                    <label for='ciudad'>Ciudad <span aria-hidden="true" class="required">*</span></label><br>
+                    <input placeholder='Querétaro'  id='ciudad' name='ciudad' class='form-input text-center' value= "{{old('cuidad')}}" required>
                     <br>
                     <br>
                 </div>
                 <br>       
                 <div class="col-12 col-md-6 ">
-                    <label for='Estado'>Estado <span aria-hidden="true" class="required">*</span></label><br>
+                    <label for='estado'>Estado <span aria-hidden="true" class="required">*</span></label><br>
                     <input placeholder='Querétaro'  id='estado' name='estado' class='form-input text-center' value= "{{old('estado')}}" required>
                     <br>
                     <br>
                 </div>
+                
                 <br>
             </div>
         </div>
@@ -125,8 +124,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6" >
-                    <label for='email'>Método de pago <span aria-hidden="true" class="required">*</span></label><br>
-                        <select class='form-input' name="cars" id="cars" required>
+                    <label for='tipo_pago'>Método de pago <span aria-hidden="true" class="required">*</span></label><br>
+                        <select class='form-input' name="tipo_pago" id="tipo_pago" required>
                             <option value="volvo">Transferencia</option>
                             <option value="saab">Paypal</option>
                             <option value="mercedes">Depósito</option>
@@ -137,8 +136,8 @@
                 </div>
 
                 <div class="col-12 col-md-6 ">
-                     <label for='usoCFDI'>Uso CFDI</label><br>
-                     <input placeholder='comprobante ' id='usoCFDI' name='usoCFDI' class='form-input text-center' value= "{{old('usoCFDI')}}" >
+                     <label for='uso_cfdi'>Uso CFDI</label><br>
+                     <input placeholder='comprobante ' id='uso_cfdi' name='uso_cfdi' class='form-input text-center' value= "{{old('usoCFDI')}}" >
                      <br>
                      <br>
                     
@@ -151,8 +150,10 @@
         <textarea placeholder='Comentarios adicionales' id='observaciones' name='observaciones' class='form-input text-center' value= "{{old('observaciones')}}" ></textarea>
         <br>
         <br>
+
+        <input id="aprobado" name="aprobado" type="hidden" value="0">
         <div class="text-center">
-            <a class=" btn button-donar text-light rounded" href="#" role="button">Regístrate</a>
+        <input type="submit" class=" btn button-donar text-light rounded" value="Regístrate"></input>
         </div>
             
         <br>

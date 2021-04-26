@@ -41,10 +41,7 @@ Route::get('/donaciones', function(){
     return view("landing-donaciones");
 });
 
-Route::get('/registro/donador', function(){
-    
-    return view("landing-registro-don");
-});
+
 
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
@@ -74,6 +71,8 @@ Route::get('/calendario', function(){
 });
 
 
+use App\Http\Controllers\DonatorController;
+Route::resource('donador',DonatorController::class);
 
 
 
