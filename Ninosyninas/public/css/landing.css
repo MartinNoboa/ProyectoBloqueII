@@ -1,5 +1,5 @@
 .bottom-half{
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #5cafe2);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #4eb3f1);
     width: 100%;
     padding-left: 0;
 }
@@ -11,7 +11,7 @@
 
 
 .upper-half{
-    background-image: linear-gradient(to top,  rgba(255, 255, 255, 0), #5cafe2);
+    background-image: linear-gradient(to top,  rgba(255, 255, 255, 0), #4eb3f1);
     top:0;
     width: 100%;
 }
