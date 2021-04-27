@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGalleriesImagesTable extends Migration
+class CreateNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,17 @@ class CreateGalleriesImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries_images', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            //llave foranea de la tabla permits
-            $table->foreignId('gallery_id')
-                ->nullable()
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('set null');
-            //llave foranea de la tabla roles
+            $table->string("evento")->nullable();
+            $table->string("titulo");
+            $table->text("contenido");
+            $table->date("fecha");
             $table->foreignId('image_id')
                 ->nullable()
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('set null');
-            $table->timestamps();
         });
     }
 
@@ -38,6 +34,6 @@ class CreateGalleriesImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galleries_images');
+        Schema::dropIfExists('news');
     }
 }
