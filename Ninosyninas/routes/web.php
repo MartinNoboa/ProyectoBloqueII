@@ -56,7 +56,7 @@ Route::get('/nosotros-ayuda', function(){
 
 });
 
-Route::get('/noticias', [LandingController::class, 'noticiasTexts']);
+Route::get('/noticias', []);
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
