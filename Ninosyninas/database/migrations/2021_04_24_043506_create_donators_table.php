@@ -26,6 +26,9 @@ class CreateDonatorsTable extends Migration
             $table->string("colonia");
             $table->string("ciudad");
             $table->string("estado");
+            $table->string("tipo_pago");
+            $table->string("uso_cfdi")->nullable();
+            $table->string("observaciones")->nullable();
             $table->boolean("aprobado");
         });
     }

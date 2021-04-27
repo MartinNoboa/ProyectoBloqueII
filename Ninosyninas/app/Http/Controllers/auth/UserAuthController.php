@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 //clase para hashear contraseñas
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,10 @@ class UserAuthController extends Controller
         return view("auth.login");
     }
     
+    
+    /*
+    * Funcion para validar datos de inicio de sesion
+    */
     function check(Request $request){
         //return $request->input();
         //validar inputs del login

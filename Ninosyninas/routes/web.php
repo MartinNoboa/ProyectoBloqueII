@@ -41,10 +41,7 @@ Route::get('/donaciones', function(){
     return view("landing-donaciones");
 });
 
-Route::get('/registro/donador', function(){
-    
-    return view("landing-registro-don");
-});
+
 
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
@@ -74,15 +71,17 @@ Route::get('/calendario', function(){
 });
 
 
+use App\Http\Controllers\DonatorController;
+Route::resource('donador',DonatorController::class);
 
 
 
 
 
 //rutas para el controlador de login y logout
-use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\auth\UserAuthController;
 
-Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada');
+Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
 Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
 Route::get('logout',[UserAuthController::class,'logout']);

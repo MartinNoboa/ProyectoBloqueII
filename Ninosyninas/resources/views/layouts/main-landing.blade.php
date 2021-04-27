@@ -58,7 +58,7 @@
 
     </div> 
     <!-- Revisar para poner iconos -->
-    <span id = "loginIcon"><a id = "linkLogin" href = "#"><i class="fas fa-user fa-2x"></i></a></span>
+    <span id = "loginIcon"><a id = "linkLogin" href = "{{ route('login') }}"><i class="fas fa-user fa-2x"></i></a></span>
     
 </nav>
     @yield('form')
