@@ -19,7 +19,7 @@ class UserAuthController extends Controller
     
     
     /*
-    * Funcion para 
+    * Funcion para validar datos de inicio de sesion
     */
     function check(Request $request){
         //return $request->input();
