@@ -64,6 +64,7 @@
     @yield('form')
     @yield('header')
     @yield('login')
+    @yield('content')
 
     <main class="containers-fluid">
         @yield('mainContent')

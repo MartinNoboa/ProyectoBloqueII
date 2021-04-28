@@ -18,7 +18,8 @@ class CreateNewsTable extends Migration
             $table->string("evento")->nullable();
             $table->string("titulo");
             $table->text("contenido");
-            $table->date("fecha");
+            // $table->date("fecha");
+            $table->timestamps();
             $table->foreignId('image_id')
                 ->nullable()
                 ->constrained()

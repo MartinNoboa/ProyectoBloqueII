@@ -11,7 +11,15 @@ class news extends Model
     protected $fillable = [
         'evento',
         'titulo',
-        'contenido'
+        'contenido',
+        'fecha',
+        'image_id',
     ];
-    const CREATED_AT = 'fecha';
+    // const CREATED_AT = 'fecha';
+    // public $timestamps = false;
+    public function images()
+    {
+        return $this->hasOne(images::class);
+    }
+
 }
