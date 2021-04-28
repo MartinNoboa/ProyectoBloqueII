@@ -13,15 +13,15 @@
 @endsection
 
 @section('mainContent')
-<p>Aqui iran todas las noticias.</p>
 <div class="container center">
-    <div class="row">
+    <div class="row text-center">
         @foreach($noticia as $id => $noticia)
-        <br>
+
         <x-card-noticia :titulo="$noticia['titulo']" :cuerpo="$noticia['cuerpo']" :foto="$noticia['foto']" :id="$noticia['id']"/>
         <br>
-        <br>
+ 
         @endforeach
     </div>
+    
 </div>
 @endsection
