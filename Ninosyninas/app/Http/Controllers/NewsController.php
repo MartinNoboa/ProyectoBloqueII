@@ -11,18 +11,46 @@ class NewsController extends Controller
 {
     public function index()
     {
-        return view('news.index');
+        $news=news::paginate(10);
+        return view('news.index',[
+            'news'=>$news,
+        ]);
     }
     public function showForm()
     {
         return view('news.registrar-noticia');
+    }
+    public function edit($id)
+    {
+        
+        $v_news=news::findOrFail($id);
+        
+        return view('news.edit',compact('v_news'));
+   
+    }
+    public function update(Request $request, $id)
+    {
+        
+        $this->validate($request,[
+            'titulo'=>'required|MAX:255',
+            'contenido'=>'required',
+        ]);
+        $input = $request->all();
+        $news = news::find($id);
+        $news->titulo = $input['titulo'];
+        $news->contenido = $input['contenido'];
+        $news->save();
+
+
+        return redirect()->route('news');
+
     }
     public function upload_image(Request $request)
     {
         $this->validate($request,[
             'titulo'=>'required|MAX:255',
             'contenido'=>'required',
-            'image'=>'nullable|image',
+            'image'=>'required|nullable|image',
         ]);
         
 
@@ -38,7 +66,7 @@ class NewsController extends Controller
             if ($request->hasFile('image')) {//tiene una imagen
                 images::create([
                     'nombre'=>$name,
-                    'url'=>'',
+                    'url'=>'storage/img/imgNews1.jpg',
                 ]);
                 news::create([
                     'titulo'=>$request->titulo,
@@ -62,7 +90,7 @@ class NewsController extends Controller
             if ($request->hasFile('image')) {
                 images::create([
                     'nombre'=>$name,
-                    'url'=>'',
+                    'url'=>'storage/img/'.$name,
                 ]);
                 news::create([
                     'titulo'=>$request->titulo,

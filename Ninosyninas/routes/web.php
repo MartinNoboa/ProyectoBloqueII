@@ -57,6 +57,8 @@ Route::get('/nosotros-ayuda', function(){
 Route::get('/noticias', [NewsController::class,'index'])->name('news');
 Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->name('upload-image');
 Route::post('/noticias/registrar-noticia', [NewsController::class,'upload_image']);
+Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews');
+Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
