@@ -41,3 +41,13 @@ Route::get('/calendario', function(){
 });
 
 Route::get('/noticias', [LandingController::class, 'noticiasTexts']);
+
+Route::get("/test-bd", function(){
+    try{
+        DB::connection()->getPdo();
+        echo "Jalo la conexión a " . DB::connection()->getDatabasename();
+    }catch (Exception $e){
+        die("No jalo la conexión. Error:" . $e);
+    }
+
+});
