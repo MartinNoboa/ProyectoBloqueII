@@ -42,12 +42,13 @@ Route::get('/calendario', function(){
 
 Route::get('/noticias', [LandingController::class, 'noticiasTexts']);
 
-Route::get("/test-bd", function(){
+
+//Probar conexion a base de datos (Exitosa en PC, pendiente en Mac)
+Route::get('/test-bd', function(){
     try{
         DB::connection()->getPdo();
-        echo "Jalo la conexión a " . DB::connection()->getDatabasename();
-    }catch (Exception $e){
-        die("No jalo la conexión. Error:" . $e);
+        echo "Jalo la conexion a " . DB::connection()->getDatabasename();
+    }catch(Exception $e){
+        die("Cannot connect to the database. Error: " . e);
     }
-
 });
