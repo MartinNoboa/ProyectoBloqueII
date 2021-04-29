@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="cnt my-5">
-                {{-- <img src="{{asset($newsItem->images->url)}} " alt="prueba" srcset="" class="img"> --}}
+                <img src="{{asset($newsItem->image->url)}} " alt="no se encontró la imagen" srcset="" class="img">
                 <p class="overlay-text">{{$newsItem->titulo}} </p>
             </div>
         </div>

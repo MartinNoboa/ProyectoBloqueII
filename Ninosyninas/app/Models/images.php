@@ -14,4 +14,8 @@ class images extends Model
         'url',
     ];
     public $timestamps = false;
+    public function news()
+    {
+        return $this->hasMany(news::class,'id');
+    }
 }

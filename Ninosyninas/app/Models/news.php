@@ -17,9 +17,11 @@ class news extends Model
     ];
     // const CREATED_AT = 'fecha';
     // public $timestamps = false;
-    public function images()
+    public function image()
     {
-        return $this->hasOne(images::class);
+        
+        return $this->belongsTo(images::class,'image_id');
+
     }
 
 }

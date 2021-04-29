@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
     public function index()
-    {
+    {  
+        // $pp=news::find(1)->images()->first()->url;
+        // dd($pp);
         $news=news::paginate(10);
         return view('news.index',[
             'news'=>$news,
