@@ -75,7 +75,8 @@ use App\Http\Controllers\DonatorController;
 Route::resource('donador',DonatorController::class);
 
 
-
+use App\Http\Controllers\DonadoresController;
+Route::resource('donadores',DonadoresController::class);
 
 
 //rutas para el controlador de login y logout

@@ -1,0 +1,7 @@
+@php
+
+    dd($consulta);
+
+
+
+@endphp

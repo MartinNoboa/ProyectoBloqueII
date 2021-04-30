@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Donadores;
 use Illuminate\Http\Request;
 
+
+
 class DonadoresController extends Controller
 {
     /**
@@ -12,9 +14,33 @@ class DonadoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function eloquent(){
+
+
+        //$consulta = Donadores::where('nombre')->get();
+
+        $consulta = Donadores::where('aprobado',"=",'2')->get();
+
+        //$aprobados = Donadores::all();
+
+        //return view('',['consulta' => $consulta]);
+
+        //return $consulta;
+
+
+    }
+
     public function index()
     {
-        return view("landing-registro-don");
+        //para pasar infor directamente al index
+        //$datos['donadores']=Donadores::paginate(10);
+
+        $aprobados = Donadores::where('aprobado',"=",'1')->paginate(10);
+
+        $desaprobados = Donadores::where('aprobado',"=",'2')->paginate(10);
+        
+        return view('donadores.index',['desaprobados' => $desaprobados,'aprobados' => $aprobados]);
     }
 
     /**
@@ -24,7 +50,13 @@ class DonadoresController extends Controller
      */
     public function create()
     {
-        return view("landing-registro-don");
+        //
+        return view('donadores.create');
+        
+
+        
+
+
     }
 
     /**
@@ -35,10 +67,43 @@ class DonadoresController extends Controller
      */
     public function store(Request $request)
     {
-        // $datosDonador = request()-> all();
-       $datosDonador = request()-> except('_token');
-       Donadores::insert($datosDonador);
-        return response()->json($datosDonador);
+
+
+        $campos=[
+
+                'nombre'=>'required|string|max:100',
+                'apellido_paterno'=>'required|string|max:100',
+                'apellido_materno'=>'required|string|max:100',
+                'email'=>'required|email',
+                'telefono'=>'required|numeric',
+                'calle_principal'=>'required|string|max:100',
+                'codigo_postal'=>'required|numeric',
+                'colonia'=>'required|string|max:100',
+                'ciudad'=>'required|string|max:100',
+                'estado'=>'required|string|max:100',
+                'tipo_pago'=>'required|string|max:100',
+
+
+        ];
+
+        $mensaje=[
+
+            'required'=>'El :attribute es requerido'
+
+        ];
+
+        $this->validate($request,$campos,$mensaje);
+
+
+
+        //
+        $datosDonadores = request()->except('_token');
+        
+        //$consulta = Donadores::where('aprobado',"=",'2')->get();
+        
+        Donadores::insert($datosDonadores);
+
+        return redirect('donadores')->with('mensaje','Donador registrado con éxito');
     }
 
     /**
@@ -58,9 +123,12 @@ class DonadoresController extends Controller
      * @param  \App\Models\Donadores  $donadores
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donadores $donadores)
+    public function edit($id)
     {
         //
+        $donadores=Donadores::findOrFail($id);
+        return view('donadores.edit',compact('donadores'));
+        
     }
 
     /**
@@ -70,9 +138,17 @@ class DonadoresController extends Controller
      * @param  \App\Models\Donadores  $donadores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Donadores $donadores)
+    public function update(Request $request,  $id)
     {
         //
+        $datosDonadores = request()->except(['_token','_method']);
+        Donadores::where('id','=',$id)->update($datosDonadores);
+
+        $donadores=Donadores::findOrFail($id);
+        
+        //return view('usuario',compact('usuario'));
+
+        return redirect('donadores')->with('mensaje','Donador editado con éxito');
     }
 
     /**
@@ -81,8 +157,14 @@ class DonadoresController extends Controller
      * @param  \App\Models\Donadores  $donadores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donadores $donadores)
+    public function destroy($id)
     {
         //
+        Donadores::destroy($id);
+
+        //return redirect('/donadores');
+
+        return redirect('donadores')->with('mensaje','Eliminado Exitoso');
+        
     }
 }
