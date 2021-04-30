@@ -6,6 +6,7 @@ use App\Models\news;
 use App\Models\images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -29,6 +30,16 @@ class NewsController extends Controller
         
         return view('news.edit',compact('v_news'));
    
+    }
+    public function delete($id)
+    {
+        $img_=news::find($id);
+        $str_Storage=str_replace('storage/','',$img_->url);
+        Storage::disk('public')->delete($str_Storage);
+        news::destroy($id);
+        images::destroy($img_->image_id);
+
+        return back();
     }
     public function update(Request $request, $id)
     {

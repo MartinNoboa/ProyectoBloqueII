@@ -59,6 +59,8 @@ Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->n
 Route::post('/noticias/registrar-noticia', [NewsController::class,'upload_image']);
 Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews');
 Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
+Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
+
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);

@@ -8,17 +8,23 @@
     <hr>
     @if ($news->count())
         @foreach ($news as $newsItem)
-        <div class="d-flex align-items-center justify-content-center flex-column m-3 border-bottom">
+        <div class="d-flex align-items-center justify-content-center flex-column border-bottom">
             <div class="ms-auto p-2 dropdown-img">
                 <span class="material-icons-outlined">
                     more_vert
                 </span>
                 <div class="dropdown-content-img">
                     <a href="{{url('/noticias/edit/'.$newsItem->id)}}">Editar</a>
-                    <a href="{{url('/')}}">Borrar</a>
+                    <a href="{{url('/noticias/delete/'.$newsItem->id) }}">Borrar</a>
+                    
+                    {{-- <form action="{{ url('/noticias/delete'.$newsItem->id) }}" method="post">
+                            @csrf
+                            {{ method_field('DELETE')}}
+                            <input type="submit" value="Borrar">
+                    </form> --}}
                 </div>
             </div>
-            <div class="cnt my-5">
+            <div class="cnt mb-5">
                 <img src="{{asset($newsItem->image->url)}} " alt="no se encontró la imagen" srcset="" class="img">
                 <p class="overlay-text">{{$newsItem->titulo}} </p>
             </div>
@@ -28,7 +34,7 @@
         <h2>No hay noticias disponibles</h2>
     @endif
 
-    <div class="d-flex align-items-center justify-content-center flex-column m-3 border-bottom">
+    {{-- <div class="d-flex align-items-center justify-content-center flex-column m-3 border-bottom">
         <div class="ms-auto p-2 dropdown-img">
             <span class="material-icons-outlined">
                 more_vert
@@ -43,6 +49,6 @@
             <p class="overlay-text">Titulo</p>
         </div>
 
-    </div>
+    </div> --}}
 </div>
 @endsection
