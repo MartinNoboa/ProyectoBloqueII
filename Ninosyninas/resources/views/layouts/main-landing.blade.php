@@ -69,7 +69,7 @@
     <main class="containers-fluid">
         @yield('mainContent')
     </main>
-    <div class="footer">
+    <div class="footer mw-100">
         <div class="row">
             <div class="col-8">
                 <div class="container footer">
