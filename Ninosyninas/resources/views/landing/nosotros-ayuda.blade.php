@@ -4,8 +4,8 @@
 
 @section('header')
 <div class="container-fluid upper-half">
-<br>
-<br>
+    <br>
+    <br>
     <div class="position-relative">
         <div class="position-absolute top-50 start-50 translate-middle">
             <table class="text-center table-wt zelda">
@@ -18,15 +18,14 @@
     <br>
     <br>
     <br>
-</div>
+
 @endsection
 @section('mainContent')
-<div class="bottom-half">
-<div class="row">
-    <div class="col-4">
-        <div class="container">
+
+    <div class="row">
+        <div class="col-4 text-center">
             <br>
-            <h3 class="text-center">¿Qué necesitamos?</h3>
+            <h3>¿Qué necesitamos?</h3>
             <br>
             <p>
             A través de nuestros diferentes programas, Educación Salud y Capacitación, apoyamos en la realización de las 
@@ -56,45 +55,40 @@
               realización de tareas, así como en la entrega de las mismas vía internet y en las video clases.
             </p>
             <br>
-            
+        </div>
+        <div class="col-8 text-center">
+            <br>
+            <br>
+            <img src="{{url('img/25.jpeg')}}"  width="80%">
+            <br>
         </div>
     </div>
-    <div class="col-8 text-center">
-        <br>
-        <br>
-            <img src="{{url('img/25.jpeg')}}"  width="80%">
-        <br>
-    </div>
 </div>
-
-<div class="row">
-    <div class="col-4">
-        <div class="container">
+<div class="container-fluid bottom-half">
+    <div class="row text-center">
+        <div class="col-4">
             <br>
-            <h3 class="text-center">¿Cómo donar?</h3>
+            <h3>¿Cómo donar?</h3>
             <br>
-            <p>El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
+            <p >El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
                 agradecer su apoyo a todas aquellas personas que han hecho posible nuestro sueño.</p>
             <br>
             <p>Súmate a nuestra causa:</p>
             <br>
             <a class="btn btn-outline-primary" href="{{ url('#')}}" role="button">Donar</a>
-            
+        </div>
+        <div class="col-8">
+            <br>
+            <br>
+            <img src="{{url('img/24.jpg')}}"  width="80%">
+            <br>
         </div>
     </div>
-    <div class="col-8 text-center">
-        <br>
-        <br>
-            <img src="{{url('img/24.jpg')}}"  width="80%">
-        <br>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-4">
-        <div class="container">
+    <div class="row text-center">
+        <div class="col-4">
             <br>
-            <h3 class="text-center">Voluntariado y Servicio Social</h3>
+            <h3>Voluntariado y Servicio Social</h3>
             <br>
             <p>Si quieres formar parte de nuestro equipo de trabajo, no dudes en ponerte en contacto con nosotros. Ser 
                 voluntario es una forma de empatía, es ser, estar en el mundo, meterte en los zapatos del otro y 
@@ -104,15 +98,13 @@
                 compartir para apoyar nuestra labor.</p>
             <br>
             <p>Contamos con alumnos de diversas instituciones que realizan su servicio social apoyando los diferentes programas.</p>
-            
+        </div>
+        <div class="col-8">
+            <br>
+            <br>
+            <img src="{{url('img/14.jpg')}}" width="80%">
+            <br>
         </div>
     </div>
-    <div class="col-8 text-center">
-        <br>
-        <br>
-            <img src="{{url('img/14.jpg')}}" width="80%">
-        <br>
-    </div>
-</div>
 </div>
 @endsection

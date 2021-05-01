@@ -3,44 +3,46 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class="container-fluid">
-    <br>
-    <br>
-    <div class="position-relative">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <table class="text-center table-wt zelda">
-                <tr>
-                    <th><a href="{{url('/nosotros-areas')}}">Areas de atención</a></th><th><a href="{{url('/nosotros-logros')}}">Logros</a></th><th><a href="{{url('/nosotros-ayuda')}}">Ayudar</a></th>
-                </tr>
-            </table>
+<div class="container-fluid upper-half">
+        <br>
+        <br>
+        <div class="position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <table class="text-center table-wt zelda">
+                    <tr>
+                        <th><a href="{{url('/nosotros-areas')}}">Areas de atención</a></th><th><a href="{{url('/nosotros-logros')}}">Logros</a></th><th><a href="{{url('/nosotros-ayuda')}}">Ayudar</a></th>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-</div>
+        <br>
+        <br>
+        <br>
+
 @endsection
 @section('mainContent')
-<div class=" bottom-half">
-    <div class="row">
-        <div class="col-4">
-            <div class="container text-center">
+
+        <div class="row">
+            <div class="col-4">
+                <div class="container text-center">
+                    <br>
+                    <h3>Áreas de atención</h3>
+                    <br>
+                    <p>Atendemos a 130 niños, niñas y adolescentes de 4 a 18 años con programas de Educación, Salud, Alimentación 
+                    y capacitación.</p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-8 text-center">
                 <br>
-                <h3>Áreas de atención</h3>
                 <br>
-                <p>Atendemos a 130 niños, niñas y adolescentes de 4 a 18 años con programas de Educación, Salud, Alimentación 
-                y capacitación.</p>
+                <img src="{{url('img/17.jpg')}}" width="80%">
                 <br>
             </div>
         </div>
-        <div class="col-8 text-center">
-            <br>
-            <br>
-            <img src="{{url('img/17.jpg')}}" width="80%">
-            <br>
-        </div>
+</div>
     
-
+<div class="container-fluid bottom-half">
     <div class="row">
         <div class="col-4">
             <div class="container text-center">
@@ -109,4 +111,5 @@
         </div>
     </div>
 </div>
+
 @endsection
