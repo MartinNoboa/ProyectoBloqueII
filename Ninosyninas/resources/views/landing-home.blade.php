@@ -35,10 +35,9 @@
 @endsection
 @section('header')
 <div class='upper-half'>  
-    <img src="{{url('img/16.jpg')}}" alt="home photo" class="center" width="100">
-    <br>
-    <br>
-    <div class="container">
+    <img src="{{url('img/16.jpg')}}" alt="home photo" class="img-fluid">
+
+    <div class="container mt-5">
         <div class="center">
             <div class="grid-3 center">
                 <div class="card text-center">
@@ -49,9 +48,9 @@
                         </svg>
                         <br>
                         <br>
-                        <h5 class="card-title">{{$textos["cardt1"]}}</h5>
+                        <h5 class="card-title text-justify">{{$textos["cardt1"]}}</h5>
                         <br>
-                        <p class="card-text">{{$textos["card1"]}}</p>
+                        <p class="card-text text-justify">{{$textos["card1"]}}</p>
                     </div>
                 </div>
                 <div class="card text-center">

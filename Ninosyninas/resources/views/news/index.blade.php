@@ -3,7 +3,7 @@
 <div class="container p-3 bg-white">
     <h1 class="mt-2 mb-5">Noticias</h1>
     <div class="col-md-12 mb-4">
-        <a a href="{{url('/noticias/registrar-noticia')}} " type="button" class="btn btn-success"><i class="bi bi-plus pe-2" aria-hidden="true"></i>Agregar Noticia</a>
+        <a a href="{{url('/noticias/registrar-noticia')}} " type="button" class="btn btn-success"><i class="bi bi-plus pe-2" aria-hidden="true"></i>Registrar Noticia</a>
     </div>
     <hr>
     @if ($news->count())
