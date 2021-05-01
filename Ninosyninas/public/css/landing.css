@@ -24,12 +24,6 @@
     width: 100%;
 }
 
-.nav-link:hover {
-    text-decoration: none;
-    color: purple;
-    
-}
-
 .table-wt{
     background-color: white;
     color: #000;

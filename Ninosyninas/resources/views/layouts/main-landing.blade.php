@@ -28,7 +28,7 @@
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
         <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid"
                 alt="cuadro responsive" width="150"> </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
@@ -37,22 +37,22 @@
         <div class="collapse navbar-collapse" id="collapse_target">
             <ul class="navbar-nav">
 
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/nosotros')}}">Nosotros</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="#">Galería</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{{url('/noticias')}}">Noticias</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class=" mx-2">
                     <a class="button-donar text-light nav-link btn-lg rounded" href="{{url('/donaciones')}}"
                         role="button">Donar</a>
                 </li>
