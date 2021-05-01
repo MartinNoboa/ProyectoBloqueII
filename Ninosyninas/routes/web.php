@@ -20,7 +20,7 @@ use App\Http\Controllers\NewsController;
 
 
 Route::get('/home', function(){
-    return view('home');
+    return view('registrado.panel');
 });
 
 
@@ -32,10 +32,7 @@ Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
-Route::get('/home', function(){
-    
-    return view("home");
-});
+
 
 Route::get('/donaciones', function(){
     
