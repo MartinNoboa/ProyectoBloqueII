@@ -22,29 +22,21 @@ Route::get('/welcome', function () {
 Route::get('/', [LandingController::class, 'homeTexts']);
 
 Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
-Route::get('/nosotros-test', [LandingController::class, 'aNosotros']);
 
-Route::get('/contactanos', function(){
-    return view("landing.landing-contacto");
-});
+Route::get('/contactanos', function(){return view("landing.landing-contacto");});
 
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
 Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 
-Route::get('/nosotros-ayuda', function(){
+Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");});
 
-    return view("landing.nosotros-ayuda");
-});
-
-Route::get('/calendario', function(){
-    return view("landing.landing-calendario");
-});
+Route::get('/calendario', function(){return view("landing.landing-calendario");});
 
 Route::get('/noticias', [LandingController::class, 'index']);
 
 
-//Probar conexion a base de datos (Exitosa en PC, pendiente en Mac)
+/*Probar conexion a base de datos (Exitosa en PC, pendiente en Mac)
 Route::get('/test-bd', function(){
     try{
         DB::connection()->getPdo();
@@ -52,4 +44,4 @@ Route::get('/test-bd', function(){
     }catch(Exception $e){
         die("Cannot connect to the database. Error: " . $e);
     }
-});
+});*/
