@@ -51,7 +51,7 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'unix_socket' =>  env('UNIX_SOCKET', ''),
+            'unix_socket' => env('UNIX_SOCKET', '/Applications/MAMP/tmp/mysql/mysql.sock'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -63,9 +63,12 @@ return [
             ]) : [],
         ],
 
-        /*'mysql' => array (
+        /*
+        Para mac:
          'unix_socket' => env('UNIX_SOCKET', '/Applications/MAMP/tmp/mysql/mysql.sock')
-        )*/
+        Para PC:
+        'unix_socket' =>  env('UNIX_SOCKET', '')
+        */
 
         'pgsql' => [
             'driver' => 'pgsql',
