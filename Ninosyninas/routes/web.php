@@ -49,6 +49,6 @@ Route::get('/test-bd', function(){
         DB::connection()->getPdo();
         echo "Jalo la conexion a " . DB::connection()->getDatabasename();
     }catch(Exception $e){
-        die("Cannot connect to the database. Error: " . e);
+        die("Cannot connect to the database. Error: " . $e);
     }
 });
