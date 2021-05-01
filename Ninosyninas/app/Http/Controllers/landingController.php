@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\news;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class LandingController extends Controller{
@@ -40,7 +42,7 @@ class LandingController extends Controller{
                           derechos."
         ];
 
-        return view("landing-home", ["textos" => $textos]);
+        return view("landing.landing-home", ["textos" => $textos]);
     }
 
     public function nosotrosTexts(){
@@ -66,7 +68,7 @@ class LandingController extends Controller{
             "nombre3" => "Jose Perez"
 
         ];
-        return view("landing-nosotros", ["textos" => $textos]);
+        return view("landing.landing-nosotros", ["textos" => $textos]);
         
     }
     public function areasTexts(){
@@ -90,7 +92,7 @@ class LandingController extends Controller{
 
         ];
     
-        return view("nosotros-area", ["areas" => $areas], ["programas" => $programas]);
+        return view("landing.nosotros-area", ["areas" => $areas], ["programas" => $programas]);
     }
     
     public function logroText(){
@@ -107,7 +109,7 @@ class LandingController extends Controller{
         Hemos logrado una importante participación de las madres de familia en el proceso de escolarización y educación de sus hijos.
         
         El 60 % de los niños y niñas que pasan por la Institución ya no regresan a la calle, se integran al trabajo formal.";
-        return view("nosotros-logros", ["logro" => $logro]);
+        return view("landing.nosotros-logros", ["logro" => $logro]);
     }
 
     public function noticiasTexts(){
@@ -126,6 +128,16 @@ class LandingController extends Controller{
             ]
         ];
     
-        return view("landing-noticias", ["noticia" => $noticia]);
+        return view("landing.landing-noticias", ["noticia" => $noticia]);
+    }
+
+    public function index()
+    {
+        //para pasar infor directamente al index
+        //$datos['donadores']=Donadores::paginate(10);
+
+        $noticias = news::all();
+
+        return view('landing.landing-noticias',['noticias' => $noticias]);
     }
 }
