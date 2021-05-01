@@ -71,7 +71,7 @@ Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editU
 Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 
 Route::get('/calendario', function(){
-    return view("landing-calendario");
+    return view("landing.landing-calendario");
 });
 
 
