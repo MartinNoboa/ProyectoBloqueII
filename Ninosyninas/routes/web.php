@@ -22,6 +22,7 @@ Route::get('/welcome', function () {
 Route::get('/', [LandingController::class, 'homeTexts']);
 
 Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
+Route::get('/nosotros-test', [LandingController::class, 'aNosotros']);
 
 Route::get('/contactanos', function(){
     return view("landing.landing-contacto");

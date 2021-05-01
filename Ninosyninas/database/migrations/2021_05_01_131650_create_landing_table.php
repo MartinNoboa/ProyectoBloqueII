@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Noticia extends Migration
+class CreateLandingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class Noticia extends Migration
      */
     public function up()
     {
-        Schema::create('Noticias', function (Blueprint $table) {
-            $table->id('id_noticia');
-            $table->string('Nombre')->unique();
-            $table->text('imagen');
-            $table->timestamp('fecha')->useCurrent();
-            $table->longText('descripcion');
+        Schema::create('landing', function (Blueprint $table) {
+            $table->id();
+            $table->string('apartado')->unique();
+            $table->text('contenido');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +28,6 @@ class Noticia extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Noticias');
+        Schema::dropIfExists('landing');
     }
 }

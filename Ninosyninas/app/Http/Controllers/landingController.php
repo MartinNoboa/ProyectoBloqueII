@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\news;
+use App\Models\Landing;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -139,5 +140,15 @@ class LandingController extends Controller{
         $noticias = news::all();
 
         return view('landing.landing-noticias',['noticias' => $noticias]);
+    }
+
+    public function aNosotros()
+    {
+        //para pasar infor directamente al index
+        //$datos['donadores']=Donadores::paginate(10);
+
+        $textos = Landing::where('apartado', "=", 'aNosotros');
+
+        return view('landing.landing-nosotros',['textos' => $textos]);
     }
 }
