@@ -132,8 +132,6 @@ class LandingController extends Controller{
         return view("landing.landing-noticias", ["noticia" => $noticia]);
     }
 
-
-
     public function index()
     {
         //para pasar infor directamente al index
@@ -157,5 +155,10 @@ class LandingController extends Controller{
         $textos = Landing::where('apartado', "=", 'aNosotros');
 
         return view('landing.landing-nosotros',['textos' => $textos]);
+    }
+
+    public function verNoticia($id){
+        $noticia = news::find($id);
+        return view('landing.ver-noticia',['noticia'=>$noticia]);
     }
 }
