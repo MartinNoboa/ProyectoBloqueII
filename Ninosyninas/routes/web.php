@@ -74,9 +74,6 @@ Route::get('/calendario', function(){
 
 
 use App\Http\Controllers\DonatorController;
-/*
-Route::resource('donador',DonatorController::class);
-*/
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
 
 
