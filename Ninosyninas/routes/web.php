@@ -58,6 +58,7 @@ Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
+Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
 Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');

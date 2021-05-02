@@ -5,10 +5,8 @@
 @section('header')
 <div class="container">
     @if(Session::has('mensaje'))
-    <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
                 {{ Session::get('mensaje')}}
-                
                 <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true" class="btn pull-right" >&times;</span>
                 </button>
@@ -72,10 +70,13 @@
                     <td class="fs-6 text-wrap">{{ $user->telefono}}</td>
                     <td class="fs-6 text-wrap">{{ $user->mail}}</td>
                     <td>
+                    <a href="{{ url('/registrar-usuario/'.$user->id.'/see ') }}">
+                        <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
+                                    <i class="far fa-eye"></i>
+                        </button>      
+                    </a>
 
                         <a href="{{ url('/usuario/'.$user->id.'/edit') }}">
-
-
                             <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                                 <i class="bi bi-pencil-square"></i>
                             </button>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -37,5 +38,18 @@ class RegisterController extends Controller
             'contrasenia'=>Hash::make($request->password),
         ]);
         return redirect()->route('lista_usuarios')->with('mensaje','Usuario registrado con éxito');
+    }
+
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Donadores  $donadores
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $usuario=users::findOrFail($id);
+        return view('usuario.see',compact('usuario'));
     }
 }

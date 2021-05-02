@@ -18,16 +18,6 @@
                 @enderror
             </div>
             <div class="mb-3 form-group form-outline px-4">
-                <label for="apellido_paterno"  class="px-0">Apellido Paterno <span aria-hidden="true" class="required text-danger" >*</span></label>
-                <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Ingresa el Apellido Paterno"
-                    class="form-control @error('apellido_paterno') border border-danger @enderror" value="{{old('apellido_paterno')??$v_user->apellido_paterno}}">
-                @error('apellido_paterno')
-                    <div class="text-danger my-2 fs-6">
-                        {{$message}}
-                    </div>
-                @enderror
-            </div>
-            <div class="mb-3 form-group form-outline px-4">
                 <label for="apellido_materno" class="px-0">Apellido Materno <span aria-hidden="true" class="required text-danger" >*</span></label>
                 <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Ingresa el Apellido Materno"
                     class="form-control @error('apellido_materno') border border-danger @enderror" value="{{old('apellido_materno')??$v_user->apellido_materno}}">
@@ -37,6 +27,16 @@
                     </div>
                 @enderror
                 </div>
+                <div class="mb-3 form-group form-outline px-4">
+                <label for="apellido_paterno"  class="px-0">Apellido Paterno <span aria-hidden="true" class="required text-danger" >*</span></label>
+                <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Ingresa el Apellido Paterno"
+                    class="form-control @error('apellido_paterno') border border-danger @enderror" value="{{old('apellido_paterno')??$v_user->apellido_paterno}}">
+                @error('apellido_paterno')
+                    <div class="text-danger my-2 fs-6">
+                        {{$message}}
+                    </div>
+                @enderror
+            </div>
             <div class="mb-3 form-group form-outline px-4">
                 <label for="ocupacion"  class="px-0">Ocupacion <span aria-hidden="true" class="required text-danger" >*</span></label>
                 <input type="text" name="ocupacion" id="ocupacion" placeholder="Ingresa la ocupación"
