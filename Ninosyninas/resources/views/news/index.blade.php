@@ -14,14 +14,9 @@
                     more_vert
                 </span>
                 <div class="dropdown-content-img">
+                    <a href="{{url('/noticias/view/'.$newsItem->id) }}">Ver</a>
                     <a href="{{url('/noticias/edit/'.$newsItem->id)}}">Editar</a>
                     <a href="{{url('/noticias/delete/'.$newsItem->id) }}">Borrar</a>
-                    
-                    {{-- <form action="{{ url('/noticias/delete'.$newsItem->id) }}" method="post">
-                            @csrf
-                            {{ method_field('DELETE')}}
-                            <input type="submit" value="Borrar">
-                    </form> --}}
                 </div>
             </div>
             <div class="cnt mb-5">
