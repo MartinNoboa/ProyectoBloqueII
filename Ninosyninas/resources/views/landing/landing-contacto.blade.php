@@ -22,10 +22,10 @@
         @endforeach
     @endif
 
-    <form method="POST" action= "{{ url('landing-contacto') }}" >
+    <form method="POST" action= "{{ url('landing-contacto') }}"  >
         @csrf
         
-        <div class="container pb-4" >
+        <div class="container pb-4 " >
 
             <label for="nombre" class="px-0" >Nombre <span aria-hidden="true" class="required text-danger" >*</span></label>
             <input type="text"  class="form-control" name="nombre" class='form-input text-center' placeholder="Juan" id="nombre" value= "{{old('nombre')}}" required>
@@ -58,6 +58,7 @@
     </form>
 
 </div>
+<br>
 
 </div>
 
@@ -65,12 +66,8 @@
     <img src="{{url('img/32.jpg')}}" alt="" width="270" height="850" alt="home photo" class="center pm-5">
     <table class='center'>
         <tr><th><h3>¡Llámanos!</h3></th><th></th><th>+52 442 182 7987</th></tr>
-        
+        <tr><th><h4>Calle:</h4></th><th></th><th>Francisco González de Cosío 110, Plaza de las Americas, 76050 Santiago de Querétaro, Qro. México.</th></tr>
+        <tr><th><h4>E-mail:</h4></th><th></th><th>ninosyninasdemexico@yahoo.com</th></tr>
     </table>
-    <div class='container pb-4'>
-        <p pb-2><strong>Calle:</strong> Francisco González de Cosío 110, Plaza de las Americas, 76050 Santiago de Querétaro, Qro. México.</p>
-       
-        <p><strong>e-mail:</strong> ninosyninasdemexico@yahoo.com</p>
-    </div>
 </div>
 @endsection
