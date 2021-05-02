@@ -6,7 +6,7 @@
 <div class='upper-half'> 
 <br>
 <br>
-<h1 class='text-center'>¡Bienvenido!</h1>
+<h1 class='text-center'>¡Bienvenid@!</h1>
 <br>
 <br>
 @endsection
@@ -17,12 +17,9 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <br>
-            <br>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-user fa-6x pb-3 titulo"></i></a>
             <h3>Usarios</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Usuarios con una sesión activa en el panel administrativo</h5>
         </div>
         </div>
     </div>
@@ -30,12 +27,9 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <br>
-            <br>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-child fa-6x pb-3 titulo"></i></a>
             <h3>Niños</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Niños son parte de Niños y Niñas de México</h5>
         </div>
         </div>
     </div>
@@ -43,12 +37,9 @@
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <br>
-            <br>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-calendar-alt fa-6x pb-3 titulo"></i></a>
             <h3>Calendario</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Eventos que hubo o habrá en Niños y Niñas de México</h5>
         </div>
         </div>
     </div>
@@ -63,12 +54,9 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <br>
-            <br>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-newspaper fa-6x pb-3 titulo"></i></a>
             <h3>Noticias</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Noticias más relevantes que se muestran en el sitio web</h5>
         </div>
         </div>
     </div>
@@ -76,10 +64,9 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-spinner fa-6x pb-3 titulo"></i></a>
             <h3>Progreso</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Avance que ha tenido un niño desde que ingresó </h5>
         </div>
         </div>
     </div>
@@ -87,10 +74,9 @@
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-        <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <h3>Donaciones</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+           <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-donate fa-6x pb-3 titulo"></i></a>
+            <h3>Donadores</h3>
+            <h5>Donadores registrados en Niños y Niñas de México</h5>
         </div>
         </div>
     </div>
@@ -102,12 +88,9 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <br>
-            <br>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-images fa-6x pb-3 titulo"></i></a>
             <h3>Galeria</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Colección de imagenes que se deaean mostrar en la pagina web</h5>
         </div>
         </div>
     </div>
@@ -115,28 +98,21 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-tasks  fa-6x pb-3 titulo"></i></a>
             <h3>Reportes</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <h5>Reportar cual es el esatus que tiene actualmente un niño</h5>
         </div>
         </div>
     </div>
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <img src="{{url('img/fondo1.jpg')}}" class="rounded-circle shadow" alt="Cinque Terre" width="150" height="150"> 
-            <h3>Edit content</h3>
-            <h5> loren ipsum loren ipsum loren ipsum loren ipsum</h5>
-            <button type="button" class="btn btn-light">Abrir</button>
+            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
+            <h3>Editar Página web</h3>
+            <h5>Modificar el contenido deseado de la págian web</h5>
         </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-
-
 
 </div>
 <br>
