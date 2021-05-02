@@ -75,7 +75,7 @@
             <br>
             <p>Súmate a nuestra causa:</p>
             <br>
-            <a class="btn btn-outline-primary" href="{{ url('#')}}" role="button">Donar</a>
+            <a class="btn btn-outline-primary" href="{{ url('/donaciones')}}" role="button">Donar</a>
         </div>
         <div class="col-8">
             <br>

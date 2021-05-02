@@ -132,6 +132,8 @@ class LandingController extends Controller{
         return view("landing.landing-noticias", ["noticia" => $noticia]);
     }
 
+
+
     public function index()
     {
         //para pasar infor directamente al index
@@ -139,7 +141,12 @@ class LandingController extends Controller{
 
         $noticias = news::all();
 
-        return view('landing.landing-noticias',['noticias' => $noticias]);
+        $url = DB::table('news')
+                    ->join('images', 'news.id', '=', 'images.id')
+                    ->select('images.url')
+                    ->get();
+
+        return view('landing.landing-noticias',['noticias' => $noticias, 'url' => $url]);
     }
 
     public function aNosotros()
