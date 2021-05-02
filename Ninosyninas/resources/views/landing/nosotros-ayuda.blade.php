@@ -99,9 +99,11 @@
         <div class="col-8 text-center">
             <br>
 
+
             <br>
                 <img src="{{url('img/24.jpg')}}"  width="80%">
             <br>
+
 
         </div>
     </div>
@@ -134,4 +136,5 @@
     </div>
     </div>
 </div>
+
 @endsection

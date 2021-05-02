@@ -10,6 +10,7 @@
             {{ method_field('patch')}}
             <div class="mb-3 form-group form-outline px-4">
                 <label for="name" class="px-0">Nombre <span aria-hidden="true" class="required text-danger" >*</span> </label>
+
                 <input type="text" name="name" id="name" placeholder="Ingresa el Nombre" class="form-control @error('name') border border-danger @enderror" value="{{old('name')??$v_user->nombre}}">
                 @error('name')
                         <div class="text-danger my-2 fs-6">
@@ -19,6 +20,7 @@
             </div>
             <div class="mb-3 form-group form-outline px-4">
                 <label for="apellido_materno" class="px-0">Apellido Materno <span aria-hidden="true" class="required text-danger" >*</span></label>
+
                 <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Ingresa el Apellido Materno"
                     class="form-control @error('apellido_materno') border border-danger @enderror" value="{{old('apellido_materno')??$v_user->apellido_materno}}">
                 @error('apellido_materno')
@@ -39,6 +41,7 @@
             </div>
             <div class="mb-3 form-group form-outline px-4">
                 <label for="ocupacion"  class="px-0">Ocupacion <span aria-hidden="true" class="required text-danger" >*</span></label>
+
                 <input type="text" name="ocupacion" id="ocupacion" placeholder="Ingresa la ocupación"
                     class="form-control @error('ocupacion') border border-danger @enderror" value="{{old('ocupacion')??$v_user->ocupacion}}">
                 @error('ocupacion')
@@ -49,6 +52,7 @@
                 </div>
             <div class="mb-3 form-group form-outline px-4">
                 <label for="phone" class="px-0">Telefono <span aria-hidden="true" class="required text-danger" >*</span></label>
+
                 <input type="tel" name="phone" id="phone" placeholder="Ingresa el telefono" class="form-control @error('phone') border border-danger @enderror" value="{{old('phone')??$v_user->telefono}}">
                 @error('phone')
                     <div class="text-danger my-2 fs-6">
@@ -68,6 +72,7 @@
                 </div>
             <div class="mb-3 form-group form-outline px-4">
                 <label for="contratacion"  class="px-0">Fecha de Contratación <span aria-hidden="true" class="required text-danger" >*</span></label>
+
                 <input type="date" name="contratacion" id="contratacion" class="form-control @error('contratacion') border border-danger @enderror" value="{{old('contratacion')??$v_user->fecha_inicio}}">
                 @error('contratacion')
                     <div class="text-danger my-2 fs-6">
@@ -105,6 +110,7 @@
                     </div>
                 @enderror
             </div> --}}
+
             <div class="px-4">
                 <input type="submit" class="btn btn-primary w-100 mt-4">
             </div>
