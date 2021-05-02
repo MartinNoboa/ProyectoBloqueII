@@ -1,4 +1,5 @@
 $tl: 0.3s; // transition length
+$morado_culero:#800080;
 
 .search-box {
     transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
@@ -90,57 +91,90 @@ $tl: 0.3s; // transition length
     margin: 0;
 }
 
-.dropdown-img{
+.dropdown-img {
     position: relative;
     display: inline-block;
-    
+
 }
-.dropdown-img:hover .dropdown-content-img{
+
+.dropdown-img:hover .dropdown-content-img {
     display: block;
 }
-.dropdown-content-img{
+
+.dropdown-content-img {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
-    
-    a{
+
+    a {
         color: black;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        &:hover{
+
+        &:hover {
             background-color: #f1f1f1
         }
     }
 }
-.container-footer{
+
+.container-footer {
     display: grid;
-    gap:1rem;
-    grid-template-columns: minmax(5px,20px) 1fr 1fr 1fr;
-    grid-template-rows: 0 repeat(3,auto);
+    gap: 1rem;
+    grid-template-columns: minmax(5px, 20px) 1fr 1fr 1fr;
+    grid-template-rows: 0 repeat(3, auto);
 }
 
-.grid-item-3{
+.grid-item-3 {
     grid-column: span 3 / auto;
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
 }
-.grid-item-2{
+
+.grid-item-2 {
     grid-column: 2 / span 2;
     grid-row-start: 3;
     // grid-column-start: 2;
     // grid-column-end: 3;
 }
-.grid-item-fb{
+
+.grid-item-fb {
     grid-column: 4 / span 1;
     grid-row-start: 3;
 }
-.grid-item-num{
+
+.grid-item-num {
     grid-column-start: 2;
     grid-row-start: 4;
 }
+
+.nav-item {
+
+    &:after {
+        content: '';
+        display: block;
+        margin: auto;
+        height: 4px;
+        width: 0px;
+        background: transparent;
+        transition: width .5s ease, background-color 1s ease;
+
+        // height: 100%;
+        // border-bottom: 5px solid $morado_culero;
+    }
+    &:hover::after{
+        width: 100%;
+        background: $morado_culero;
+    }
+
+}
+.text-justify{
+    text-align: justify;
+    text-justify: inter-word;;
+}
+
