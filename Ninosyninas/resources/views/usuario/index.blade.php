@@ -125,8 +125,15 @@
     </div>
 
 </div>
+    <div class="container">
+        {{ $user->onEachSide(5)->links() }}
+    </div>
+
+
 </div>
 </div>
+
+
 
 <!-- <script>
     script para poder usar busqueda ajax
