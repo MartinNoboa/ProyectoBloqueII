@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 
 
+
 class DonadoresController extends Controller
 {
     /**
@@ -36,9 +37,9 @@ class DonadoresController extends Controller
         //para pasar infor directamente al index
         //$datos['donadores']=Donadores::paginate(10);
 
-        $aprobados = Donadores::where('aprobado',"=",'1')->paginate(10);
+        $aprobados = Donadores::where('aprobado',"=",'1')->paginate(5);
 
-        $desaprobados = Donadores::where('aprobado',"=",'2')->paginate(10);
+        $desaprobados = Donadores::where('aprobado',"=",'2')->paginate(5);
         
         return view('donadores.index',['desaprobados' => $desaprobados,'aprobados' => $aprobados]);
     }
@@ -52,11 +53,7 @@ class DonadoresController extends Controller
     {
         //
         return view('donadores.create');
-        
-
-        
-
-
+    
     }
 
     /**

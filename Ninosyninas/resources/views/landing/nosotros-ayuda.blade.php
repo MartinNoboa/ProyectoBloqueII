@@ -3,6 +3,7 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
+<<<<<<< HEAD:Ninosyninas/resources/views/nosotros-ayuda.blade.php
 <div class='upper-half'>
 
 <div class="container mb-5">
@@ -44,6 +45,36 @@
                 A través de nuestros diferentes programas, Educación Salud y Capacitación, apoyamos en la realización de las 
                 tareas y proyectos escolares de los niños, atendemos sus necesidades específicas para el aprendizaje (terapia 
                 de lenguaje, estimulación Psicopedagógica, comprensión lectora etc.).</p><br><p>
+=======
+<div class="container-fluid upper-half">
+    <br>
+    <br>
+    <div class="position-relative">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <table class="text-center table-wt zelda">
+                <tr>
+                    <th><a href="{{url('/nosotros-areas')}}">Areas de atención</a></th><th><a href="{{url('/nosotros-logros')}}">Logros</a></th><th><a href="{{url('/nosotros-ayuda')}}">Ayudar</a></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+@endsection
+@section('mainContent')
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <br>
+            <h3>¿Qué necesitamos?</h3>
+            <br>
+            <p>
+            A través de nuestros diferentes programas, Educación Salud y Capacitación, apoyamos en la realización de las 
+            tareas y proyectos escolares de los niños, atendemos sus necesidades específicas para el aprendizaje (terapia 
+            de lenguaje, estimulación Psicopedagógica, comprensión lectora etc.).</p><br><p>
+>>>>>>> 74f7131272f57bacd50bff588b89067a2d718614:Ninosyninas/resources/views/landing/nosotros-ayuda.blade.php
 
                 Talleres de: lectura, musicoterapia, de desarrollo humano, Computación y Actividades de verano.
                 Inculcamos Valores y Hábitos de orden y limpieza</p><br><p>
@@ -77,6 +108,7 @@
                 <img src="{{url('img/25.jpeg')}}"  width="80%">
             <br>
         </div>
+<<<<<<< HEAD:Ninosyninas/resources/views/nosotros-ayuda.blade.php
     </div>
 
     <div class="row">
@@ -96,9 +128,28 @@
         </div>
         <div class="col-8 text-center">
             <br>
+=======
+        <div class="col-8 text-center">
+            <br>
+            <br>
+            <img src="{{url('img/25.jpeg')}}"  width="80%">
+            <br>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bottom-half">
+    <div class="row text-center">
+        <div class="col-4">
+            <br>
+            <h3>¿Cómo donar?</h3>
+            <br>
+            <p >El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
+                agradecer su apoyo a todas aquellas personas que han hecho posible nuestro sueño.</p>
+>>>>>>> 74f7131272f57bacd50bff588b89067a2d718614:Ninosyninas/resources/views/landing/nosotros-ayuda.blade.php
             <br>
                 <img src="{{url('img/24.jpg')}}"  width="80%">
             <br>
+<<<<<<< HEAD:Ninosyninas/resources/views/nosotros-ayuda.blade.php
         </div>
     </div>
 
@@ -120,13 +171,42 @@
             </div>
         </div>
         <div class="col-8 text-center">
+=======
+            <a class="btn btn-outline-primary" href="{{ url('#')}}" role="button">Donar</a>
+        </div>
+        <div class="col-8">
+            <br>
+            <br>
+            <img src="{{url('img/24.jpg')}}"  width="80%">
+            <br>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-4">
+            <br>
+            <h3>Voluntariado y Servicio Social</h3>
+>>>>>>> 74f7131272f57bacd50bff588b89067a2d718614:Ninosyninas/resources/views/landing/nosotros-ayuda.blade.php
             <br>
             <br>
                 <img src="{{url('img/14.jpg')}}" width="80%">
             <br>
+<<<<<<< HEAD:Ninosyninas/resources/views/nosotros-ayuda.blade.php
         </div>
     </div>
     </div>
 </div>
 
+=======
+            <p>Contamos con alumnos de diversas instituciones que realizan su servicio social apoyando los diferentes programas.</p>
+        </div>
+        <div class="col-8">
+            <br>
+            <br>
+            <img src="{{url('img/14.jpg')}}" width="80%">
+            <br>
+        </div>
+    </div>
+</div>
+>>>>>>> 74f7131272f57bacd50bff588b89067a2d718614:Ninosyninas/resources/views/landing/nosotros-ayuda.blade.php
 @endsection

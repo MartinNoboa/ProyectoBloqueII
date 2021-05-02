@@ -18,6 +18,10 @@
 }
 
 
+.noticia{
+    padding: 20px 20px 20px 20px;
+}
+
 .upper-half{
     background-image: linear-gradient(to top,  rgba(255, 255, 255, 0), #4eb3f1);
     top:0;
@@ -27,7 +31,7 @@
 .nav-link:hover {
     text-decoration: none;
     color: purple;
-    font-weight: bold;
+    
 }
 
 .table-wt{
@@ -210,10 +214,17 @@ CSS para donaciones
     color: purple;
 }
 
-/*
-nosotros 
+/*Botón alert*/
 
-*/ 
+.Button_alert{
+
+    position: absolute;
+    top:50%;
+    right: 0;
+    width: 120px;
+    transform: translateY(-50%);
+
+}
 
 .ancho{
     width: 70%;

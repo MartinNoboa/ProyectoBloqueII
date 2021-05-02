@@ -20,7 +20,7 @@ use App\Http\Controllers\NewsController;
 
 
 Route::get('/home', function(){
-    return view('home');
+    return view('registrado.panel');
 });
 
 
@@ -32,10 +32,7 @@ Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
-Route::get('/home', function(){
-    
-    return view("home");
-});
+
 
 Route::get('/donaciones', function(){
     
@@ -48,11 +45,8 @@ Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 
 Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 
-Route::get('/nosotros-ayuda', function(){
+Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");});
 
-    return view("nosotros-ayuda");
-
-});
 
 Route::get('/noticias', [NewsController::class,'index'])->name('news');
 Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->name('upload-image');

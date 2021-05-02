@@ -1,5 +1,5 @@
 @props([ "titulo", "cuerpo", "foto", "id"])
-<div class="card" style="width: 18rem;">
+<div class="card noticia" style="width: 18rem;">
   <img src="{{ url('img/noticias/' . $foto . '.jpg') }}" class="card-img-top" alt="Imagen de la noticia">
   <div class="card-body text-center">
     <h5 class="card-title">{{$titulo}}</h5>
