@@ -36,6 +36,6 @@ class RegisterController extends Controller
             'mail'=>$request->email,
             'contrasenia'=>Hash::make($request->password),
         ]);
-        return redirect()->route('lista_usuarios');
+        return redirect()->route('lista_usuarios')->with('mensaje','Usuario registrado con éxito');
     }
 }

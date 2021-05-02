@@ -131,7 +131,7 @@
 
         <div class="form-field  pb-4">
             <label for="observaciones" class="px-0"> Observaciones</label>
-            <input type="text" class="form-control" placeholder="Donador en revisión" name="observaciones" value="{{ isset($donadores->observaciones)?$donadores->observaciones:'' }}" id="observaciones" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+            <textarea type="text" class="form-control" placeholder="Donador en revisión" name="observaciones" value="{{ isset($donadores->observaciones)?$donadores->observaciones:'' }}" id="observaciones" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>></textarea>
         </div>
 
         @if ($modo != 'Consultar')

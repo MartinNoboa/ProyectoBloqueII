@@ -36,7 +36,7 @@
   
      <div class="d-flex border-bottom mb-3">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Registrar </h3>
+            <h1 class="text-left fs-4">Lista de donadores Registrados </h3>
         </div>
         <div class="align-self-center p-2">
         <a href="{{url('donadores/create')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
@@ -238,6 +238,7 @@
     <div class="container">
         {{ $aprobados->onEachSide(5)->links() }}
     </div>
+</div>
 </div>
 
 
