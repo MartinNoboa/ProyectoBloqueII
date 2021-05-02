@@ -28,7 +28,8 @@ Route::get('/', [LandingController::class, 'homeTexts']);
 
 Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
-Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
+Route::view ('/contactanos','landing.landing-contacto')->name('landing.landing-contacto');
+
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
@@ -60,6 +61,7 @@ Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
+Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
 Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
@@ -70,16 +72,17 @@ Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editU
 Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 
 Route::get('/calendario', function(){
-    return view("landing-calendario");
+    return view("landing.landing-calendario");
 });
 
 
 use App\Http\Controllers\DonatorController;
-Route::resource('donador',DonatorController::class);
+Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
 
 
 use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class);
+
 
 
 //rutas para el controlador de login y logout
