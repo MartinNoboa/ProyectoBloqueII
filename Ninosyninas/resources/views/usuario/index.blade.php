@@ -75,7 +75,7 @@
 
 </div>
 
-{{-- <script>
+<!-- <script>
     script para poder usar busqueda ajax
     $(document).ready(function(){
     function fetchUsersData(query =''){
@@ -96,7 +96,7 @@
         fetch_custumer_data(query);
     });
 });
-</script> --}}
+</script> -->
 
 
 @endsection

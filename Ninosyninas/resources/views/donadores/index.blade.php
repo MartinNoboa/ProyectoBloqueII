@@ -79,14 +79,18 @@
                 <td>{{ $donador->email }}</td>
                 <td>{{ $donador->telefono }}</td>            
                 <td>
+                <a href="{{ url('/donadores/'.$donador->id.'/show') }}">
                 
+                            <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
+                                <i class="far fa-eye"></i>
+                            </button>      
+                </a>
                 <a href="{{ url('/donadores/'.$donador->id.'/edit') }}">
                 
                               <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                                 <i class="bi bi-pencil-square"></i>
                             </button>      
                 </a>
-
                 
 
                 <form action="{{ url('/donadores/'.$donador->id) }}" method="post">
@@ -168,7 +172,12 @@
               
                 
                 <td>
+                <a href="{{ url('/donadores/'.$donador->id.'/show') }}">
                 
+                            <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
+                                <i class="far fa-eye"></i>
+                            </button>      
+                </a>
                 <a href="{{ url('/donadores/'.$donador->id.'/edit') }}">
                 
                               <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
