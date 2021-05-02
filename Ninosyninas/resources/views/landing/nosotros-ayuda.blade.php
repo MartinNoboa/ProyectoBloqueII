@@ -45,6 +45,7 @@
                 tareas y proyectos escolares de los niños, atendemos sus necesidades específicas para el aprendizaje (terapia 
                 de lenguaje, estimulación Psicopedagógica, comprensión lectora etc.).</p><br><p>
 
+
                 Talleres de: lectura, musicoterapia, de desarrollo humano, Computación y Actividades de verano.
                 Inculcamos Valores y Hábitos de orden y limpieza</p><br><p>
 
@@ -77,6 +78,7 @@
                 <img src="{{url('img/25.jpeg')}}"  width="80%">
             <br>
         </div>
+
     </div>
 
     <div class="row">
@@ -96,9 +98,13 @@
         </div>
         <div class="col-8 text-center">
             <br>
+
+
             <br>
                 <img src="{{url('img/24.jpg')}}"  width="80%">
             <br>
+
+
         </div>
     </div>
 
@@ -120,10 +126,12 @@
             </div>
         </div>
         <div class="col-8 text-center">
+
             <br>
             <br>
                 <img src="{{url('img/14.jpg')}}" width="80%">
             <br>
+
         </div>
     </div>
     </div>

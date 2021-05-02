@@ -109,9 +109,11 @@ class DonadoresController extends Controller
      * @param  \App\Models\Donadores  $donadores
      * @return \Illuminate\Http\Response
      */
-    public function show(Donadores $donadores)
+    public function show($id)
     {
-        //
+        $donadores=Donadores::findOrFail($id);
+        return view('donadores.see',compact('donadores'));
+    
     }
 
     /**

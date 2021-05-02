@@ -52,6 +52,7 @@
                             @endforeach
                         </table>
                     </div>
+
                 </div>
             </div>
             <div class="col-8 text-center">
@@ -61,6 +62,7 @@
                 <br>
             </div>
         </div>
+
 
 
         <div class="row mb-5">

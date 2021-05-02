@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Models\Donator;
+use  App\Models\Donadores;
 
 class DonatorController extends Controller
 {
@@ -49,7 +50,8 @@ class DonatorController extends Controller
      */
     public function show($id)
     {
-        //
+        $donadores=Donadores::findOrFail($id);
+        return view('donadores.see',compact('donadores'));
     }
 
     /**
