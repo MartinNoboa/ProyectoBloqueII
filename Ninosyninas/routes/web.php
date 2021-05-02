@@ -28,7 +28,7 @@ Route::get('/', [LandingController::class, 'homeTexts']);
 
 Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
-Route::view ('/contactanos','landing-contacto')->name('landing-contacto');
+Route::view ('/contactanos','landing.landing-contacto')->name('landing.landing-contacto');
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
