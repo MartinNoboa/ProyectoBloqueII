@@ -154,6 +154,7 @@ $morado_culero:#800080;
 }
 
 .nav-item {
+
     &:after {
         content: '';
         display: block;
@@ -172,3 +173,8 @@ $morado_culero:#800080;
     }
 
 }
+.text-justify{
+    text-align: justify;
+    text-justify: inter-word;;
+}
+

@@ -58,6 +58,13 @@ class NewsController extends Controller
         return redirect()->route('news');
 
     }
+    public function view_news($id)
+    {
+        $news=news::find($id);
+        return view('news.view-news',[
+            'news'=>$news,
+        ]);
+    }
     public function upload_image(Request $request)
     {
         $this->validate($request,[

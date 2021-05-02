@@ -150,3 +150,8 @@
   width: 100%;
   background: #800080;
 }
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}

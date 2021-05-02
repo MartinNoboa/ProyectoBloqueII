@@ -60,6 +60,8 @@ Route::post('/noticias/registrar-noticia', [NewsController::class,'upload_image'
 Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews');
 Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
+Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
+
 
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
