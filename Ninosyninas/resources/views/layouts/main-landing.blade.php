@@ -16,9 +16,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     {{-- iconos de google --}}
     <link rel="stylesheet" href="{{ asset('css/material-icons.min.css') }}">
-    <link
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-        rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
+    
+    <!-- Prueba-->
+
+    <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <!-- bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+
+
+    
+    
+
     <!-- Google Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -28,7 +43,7 @@
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
         <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid"
                 alt="cuadro responsive" width="150"> </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
@@ -37,22 +52,22 @@
         <div class="collapse navbar-collapse" id="collapse_target">
             <ul class="navbar-nav">
 
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/nosotros')}}">Nosotros</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="#">Galería</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{{url('/noticias')}}">Noticias</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class=" mx-2">
                     <a class="button-donar text-light nav-link btn-lg rounded" href="{{url('/donaciones')}}"
                         role="button">Donar</a>
                 </li>

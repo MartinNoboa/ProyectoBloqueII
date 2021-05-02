@@ -28,12 +28,6 @@
     width: 100%;
 }
 
-.nav-link:hover {
-    text-decoration: none;
-    color: purple;
-    
-}
-
 .table-wt{
     background-color: white;
     color: #000;
@@ -214,7 +208,20 @@ CSS para donaciones
     color: purple;
 }
 
+/*Botón alert*/
 
+.Button_alert{
 
+    position: absolute;
+    top:50%;
+    right: 0;
+    width: 120px;
+    transform: translateY(-50%);
+
+}
+
+.ancho{
+    width: 70%;
+}
 
 
