@@ -59,7 +59,7 @@ class UsuariosController extends Controller
         $usr->save();
 
 
-        return redirect()->route('lista_usuarios');
+        return redirect()->route('lista_usuarios')->with('mensaje','Usuario editado con éxito');
 
     }
 
@@ -69,7 +69,7 @@ class UsuariosController extends Controller
         
         users::destroy($id);
 
-        return redirect('usuario');
+        return redirect('usuario')->with('mensaje','Eliminado Exitoso');
         
     }
 

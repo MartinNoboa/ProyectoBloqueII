@@ -20,7 +20,7 @@ use App\Http\Controllers\NewsController;
 
 
 Route::get('/home', function(){
-    return view('home');
+    return view('registrado.panel');
 });
 
 
@@ -32,10 +32,7 @@ Route::view ('/contactanos','landing.landing-contacto')->name('landing.landing-c
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
-Route::get('/home', function(){
-    
-    return view("home");
-});
+
 
 Route::get('/donaciones', function(){
     
@@ -56,10 +53,13 @@ Route::post('/noticias/registrar-noticia', [NewsController::class,'upload_image'
 Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews');
 Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
+Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
+
 
 
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
+Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
 Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
@@ -75,11 +75,12 @@ Route::get('/calendario', function(){
 
 
 use App\Http\Controllers\DonatorController;
-Route::resource('donador',DonatorController::class);
+Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
 
 
 use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class);
+
 
 
 //rutas para el controlador de login y logout
