@@ -6,15 +6,28 @@
 
 
 @section('header')
+
 <div class='upper-half'> 
     <div class=" pt-5">
         <h1 class='text-center titulo'>Donaciones</h1>
         <h3 class='text-center titulo mb-5'>Regístrate como donador</h3>
 
     </div>
-
+    <div class="container">
+    @if(!empty($message))
+    <div class="alert alert-success alert-dismissible" role="alert">
+                Sus datos para registro han sido enviados con éxito
+                <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" class="btn pull-right" >&times;</span>
+                </button>
+                </div>
+    </div>
+    @endif
+</div>
 
 @endsection
+
+
 
 <div class="bottom-half">
 
@@ -25,7 +38,7 @@
             Phasellus non tortor enim. Vesbulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
             Class aptent taci sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos (informacion acerca del registro de donadores).</p>
         
-        <form method="POST" action= "{{ url('/donador/') }}">
+        <form method="POST" action= "{{ url('/donador') }}">
             @csrf
         <br>
         <div class="container">
@@ -63,9 +76,9 @@
                         </div>
                         <br>       
                         <div class="col-12 col-md-6 ">
-                            <label for='telefono'>Telefono</label><br>
-                            <input placeholder='4424587458' id='telefono' name="telefono" class='form-input ' value= "{{old('telefono')}}" >
-                            <br>
+                            <label for='telefono'>Telefono <span aria-hidden="true" class="required text-danger">*</span></label><br>
+                            <input placeholder='4424587458' id='telefono' name="telefono" class='form-input ' value= "{{old('telefono')}}" required>
+                            <br> 
                             <br>
                         </div>
                         <br>
@@ -82,8 +95,8 @@
             <br>
             <br>
 
-            <label for='calle_secundaria' >Calle secuandaria</label><br>
-            <input placeholder='Calle cerrito viejo.'  id='calle_secundaria' name='calle_secundaria' class='form-input ' value= "{{old('calle_secundaria')}}" >
+            <label for='calle_secundaria' >Calle secuandaria <span aria-hidden="true" class="required text-danger">*</span></label><br>
+            <input placeholder='Calle cerrito viejo.'  id='calle_secundaria' name='calle_secundaria' class='form-input ' value= "{{old('calle_secundaria')}}" required>
             <br>
             <br>
 
@@ -133,9 +146,9 @@
                     <div class="col-12 col-md-6" >
                         <label for='tipo_pago'  >Método de pago <span aria-hidden="true" class="required text-danger">*</span></label><br>
                             <select class='form-input' name="tipo_pago" id="tipo_pago" required>
-                                <option value="volvo">Transferencia</option>
-                                <option value="saab">Paypal</option>
-                                <option value="mercedes">Depósito</option>
+                                <option value="Transferencia">Transferencia</option>
+                                <option value="Paypal">Paypal</option>
+                                <option value="Depósito">Depósito</option>
                             </select>   
                         </label>             
                         <br>
@@ -157,7 +170,7 @@
             <br>
             <br>
 
-            <input id="aprobado" name="aprobado" type="hidden" value="0">
+            <input id="aprobado" name="aprobado" type="hidden" value="1">
             <div class="text-center">
             <input type="submit" class=" btn button-donar text-light rounded" value="Regístrate"></input>
             </div>

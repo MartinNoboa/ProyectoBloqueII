@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Models\Donator;
 use  App\Models\Donadores;
+Use Session;
+Use Redirect;
+
 
 class DonatorController extends Controller
 {
@@ -15,6 +18,7 @@ class DonatorController extends Controller
      */
     public function index()
     {
+        
         return view("landing-registro-don");
     }
 
@@ -36,10 +40,14 @@ class DonatorController extends Controller
      */
     public function store(Request $request)
     {
-       // $datosDonador = request()-> all();
        $datosDonador = request()-> except('_token');
-       Donator::insert($datosDonador);
-        return response()->json($datosDonador);
+       Donadores::insert($datosDonador);
+       $message='Sus datos para registro han sido enviados con éxito';
+       //return redirect()->route('donadores')->with('mensaje','Usuario editado con éxito');
+       //Redirect::to('/yourroute')->with('mensaje','Usuario editado con éxito');
+       //return view('landing-registro-don')->with('mensaje','Sus datos para registro han sido enviados con éxito');
+        //return view("landing-registro-don")->with('mensaje','Sus datos para registro han sido enviados con éxito');
+         return view("landing-registro-don", ["message" => $message]);
     }
 
     /**
