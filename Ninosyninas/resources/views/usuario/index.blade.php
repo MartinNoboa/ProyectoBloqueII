@@ -125,10 +125,6 @@
     </div>
 
 </div>
-    <div class="container">
-        {{ $user->onEachSide(5)->links() }}
-    </div>
-
 
 </div>
 </div>

@@ -1,11 +1,53 @@
 @extends('layouts.main-landing')
 @section('content')
-<div class="container p-3 bg-white">
-    <h1 class="mt-2 mb-5">Noticias</h1>
-    <div class="col-md-12 mb-4">
-        <a a href="{{url('/noticias/registrar-noticia')}} " type="button" class="btn btn-success"><i class="bi bi-plus pe-2" aria-hidden="true"></i>Registrar Noticia</a>
+<div class="container">
+    @if(Session::has('mensaje'))
+    <!--<div class="alert alert-success alert-dismissible" role="alert">-->
+    <div class="alert alert-success alert-dismissible" role="alert">
+                
+                
+                {{ Session::get('mensaje')}}
+                
+                <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" class="btn pull-right" >&times;</span>
+                </button>
+                </div>
     </div>
-    <hr>
+    @endif
+</div>
+
+<div class="container p-3 bg-white">
+
+
+    <h3 class="text-center mb-3">Noticias </h3>
+    <div class="align-self-center p-2">
+        <a href="{{url('/home')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
+        <br>
+        </div>
+    <div class="table-responsive">
+
+
+        <div class="d-flex border-bottom mb-3">
+        <div class="me-auto p-2">
+            <h1 class="text-left fs-4">Lista de noticias Registrados </h3>
+        </div>
+        <div class="align-self-center p-2">
+        <a href="{{url('/noticias/registrar-noticia')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
+        <br>
+        </div>
+
+        <div class="align-self-center p-2">
+            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
+            {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
+            <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
+                search
+                </span></label>
+            
+        </div>
+        </div>
+    </div>
+
+
     @if ($news->count())
         @foreach ($news as $newsItem)
         <div class="d-flex align-items-center justify-content-center flex-column border-bottom">
