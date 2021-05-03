@@ -22,8 +22,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">{{$noticia -> titulo}}</h5>
                     <p class="card-text">{{$noticia -> cuerpo}}</p>
-                    <p>{{$url}}</p>
-                    <a href="#" class="btn btn-primary" alt="enlace a noticia">Ver Noticia Completa</a>
+                    <a href="{{url('/noticia/ver/'.$noticia->id) }}" class="btn btn-primary" alt="enlace a noticia">Ver Noticia Completa</a>
                 </div>
             </div>
         </div>

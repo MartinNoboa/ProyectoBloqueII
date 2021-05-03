@@ -30,7 +30,6 @@ Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
 Route::view ('/contactanos','landing.landing-contacto')->name('landing.landing-contacto');
 
-
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
 
@@ -55,6 +54,7 @@ Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews
 Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
 Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
+Route::get('/noticia/ver/{id}',[LandingController::class, 'verNoticia']);
 
 
 
