@@ -72,6 +72,7 @@ class LandingController extends Controller{
         return view("landing.landing-nosotros", ["textos" => $textos]);
         
     }
+    
     public function areasTexts(){
             
         $areas = [
