@@ -42,7 +42,9 @@
 </head>
 
 <body class="bg-light">
-
+    <?php
+    $message="";
+    ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
         <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logo.png')}}" class="img-fluid"
                 alt="cuadro responsive" width="150"> </a>

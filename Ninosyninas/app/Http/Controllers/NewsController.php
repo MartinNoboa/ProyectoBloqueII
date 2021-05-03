@@ -55,7 +55,7 @@ class NewsController extends Controller
         $news->save();
 
 
-        return redirect()->route('news');
+    return redirect()->route('news')->with('mensaje','La noticia se ha editado con éxito');
 
     }
     public function view_news($id)
@@ -129,7 +129,7 @@ class NewsController extends Controller
         }
         
         
-        return redirect()->route('news');
+        return redirect()->route('news')->with('mensaje','La noticia se ha  registrado con éxito');
     }
 
 }

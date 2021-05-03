@@ -60,6 +60,7 @@
                 </tr>
             </thead>
             <tbody>
+            @if ($users->count())
                 @foreach($users as $user)
                 <tr scope="row">
                     <td class="fs-6 text-wrap">{{ $user->nombre}}</td>
@@ -112,23 +113,31 @@
                              
                         </div>
                         </div>
+                       
                     </div>
                     </div>
-                
-                </form>
-
-                    </td>
+                    
                 </tr>
+                
+               
+                   
+                    </td>
+                    </form>
                 @endforeach
+                        @else
+                        <div>
+                        <h2>No hay usuarios disponibles</h2>
+                        </div>
+                    
+                @endif
+                
+                
             </tbody>
+            
         </table>
     </div>
 
 </div>
-    <div class="container">
-        {{ $user->onEachSide(5)->links() }}
-    </div>
-
 
 </div>
 </div>
