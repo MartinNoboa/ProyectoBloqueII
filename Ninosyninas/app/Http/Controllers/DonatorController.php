@@ -43,10 +43,6 @@ class DonatorController extends Controller
        $datosDonador = request()-> except('_token');
        Donadores::insert($datosDonador);
        $message='Sus datos para registro han sido enviados con éxito';
-       //return redirect()->route('donadores')->with('mensaje','Usuario editado con éxito');
-       //Redirect::to('/yourroute')->with('mensaje','Usuario editado con éxito');
-       //return view('landing-registro-don')->with('mensaje','Sus datos para registro han sido enviados con éxito');
-        //return view("landing-registro-don")->with('mensaje','Sus datos para registro han sido enviados con éxito');
          return view("landing-registro-don", ["message" => $message]);
     }
 

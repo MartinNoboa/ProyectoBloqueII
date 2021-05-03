@@ -70,6 +70,7 @@
             </tr>
         </thead>
         <tbody>
+        @if ($desaprobados->count())
             @foreach($desaprobados as $donador)
             <tr scope="row">
             
@@ -133,6 +134,9 @@
             </tr>
 
             @endforeach
+            @else
+                <h2>No hay donadores disponibles</h2>
+            @endif
            
     <!-- segunda tabla para aprobados-->
          
@@ -160,6 +164,7 @@
             </tr>
         </thead>
         <tbody>
+        @if ($aprobados->count())
             @foreach($aprobados as $donador)
             <tr scope="row">
             
@@ -202,8 +207,8 @@
                                 
                     </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <!-- Modal desaprobados-->
+                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -212,12 +217,13 @@
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                           
-                        </div>
+                       
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Eliminar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn button-donar">Eliminar</button>
+
+
+                             
                         </div>
                         </div>
                     </div>
@@ -228,7 +234,9 @@
                 </td>
             </tr>
             @endforeach
-
+            @else
+                <h2>No hay donadores disponibles</h2>
+            @endif
           
         </tbody>
     </table>
