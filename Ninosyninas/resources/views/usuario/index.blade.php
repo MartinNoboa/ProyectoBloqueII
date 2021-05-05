@@ -40,9 +40,11 @@
         <div class="align-self-center p-2">
             <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
             {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
-            <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
+            <label for="search-box" title="Buscar">
+                <span class="material-icons-outlined search-icon">
                 search
-                </span></label>
+                </span>
+            </label>
             
         </div>
     </div>
@@ -89,10 +91,7 @@
                 <!--<button type="submit" class="btn btn-danger" onclick="return confirm('¿Quieres borrar?')" value="Borrar">Borrar</button>-->
 
                 <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger my-1 d-flex justify-content-center align-items-center" 
-
-                    value="Borrar"><i class="bi bi-trash"></i>
-                                
-                    </button>
+                    value="Borrar"><i class="bi bi-trash"></i></button>
 
                     <!-- Modal desaprobados-->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
