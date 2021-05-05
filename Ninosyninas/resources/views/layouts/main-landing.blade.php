@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="{{ asset('css/material-icons.min.css') }}">
 
 
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    
+    <link href="rel="stylesheet">
+    https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" 
     
     <!-- Prueba-->
 
