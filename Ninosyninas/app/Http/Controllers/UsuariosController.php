@@ -82,7 +82,7 @@ class UsuariosController extends Controller
                         ->where('nombre','like','%'.$query.'%')
                         ->orWhere('apellido_paterno','like','%'.$query.'%')
                         ->orWhere('apellido_materno','like','%'.$query.'%')
-                        ->get();
+                        ->get(); 
 
             }
             else{
