@@ -17,7 +17,7 @@
     <div class="row">
         @foreach($noticias as $noticia)
         <div class="col-sm-6">
-            <div class="card noticia" style="width: 18rem;">
+            <div class="card noticia m-2" style="width: 25rem;">
                 <img src="{{$url}}" class="card-img-top" alt="Imagen de la noticia">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{$noticia -> titulo}}</h5>
