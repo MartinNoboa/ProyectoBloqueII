@@ -72,6 +72,7 @@ class LandingController extends Controller{
         return view("landing.landing-nosotros", ["textos" => $textos]);
         
     }
+    
     public function areasTexts(){
             
         $areas = [
@@ -113,24 +114,6 @@ class LandingController extends Controller{
         return view("landing.nosotros-logros", ["logro" => $logro]);
     }
 
-    public function noticiasTexts(){
-        $noticia = [
-            "1" => [
-                "id" => "1",
-                "titulo" => "Titulo de prueba",
-                "cuerpo" => "Este es un texto de prueba para demostrar el funcionamiento de esta funcion.",
-                "foto" => "ejemplo"
-            ],
-            "2" => [
-                "id" => "1",
-                "titulo" => "Titulo de prueba2",
-                "cuerpo" => "Este es un texto de prueba para demostrar el funcionamiento de esta funcion.2",
-                "foto" => "ejemplo"
-            ]
-        ];
-    
-        return view("landing.landing-noticias", ["noticia" => $noticia]);
-    }
 
     public function index()
     {
@@ -139,7 +122,12 @@ class LandingController extends Controller{
 
         $noticias = news::all();
 
-        return view('landing.landing-noticias',['noticias' => $noticias]);
+        $url = DB::table('news')
+                    ->join('images', 'news.id', '=', 'images.id')
+                    ->select('images.url', 'news.titulo', 'news.contenido')
+                    ->get();
+
+        return view('landing.landing-noticias',['noticias' => $noticias, 'url' => $url]);
     }
 
     public function aNosotros()
@@ -150,5 +138,10 @@ class LandingController extends Controller{
         $textos = Landing::where('apartado', "=", 'aNosotros');
 
         return view('landing.landing-nosotros',['textos' => $textos]);
+    }
+
+    public function verNoticia($id){
+        $noticia = news::find($id);
+        return view('landing.ver-noticia',['noticia'=>$noticia]);
     }
 }
