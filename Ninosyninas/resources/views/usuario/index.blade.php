@@ -38,7 +38,7 @@
         <br>
         </div>
         <div class="align-self-center p-2">
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
+            <input type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
             {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
             <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
                 search
@@ -143,7 +143,9 @@
 </div>
 
 
+@endsection
 
+@push('scripts')
 <!-- <script>
     script para poder usar busqueda ajax
     $(document).ready(function(){
@@ -166,6 +168,5 @@
     });
 });
 </script> -->
+@endpush
 
-
-@endsection
