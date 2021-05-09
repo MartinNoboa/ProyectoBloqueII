@@ -18,7 +18,7 @@
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
             <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-user fa-6x pb-3 titulo"></i></a>
-            <h3>Usarios</h3>
+            <h3>Usuarios</h3>
             <h5>Usuarios con una sesión activa en el panel administrativo</h5>
         </div>
         </div>

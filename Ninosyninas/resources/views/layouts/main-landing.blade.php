@@ -78,7 +78,11 @@
 
         </div>
         <!-- Revisar para poner iconos -->
+        @if (session()->has('sesionUsuario'))
+        <span id="loginIcon"><a id="linkLogin" href="{{ route('logout') }}"><i class="fas fa-user fa-2x"></i></a></span>
+        @else
         <span id="loginIcon"><a id="linkLogin" href="{{ route('login') }}"><i class="fas fa-user fa-2x"></i></a></span>
+        @endif
 
     </nav>
     @yield('form')
