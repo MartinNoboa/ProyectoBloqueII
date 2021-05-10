@@ -177,4 +177,14 @@ $morado_culero:#800080;
     text-align: justify;
     text-justify: inter-word;;
 }
-
+.backbtn{
+    border: 1px solid rgb(188, 188, 188);
+    background: linear-gradient(to left, rgb(188, 188, 188) 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: all .35s ease-out;
+    &:hover{
+        background-position: right;
+        color: #fff;
+    }
+}

@@ -24,40 +24,44 @@
 
 
     <h3 class="text-center mb-3">Donadores </h3>
-    <div class="align-self-center p-2">
-        <a href="{{url('/home')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
-        <br>
-        </div>
-    <div class="table-responsive">
-
-   
-     <br>
-
+    <div class="d-flex justify-content-start my-3">
+        <a href="{{url('/home')}}">
+            <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+        </a>
+    </div>
   
-     <div class="d-flex border-bottom mb-3">
+    <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Lista de donadores Registrados </h3>
+            <h1 class="text-left fs-4">Lista de Donadores Registrados </h3>
         </div>
-        <div class="align-self-center p-2">
-        <a href="{{url('donadores/create')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
-        <br>
-        </div>
-
-        <div class="align-self-center p-2">
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
+        <div class="p-2">
+    
+            <a href="{{url('donadores/create')}}" class="btn btn-success ">
+                <button type="button" class="btn btn-success m-0 p-0 d-flex justify-content-center align-items-center">
+                    <span class="material-icons-outlined">
+                        add_circle
+                    </span>
+                </button>
+            </a>
+    
+            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off">
             {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
-            <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
-                search
-                </span></label>
-            
+            <label for="search-box" title="Buscar">
+                <span class="material-icons-outlined search-icon">
+                    search
+                </span>
+            </label>
+    
         </div>
-       
     </div>
 
 
     <table class="table table-hover px-3 " >
         
         <h3 class="pt-5"><strong>Desaprobados</strong></h3>
+        @if ($desaprobados->count())
         <br>
         <thead >
             <tr>
@@ -70,7 +74,6 @@
             </tr>
         </thead>
         <tbody>
-        @if ($desaprobados->count())
             @foreach($desaprobados as $donador)
             <tr scope="row">
             
@@ -134,9 +137,9 @@
             </tr>
 
             @endforeach
-            @else
-                <h2>No hay donadores disponibles</h2>
-            @endif
+        @else
+            <h4 class="my-4">No hay donadores disponibles</h4 class="my-4">
+        @endif
            
     <!-- segunda tabla para aprobados-->
          
@@ -150,9 +153,9 @@
     
 
     <table class="table table-hover px-3">
-        <br><br>
-        <h3 class="pb-4"><strong>Aprobados</strong></h3>
         
+        <h3 class="my-4"><strong>Aprobados</strong></h3>
+        @if ($aprobados->count())
         <thead >
             <tr>
                 <th scope="col">Nombre</th>
@@ -164,7 +167,7 @@
             </tr>
         </thead>
         <tbody>
-        @if ($aprobados->count())
+        
             @foreach($aprobados as $donador)
             <tr scope="row">
             
@@ -235,7 +238,7 @@
             </tr>
             @endforeach
             @else
-                <h2>No hay donadores disponibles</h2>
+                <h4 class="my-4 text-center">No hay donadores disponibles</h4>
             @endif
           
         </tbody>

@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
-
+use App\Http\Controllers\DonadoresController;
+use App\Http\Controllers\auth\UserAuthController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\GaleriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,20 +93,20 @@ Route::get('/calendario', function(){
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
 
 
-use App\Http\Controllers\DonadoresController;
+
 Route::resource('donadores',DonadoresController::class);
 
 
 
 //rutas para el controlador de login y logout
-use App\Http\Controllers\auth\UserAuthController;
+
 
 Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
 Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
 Route::get('logout',[UserAuthController::class,'logout']);
 
-
+route::get('/galeria',[GaleriaController::class,'index'])->name('galeria');
 
 
 /*
