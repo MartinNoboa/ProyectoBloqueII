@@ -77,7 +77,9 @@ Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
-Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+// Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
+//Route::get('get-more-users', 'HomeController@getMoreUsers')->name('users.get-more-users');
 
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario'])->middleware('sesionIniciada');
 Route::resource('usuario',UsuariosController::class);
