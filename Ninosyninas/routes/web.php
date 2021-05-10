@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
 
+use App\Http\Controllers\DonatorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +40,17 @@ Route::get('/donaciones', function(){
     
     return view("landing-donaciones");
 });
+
+/*
+Route::get('/donador', function(){
+    
+    return view("landing-registro-don");
+});
+*/
+//Route::get('donacionexitosa', DonatorController::class)->name('donador');
+
+Route::resource('donador',DonatorController::class);
+
 
 
 
@@ -75,7 +88,6 @@ Route::get('/calendario', function(){
 });
 
 
-use App\Http\Controllers\DonatorController;
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
 
 
