@@ -14,11 +14,10 @@ class UsuariosController extends Controller
     public function index()
     {
         //return view('usuario.index');ajax busqueda es solo esta linea
+        //return view('usuario.index',['users'=>$users,]);
         
-        $users=users::paginate(10);
-        return view('usuario.index',[
-            'users'=>$users,
-        ]);
+        $users=users::usuarios();
+        return view('usuario.index')->with('users',$users);
     }
 
     public function edit($id)

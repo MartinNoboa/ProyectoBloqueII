@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
+
 
 class users extends Model
 {
@@ -47,4 +49,20 @@ class users extends Model
         'email_verified_at' => 'datetime',
     ];
     public $timestamps = false;
+
+
+    /* 
+    * Eloquent casting -> recuperar un atributo
+    * Estructura
+    *   public function get[nombreAtributo]Attribute
+    */
+    public function getNombreCompletoAttribute(){
+        $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
+        return $nombreCompleto;
+    }
+
+    public static function usuarios(){
+        $usuarios = DB::table('users');
+        return $usuarios->paginate(10);
+    }
 }

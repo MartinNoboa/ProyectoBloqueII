@@ -18,10 +18,12 @@
 
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
         <h3 class="text-center mb-3">Usuarios </h3>
-            <div class="align-self-center p-2">
-                <a href="{{url('/home')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
-                <br>
-                </div>
+            
+    <div class="align-self-center p-2">
+        <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
+        <br>
+        </div>
+    <div class="table-responsive">
             <div class="table-responsive">
 
         
@@ -51,8 +53,8 @@
             <thead>
                 <tr>
                     <th class="text-wrap" scope="col">Nombre</th>
-                    <th class="text-wrap" scope="col">Apellido Paterno</th>
-                    <th class="text-wrap" scope="col">Apellido Materno</th>
+                    <!-- <th class="text-wrap" scope="col">Apellido Paterno</th>
+                    <th class="text-wrap" scope="col">Apellido Materno</th> -->
                     <th class="text-wrap" scope="col">Fecha Nacimiento</th>
                     <th class="text-wrap" scope="col">Ocupacion</th>
                     <th class="text-wrap" scope="col">Telefono</th>
@@ -63,9 +65,13 @@
             @if ($users->count())
                 @foreach($users as $user)
                 <tr scope="row">
-                    <td class="fs-6 text-wrap">{{ $user->nombre}}</td>
+                    <!-- <td class="fs-6 text-wrap">{{ $user->nombre}}</td>
                     <td class="fs-6 text-wrap">{{ $user->apellido_paterno}}</td>
-                    <td class="fs-6 text-wrap">{{ $user->apellido_materno}}</td>
+                    <td class="fs-6 text-wrap">{{ $user->apellido_materno}}</td> -->
+                    @php
+                        $nombre= App\Models\users::find($user->id)
+                    @endphp
+                    <td class="fs-6 text-wrap">{{ $nombre['nombreCompleto'] }}</td>
                     <td class="fs-6 text-wrap">{{ $user->fecha_nacimiento}}</td>
                     <td class="fs-6 text-wrap">{{ $user->ocupacion}}</td>
                     <td class="fs-6 text-wrap">{{ $user->telefono}}</td>
@@ -162,7 +168,7 @@
             }
         })
     }
-    $document.on('keyup','#search-user',function(){
+    $document.on('userup','#search-user',function(){
         let query = $(this).val();
         fetch_custumer_data(query);
     });
