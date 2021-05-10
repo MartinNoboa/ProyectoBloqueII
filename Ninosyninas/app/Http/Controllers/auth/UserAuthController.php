@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\auth;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 //clase para hashear contraseñas
 use Illuminate\Support\Facades\Hash;
