@@ -61,8 +61,16 @@ class users extends Model
         return $nombreCompleto;
     }
 
-    public static function usuarios(){
+    public static function usuarios($busqueda){
         $usuarios = DB::table('users');
+
+        if($busqueda && !empty($busqueda)) {
+            $usuarios->where(function($q) use ($busqueda) {
+                $q->where('users.nombre', 'like', "%{$busqueda}%")
+                ->orWhere('users.apellido_paterno', 'like', "%{$busqueda}%")
+                ->orWhere('users.apellido_materno', 'like', "%{$busqueda}%");
+            });
+        }
         return $usuarios->paginate(10);
     }
 }

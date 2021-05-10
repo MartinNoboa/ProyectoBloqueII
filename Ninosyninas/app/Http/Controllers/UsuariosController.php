@@ -16,7 +16,10 @@ class UsuariosController extends Controller
         //return view('usuario.index');ajax busqueda es solo esta linea
         //return view('usuario.index',['users'=>$users,]);
         
-        $users=users::usuarios();
+        /*recibe la busqueda parcial de un usuario, al cargar la pagina no tiene busqueda parcial 
+        * por eso recibe un espacio vacio
+        */        
+        $users=users::usuarios('');
         return view('usuario.index')->with('users',$users);
     }
 
@@ -70,6 +73,14 @@ class UsuariosController extends Controller
 
         return redirect('usuario')->with('mensaje','Eliminado Exitoso');
         
+    }
+
+    public function getMoreUsers(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $users = users::getUsers($query);
+                return view('usuario.data.data_usuario', compact('users'))->render();
+        }
     }
 
     public function search(Request $request){
