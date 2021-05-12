@@ -30,7 +30,7 @@ Route::get('/', [LandingController::class, 'homeTexts']);
 
 Route::get('/nosotros', [LandingController::class, 'nosotrosTexts']);
 
-Route::view ('/contactanos','landing.landing-contacto')->name('landing.landing-contacto');
+Route::view ('cd ','landing.landing-contacto')->name('landing.landing-contacto');
 
 Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store');
 
@@ -97,7 +97,7 @@ Route::resource('donadores',DonadoresController::class);
 
 
 //rutas para el controlador de login y logout
-use App\Http\Controllers\auth\UserAuthController;
+use App\Http\Controllers\Auth\UserAuthController;
 
 Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
