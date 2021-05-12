@@ -75,6 +75,8 @@ Route::get('/noticia/ver/{id}',[LandingController::class, 'verNoticia']);
 //Rutas para CRUD de reportes
 
 Route::get('/reporte',[ReporteController::class,'verReporte']);
+Route::get('/reporte/create', [ReporteController::class, 'create']);
+
 
 
 
