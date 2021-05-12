@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\auth\UserAuthController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -20,10 +21,10 @@ use App\Http\Controllers\DonatorController;
 |
 */
 
-
+/* 
 Route::get('/home', function(){
     return view('registrado.panel');
-});
+}); */
 
 
 Route::get('/', [LandingController::class, 'homeTexts']);
@@ -61,9 +62,9 @@ Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");}
 
 
 Route::get('/home/noticias', [NewsController::class,'index'])->name('news');
-Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->name('upload-image');
+Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->middleware('sesionIniciada')->name('upload-image');
 Route::post('/noticias/registrar-noticia', [NewsController::class,'upload_image']);
-Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews');
+Route::get('/noticias/edit/{id}',[NewsController::class,'edit'])->name('editNews')->middleware('sesionIniciada');
 Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
 Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
@@ -71,16 +72,18 @@ Route::get('/noticia/ver/{id}',[LandingController::class, 'verNoticia']);
 
 
 
-Route::get('/registrar-usuario',[RegisterController::class,'index'])->name('register');
+Route::get('/registrar-usuario',[RegisterController::class,'index'])->middleware('sesionIniciada')->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
-Route::get('/usuarios',[UsuariosController::class,'index'])->name('lista_usuarios');
-Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
+// Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
+Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
+//Route::get('get-more-users', 'HomeController@getMoreUsers')->name('users.get-more-users');
 
-Route::post('/usuarioadd',[UsuariosController::class,'addUsuario']);
+Route::post('/usuarioadd',[UsuariosController::class,'addUsuario'])->middleware('sesionIniciada');
 Route::resource('usuario',UsuariosController::class);
-Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editUser');
+Route::get('/usuario/{id}/edit',[UsuariosController::class,'edit'])->name('editUser')->middleware('sesionIniciada');
 Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 
 Route::get('/calendario', function(){
@@ -88,21 +91,25 @@ Route::get('/calendario', function(){
 });
 
 
-Route::get('/donadores/{id}/show',[DonatorController::class, 'show']);
+Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
 
 use App\Http\Controllers\DonadoresController;
-Route::resource('donadores',DonadoresController::class);
+Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
 
 
 
 //rutas para el controlador de login y logout
+<<<<<<< HEAD
 use App\Http\Controllers\Auth\UserAuthController;
+=======
+//use app\Http\Controllers\auth\UserAuthController;
+>>>>>>> 87f7d816a5af557295fdb3707bb1fc92b322afb2
 
 Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
 Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
-Route::get('logout',[UserAuthController::class,'logout']);
+Route::get('logout',[UserAuthController::class,'logout'])->name('logout');
 
 
 

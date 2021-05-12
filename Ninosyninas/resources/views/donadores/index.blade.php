@@ -25,7 +25,7 @@
 
     <h3 class="text-center mb-3">Donadores </h3>
     <div class="align-self-center p-2">
-        <a href="{{url('/home')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
+        <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
         <br>
         </div>
     <div class="table-responsive">

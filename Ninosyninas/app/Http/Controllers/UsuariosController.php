@@ -14,11 +14,13 @@ class UsuariosController extends Controller
     public function index()
     {
         //return view('usuario.index');ajax busqueda es solo esta linea
+        //return view('usuario.index',['users'=>$users,]);
         
-        $users=users::paginate(10);
-        return view('usuario.index',[
-            'users'=>$users,
-        ]);
+        /*recibe la busqueda parcial de un usuario, al cargar la pagina no tiene busqueda parcial 
+        * por eso recibe un espacio vacio
+        */        
+        $users=users::usuarios('');
+        return view('usuario.index')->with('users',$users);
     }
 
     public function edit($id)
@@ -73,49 +75,13 @@ class UsuariosController extends Controller
         
     }
 
-    public function search(Request $request){
-        if ($request->ajax()) {
-            $output='';
-            $query = $request->get('query');
-            if($query != ''){
-                $data = DB::table('users')
-                        ->where('nombre','like','%'.$query.'%')
-                        ->orWhere('apellido_paterno','like','%'.$query.'%')
-                        ->orWhere('apellido_materno','like','%'.$query.'%')
-                        ->get();
-
-            }
-            else{
-                $data = DB::table('users')
-                        ->orderBy('id','desc')
-                        ->get();
-
-            }
-            $num_rows = $data->count();
-            if ($num_rows>0) {
-                foreach($data as $user){
-                    $output .='
-                    <tr>
-                    <td>'.$user->nombre.'</td>
-                    <td>'.$user->apellido_paterno.'</td>
-                    <td>'.$user->apellido_materno.'</td>
-                    <td>'.$user->fecha_nacimiento.'</td>
-                    <td>'.$user->fecha_inicio.'</td>
-                    <td>'.$user->ocupacion.'</td>
-                    <td>'.$user->telefono.'</td>
-                    <td>'.$user->mail.'</td>
-                    </tr>
-                    ';
-                }
-            }
-            else{
-                $output .='
-                <tr>
-                <td class=""> No se encontro usuario</td>
-            
-                </tr>
-                ';
-            }
+    public function recuperarUsuarios(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $users = users::usuarios($query);
+                return view('usuario.data.data_usuario', compact('users'))->render();
         }
     }
+
+    
 }
