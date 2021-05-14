@@ -17,7 +17,7 @@
 
 
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
-        <h3 class="text-center mb-3">Usuarios </h3>
+        <h3 class="text-center mb-3">Niños y niñas</h3>
             
     <div class="align-self-center p-2">
         <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
@@ -33,7 +33,7 @@
 
     <div class="d-flex border-bottom mb-3">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Lista de Usuarios Registrados</h3>
+            <h1 class="text-left fs-4">Lista de Niños</h3>
         </div>
         <div class="align-self-center p-2">
         <a href="{{url('/registrar-usuario')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
@@ -42,9 +42,11 @@
         <div class="align-self-center p-2">
             <input type="text" class="search-box" name="search-user" id="search" autocomplete="off" >
             <!-- {{-- data-href="{{URL::to('/usuarios.search')}}" --}} -->
-            <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
-                search
-                </span></label>
+            <label for="search-box" title="Buscar">
+                <span class="material-icons-outlined search-icon">
+                    search
+                </span>
+            </label>
             
         </div>
     </div>
@@ -54,13 +56,13 @@
                 <tr>
                     <th class="text-wrap" scope="col">Nombre Completo</th>
                     <th class="text-wrap" scope="col">Fecha Nacimiento</th>
-                    <th class="text-wrap" scope="col">Ocupacion</th>
-                    <th class="text-wrap" scope="col">Telefono</th>
-                    <th class="text-wrap" scope="col">Email</th>
+                    <th class="text-wrap" scope="col">Grado</th>
+                    <!-- Campo calculable (?) -->
+                    <th class="text-wrap" scope="col">Calificación</th>
                 </tr>
             </thead>
-            <tbody id = "usuarios">
-                @include('usuario.data.data_usuario')
+            <tbody id = "ninos">
+                @include('ninos.data.data_ninos')
             </tbody>
             
         </table>
@@ -81,15 +83,15 @@
         $(document).on('click', '.pagination a', function(event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
-        getMoreUsers(page);
+        recuperarNinos(page);
         });
 
         $('#search').on('keyup', function() {
             $value = $(this).val();
-            recuperarUsuarios(1);
+            recuperarNinos(1);
         });
 
-        function recuperarUsuarios(page) {
+        function recuperarNinos(page) {
         //
             var search = $('#search').val();
       
@@ -98,9 +100,9 @@
             data: {
                 'search_query':search,
             },
-            url: "{{ route('UsuariosController.search') }}",
+            url: "{{ route('Ninos.search') }}",
             success:function(data) {
-                $('#usuarios').html(data);
+                $('#ninos').html(data);
             }
             });
         }

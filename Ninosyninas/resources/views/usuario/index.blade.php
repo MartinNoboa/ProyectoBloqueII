@@ -81,7 +81,7 @@
         $(document).on('click', '.pagination a', function(event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
-        getMoreUsers(page);
+        recuperarUsuarios(page);
         });
 
         $('#search').on('keyup', function() {

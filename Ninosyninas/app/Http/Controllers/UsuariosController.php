@@ -67,12 +67,8 @@ class UsuariosController extends Controller
 
     public function destroy($id)
     {
-        //
-        
         users::destroy($id);
-
         return redirect('usuario')->with('mensaje','Eliminado Exitoso');
-        
     }
 
     public function recuperarUsuarios(Request $request) {
