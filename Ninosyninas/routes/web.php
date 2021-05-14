@@ -100,11 +100,10 @@ Route::resource('donadores',DonadoresController::class)->middleware('sesionInici
 
 
 //rutas para el controlador de login y logout
-<<<<<<< HEAD
-use App\Http\Controllers\Auth\UserAuthController;
-=======
-//use app\Http\Controllers\auth\UserAuthController;
->>>>>>> 87f7d816a5af557295fdb3707bb1fc92b322afb2
+
+//use App\Http\Controllers\Auth\UserAuthController;
+
+
 
 Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
