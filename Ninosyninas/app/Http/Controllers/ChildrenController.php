@@ -16,7 +16,7 @@ class ChildrenController extends Controller
     public function recuperarNinos(Request $request) {
         $query = $request->search_query;
         if($request->ajax()) {
-            $users = Children::ninos($query);
+            $children = Children::ninos($query);
                 return view('ninos.data.data_ninos', compact('children'))->render();
         }
     }

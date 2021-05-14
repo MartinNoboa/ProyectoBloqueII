@@ -101,7 +101,7 @@ Route::resource('donadores',DonadoresController::class)->middleware('sesionInici
  * Rutas para el manejo de la seccion de ninos
  */
 Route::get('/ninos',[ChildrenController::class,'index'])->middleware('sesionIniciada')->name('lista_ninos');
-Route::get('/ninos/search',[ChildrenController::class,'recuperarNinos'])->name('Ninos.search');
+Route::get('/ninos/search',[ChildrenController::class,'recuperarNinos'])->name('buscar_ninos');
 
 /** 
  * Rutas para el controlador de login y logout 

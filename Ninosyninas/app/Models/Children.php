@@ -10,6 +10,10 @@ class Children extends Model
 {
     use HasFactory;
 
+    /** 
+     * Eloquent agrega una -s al final de los nombres de las tablas en metodos default
+     * Definir el nombre de la tabla en el modelo evita conflictos de query
+    */
     protected $table = "children";
     protected $fillable = [
         'nombre',
@@ -35,7 +39,7 @@ class Children extends Model
         $ninos = DB::table('children');
         if($busqueda && !empty($busqueda)) {
             $ninos->where(function($q) use ($busqueda) {
-                $q->where('children.nombre', 'like', "%{busqueda}%")
+                $q->where('children.nombre', 'like', "%{$busqueda}%")
                 ->orWhere('children.apellido_paterno', 'like',"%{$busqueda}%")
                 ->orWhere('children.apellido_materno', 'like', "%{$busqueda}%");
         });

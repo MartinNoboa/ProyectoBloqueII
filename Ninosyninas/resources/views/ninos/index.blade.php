@@ -92,15 +92,15 @@
         });
 
         function recuperarNinos(page) {
-        //
             var search = $('#search').val();
+            //console.log(search);
       
             $.ajax({
             type: "GET",
             data: {
                 'search_query':search,
             },
-            url: "{{ route('Ninos.search') }}",
+            url: "{{ route('buscar_ninos') }}",
             success:function(data) {
                 $('#ninos').html(data);
             }
