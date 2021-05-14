@@ -34,7 +34,8 @@ class NewsController extends Controller
     public function delete($id)
     {
         $img_=news::find($id);
-        $str_Storage=str_replace('storage/','',$img_->url);
+        $str_Storage=$img_->url;
+        // $str_Storage=str_replace('storage/','',$img_->url);
         Storage::disk('public')->delete($str_Storage);
         news::destroy($id);
         images::destroy($img_->image_id);

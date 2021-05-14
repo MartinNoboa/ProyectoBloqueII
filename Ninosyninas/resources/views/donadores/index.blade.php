@@ -138,7 +138,7 @@
 
             @endforeach
         @else
-            <h4 class="my-4">No hay donadores disponibles</h4 class="my-4">
+            <h4 class="my-4 text-center">No hay donadores disponibles</h4 class="my-4">
         @endif
            
     <!-- segunda tabla para aprobados-->

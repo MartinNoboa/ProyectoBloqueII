@@ -107,6 +107,10 @@ Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionInici
 Route::get('logout',[UserAuthController::class,'logout']);
 
 route::get('/galeria',[GaleriaController::class,'index'])->name('galeria');
+route::get('/galeria/publicar-imagen',[GaleriaController::class,'displayForm']);
+route::post('/galeria/publicar-imagen',[GaleriaController::class,'publicarForm']);
+route::post('/galeria/delete/{id}',[GaleriaController::class,'delete']);
+
 
 
 /*
