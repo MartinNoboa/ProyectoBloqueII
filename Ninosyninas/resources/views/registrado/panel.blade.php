@@ -27,7 +27,7 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-child fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{route('lista_ninos')}}" class="btn"><i class="fas fa-child fa-6x pb-3 titulo"></i></a>
             <h3>Niños</h3>
             <h5>Niños son parte de Niños y Niñas de México</h5>
         </div>

@@ -4,11 +4,11 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\UserAuthController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
-
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\ChildrenController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,9 +77,7 @@ Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
-// Route::get('/usuarios/search',[UsuariosController::class,'search'])->name('UsuariosController.search');
 Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
-//Route::get('get-more-users', 'HomeController@getMoreUsers')->name('users.get-more-users');
 
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario'])->middleware('sesionIniciada');
 Route::resource('usuario',UsuariosController::class);
@@ -99,12 +97,23 @@ Route::resource('donadores',DonadoresController::class)->middleware('sesionInici
 
 
 
+
 //rutas para el controlador de login y logout
 
 //use App\Http\Controllers\Auth\UserAuthController;
 
 
 
+/** 
+ * Rutas para el manejo de la seccion de ninos
+ */
+Route::get('/ninos',[ChildrenController::class,'index'])->middleware('sesionIniciada')->name('lista_ninos');
+Route::get('/ninos/search',[ChildrenController::class,'recuperarNinos'])->name('buscar_ninos');
+
+
+/** 
+ * Rutas para el controlador de login y logout 
+*/
 Route::get('login',[UserAuthController::class,'login'])->middleware('sesionYaIniciada')->name('login');
 Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
 Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
