@@ -1,4 +1,5 @@
 <!--<h1>{{($modo)}} Reporte </h1> -->
+@section('pageTitle', "[[$modo]] Reporte")
 <br>
 
 <div class="d-flex align-items-center justify-content-center flex-column">

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reporte;
-use App\Models\User;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -95,5 +94,20 @@ class ReporteController extends Controller
         Reporte::destroy($id);
 
         return back();
+    }
+
+    public function getNombreUsuario(){
+        $nombre = users::get('nombre');
+        $aPaterno = users::get('apellido_paterno');
+        $aMaterno = users::get('apellido_materno');
+
+        $response = $nombre + $aPaterno + $aMaterno;
+
+        return $response;
+
+    }
+
+    public function verReporte(){
+        return view("reporte.index");
     }
 }
