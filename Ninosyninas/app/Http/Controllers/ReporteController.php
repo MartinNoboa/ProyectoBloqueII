@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reporte;
 use App\Models\users;
+use App\Models\Children;
+use App\Models\areas;
+use App\Models\Reporte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ReporteController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +19,9 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        //
+        $reportes = Reporte::all();
+        
+        return view('reporte.index',['reportes' => $reportes]);
     }
 
     /**
@@ -26,14 +31,26 @@ class ReporteController extends Controller
      */
     public function create()
     {
-       /* $usuarios = [
-            "1" -> User::findOrFail('id'),
-            "2" -> users::findOrFail('nombre'),
-            "3" -> users::findOrFail('apellido_paterno'),
-            "4" -> users::findOrFail('apellido_materno')];*/
+        $userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $areasList = areas::select('id', 'area') -> get();
 
-        return view('reporte.create');
+    return view('reporte.create', compact('userList'), compact('childList'), compact('areasList'));
     }
+
+    public function getNombreUsuario($id){
+        $consulta = users::where('id', '=', '$id')->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
+        $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
+        return $nombreCompleto;
+    }
+
+    public function getNombreNino($id){
+        $consulta = Children::where('id', '=', '$id')->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
+        $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
+        return $nombreCompleto;
+    }
+
+
 
 
     /**
@@ -44,7 +61,35 @@ class ReporteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+         $campos=[
+
+            'users_id'=>'required|numeric|max:20',
+            'child_id'=>'required|numeric|max:20',
+            'area_id'=>'required|numeric|max:20',
+            'calificacion'=>'required|integer|max:10',
+
+    ];
+
+    $mensaje=[
+
+        'required'=>'El :attribute es requerido'
+
+    ];
+
+    $this->validate($request,$campos,$mensaje);
+
+
+ 
+    //
+    $datosReporte = request()->except('_token');
+
+    //return response()->json($datosReporte);
+    
+    Reporte::insert($datosReporte);
+
+    return redirect('reporte')->with('mensaje','Reporte registrado con éxito');
     }
 
     /**
@@ -53,11 +98,11 @@ class ReporteController extends Controller
      * @param  \App\Models\Reporte  $reporte
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $reportes=Reporte::all();
+        $reportes=Reporte::findOrFail($id);
 
-        return view('reporte.ver-reporte', ['reportes' => $reportes]);
+        return view('reporte.see', compact('reportes'));
 
 
     }
@@ -71,8 +116,11 @@ class ReporteController extends Controller
     public function edit($id)
     {
         $reporte=Reporte::findOrFail($id);
+        $userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $areasList = areas::select('id', 'area') -> get();
 
-        return view('reporte.edit-reporte', compact('reporte'));
+        return view('reporte.edit', compact('reporte'), compact('userList'), compact('childList'));
 
     }
 
@@ -96,18 +144,4 @@ class ReporteController extends Controller
         return back();
     }
 
-    public function getNombreUsuario(){
-        $nombre = users::get('nombre');
-        $aPaterno = users::get('apellido_paterno');
-        $aMaterno = users::get('apellido_materno');
-
-        $response = $nombre + $aPaterno + $aMaterno;
-
-        return $response;
-
-    }
-
-    public function verReporte(){
-        return view("reporte.index");
-    }
 }

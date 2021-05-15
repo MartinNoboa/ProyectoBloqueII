@@ -4,7 +4,7 @@
 
 
 
-<form action="{{ url('/reporte/'.$reporte->id) }}" method="post">
+<form action="{{ url('/reporte/'.$item->id) }}" method="post">
 
     @csrf 
     {{ method_field('PATCH')}}

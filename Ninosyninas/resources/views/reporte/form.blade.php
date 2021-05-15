@@ -1,7 +1,9 @@
 <!--<h1>{{($modo)}} Reporte </h1> -->
-@section('pageTitle', "[[$modo]] Reporte")
-<br>
+@section('pageTitle', "$modo Reporte")
 
+
+<div class='container'><a class="btn btn-outline-primary p-2 m-2" href="{{url('/reporte')}}">Regresar a reportes</a></div>
+ 
 <div class="d-flex align-items-center justify-content-center flex-column">
     <div class="p-4 w-50 bg-light container my-5 shadow p-3 mb-5 bg-body rounded">
     <h1 class="fs-1 my-3 d-flex align-items-center justify-content-center"><h1>{{($modo)}} Reporte</h1></h1>
@@ -22,36 +24,37 @@
 
     @endif
 
-    <div class="form-group pb-4" >
-
-        <label for="nombre" class="px-0"  >Nombre <span aria-hidden="true" class="required text-danger" >*</span></label>
-            <input type="text" class="form-control" name="nombre" placeholder="Juan" value="{{ isset($donadores->nombre)?$donadores->nombre:old('nombre') }}" id="nombre" required  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
-            
-    </div>
-
     <div class="contact-form row pb-4">
 
         <div class="form-field pb-4">
-            <label for="select_nino" class="px-0">Niño de quien se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
-            <select class="form-input" id="select_nino" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+            <label for="child_id" class="px-0">Niño de quien se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
+            <select class="form-control" id="child_id" name="child_id" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un niño</option>
+            @foreach($childList as $item)
+                <option value="{{$item -> id}}">{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
+
+            @endforeach
+                
                 <option>Juanito</option>
             </select>
         </div>
 
         <div class="form-field pb-4 col-lg-6">
-            <label for="select_usuario" class="px-0">Quien reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
-            <select class="form-input" id="select_usuario" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+            <label for="users_id" class="px-0">Quien reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
+            <select class="form-control" id="users_id" name="users_id" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un usuario</option>
-                <option>Juan</option>
+                @foreach($userList as $item)
+                    <option value="{{$item -> id}}">{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
+
+                @endforeach
             </select>
         </div>
 
         <div class="form-field pb-4 col-lg-6">
-            <label for="select_area" class="px-0">Area desde la que se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
-            <select class="form-input" id="select_area" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+            <label for="area_id" class="px-0">Area desde la que se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
+            <select class="form-control" id="area_id" name="area_id"<?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un area</option>
-                <option>Psicologia</option>
+                <option value="1">Psicologia</option>
             </select>
         </div>
 
@@ -66,7 +69,7 @@
         <div class="form-group pb-4" >
 
         <label for="enlace" class="px-0"  >Enlace a Google Drive para archivo del reporte (Opcional)</label>
-            <input type="text" class="form-control" name="enlace" placeholder="drive.google.com" id="enlace" required  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
+            <input type="text" class="form-control" name="enlace" placeholder="drive.google.com" id="enlace"  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
             
         </div>
 

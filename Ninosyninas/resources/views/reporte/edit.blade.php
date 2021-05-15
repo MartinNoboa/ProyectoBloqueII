@@ -1,4 +1,4 @@
-extends('layouts.main-landing')
+@extends('layouts.main-landing')
 
 @section('mainContainer')
 
@@ -8,7 +8,7 @@ extends('layouts.main-landing')
 
     @csrf 
     {{ method_field('PATCH')}}
-    @include('donadores.form',['modo'=>'Editar']);
+    @include('reporte.form',['modo'=>'Editar']);
 
 </form>
 

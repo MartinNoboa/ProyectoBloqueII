@@ -5,7 +5,7 @@
 @section('header')
 
 
-<form action="{{ url('/reporte/')}}" method="post">
+<form action="{{ url('/reporte')}}" method="post">
 
 @csrf
 @include('reporte.form',['modo'=>'Crear']);
