@@ -1,8 +1,12 @@
+
+
 @extends('layouts.main-landing')
 
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
+
+
 <div class="container">
     @if(Session::has('mensaje'))
     <div class="alert alert-success alert-dismissible" role="alert">

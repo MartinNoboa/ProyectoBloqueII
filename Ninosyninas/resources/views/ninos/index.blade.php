@@ -23,20 +23,17 @@
         <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
         <br>
         </div>
-    <div class="table-responsive">
-            <div class="table-responsive">
 
-        
+     <div class="table-responsive">
+            <div class="table-responsive">    
             <br>
-
-
-
+            
     <div class="d-flex border-bottom mb-3">
         <div class="me-auto p-2">
             <h1 class="text-left fs-4">Lista de Niños</h3>
         </div>
         <div class="align-self-center p-2">
-        <a href="{{url('/registrar-usuario')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
+        <a href="{{url('/registrar-ninos')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
         <br>
         </div>
         <div class="align-self-center p-2">
@@ -54,7 +51,9 @@
         <table class="table table-hover px-3">
             <thead>
                 <tr>
-                    <th class="text-wrap" scope="col">Nombre Completo</th>
+                    <th class="text-wrap" scope="col">Nombre </th>
+                    <th class="text-wrap" scope="col">Apellido Paterno </th>
+                    <th class="text-wrap" scope="col">Apellido Materno </th>
                     <th class="text-wrap" scope="col">Fecha Nacimiento</th>
                     <th class="text-wrap" scope="col">Grado</th>
                     <!-- Campo calculable (?) -->

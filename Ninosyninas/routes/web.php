@@ -107,8 +107,33 @@ Route::resource('donadores',DonadoresController::class)->middleware('sesionInici
 /** 
  * Rutas para el manejo de la seccion de ninos
  */
+
+//registrar niño
+
+Route::resource('/registrar-ninos',ChildrenController::class);
+
+Route::get('/registrar-ninos',[ChildrenController::class,'create'])->middleware('sesionIniciada')->name('register');
+Route::post('/registrar-ninos',[ChildrenController::class,'store']);
+
+//view
+Route::get('/registrar-ninos/{id}/see',[ChildrenController::class,'show']);
+
+
+
+
+ //main
 Route::get('/ninos',[ChildrenController::class,'index'])->middleware('sesionIniciada')->name('lista_ninos');
 Route::get('/ninos/search',[ChildrenController::class,'recuperarNinos'])->name('buscar_ninos');
+
+//edit
+Route::post('/ninosadd',[UsuariosController::class,'addninos'])->middleware('sesionIniciada');
+
+Route::resource('ninos',ChildrenController::class);
+Route::get('/ninos/{id}/edit',[ChildrenController::class,'edit'])->name('editninos')->middleware('sesionIniciada');
+Route::patch('/ninos/{id}/edit',[ChildrenController::class,'update']);
+
+
+
 
 
 /** 
