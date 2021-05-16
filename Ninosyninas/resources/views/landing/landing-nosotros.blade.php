@@ -34,7 +34,7 @@
     <br>
     <br>
     <div class="text-justyfy center">
-        <p>{{$textos["aNosotros"]}}</p>
+        <p>{{$txt[3]['contenido']}}</p>
     </div>
     <img class="center" src="{{url('img/29.png')}}">
     <br>

@@ -170,7 +170,7 @@
             <br>
             <br>
 
-            <input id="aprobado" name="aprobado" type="hidden" value="1">
+            <input id="aprobado" name="aprobado" type="hidden" value="2">
             <div class="text-center">
             <input type="submit" class=" btn button-donar text-light rounded" value="Regístrate"></input>
             </div>

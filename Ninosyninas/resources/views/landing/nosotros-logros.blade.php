@@ -36,7 +36,7 @@
         <div class="grid-2 ">
             <div>
                 <h3 class="text-center">Logros</h3>
-                <p>{{$logro}}</p>
+                <p>{{$txt[4]['contenido']}}</p>
             </div>
             <div class="text-center">
                 <img src="{{url('img/23.png')}}" width="80%">

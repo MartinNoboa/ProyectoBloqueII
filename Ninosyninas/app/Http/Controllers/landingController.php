@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class LandingController extends Controller{
     public function homeTexts(){
         
+        $txt=Landing::all()->toArray();       
         $textos = [
             "card1" => "Nos acompañamos en la bella tarea de vivir la vida",
             "cardt1" => "Título de la tarjeta1",
@@ -19,35 +20,14 @@ class LandingController extends Controller{
             "cardt2" => "Título de la tarjeta2",
             "card3" => "Niños resilientes aprendiendo a vivir, enfrentando retos en la vida",
             "cardt3" => "Título de la tarjeta3",
-            "aNosotros" => "Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven 
-                            muchos niños y sus familias al hacer de la calle su lugar de trabajo. La calle es un medio agresivo
-                             y marca de manera importante el desarrollo de los niños que se ven obligados a pasar gran parte del 
-                             día en ella. La invitación al consumo de drogas, la exposición a riesgos de carácter sexual, la
-                              ignorancia y la temprana deserción escolar, hacen de este grupo de menores una población altamente 
-                              vulnerable.
-                            Comenzamos como voluntarios participando en un estudio llamado “100 Ciudades“ coordinado por UNICEF 
-                            Y La OIT, lo que nos motivó para hacer un 'CENTRO DE ATENCIÓN DE DÍA', desarrollamos nuestra labor desde
-                             1998. Somos una Asociación Civil legalmente constituida y somos una donataria autorizada para expedir 
-                             recibos deducibles de impuestos. Nos organizamos a través de un patronato, cuya tarea es velar 
-                             por el buen funcionamiento de la institución.",
-            "Mision" => "Generamos un programa de formación integral con las niñas, niños y adolescentes, que junto con su 
-                        familia han hecho de la calle su lugar de trabajo y un espacio importante de socialización, para 
-                        desarrollar sus capacidades básicas y juntos construir alternativas que les permitan mejores 
-                        oportunidades y calidad de vida.",
-            "Vision" => "Queremos que los niños y niñas que hoy se encuentran en condiciones adversas por la marginación y 
-                        tienen que incorporarse a la economía informal a temprana edad, tengan mejores oportunidades tanto de
-                         desarrollo personal como económicas a futuro, y diferentes alternativas laborales para que la calle 
-                         no sea su opción.
-                        Que no tengamos más niños y niñas trabajando en la calle para contribuir a la economía familiar. Sino
-                         que todos tengan una alternativa real de desarrollo integral, y así poder disfrutar de su niñez y sus
-                          derechos."
         ];
+        return view("landing.landing-home", ["textos" => $textos, "txt" => $txt]);
 
-        return view("landing.landing-home", ["textos" => $textos]);
+        
     }
 
     public function nosotrosTexts(){
-
+        $txt=Landing::all()->toArray();   
         $textos = [
             "aNosotros" => "Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven 
             muchos niños y sus familias al hacer de la calle su lugar de trabajo. La calle es un medio agresivo
@@ -69,7 +49,7 @@ class LandingController extends Controller{
             "nombre3" => "Jose Perez"
 
         ];
-        return view("landing.landing-nosotros", ["textos" => $textos]);
+        return view("landing.landing-nosotros", ["textos" => $textos, "txt" => $txt]);
         
     }
     
@@ -98,20 +78,8 @@ class LandingController extends Controller{
     }
     
     public function logroText(){
-
-        $logro = "Contamos con un espacio construido especialmente para el desarrollo de nuestro proyecto, en un terreno donado por Gobierno del Estado y la construcción por CEDAR FOUNDATION una fundación Canadiense.
-        Atendemos a 130 niños y niñas desde los diferentes programas.
-        
-        A 20 años hemos servido alrededor de 500,000 almuerzos.
-        
-        Tenemos al 95% de los niños y niñas inscrito en alguna modalidad educativa oficial.
-        
-        Se han reducido los índices de inasistencia y deserción escolar, elevando de 2 o 3 años escolares a por lo menos a 8, están concluyendo la primaria.
-        
-        Hemos logrado una importante participación de las madres de familia en el proceso de escolarización y educación de sus hijos.
-        
-        El 60 % de los niños y niñas que pasan por la Institución ya no regresan a la calle, se integran al trabajo formal.";
-        return view("landing.nosotros-logros", ["logro" => $logro]);
+        $txt=Landing::all()->toArray();  
+        return view("landing.nosotros-logros", ["txt" => $txt]);
     }
 
 
