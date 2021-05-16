@@ -1,6 +1,6 @@
 @extends('layouts.main-landing')
 
-@section('mainContainer')
+@section('header')
 
 
 

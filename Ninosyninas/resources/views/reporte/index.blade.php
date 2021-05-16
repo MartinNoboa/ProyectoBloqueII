@@ -2,6 +2,8 @@
 
 @section('pageTitle', "Niños y niñas de Mexico")
 
+<?php use App\Http\Controllers\ReporteController;?>
+
 @section('header')
 
 <div class="container">
@@ -56,7 +58,7 @@
                 <th scope="col">Quien reporta</th>
                 <th scope="col">Area</th>
                 <th scope="col">Calificacion</th>
-                <th scope="col">Enlace</th>
+                <th scope="col">Enlace a drive</th>
                 
                 
             </tr>
@@ -64,12 +66,18 @@
         <tbody>
             @foreach($reportes as $item)
             <tr scope="row">
-            
-                <td>{{ $item->child_id }}</td>
-                <td>{{ $item->users_id }}</td>
-                <td>{{ $item->area_id }}</td>
+                @php
+                    $nombreUsuario= App\Models\users::find($item->users_id);
+                    $nombreNino = App\Models\Children::find($item->child_id);
+                    $nombreArea = App\Models\areas::find($item->area_id);
+                @endphp
+                <td>{{$nombreNino['nombreCompleto']}}</td>
+                <td>{{$nombreUsuario['nombreCompleto']}}</td>
+                <td>{{$nombreArea['nombreCompleto']}}</td>
                 <td>{{ $item->calificacion }}</td>
-                <td>@if($item->enlace == '') @else<a href="{{ $item->enlace }}">Enlace</a>@endif</td>
+                <td>@if($item->enlace == '') @else<a href="{{ $item->enlace }}" target="_blank"><button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
+                                <i class="bi bi-file-earmark"></i>
+                            </button>  </a>@endif</td>
 
                 
               

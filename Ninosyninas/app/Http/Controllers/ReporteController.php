@@ -35,20 +35,19 @@ class ReporteController extends Controller
         $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $areasList = areas::select('id', 'area') -> get();
 
-    return view('reporte.create', compact('userList'), compact('childList'), compact('areasList'));
+    return view('reporte.create', compact('userList', 'childList', 'areasList'));
     }
 
-    public function getNombreUsuario($id){
-        $consulta = users::where('id', '=', '$id')->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
-        $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
-        return $nombreCompleto;
+    public static function getNombreUsuario($id){
+        $consulta = users::where('id', '=', $id)->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
+        return $consulta;
     }
 
-    public function getNombreNino($id){
-        $consulta = Children::where('id', '=', '$id')->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
-        $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
-        return $nombreCompleto;
-    }
+    public static function getNombreNino($id){
+        $consulta = Children::where('id', '=', $id)->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
+        $response = $consulta;
+        return $response;
+    } 
 
 
 
@@ -100,9 +99,9 @@ class ReporteController extends Controller
      */
     public function show($id)
     {
-        $reportes=Reporte::findOrFail($id);
+        $reporte=Reporte::findOrFail($id);
 
-        return view('reporte.see', compact('reportes'));
+        return view('reporte.see', compact('reporte'));
 
 
     }
@@ -120,7 +119,7 @@ class ReporteController extends Controller
         $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $areasList = areas::select('id', 'area') -> get();
 
-        return view('reporte.edit', compact('reporte'), compact('userList'), compact('childList'));
+        return view('reporte.edit', compact('reporte', 'userList', 'childList', 'areasList'));
 
     }
 
@@ -131,17 +130,24 @@ class ReporteController extends Controller
      * @param  \App\Models\Reporte  $reporte
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reporte $reporte)
+    public function update(Request $request, $id)
     {
-        //
+        $datosReportes = request()->except(['_token','_method']);
+        Reporte::where('id','=',$id)->update($datosReportes);
+
+        $reportes=Reporte::findOrFail($id);
+        
+        //return view('usuario',compact('usuario'));
+
+        return redirect('reporte')->with('mensaje','Reporte editado con éxito');
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
-        $reporte=Reporte::find($id);
+        
         Reporte::destroy($id);
 
-        return back();
+        return redirect('reporte')->with('mensaje','Eliminado Exitoso');
     }
 
 }

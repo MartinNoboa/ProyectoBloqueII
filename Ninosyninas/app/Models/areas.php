@@ -14,4 +14,9 @@ class areas extends Model
         'area',
         'descripcion'
     ];
+
+    public function getNombreCompletoAttribute(){
+        $nombreCompleto = ucfirst($this->area);
+        return $nombreCompleto;
+    }
 }
