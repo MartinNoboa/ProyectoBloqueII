@@ -54,7 +54,7 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <a type="button"  href="{{url('/noticias')}}" class="btn"><i class="fas fa-newspaper fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/home/noticias')}}" class="btn"><i class="fas fa-newspaper fa-6x pb-3 titulo"></i></a>
             <h3>Noticias</h3>
             <h5>Noticias más relevantes que se muestran en el sitio web</h5>
         </div>
@@ -98,7 +98,7 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-tasks  fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/reporte')}}" class="btn"><i class="fas fa-tasks  fa-6x pb-3 titulo"></i></a>
             <h3>Reportes</h3>
             <h5>Reportar cual es el esatus que tiene actualmente un niño</h5>
         </div>

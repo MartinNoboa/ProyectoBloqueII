@@ -1,7 +1,7 @@
 @extends('layouts.main-landing')
 @section('mainContent')
 <div class='bottom-half'>
-<div class='container'><a class="btn btn-outline-primary p-20 m-20" href="{{url('/noticias')}}">Regresar a noticias</a></div>
+<div class='container'><a class="btn btn-outline-primary p-2 m-2" href="{{url('/noticias')}}">Regresar a noticias</a></div>
     <div class="d-flex align-items-center justify-content-center flex-column ">
     <div class="w-50 bg-light container my-2 shadow-sm   mb-5 bg-body rounded p-0">
         <img src="{{asset($noticia->image->url)}}" alt="" srcset="" class="img-fluid">

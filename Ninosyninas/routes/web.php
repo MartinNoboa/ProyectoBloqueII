@@ -6,6 +6,8 @@ use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ReporteController;
+
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
 use Illuminate\Support\Facades\DB;
@@ -69,6 +71,13 @@ Route::patch('/noticias/edit/{id}',[NewsController::class,'update']);
 Route::get('/noticias/delete/{id}',[NewsController::class,'delete']);
 Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
 Route::get('/noticia/ver/{id}',[LandingController::class, 'verNoticia']);
+
+
+//Rutas para CRUD de reportes
+
+/* Route::get('/reporte',[ReporteController::class,'index']);
+Route::get('/reporte/create', [ReporteController::class, 'create']); */
+Route::resource('reporte', ReporteController::class);
 
 
 

@@ -122,12 +122,7 @@ class LandingController extends Controller{
 
         $noticias = news::all();
 
-        $url = DB::table('news')
-                    ->join('images', 'news.id', '=', 'images.id')
-                    ->select('images.url', 'news.titulo', 'news.contenido')
-                    ->get();
-
-        return view('landing.landing-noticias',['noticias' => $noticias, 'url' => $url]);
+        return view('landing.landing-noticias',['noticias' => $noticias]);
     }
 
     public function aNosotros()
