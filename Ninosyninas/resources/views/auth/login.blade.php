@@ -1,7 +1,7 @@
 @extends('layouts.main-landing')
 @section('login')
 
-<div class="d-flex align-items-center justify-content-center flex-column" style="margin-top:50px">
+<div class="d-flex align-items-center justify-content-center flex-column" style="margin-top:50px; min-height: 500px;">
     <div class="p-4 w-50 bg-light container">
     <h3 class = "text-center">Login</h3>
         <form action=" {{ route('auth.check')}}" method="POST">

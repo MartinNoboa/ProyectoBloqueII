@@ -1,6 +1,6 @@
 @extends('layouts.main-landing')
 @section('content')
-<div class="container">
+<div class="container" style=" min-height: 500px;">
     @if(Session::has('mensaje'))
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
