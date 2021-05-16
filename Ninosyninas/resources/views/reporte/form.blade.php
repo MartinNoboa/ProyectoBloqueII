@@ -31,7 +31,7 @@
             <select class="form-control" id="child_id" name="child_id" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un niño</option>
             @foreach($childList as $item)
-                <option value="{{$item -> id}}" @if($item->id == $reporte->child_id) selected @else @endif>{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
+                <option value="{{$item -> id}}" @if($modo != 'Crear') @if($item->id == $reporte->child_id) selected @else @endif @endif>{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
 
             @endforeach
                 
@@ -44,7 +44,7 @@
             <select class="form-control" id="users_id" name="users_id" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un usuario</option>
                 @foreach($userList as $item)
-                    <option value="{{$item -> id}}" @if($item->id == $reporte->users_id) selected @else @endif >{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
+                    <option value="{{$item -> id}}" @if($modo != 'Crear') @if($item->id == $reporte->users_id) selected @else @endif @endif >{{$item -> nombre}} {{$item -> apellido_paterno}} {{$item -> apellido_materno}}</option>
                 @endforeach
             </select>
         </div>
@@ -55,7 +55,7 @@
                 <option selected>Selecciona a un area</option>
                 <option value="1">Psicologia</option>
                 @foreach($areasList as $item)
-                    <option value="{{$item -> id}}" @if($item->id == $reporte->users_id) selected @else @endif >{{$item -> area}}</option>
+                    <option value="{{$item -> id}}" @if($modo != 'Crear') @if($item->id == $reporte->area_id) selected @else @endif @endif >{{$item -> area}}</option>
                 @endforeach
             </select>
         </div>
