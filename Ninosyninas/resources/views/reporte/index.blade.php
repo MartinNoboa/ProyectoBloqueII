@@ -81,7 +81,7 @@
               
                 
                 <td>
-                <a href="{{ url('/reporte/'.$item->id/show) }}">
+                <a href="{{ url('/reporte/'.$item->id.'/show') }}">
                 
                             <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
                                 <i class="far fa-eye"></i>
