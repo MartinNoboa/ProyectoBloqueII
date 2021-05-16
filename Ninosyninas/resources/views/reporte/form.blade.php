@@ -92,7 +92,7 @@
            </div>
            @endif
            <div class="px-4">
-                <a href="{{url('donadores/')}}" class="btn bg-danger w-100 mt-4 text-white">Regresar</a>
+                <a href="{{url('reporte/')}}" class="btn bg-danger w-100 mt-4 text-white">Regresar</a>
            </div>
         
     </div>
