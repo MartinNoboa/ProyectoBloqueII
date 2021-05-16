@@ -154,6 +154,7 @@ Route::get('logout',[UserAuthController::class,'logout'])->name('logout');
 
 
 
+
 /*
 * Funcion para probar si la conecxion es correcta
 *

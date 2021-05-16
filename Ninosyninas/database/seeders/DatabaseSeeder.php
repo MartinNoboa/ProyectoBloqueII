@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
             //Tablas de relacion
             PermitRoleSeeder::class,
             RoleUserSeeder::class,
+
+            //Landing tables 
+            LandingSeeder::class,
             
         ]);
     }
