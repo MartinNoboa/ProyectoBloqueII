@@ -99,10 +99,11 @@ class ReporteController extends Controller
      */
     public function show($id)
     {
-        $reporte=Reporte::findOrFail($id);
+        $reporte = Reporte::findOrFail($id);$userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $areasList = areas::select('id', 'area') -> get();
 
-        return view('reporte.see', compact('reporte'));
-
+        return view('reporte.see', compact('reporte', 'userList', 'childList', 'areasList'));
 
     }
 
@@ -114,7 +115,7 @@ class ReporteController extends Controller
      */
     public function edit($id)
     {
-        $reporte=Reporte::findOrFail($id);
+        $reporte = Reporte::findOrFail($id);
         $userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $areasList = areas::select('id', 'area') -> get();
