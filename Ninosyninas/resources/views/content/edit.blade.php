@@ -21,8 +21,8 @@
                     <div class="form-group pb-4 col-lg-12" >
                         <div class="form-group pb-4" >  
                             <label for="nombre" class="px-0" >Contenido <span aria-hidden="true" class="required text-danger" >*</span></label>
-                           
-                            <textarea  type="text" class="form-control" name="contenido" id="contenido" height="400rem"   required>{{$contenido->contenido}}</textarea>
+                            <br><br>
+                            <textarea  rows="10" type="text" class="form-control" name="contenido" id="contenido" height="400rem"   required>{{$contenido->contenido}}</textarea>
                         </div>
                     </div>
                     <div class="px-4">

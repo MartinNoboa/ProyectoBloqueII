@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
 
             //Landing tables 
             LandingSeeder::class,
-            
+            EduacionSeeder::class,
+            AtencionSeeder::class,
         ]);
     }
 }

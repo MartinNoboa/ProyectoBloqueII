@@ -143,9 +143,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr scope="row ">
+                <tr scope="row " >
                     <td>Donar</td>
-                    <td class="pull-right">      
+                    <td class="text-left">      
                     <a href="{{ url('contenido/edit/9') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                         <i class="bi bi-pencil-square"></i>
