@@ -7,6 +7,7 @@ use App\Models\news;
 use App\Models\Landing;
 use App\Models\Atencion;
 use App\Models\Educacion;
+use App\Models\Patronato;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -29,7 +30,8 @@ class LandingController extends Controller{
     }
 
     public function nosotrosTexts(){
-        $txt=Landing::all()->toArray();   
+        $txt=Landing::all()->toArray();
+        $patronato= Patronato::all()->toArray();
         $textos = [
             
             "patronato1" => "Información del patronato",
@@ -40,7 +42,7 @@ class LandingController extends Controller{
             "nombre3" => "Jose Perez"
 
         ];
-        return view("landing.landing-nosotros", ["textos" => $textos, "txt" => $txt]);
+        return view("landing.landing-nosotros", ["textos" => $textos, "patronato" => $patronato, "txt" => $txt]);
         
     }
     
