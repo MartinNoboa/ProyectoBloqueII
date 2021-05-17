@@ -25,8 +25,10 @@ class DatabaseSeeder extends Seeder
 
             //Landing tables 
             LandingSeeder::class,
+            PatronatoSeeder::class,
             EduacionSeeder::class,
             AtencionSeeder::class,
+           
         ]);
     }
 }
