@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ReporteController;
-
+use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +44,7 @@ Route::get('/donaciones', function(){
     return view("landing-donaciones");
 });
 
+
 /*
 Route::get('/donador', function(){
     
@@ -54,14 +55,11 @@ Route::get('/donador', function(){
 
 Route::resource('donador',DonatorController::class);
 
-
-
-
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 Route::get('/noticias',[LandingController::class,'index']);
 Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");});
-
+Route::get('/contactanos',[LandingController::class,'contactoTexts']);
 
 Route::get('/home/noticias', [NewsController::class,'index'])->name('news');
 Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->middleware('sesionIniciada')->name('upload-image');
@@ -153,7 +151,12 @@ Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionInici
 Route::get('logout',[UserAuthController::class,'logout'])->name('logout');
 
 
-
+/*
+Ruta para editar contenido 
+*/
+Route::get('contenido', [ContenidoController::class,'index'])->middleware('sesionYaIniciada');
+Route::get('contenido/edit/{id}', [ContenidoController::class,'edit'])->middleware('sesionYaIniciada');
+Route::post('contenido/{id}', [ContenidoController::class,'update'])->middleware('sesionYaIniciada');
 
 /*
 * Funcion para probar si la conecxion es correcta

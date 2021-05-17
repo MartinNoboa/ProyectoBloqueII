@@ -105,7 +105,7 @@
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <a type="button"  href="{{url('/usuario')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/contenido')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
             <h3>Editar Página web</h3>
             <h5>Modificar el contenido deseado de la págian web</h5>
         </div>

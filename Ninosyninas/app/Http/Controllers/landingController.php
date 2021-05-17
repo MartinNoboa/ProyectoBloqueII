@@ -81,6 +81,14 @@ class LandingController extends Controller{
         $txt=Landing::all()->toArray();  
         return view("landing.nosotros-logros", ["txt" => $txt]);
     }
+    public function contactoTexts(){
+        
+        $txt=Landing::all()->toArray();       
+        
+        return view("landing.landing-contacto", ["txt" => $txt]);
+
+        
+    }
 
 
     public function index()
@@ -107,4 +115,6 @@ class LandingController extends Controller{
         $noticia = news::find($id);
         return view('landing.ver-noticia',['noticia'=>$noticia]);
     }
+
+    
 }
