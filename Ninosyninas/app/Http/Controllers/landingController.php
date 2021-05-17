@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\news;
 use App\Models\Landing;
+use App\Models\Atencion;
+use App\Models\Educacion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -29,18 +31,7 @@ class LandingController extends Controller{
     public function nosotrosTexts(){
         $txt=Landing::all()->toArray();   
         $textos = [
-            "aNosotros" => "Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven 
-            muchos niños y sus familias al hacer de la calle su lugar de trabajo. La calle es un medio agresivo
-            y marca de manera importante el desarrollo de los niños que se ven obligados a pasar gran parte del 
-             día en ella. La invitación al consumo de drogas, la exposición a riesgos de carácter sexual, la
-             ignorancia y la temprana deserción escolar, hacen de este grupo de menores una población altamente 
-            vulnerable.
-            Comenzamos como voluntarios participando en un estudio llamado “100 Ciudades“ coordinado por UNICEF 
-            Y La OIT, lo que nos motivó para hacer un 'CENTRO DE ATENCIÓN DE DÍA', desarrollamos nuestra labor desde
-            1998. Somos una Asociación Civil legalmente constituida y somos una donataria autorizada para expedir 
-            recibos deducibles de impuestos. Nos organizamos a través de un patronato, cuya tarea es velar 
-            por el buen funcionamiento de la institución.",
-
+            
             "patronato1" => "Información del patronato",
             "nombre1" => "Jose Perez",
             "patronato2" => "Información del patronato",
@@ -54,7 +45,8 @@ class LandingController extends Controller{
     }
     
     public function areasTexts(){
-            
+        $atencion=Atencion::all()->toArray();
+        $educacion=Educacion::all()->toArray();
         $areas = [
             "1" => "Alimentación.",
             "2" => "Asesorías y acompañamiento.",
@@ -74,7 +66,7 @@ class LandingController extends Controller{
 
         ];
     
-        return view("landing.nosotros-area", ["areas" => $areas], ["programas" => $programas]);
+        return view("landing.nosotros-area", ["areas" => $areas], ["programas" => $programas], ["atencion" => $atencion],["educacion" => $educacion]);
     }
     
     public function logroText(){
