@@ -89,8 +89,21 @@ class LandingController extends Controller{
 
         
     }
+    public function ayudaTexts(){
+        
+        $txt=Landing::all()->toArray();       
+        return view("landing.nosotros-ayuda", ["txt" => $txt]);
 
+        
+    }
+    public function donaTexts(){
+        
+        $txt=Landing::all()->toArray();       
+        return view("landing-donaciones", ["txt" => $txt]);
 
+        
+    }
+    
     public function index()
     {
         //para pasar infor directamente al index

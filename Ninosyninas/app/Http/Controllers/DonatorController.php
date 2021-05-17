@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Models\Donator;
 use  App\Models\Donadores;
+use App\Models\Landing;
 Use Session;
 Use Redirect;
 
@@ -17,8 +18,7 @@ class DonatorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
+    {       
         return view("landing-registro-don");
     }
 

@@ -131,6 +131,33 @@
             </tbody>
         </table>
     </div>
+    <!--- Donaciones -->
+    <div class="container">
+        <table class="table table-hover px-3 " >
+            <h3 class="pt-5"><strong>Donaciones</strong></h3>
+            <br>
+            <thead >
+                <tr>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row ">
+                    <td>Donar</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('contenido/edit/9') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
     
      <!--- Contactanos -->
      <div class="container">

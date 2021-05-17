@@ -116,13 +116,21 @@
 
             <div class="text-center">
                 <br>
-                <p>{{$txt[1]['contenido']}}</p>
+                <?php
+                            $string= $txt[1]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo $string1 ?>
             </div>
         </div>
         <div class="grid-2">
             <div class="text-center">
                 <br>
-                <p>{{$txt[2]['contenido']}}
+                <?php
+                            $string= $txt[2]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo $string1 ?>
             </div>
             <div class="text-center">
                 <h3>Visión</h3>

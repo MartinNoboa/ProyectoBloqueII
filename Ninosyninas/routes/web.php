@@ -39,10 +39,6 @@ Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store')
 
 
 
-Route::get('/donaciones', function(){
-    
-    return view("landing-donaciones");
-});
 
 
 /*
@@ -58,7 +54,7 @@ Route::resource('donador',DonatorController::class);
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 Route::get('/noticias',[LandingController::class,'index']);
-Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");});
+Route::get('/nosotros-ayuda',[LandingController::class,'ayudaTexts']);
 Route::get('/contactanos',[LandingController::class,'contactoTexts']);
 
 Route::get('/home/noticias', [NewsController::class,'index'])->name('news');
@@ -97,6 +93,7 @@ Route::get('/calendario', function(){
 
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
+Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
 
 use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');

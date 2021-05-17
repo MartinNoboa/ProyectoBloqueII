@@ -34,7 +34,11 @@
     <br>
     <br>
     <div class="text-justyfy center">
-        <p>{{$txt[3]['contenido']}}</p>
+            <?php
+                            $string= $txt[3]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+            <?php echo $string1 ?>
     </div>
     <img class="center" src="{{url('img/29.png')}}">
     <br>

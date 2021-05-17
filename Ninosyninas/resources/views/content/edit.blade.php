@@ -20,8 +20,9 @@
                 <div class="contact-form row pb-4">
                     <div class="form-group pb-4 col-lg-12" >
                         <div class="form-group pb-4" >  
-                            <label for="nombre" class="px-0" >Contenido: </label>
-                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" type="text" class="form-control" name="contenido" id="contenido" height="400rem"   required>{{$contenido->contenido}}</textarea>
+                            <label for="nombre" class="px-0" >Contenido <span aria-hidden="true" class="required text-danger" >*</span></label>
+                           
+                            <textarea  type="text" class="form-control" name="contenido" id="contenido" height="400rem"   required>{{$contenido->contenido}}</textarea>
                         </div>
                     </div>
                     <div class="px-4">
@@ -44,11 +45,4 @@
 
 
 @endsection
-
-<script>
-function textAreaAdjust(element) {
-  element.style.height = "1px";
-  element.style.height = (25+element.scrollHeight)+"px";
-}
-</script>
 
