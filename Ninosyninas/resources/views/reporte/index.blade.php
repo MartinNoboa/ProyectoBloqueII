@@ -50,6 +50,7 @@
         
         <h3 class="pt-3"><strong>Reportes</strong></h3>
         <br>
+        @if ($reportes->count())
         <thead >
             <tr>
                 <th scope="col">Nombre del niño</th>
@@ -62,6 +63,7 @@
             </tr>
         </thead>
         <tbody>
+        
             @foreach($reportes as $item)
             <tr scope="row">
                 @php
@@ -138,7 +140,13 @@
                 </td>
             </tr>
             @endforeach
+            @else
+                <h2>No hay reportes disponibles</h2>
+            @endif
         
         </tbody>
     </table>
+
+    </div>
+    </div>
 @endsection
