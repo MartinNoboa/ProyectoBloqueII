@@ -3,9 +3,9 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-
+@if(Session::has('mensaje'))
 <div class="container">
-    @if(Session::has('mensaje'))
+    
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
                 
@@ -17,9 +17,9 @@
                 </button>
                 </div>
     </div>
-    @endif
+    
 </div>
-
+@endif
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
 
 
