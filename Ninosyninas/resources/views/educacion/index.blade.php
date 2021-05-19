@@ -37,7 +37,7 @@
                 <h1 class="text-left fs-4">Lista de los programas de educación</h3>
             </div>
             <div class="align-self-center p-2">
-            <a href="{{url('/registrar-usuario')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
+            <a href="{{url('educacion/registrar-nuevo')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
             <br>
         </div>
     </div>
