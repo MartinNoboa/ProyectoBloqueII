@@ -99,6 +99,36 @@
                     </td>
                 </tr>
                 <tr scope="row ">
+                    <td>Patronato</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('patronato') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>Áreas de atención</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('atencion') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>Programa de educación</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('educacion') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
                     <td>Logros</td>
                     <td class="pull-right">      
                     <a href="{{ url('contenido/edit/5') }}">

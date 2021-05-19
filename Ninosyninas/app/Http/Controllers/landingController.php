@@ -32,17 +32,7 @@ class LandingController extends Controller{
     public function nosotrosTexts(){
         $txt=Landing::all()->toArray();
         $patronato= Patronato::all()->toArray();
-        $textos = [
-            
-            "patronato1" => "Información del patronato",
-            "nombre1" => "Jose Perez",
-            "patronato2" => "Información del patronato",
-            "nombre2" => "Jose Perez",
-            "patronato3" => "Información del patronato",
-            "nombre3" => "Jose Perez"
-
-        ];
-        return view("landing.landing-nosotros", ["textos" => $textos, "patronato" => $patronato, "txt" => $txt]);
+        return view("landing.landing-nosotros", [ "patronato" => $patronato, "txt" => $txt]);
         
     }
     

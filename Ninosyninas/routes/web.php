@@ -10,6 +10,7 @@ use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\NosotrosController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -154,6 +155,24 @@ Ruta para editar contenido
 Route::get('contenido', [ContenidoController::class,'index'])->middleware('sesionYaIniciada');
 Route::get('contenido/edit/{id}', [ContenidoController::class,'edit'])->middleware('sesionYaIniciada');
 Route::post('contenido/{id}', [ContenidoController::class,'update'])->middleware('sesionYaIniciada');
+
+
+Route::get('patronato', [NosotrosController::class,'index'])->middleware('sesionYaIniciada');
+Route::get('patronato/registrar-vocal', [NosotrosController::class,'create'])->middleware('sesionYaIniciada');
+Route::post('patronato/registrar', [NosotrosController::class,'store'])->middleware('sesionYaIniciada');
+Route::delete('/patronato/eliminar/{id}', [NosotrosController::class,'eliminar'])->middleware('sesionYaIniciada');
+
+Route::get('atencion', [NosotrosController::class,'indexat'])->middleware('sesionYaIniciada');
+//Route::delete('/atencion/eliminar/{id}', [NosotrosController::class,'eliminarat'])->middleware('sesionYaIniciada');
+Route::delete('/atencion/{id}', [NosotrosController::class,'eliminarat'])->middleware('sesionYaIniciada');
+Route::get('atencion/registrar-nuevo', [NosotrosController::class,'createarea'])->middleware('sesionYaIniciada');
+Route::post('atencion/registrar', [NosotrosController::class,'storearea'])->middleware('sesionYaIniciada');
+
+Route::get('educacion', [NosotrosController::class,'indexed'])->middleware('sesionYaIniciada');
+Route::delete('/educacion/eliminar/{id}', [NosotrosController::class,'eliminaredu'])->middleware('sesionYaIniciada');
+Route::get('educacion/registrar-nuevo', [NosotrosController::class,'createedu'])->middleware('sesionYaIniciada');
+Route::post('educacion/registrar', [NosotrosController::class,'storeedu'])->middleware('sesionYaIniciada');
+
 
 /*
 * Funcion para probar si la conecxion es correcta
