@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ReporteController;
-
+use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\NosotrosController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -39,10 +40,7 @@ Route::post('landing-contacto', 'App\Http\Controllers\MessagesController@store')
 
 
 
-Route::get('/donaciones', function(){
-    
-    return view("landing-donaciones");
-});
+
 
 /*
 Route::get('/donador', function(){
@@ -54,14 +52,11 @@ Route::get('/donador', function(){
 
 Route::resource('donador',DonatorController::class);
 
-
-
-
 Route::get('/nosotros-areas', [LandingController::class, 'areasTexts']);
 Route::get('/nosotros-logros', [LandingController::class, 'logroText']);
 Route::get('/noticias',[LandingController::class,'index']);
-Route::get('/nosotros-ayuda', function(){return view("landing.nosotros-ayuda");});
-
+Route::get('/nosotros-ayuda',[LandingController::class,'ayudaTexts']);
+Route::get('/contactanos',[LandingController::class,'contactoTexts']);
 
 Route::get('/home/noticias', [NewsController::class,'index'])->name('news');
 Route::get('/noticias/registrar-noticia', [NewsController::class,'showForm'])->middleware('sesionIniciada')->name('upload-image');
@@ -99,6 +94,7 @@ Route::get('/calendario', function(){
 
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
+Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
 
 use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
@@ -153,6 +149,26 @@ Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionInici
 Route::get('logout',[UserAuthController::class,'logout'])->name('logout');
 
 
+/*
+Ruta para editar contenido 
+*/
+Route::get('contenido', [ContenidoController::class,'index'])->middleware('sesionYaIniciada');
+Route::get('contenido/edit/{id}', [ContenidoController::class,'edit'])->middleware('sesionYaIniciada');
+Route::post('contenido/{id}', [ContenidoController::class,'update'])->middleware('sesionYaIniciada');
+
+
+
+
+Route::get('atencion', [NosotrosController::class,'indexat'])->middleware('sesionYaIniciada');
+//Route::delete('/atencion/eliminar/{id}', [NosotrosController::class,'eliminarat'])->middleware('sesionYaIniciada');
+Route::delete('/atencion/{id}', [NosotrosController::class,'eliminarat'])->middleware('sesionYaIniciada');
+Route::get('atencion/registrar-nuevo', [NosotrosController::class,'createarea'])->middleware('sesionYaIniciada');
+Route::post('atencion/registrar', [NosotrosController::class,'storearea'])->middleware('sesionYaIniciada');
+
+Route::get('educacion', [NosotrosController::class,'indexed'])->middleware('sesionYaIniciada');
+Route::delete('/educacion/eliminar/{id}', [NosotrosController::class,'eliminaredu'])->middleware('sesionYaIniciada');
+Route::get('educacion/registrar-nuevo', [NosotrosController::class,'createedu'])->middleware('sesionYaIniciada');
+Route::post('educacion/registrar', [NosotrosController::class,'storeedu'])->middleware('sesionYaIniciada');
 
 
 /*

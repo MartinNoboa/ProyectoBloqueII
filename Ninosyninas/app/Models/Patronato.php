@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Landing extends Model
+class Patronato extends Model
 {
     use HasFactory;
-    public $table = "landing";
+    public $table = "patronato";
 }

@@ -64,10 +64,17 @@
 
 <div class="bottom-half bp-4">
     <img src="{{url('img/32.jpg')}}" alt="" width="270" height="850" alt="home photo" class="center pm-5">
-    <table class='center'>
-        <tr><th><h3>¡Llámanos!</h3></th><th></th><th>+52 442 182 7987</th></tr>
-        <tr><th><h4>Calle:</h4></th><th></th><th>Francisco González de Cosío 110, Plaza de las Americas, 76050 Santiago de Querétaro, Qro. México.</th></tr>
-        <tr><th><h4>E-mail:</h4></th><th></th><th>ninosyninasdemexico@yahoo.com</th></tr>
-    </table>
+    <div class="text-center">
+                <br>
+                <?php
+                            $string= $txt[7]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo '<h3>'.$string1.'</h3>' ?>
+                <br>
+                <br>
+                <br>
+                
+    </div>
 </div>
 @endsection
