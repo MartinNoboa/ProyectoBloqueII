@@ -50,28 +50,25 @@
         <thead >
             <tr>
                 <th scope="col">Contenido</th>
-                <th scope="col">id</th>
             </tr>
         </thead>
         <tbody>
         
             @foreach($atencion as $aten)
                 <tr scope="row">
-                    <td>{{ $aten->contenido}}</td>
-                    <td>{{ $aten->id}}</td>      
+                    <td>{{ $aten->contenido}}</td>     
                     <td>
                         <form action="{{ url('/atencion/'.$aten->id)}}" method="post">
                             @csrf
                             {{ method_field('DELETE')}}
-                            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger my-1 d-flex justify-content-center align-items-center" 
+                            <button type="button" data-toggle="modal" data-target="#exampleModal{{$aten->id}}" class="btn btn-danger my-1 d-flex justify-content-center align-items-center" 
                                 value="Borrar" ><i class="bi bi-trash"></i> </button>
                                 <!-- Modal desaprobados-->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal{{$aten->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar?</h5>
-                                                <p>{{$aten->id}}</p>
                                                 <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>

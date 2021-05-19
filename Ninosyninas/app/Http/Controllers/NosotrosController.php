@@ -59,11 +59,9 @@ class NosotrosController extends Controller
      */
     public function eliminarat(Request $request,$id)
     {
-        /*
         Atencion::destroy($id);
         return redirect('atencion')->with('mensaje','Eliminado Exitoso');
-        */
-        return $request->id + $id;
+       // return $request->id + $id;
     }
     /**
      * Remove the specified resource from storage.

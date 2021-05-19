@@ -157,10 +157,7 @@ Route::get('contenido/edit/{id}', [ContenidoController::class,'edit'])->middlewa
 Route::post('contenido/{id}', [ContenidoController::class,'update'])->middleware('sesionYaIniciada');
 
 
-Route::get('patronato', [NosotrosController::class,'index'])->middleware('sesionYaIniciada');
-Route::get('patronato/registrar-vocal', [NosotrosController::class,'create'])->middleware('sesionYaIniciada');
-Route::post('patronato/registrar', [NosotrosController::class,'store'])->middleware('sesionYaIniciada');
-Route::delete('/patronato/eliminar/{id}', [NosotrosController::class,'eliminar'])->middleware('sesionYaIniciada');
+
 
 Route::get('atencion', [NosotrosController::class,'indexat'])->middleware('sesionYaIniciada');
 //Route::delete('/atencion/eliminar/{id}', [NosotrosController::class,'eliminarat'])->middleware('sesionYaIniciada');
