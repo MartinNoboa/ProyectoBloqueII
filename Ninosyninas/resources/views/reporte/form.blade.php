@@ -64,7 +64,7 @@
         <div class="form-group pb-4 col-lg-6" >
 
         <label for="nombre" class="px-0"  >Calificacion del niño: <span aria-hidden="true" class="required text-danger" >*</span></label>
-            <input type="integer" class="form-control" name="calificacion" placeholder="1-10" id="calificacion" required @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->calificacion}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
+            <input type="number" maxlenght="2" class="form-control" name="calificacion" placeholder="1-10" id="calificacion" required @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->calificacion}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
             
         </div>
 
