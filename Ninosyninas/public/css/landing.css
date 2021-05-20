@@ -2,7 +2,12 @@
     --purple: purple;
     --white: white;
     --black: black;
-    --background-color:#4eb3f1
+    --background-color:#4eb3f1;
+    --rojo: #fc0703 ;
+    --verde: #008000;
+    --azul: #0000ff;
+    --rosa: #ff0080;
+
 }
 
 
@@ -225,3 +230,26 @@ CSS para donaciones
 }
 
 
+.largo{
+
+    height: 50%;
+}
+
+/* Títulos colores*/
+.titulo-azul{
+    color: var(--azul);
+    font-weight: bold;
+}
+
+.titulo-verde{
+    color: var(--verde);
+    font-weight: bold;
+}
+.titulo-rojo{
+    color: var(--rojo);
+    font-weight: bold;
+}
+.titulo-rosa{
+    color: var(--rosa);
+    font-weight: bold;
+}

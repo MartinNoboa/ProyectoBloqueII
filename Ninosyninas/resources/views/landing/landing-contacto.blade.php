@@ -6,7 +6,7 @@
 
 <div class='upper-half ' > 
 
-<h1 class='text-center titulo pb-5 pt-5' >¡Ponte en contacto con nosotros!</h1>
+<h1 class='text-center titulo-verde pb-5 pt-5' >¡Ponte en contacto con nosotros!</h1>
 
 @endsection
 
@@ -63,7 +63,7 @@
 </div>
 
 <div class="bottom-half bp-4">
-    <img src="{{url('img/32.jpg')}}" alt="" width="270" height="850" alt="home photo" class="center pm-5">
+    
     <div class="text-center">
                 <br>
                 <?php
@@ -77,4 +77,6 @@
                 
     </div>
 </div>
+
+<!--- la foto <img src="{{url('img/32.jpg')}}" alt="" width="270" height="850" alt="home photo" class="center pm-5">  -->
 @endsection

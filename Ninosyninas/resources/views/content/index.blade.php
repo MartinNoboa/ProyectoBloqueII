@@ -99,7 +99,27 @@
                     </td>
                 </tr>
                 <tr scope="row ">
-                    <td>Áreas de atención</td>
+                    <td>¿Qué hacemos?</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('atencion') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>Registrar áreas de atención</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('atencion') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>Áreas de atención texto</td>
                     <td class="pull-right">      
                     <a href="{{ url('atencion') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">

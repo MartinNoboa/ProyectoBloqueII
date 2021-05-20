@@ -33,10 +33,9 @@
 @section('mainContent')
 <div class="bottom-half">
     <div class="container">
-        <div class="grid-2 ">
+        <h1 class="text-center titulo-verde">Logros</h1>
+        <div class="grid-2 text-center ">
             <div>
-                <h3 class="text-center">Logros</h3>
-
                 <?php
                             $string= $txt[4]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
