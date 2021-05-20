@@ -1,9 +1,13 @@
+
+
 @extends('layouts.main-landing')
 
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class="container">
+
+
+<div class="container" >
     @if(Session::has('mensaje'))
     <div class="alert alert-success alert-dismissible" role="alert">
                 {{ Session::get('mensaje')}}
@@ -81,7 +85,7 @@
         $(document).on('click', '.pagination a', function(event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
-        getMoreUsers(page);
+        recuperarUsuarios(page);
         });
 
         $('#search').on('keyup', function() {

@@ -41,15 +41,18 @@
                         <br>
                         <h3>Áreas de atención</h3>
                         <br>
-                        <p>Atendemos a 130 niños, niñas y adolescentes de 4 a 18 años con programas de Educación, Salud, Alimentación 
+                        <p>Atendemos a más de 130 niños, niñas y adolescentes de 4 a 18 años con programas de Educación, Salud, Alimentación 
                         y capacitación.</p>
                         <br>
                         <table class='content-table'>
-                            @foreach($areas as $id => $areas)
-                                <tr>
-                                    <td>{{$areas}}</td>
-                                </tr>
-                            @endforeach
+                            <?php
+                                $arrLength= count($atencion);
+                                for ($i = 0; $i < $arrLength; $i++) {
+                                    echo '<tr>';
+                                    echo '<td>'.$atencion[$i]['contenido'].'</td>';
+                                    echo '</tr>';
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
@@ -86,11 +89,14 @@
                     los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
                     <br>
                     <table class='content-table'>
-                    @foreach($programas as $id => $programas)
-                        <tr>
-                            <td>{{$programas}}</td>
-                        </tr>
-                    @endforeach
+                             <?php
+                                $arrLength= count($educacion);
+                                for ($i = 0; $i < $arrLength; $i++) {
+                                    echo '<tr>';
+                                    echo '<td>'.$educacion[$i]['contenido'].'</td>';
+                                    echo '</tr>';
+                                }
+                            ?>
                     </table>
                     <br>  
                 </div>

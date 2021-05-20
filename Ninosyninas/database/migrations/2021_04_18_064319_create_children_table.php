@@ -20,6 +20,8 @@ class CreateChildrenTable extends Migration
             $table->string("apellido_materno");
             $table->date("fecha_nacimiento");
             $table->unsignedInteger("grado");
+
+            $table->timestamps();
         });
     }
 

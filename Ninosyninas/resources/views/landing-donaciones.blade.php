@@ -58,22 +58,11 @@
 
                             <h2 class="titles "><strong>Dona con transferencia</strong></h2>
                             <br>
-                            <p>
-                                Dona con transferencia
-                                <br>
-                                Bancomer
-                                <br>
-                                Niños y Niñas de México, A. C.
-                                <br>
-                                No. Cuenta: 0101426486
-                                <br>
-                                Clabe: 012680001014264867
-                                <br>
-                                Envía tu depósito por correo a
-                                ninosyninasdemexico@yahoo.com
-                                <br>
-                                y te haremos llegar tu recibo deducible de impuestos.
-                            </p>
+                            <?php
+                            $string= $txt[8]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                            ?>
+                            <?php echo $string1 ?>
 
 
                         </div>

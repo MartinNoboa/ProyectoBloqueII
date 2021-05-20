@@ -4,7 +4,7 @@
 
 @section('header')
 
-<div class="container">
+<div class="container" >
     @if(Session::has('mensaje'))
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
@@ -53,15 +53,19 @@
        
     </div>
 
-
+   
     <table class="table table-hover px-3 " >
         
 <<<<<<< Updated upstream
         <h3 class="pt-5"><strong>Desaprobados</strong></h3>
+<<<<<<< HEAD
 =======
         <h3 class="pt-5"><strong>No Aprobados</strong></h3>
         @if ($desaprobados->count())
 >>>>>>> Stashed changes
+=======
+        @if ($desaprobados->count())
+>>>>>>> develop
         <br>
         <thead >
             <tr>
@@ -73,11 +77,15 @@
         </thead>
 <<<<<<< Updated upstream
         <tbody>
+<<<<<<< HEAD
         @if ($desaprobados->count())
 =======
         <tbody id = "donadoresNoAprobados">
         
 >>>>>>> Stashed changes
+=======
+        
+>>>>>>> develop
             @foreach($desaprobados as $donador)
             <tr scope="row">
                 @php
@@ -141,14 +149,15 @@
             </tr>
 
             @endforeach
-            @else
-                <h2>No hay donadores disponibles</h2>
-            @endif
+            
            
     <!-- segunda tabla para aprobados-->
          
         </tbody>
     </table>
+    @else
+                <h2>No hay donadores disponibles</h2>
+    @endif
 
     <div class="container">
         <!-- -->{{ $desaprobados->onEachSide(5)->links() }}
@@ -159,7 +168,7 @@
     <table class="table table-hover px-3">
         <br><br>
         <h3 class="pb-4"><strong>Aprobados</strong></h3>
-        
+        @if ($aprobados->count())
         <thead >
             <tr>
                 <th scope="col">Nombre</th>
@@ -170,11 +179,15 @@
         </thead>
 <<<<<<< Updated upstream
         <tbody>
+<<<<<<< HEAD
         @if ($aprobados->count())
 =======
         <tbody id = "donadoresAprobados">
        
 >>>>>>> Stashed changes
+=======
+       
+>>>>>>> develop
             @foreach($aprobados as $donador)
             <tr scope="row">
                 @php
