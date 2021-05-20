@@ -9,13 +9,9 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NewsController;
 
 use App\Http\Controllers\DonatorController;
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\DonadoresController;
-use Illuminate\Support\Facades\DB;
->>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
