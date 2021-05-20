@@ -36,13 +36,27 @@ class DonadoresController extends Controller
     {
         //para pasar infor directamente al index
         //$datos['donadores']=Donadores::paginate(10);
-
-        $aprobados = Donadores::where('aprobado',"=",'1')->paginate(5);
-
-        $desaprobados = Donadores::where('aprobado',"=",'2')->paginate(5);
-        
+        $aprobados = Donadores::donadoresAprobados('');
+        $desaprobados = Donadores::donadoresNoAprobados('');
         return view('donadores.index',['desaprobados' => $desaprobados,'aprobados' => $aprobados]);
     }
+
+    public function recuperarDonadoresAprobados(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $donadores = Donadores::donadoresAprobados($query);
+                return view('donadores.index', compact('donadores'))->render();
+        }
+    }
+
+    public function recuperarDonadoresNoAprobados(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $donadores = Donadores::donadoresNoAprobados($query);
+                return view('donadores.index', compact('donadores'))->render();
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -44,8 +44,7 @@
         </div>
 
         <div class="align-self-center p-2">
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user" autocomplete="off" >
-            {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
+            <input  type="text" class="search-box" name="search-user" id="search" autocomplete="off" >
             <label for="search-box" title="Buscar"><span class="material-icons-outlined search-icon">
                 search
                 </span></label>
@@ -57,26 +56,34 @@
 
     <table class="table table-hover px-3 " >
         
+<<<<<<< Updated upstream
         <h3 class="pt-5"><strong>Desaprobados</strong></h3>
+=======
+        <h3 class="pt-5"><strong>No Aprobados</strong></h3>
+        @if ($desaprobados->count())
+>>>>>>> Stashed changes
         <br>
         <thead >
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido Paterno</th>
-                <th scope="col">Apellido Materno</th>
                 <th scope="col">email</th>
                 <th scope="col">Telefono</th>
                 
             </tr>
         </thead>
+<<<<<<< Updated upstream
         <tbody>
         @if ($desaprobados->count())
+=======
+        <tbody id = "donadoresNoAprobados">
+        
+>>>>>>> Stashed changes
             @foreach($desaprobados as $donador)
             <tr scope="row">
-            
-                <td>{{ $donador->nombre }}</td>
-                <td>{{ $donador->apellido_paterno }}</td>
-                <td>{{ $donador->apellido_materno }}</td>
+                @php
+                    $nombre= App\Models\Donadores::find($donador->id)
+                @endphp
+                <td>{{ $nombre['nombreCompleto'] }}</td>
                 <td>{{ $donador->email }}</td>
                 <td>{{ $donador->telefono }}</td>            
                 <td>
@@ -156,21 +163,24 @@
         <thead >
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido Paterno</th>
-                <th scope="col">Apellido Materno</th>
                 <th scope="col">email</th>
                 <th scope="col">Telefono</th>
           
             </tr>
         </thead>
+<<<<<<< Updated upstream
         <tbody>
         @if ($aprobados->count())
+=======
+        <tbody id = "donadoresAprobados">
+       
+>>>>>>> Stashed changes
             @foreach($aprobados as $donador)
             <tr scope="row">
-            
-                <td>{{ $donador->nombre }}</td>
-                <td>{{ $donador->apellido_paterno }}</td>
-                <td>{{ $donador->apellido_materno }}</td>
+                @php
+                    $nombre= App\Models\Donadores::find($donador->id)
+                @endphp
+                <td>{{ $nombre['nombreCompleto'] }}</td>
                 <td>{{ $donador->email }}</td>
                 <td>{{ $donador->telefono }}</td>
                 
@@ -251,3 +261,56 @@
 
 
 @endsection
+
+@push('scripts')
+<script>
+    //script para poder usar busqueda ajax
+    $(document).ready(function(){
+        $(document).on('click', '.pagination a', function(event) {
+        event.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        recuperarDonadoresAprobados(page);
+        recuperarDonadoresNoAprobados(page);
+        });
+
+        $('#search').on('keyup', function() {
+            $value = $(this).val();
+            //recuperarDonadoresAprobados(1);
+            recuperarDonadoresNoAprobados(1);
+        });
+
+        function recuperarDonadoresAprobados(page) {
+            var search = $('#search').val();
+            $.ajax({
+            type: "GET",
+            data: {
+                'search_query':search,
+            },
+            url: "{{ route('Aprobados') }}",
+            success:function(data) {
+                $('#donadoresAprobados').html(data);
+                console.log(data);
+
+            }
+            });
+        }
+
+        function recuperarDonadoresNoAprobados(page) {
+        //
+            var search = $('#search').val();
+            console.log(search);
+            $.ajax({
+            type: "GET",
+            data: {
+                'search_query':search,
+            },
+            url: "{{ route('NoAprobados') }}",
+            success:function(data) {
+                console.log(data);
+                $('#donadoresNoAprobados').html(data);
+            }
+            });
+        }
+    });
+</script>
+@endpush
