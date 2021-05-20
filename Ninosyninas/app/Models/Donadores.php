@@ -30,7 +30,7 @@ class Donadores extends Model
                 ->orWhere('donadores.apellido_materno', 'like', "%{$busqueda}%");
             });
         }
-        return $donadores->paginate(5);
+        return $donadores->paginate(10);
     }
 
     public static function donadoresNoAprobados($busqueda){
@@ -42,7 +42,7 @@ class Donadores extends Model
                 ->orWhere('donadores.apellido_materno', 'like', "%{$busqueda}%");
             });
         }
-        return $donadores->paginate(5);
+        return $donadores->paginate(10);
     }
 
     public function getNombreCompletoAttribute(){

@@ -80,7 +80,7 @@ Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
-Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
+Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('buscarUsuarios');
 
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario'])->middleware('sesionIniciada');
 Route::resource('usuario',UsuariosController::class);
@@ -97,9 +97,10 @@ Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middlewar
 Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
 
 
-Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
-Route::get('/donadores/Aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('Aprobados');
-Route::get('/donadores/NoAprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('NoAprobados');
+// Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
+Route::get('/donadores',[DonadoresController::class,'index'])->middleware('sesionIniciada');
+Route::get('/donadores/aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('Aprobados');
+Route::get('/donadores/noAprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('noAprobados');
 
 
 

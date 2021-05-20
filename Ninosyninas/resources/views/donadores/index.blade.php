@@ -131,22 +131,19 @@
             </tr>
 
             @endforeach
-            
-           
-    <!-- segunda tabla para aprobados-->
-         
         </tbody>
     </table>
     @else
                 <h2>No hay donadores disponibles</h2>
     @endif
-
+        
+        
     <div class="container">
         <!-- -->{{ $desaprobados->onEachSide(5)->links() }}
 
     </div>
-    
 
+    <!-- segunda tabla para aprobados-->
     <table class="table table-hover px-3">
         <br><br>
         <h3 class="pb-4"><strong>Aprobados</strong></h3>
@@ -234,7 +231,6 @@
             @else
                 <h2>No hay donadores disponibles</h2>
             @endif
-          
         </tbody>
     </table>
         
@@ -256,7 +252,7 @@
         $(document).on('click', '.pagination a', function(event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
-        recuperarDonadoresAprobados(page);
+        //recuperarDonadoresAprobados(page);
         recuperarDonadoresNoAprobados(page);
         });
 
@@ -285,13 +281,12 @@
         function recuperarDonadoresNoAprobados(page) {
         //
             var search = $('#search').val();
-            console.log(search);
             $.ajax({
             type: "GET",
             data: {
                 'search_query':search,
             },
-            url: "{{ route('NoAprobados') }}",
+            url: "{{ route('noAprobados') }}",
             success:function(data) {
                 console.log(data);
                 $('#donadoresNoAprobados').html(data);

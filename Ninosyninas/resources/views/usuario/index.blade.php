@@ -102,7 +102,7 @@
             data: {
                 'search_query':search,
             },
-            url: "{{ route('UsuariosController.search') }}",
+            url: "{{ route('buscarUsuarios') }}",
             success:function(data) {
                 $('#usuarios').html(data);
             }
