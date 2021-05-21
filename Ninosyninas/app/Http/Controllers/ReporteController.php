@@ -99,7 +99,8 @@ class ReporteController extends Controller
      */
     public function show($id)
     {
-        $reporte = Reporte::findOrFail($id);$userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $reporte = Reporte::findOrFail($id);
+        $userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $areasList = areas::select('id', 'area') -> get();
 

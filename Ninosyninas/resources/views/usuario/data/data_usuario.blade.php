@@ -11,7 +11,7 @@
                     <td class="fs-6 text-wrap">{{ $user->telefono}}</td>
                     <td class="fs-6 text-wrap">{{ $user->mail}}</td>
                     <td>
-                    <a href="{{ url('/registrar-usuario/'.$user->id.'/see ') }}">
+                    <a href="{{ url('/usuario/'.$user->id.'/show ') }}">
                         <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
                                     <i class="far fa-eye"></i>
                         </button>      
@@ -34,7 +34,7 @@
                                 
                     </button>
 
-                    <!-- Modal desaprobados-->
+                    <!-- Modal usuarios-->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

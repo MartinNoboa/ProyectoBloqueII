@@ -78,6 +78,7 @@ Route::get('/reporte/{id}/show',[ReporteController::class, 'show'])->middleware(
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->middleware('sesionIniciada')->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
+Route::get('/usuario/{id}/show',[UsuariosController::class, 'show'])->middleware('sesionIniciada');
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
 Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
