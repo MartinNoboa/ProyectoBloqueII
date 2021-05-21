@@ -7,7 +7,7 @@
 @section('header')
 
 @if(Session::has('mensaje'))
-<div class="container" style=" min-height: 500px;">
+<div class="container">
     
     <div class="alert alert-success alert-dismissible" role="alert">
                 {{ Session::get('mensaje')}}

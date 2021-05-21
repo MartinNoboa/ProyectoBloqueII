@@ -33,7 +33,7 @@ class UsuariosController extends Controller
     {
         $rolesList = roles::select('id', 'rol') -> get();
 
-    return view('usuario.create', compact('rolesList'));
+        return view('usuario.create', compact('rolesList'));
     }
 
     public function store(Request $request)
@@ -60,31 +60,33 @@ class UsuariosController extends Controller
         ];
         
         $this->validate($request, $campos, $mensaje);
-
-        
-
-
- 
-    //
-        $datosUsuario = request()->except('roles_id','_token');
+    
+        $datosUsuario = request()->except('roles_id','_token', 'contrasenia_confirmation');
 
         //$rol = request('roles_id');
 
-        return response()->json($datosUsuario);
+        //return response()->json($datosUsuario);
     
-        //users::insert($datosUsuario);
+        users::insert($datosUsuario);
 
-       // return redirect('usuario')->with('mensaje','Usuario registrado con éxito');
+       return redirect('usuario')->with('mensaje','Usuario registrado con éxito');
     }
 
-   
+    public function show($id){
+
+        $rolesList = roles::select('id', 'rol') -> get();
+        $usuario = users::findOrFail($id);
+
+        return view('usuario.see', compact('usuario','rolesList'));
+    }
 
     public function edit($id)
     {
         
-        $v_user=users::findOrFail($id);
-        
-        return view('usuario.edit',compact('v_user'));
+        $usuario=users::findOrFail($id);
+        $rolesList = roles::select('id', 'rol') -> get();
+
+        return view('usuario.edit',compact('usuario', 'rolesList'));
 
 
         
@@ -92,39 +94,19 @@ class UsuariosController extends Controller
 
     public function update(Request $request, $id)
     {
-        
-        $this->validate($request,[
-            'name'=>'required|max:255',
-            'apellido_paterno'=>'required|max:255',
-            'apellido_materno'=>'max:255',
-            'birthday'=>'required|date',
-            'contratacion'=>'required|date',
-            'ocupacion'=>'required|max:255',
-            'phone'=>'required|numeric',
-            'email'=>'required|email|max:255',
-        ]);
-        $input = $request->all();
-        $usr = users::find($id);
-        $usr->nombre = $input['name'];
-        $usr->apellido_paterno = $input['apellido_paterno'];
-        $usr->apellido_materno = $input['apellido_materno'];
-        $usr->fecha_nacimiento = $input['birthday'];
-        $usr->fecha_inicio = $input['contratacion'];
-        $usr->ocupacion = $input['ocupacion'];
-        $usr->telefono = $input['phone'];
-        $usr->mail = $input['email'];
-        
-        $usr->save();
+        $datosUsuario = request()->except(['roles_id', '_token', 'contrasenia_confirmation', '_method']);
+        users::where('id','=',$id)->update($datosUsuario);
 
-
-        return redirect()->route('lista_usuarios')->with('mensaje','Usuario editado con éxito');
+        $usuario=users::findOrFail($id);
+        
+        return redirect('usuario')->with('mensaje','Usuario editado con éxito');
 
     }
 
     public function destroy($id)
     {
         users::destroy($id);
-        return redirect('usuario')->with('mensaje','Eliminado Exitoso');
+        return redirect('usuario')->with('mensaje','Usuario eliminado exitosamente');
     }
 
     public function recuperarUsuarios(Request $request) {

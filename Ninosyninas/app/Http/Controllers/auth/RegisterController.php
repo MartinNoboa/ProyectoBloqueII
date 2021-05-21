@@ -15,7 +15,6 @@ class RegisterController extends Controller
     }
     public function store(Request $request){
         
-        
         $campos = [
             'name'=>'required|max:255',
             'apellido_paterno'=>'required|max:255',
@@ -40,10 +39,9 @@ class RegisterController extends Controller
 
         $datosUsuario = request()->except('_token', 'role');
 
-        $rol = request('id','role');
         users::insert($datosUsuario);
 
-        return response()->json($datosUsuario, $rol);
+        return response()->json($datosUsuario);
 
         //return redirect('usuarios')->with('mensaje','Usuario registrado con éxito');
     }
