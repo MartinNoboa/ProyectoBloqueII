@@ -48,8 +48,6 @@
 
     <table class="table table-hover px-3 " >
         
-        <h3 class="pt-3"><strong>Reportes</strong></h3>
-        <br>
         @if ($reportes->count())
         <thead >
             <tr>
