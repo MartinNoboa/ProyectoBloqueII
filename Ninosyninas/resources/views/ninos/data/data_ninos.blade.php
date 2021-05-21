@@ -1,8 +1,5 @@
 
 
-
-<?php use App\Models\Reporte; ?>
-
 @if ($children->count())
     
     @foreach($children as $key)

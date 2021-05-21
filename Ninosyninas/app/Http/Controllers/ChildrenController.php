@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Children;
+use App\Models\Donator;
 use Illuminate\Http\Request;
 use App\Models\Reporte;
 use Illuminate\Database\Eloquent\Collection;
@@ -16,36 +17,19 @@ class ChildrenController extends Controller
         //$children=children::ninos('');
         //$children = children::all();
 
-        //esta me da todos los id de los niños
-        $id_ninos=Children::select('id')->get();
-        
-        //me lo pasa de json a array
-        $id_ninos->toArray();
 
-        $consulta_ninos=Reporte::select(DB::raw('child_id, nombre , apellido_paterno,apellido_materno, fecha_nacimiento, grado, avg(calificacion) as promedio'))
-                                 ->join('children', 'children.id', '=', 'reportes.child_id')
-                                ->orderBy('child_id', "asc")
-                                ->groupBy('child_id', 'nombre' , 'apellido_paterno','apellido_materno', 'fecha_nacimiento', 'grado') 
-                                ->get();
+        $children=DB::table('children')
+                    ->select('children.id','children.nombre','children.apellido_paterno','children.apellido_materno', 'children.fecha_nacimiento', 'children.grado', DB::raw('round(AVG(reportes.calificacion),0) as promedio'))
+                    ->join('reportes','reportes.child_id',"=",'children.id')
+                    ->groupBy('id','nombre' , 'apellido_paterno','apellido_materno', 'fecha_nacimiento', 'grado')  
+
+                    ->get();
+
+  
+
                                 
-
-        //dd($prueba);
         
-        //saca la calificacion de los niños por cada id en particular 
-
-        //$ninos_calificaciones = Reporte::where('child_id',"=",$id) ->select('calificacion') -> get();
-
-        //($ninos_calificaciones);
-        
-        
-        return view('ninos.index',['children'=>$consulta_ninos]);
-    }
-
-
-    //
-    public static function getCalificaciones($id_ninos){
-        $ninos_calificaciones = Reporte::where('child_id',"=",$id_ninos) ->select('calificacion') -> get();
-        return $ninos_calificaciones;
+        return view('ninos.index',['children'=>$children]);
     }
 
 
@@ -73,10 +57,10 @@ class ChildrenController extends Controller
 
     public function destroy($id)
     {
-        dd($id);
+    
         children::destroy($id);
         
-        //return redirect('ninos')->with('mensaje','Eliminado Exitoso');
+        return redirect('ninos')->with('mensaje','Eliminado Exitoso');
     }
 
     public function update(Request $request,  $id)
