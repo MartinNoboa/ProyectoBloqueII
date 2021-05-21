@@ -4,17 +4,51 @@ namespace App\Http\Controllers;
 
 use App\Models\Children;
 use Illuminate\Http\Request;
+use App\Models\Reporte;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
+
 
 class ChildrenController extends Controller
 {
     public function index()
     {     
-        $children=children::ninos('');
+        //$children=children::ninos('');
         //$children = children::all();
 
-        //dd($children[3]->id);
-        return view('ninos.index',['children'=>$children]);
+        //esta me da todos los id de los niños
+        $id_ninos=Children::select('id')->get();
+        
+        //me lo pasa de json a array
+        $id_ninos->toArray();
+
+        $consulta_ninos=Reporte::select(DB::raw('child_id, nombre , apellido_paterno,apellido_materno, fecha_nacimiento, grado, avg(calificacion) as promedio'))
+                                 ->join('children', 'children.id', '=', 'reportes.child_id')
+                                ->orderBy('child_id', "asc")
+                                ->groupBy('child_id', 'nombre' , 'apellido_paterno','apellido_materno', 'fecha_nacimiento', 'grado') 
+                                ->get();
+                                
+
+        //dd($prueba);
+        
+        //saca la calificacion de los niños por cada id en particular 
+
+        //$ninos_calificaciones = Reporte::where('child_id',"=",$id) ->select('calificacion') -> get();
+
+        //($ninos_calificaciones);
+        
+        
+        return view('ninos.index',['children'=>$consulta_ninos]);
     }
+
+
+    //
+    public static function getCalificaciones($id_ninos){
+        $ninos_calificaciones = Reporte::where('child_id',"=",$id_ninos) ->select('calificacion') -> get();
+        return $ninos_calificaciones;
+    }
+
+
 
     public function create()
     {

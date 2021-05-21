@@ -34,9 +34,13 @@
 </nav>
 @endsection
 @section('header')
+
+
+
+
+
 <div class='upper-half'>  
     <img src="{{url('img/16.jpg')}}" alt="home photo" class="img-fluid">
-
     <div class="container mt-5">
         <div class="center">
             <div class="grid-3 center">
@@ -87,11 +91,12 @@
 <br>
 <br>
 <br>
+
     <div class="bottom-half">
         <div class="text-center center">
             <h1>Acerca de nosotros</h1>
             <br>
-            <p>{{$textos["aNosotros"]}}</p>
+            <p>{{$txt[0]['contenido']}}</p>
             <a class="btn btn-outline-primary" href="{{ url('/nosotros')}}" role="button">Conoce más</a>
             <br>
             <br>
@@ -111,13 +116,21 @@
 
             <div class="text-center">
                 <br>
-                <p>{{$textos["Mision"]}}</p>
+                <?php
+                            $string= $txt[1]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo $string1 ?>
             </div>
         </div>
         <div class="grid-2">
             <div class="text-center">
                 <br>
-                <p>{{$textos["Vision"]}}
+                <?php
+                            $string= $txt[2]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo $string1 ?>
             </div>
             <div class="text-center">
                 <h3>Visión</h3>

@@ -3,9 +3,10 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-@if(Session::has('mensaje'))
-<div class="container">
-    
+
+<div class="container" >
+    @if(Session::has('mensaje'))
+
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
                 

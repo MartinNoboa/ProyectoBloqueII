@@ -54,10 +54,11 @@
        
     </div>
 
-
+   
     <table class="table table-hover px-3 " >
         
         <h3 class="pt-5"><strong>Desaprobados</strong></h3>
+        @if ($desaprobados->count())
         <br>
         <thead >
             <tr>
@@ -70,7 +71,7 @@
             </tr>
         </thead>
         <tbody>
-        @if ($desaprobados->count())
+        
             @foreach($desaprobados as $donador)
             <tr scope="row">
             
@@ -134,14 +135,15 @@
             </tr>
 
             @endforeach
-            @else
-                <h2>No hay donadores disponibles</h2>
-            @endif
+            
            
     <!-- segunda tabla para aprobados-->
          
         </tbody>
     </table>
+    @else
+                <h2>No hay donadores disponibles</h2>
+    @endif
 
     <div class="container">
         <!-- -->{{ $desaprobados->onEachSide(5)->links() }}
@@ -152,7 +154,7 @@
     <table class="table table-hover px-3">
         <br><br>
         <h3 class="pb-4"><strong>Aprobados</strong></h3>
-        
+        @if ($aprobados->count())
         <thead >
             <tr>
                 <th scope="col">Nombre</th>
@@ -164,7 +166,7 @@
             </tr>
         </thead>
         <tbody>
-        @if ($aprobados->count())
+       
             @foreach($aprobados as $donador)
             <tr scope="row">
             

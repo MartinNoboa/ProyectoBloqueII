@@ -36,7 +36,12 @@
         <div class="grid-2 ">
             <div>
                 <h3 class="text-center">Logros</h3>
-                <p>{{$logro}}</p>
+
+                <?php
+                            $string= $txt[4]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo $string1 ?>
             </div>
             <div class="text-center">
                 <img src="{{url('img/23.png')}}" width="80%">
