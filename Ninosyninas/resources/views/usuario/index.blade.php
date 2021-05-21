@@ -6,9 +6,9 @@
 
 @section('header')
 
-
+@if(Session::has('mensaje'))
 <div class="container" style=" min-height: 500px;">
-    @if(Session::has('mensaje'))
+    
     <div class="alert alert-success alert-dismissible" role="alert">
                 {{ Session::get('mensaje')}}
                 <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
@@ -16,9 +16,9 @@
                 </button>
                 </div>
     </div>
-    @endif
+    
 </div>
-
+@endif
 
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
         <h3 class="text-center mb-3">Usuarios </h3>
@@ -40,7 +40,7 @@
             <h1 class="text-left fs-4">Lista de Usuarios Registrados</h3>
         </div>
         <div class="align-self-center p-2">
-        <a href="{{url('/registrar-usuario')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
+        <a href="{{url('usuario/create')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
         <br>
         </div>
         <div class="align-self-center p-2">
