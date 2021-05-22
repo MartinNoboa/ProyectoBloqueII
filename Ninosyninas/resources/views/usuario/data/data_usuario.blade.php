@@ -1,28 +1,28 @@
 
             @if ($users->count())
-                @foreach($users as $user)
+                @foreach($users as $item)
                 <tr scope="row">
                     @php
-                        $nombre= App\Models\users::find($user->id)
+                        $nombre= App\Models\users::find($item->id)
                     @endphp
                     <td class="fs-6 text-wrap">{{ $nombre['nombreCompleto'] }}</td>
-                    <td class="fs-6 text-wrap">{{ $user->fecha_nacimiento}}</td>
-                    <td class="fs-6 text-wrap">{{ $user->ocupacion}}</td>
-                    <td class="fs-6 text-wrap">{{ $user->telefono}}</td>
-                    <td class="fs-6 text-wrap">{{ $user->mail}}</td>
+                    <td class="fs-6 text-wrap">{{ $item->fecha_nacimiento}}</td>
+                    <td class="fs-6 text-wrap">{{ $item->ocupacion}}</td>
+                    <td class="fs-6 text-wrap">{{ $item->telefono}}</td>
+                    <td class="fs-6 text-wrap">{{ $item->mail}}</td>
                     <td>
-                    <a href="{{ url('/usuario/'.$user->id.'/show ') }}">
+                    <a href="{{ url('/usuario/'.$item->id.'/show ') }}">
                         <button type="button" class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
                                     <i class="far fa-eye"></i>
                         </button>      
                     </a>
 
-                        <a href="{{ url('/usuario/'.$user->id.'/edit') }}">
+                        <a href="{{ url('/usuario/'.$item->id.'/edit') }}">
                             <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
                         </a>
-                <form action="{{ url('/usuario/'.$user->id) }}" method="post">
+                <form action="{{ url('/usuario/'.$item->id)}}" method="post">
                 @csrf
                 {{ method_field('DELETE')}}
 
