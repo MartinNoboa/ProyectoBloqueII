@@ -5,7 +5,7 @@
     <div class="p-4 w-50 bg-light container my-2 shadow p-3 mb-5 bg-body rounded">
         <h1 class="fs-2 my-3 d-flex align-items-center justify-content-center">Publicar imagen en galeria</h1>
         <hr>
-        <form action="{{url('/galeria/publicar-imagen')}} " method="POST" enctype="multipart/form-data">
+        <form action="{{url('/panel/galeria/publicar-imagen')}} " method="POST" enctype="multipart/form-data">
             @csrf
             {{-- <div class="mb-3 form-group form-outline px-4">
                 <label for="titulo" class="form-label fs-4 px-0">Titulo</label>
@@ -49,7 +49,7 @@
                 
             </div>
             <div class="px-4">
-                <a href="{{route('galeria')}}" class="btn bg-danger w-100 mt-4 text-white">Cancel</a>
+                <a href="{{route('galeria-panel')}}" class="btn bg-danger w-100 mt-4 text-white">Cancel</a>
             </div>
 
         </form>

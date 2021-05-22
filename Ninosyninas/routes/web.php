@@ -9,7 +9,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\DonadoresController;
 use App\Http\Controllers\auth\UserAuthController;
 use App\Http\Controllers\DonatorController;
-use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\Galeria\GaleriaHomeController;
+use App\Http\Controllers\Galeria\GaleriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,11 +107,12 @@ Route::post('check',[UserAuthController::class,'check'])->name("auth.check");
 Route::get('panel',[UserAuthController::class,'panel'])->middleware('sesionIniciada');
 Route::get('logout',[UserAuthController::class,'logout']);
 
-route::get('/galeria',[GaleriaController::class,'index'])->name('galeria');
-route::get('/galeria/publicar-imagen',[GaleriaController::class,'displayForm']);
-route::post('/galeria/publicar-imagen',[GaleriaController::class,'publicarForm']);
-route::post('/galeria/delete/{id}',[GaleriaController::class,'delete']);
+Route::get('/panel/galeria',[GaleriaController::class,'index'])->name('galeria-panel');
+Route::get('/panel/galeria/publicar-imagen',[GaleriaController::class,'displayForm']);
+Route::post('/panel/galeria/publicar-imagen',[GaleriaController::class,'publicarForm']);
+Route::any('/panel/galeria/delete/{id}',[GaleriaController::class,'delete']);
 
+Route::get('/galeria',GaleriaHomeController::class)->name('galeria');
 
 
 /*

@@ -35,7 +35,7 @@
         </div>
         <div class="p-2">
 
-            <a href="{{url('/galeria/publicar-imagen')}}" class="btn btn-success ">
+            <a href="{{url('/panel/galeria/publicar-imagen')}}" class="btn btn-success ">
                 <button type="button" class="btn btn-success m-0 p-0 d-flex justify-content-center align-items-center">
                     <span class="material-icons-outlined">
                         add_circle
@@ -65,12 +65,12 @@
                 more_vert
             </span>
             <div class="dropdown-content-img">
-                <a href="{{url('/galeria/delete/'.$galleriesItem->id) }}">Borrar</a>
+                <a href="{{url('/panel/galeria/delete/'.$galleriesItem->id) }}">Borrar</a>
             </div>
         </div>
         <div class="cnt mb-5">
             <img src="{{asset($galleriesItem->image->url)}} " alt="no se encontró la imagen" srcset="" class="img">
-            <p class="overlay-text">{{$galleriesItem->titulo}} </p>
+            {{-- <p class="overlay-text">{{$galleriesItem->titulo}} </p> --}}
         </div>
     </div>
     @endforeach
