@@ -90,7 +90,8 @@
             <select class="form-control" id="roles_id" name="roles_id" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un rol para el usuario</option>
                 @foreach($rolesList as $item)
-                    <option value="{{$item -> id}}" >{{$item -> rol}}</option>
+                    
+                    <option value="{{$item -> id}}"@if($modo != 'Crear' && $item->id == $rolUsuario->role_id) selected @else @endif >{{$item -> rol}}</option>
                 @endforeach
             </select>
         </div>

@@ -97,14 +97,14 @@
                 @csrf
                 {{ method_field('DELETE')}}
 
-                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger my-1 d-flex justify-content-center align-items-center" 
+                <button type="button" data-toggle="modal" data-target="#exampleModal{{$item->id}}" class="btn btn-danger my-1 d-flex justify-content-center align-items-center" 
 
                     value="Borrar"><i class="bi bi-trash"></i>
                                 
                 </button>
 
                     <!-- Modal usuarios-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">

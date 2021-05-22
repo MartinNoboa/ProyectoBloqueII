@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\users;
 use App\Models\roles;
+use App\Models\roles_users;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -32,7 +33,6 @@ class UsuariosController extends Controller
     public function create()
     {
         $rolesList = roles::select('id', 'rol') -> get();
-
         return view('usuario.create', compact('rolesList'));
     }
 
@@ -63,11 +63,13 @@ class UsuariosController extends Controller
     
         $datosUsuario = request()->except('roles_id','_token', 'contrasenia_confirmation');
 
-        //$rol = request('roles_id');
+        $rol = request('roles_id');
 
         //return response()->json($datosUsuario);
     
-        users::insert($datosUsuario);
+        $user = users::insertGetId($datosUsuario);
+
+        roles_users::insert(['role_id' => $rol, 'user_id' => $user, 'activo' => 1]);
 
        return redirect('usuario')->with('mensaje','Usuario registrado con éxito');
     }
@@ -76,8 +78,9 @@ class UsuariosController extends Controller
 
         $rolesList = roles::select('id', 'rol') -> get();
         $usuario = users::findOrFail($id);
+        $rolUsuario = roles_users::where('user_id', $id) -> select('role_id') -> first();
 
-        return view('usuario.see', compact('usuario','rolesList'));
+        return view('usuario.see', compact('usuario','rolesList', 'rolUsuario'));
     }
 
     public function edit($id)
@@ -85,8 +88,9 @@ class UsuariosController extends Controller
         
         $usuario=users::findOrFail($id);
         $rolesList = roles::select('id', 'rol') -> get();
-
-        return view('usuario.edit',compact('usuario', 'rolesList'));
+        $rolUsuario = roles_users::where('user_id', '=', $id) -> select('role_id') -> get();
+        dd($rolUsuario);
+        return view('usuario.edit',compact('usuario', 'rolesList', 'rolUsuario'));
 
 
         
