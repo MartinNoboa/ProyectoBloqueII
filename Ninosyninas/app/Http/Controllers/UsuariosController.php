@@ -88,8 +88,8 @@ class UsuariosController extends Controller
         
         $usuario=users::findOrFail($id);
         $rolesList = roles::select('id', 'rol') -> get();
-        $rolUsuario = roles_users::where('user_id', '=', $id) -> select('role_id') -> get();
-        dd($rolUsuario);
+        $rolUsuario = roles_users::where('user_id', '=', $id) -> select('role_id') -> first();
+        
         return view('usuario.edit',compact('usuario', 'rolesList', 'rolUsuario'));
 
 
@@ -102,6 +102,9 @@ class UsuariosController extends Controller
         users::where('id','=',$id)->update($datosUsuario);
 
         $usuario=users::findOrFail($id);
+
+        $rol = request('roles_id');
+        $rolUsuario = roles_users::where('user_id', '=', $id) -> update(['role_id' => $rol]);
         
         return redirect('usuario')->with('mensaje','Usuario editado con éxito');
 
