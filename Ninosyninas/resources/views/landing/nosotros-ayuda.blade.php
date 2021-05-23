@@ -3,7 +3,7 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'>
+<div class='background'>
 
 <div class="container mb-5">
 <br>
@@ -31,20 +31,21 @@
 </div>
 @endsection
 @section('mainContent')
-<div class="bottom-half">
+<div class="background">
             
     <div class="container">
+    <h1 class="text-center titulo-rojo font-title-title">¿Qué necesitamos?</h1>
     <div class="row">
         <div class="col-4">
             <div class="container">
                 <br>
-                <h3 class="text-center">¿Qué necesitamos?</h3>
+                <h3 class="text-center titulo-azul font-title">Donativo</h3>
                 <br>
                 <?php
                             $string= $txt[5]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo $string1 ?>
+                <?php echo ' <h5>'.$string1.' <h5>' ?>
                 <br>
                 
             </div>
@@ -57,57 +58,59 @@
         </div>
 
     </div>
-
+    
+    <br>
+    <br>
     <div class="row">
         <div class="col-4">
-            <div class="container">
+        <div class="container text-center">
                 <br>
-                <h3 class="text-center">¿Cómo donar?</h3>
+                <h3 class="text-center titulo-verde font-title">En especie</h3>
                 <br>
-                <p>El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
-                    agradecer su apoyo a todas aquellas personas que han hecho posible nuestro sueño.</p>
                 <br>
-                <p>Súmate a nuestra causa:</p>
+                <?php
+                            $string= $txt[11]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo ' <h5>'.$string1.' <h5>' ?>
+                <br>
+                
+            </div>
+        </div>
+        <div class="col-4 text-center">
+        <div class="container">
+                <br>
+                <h3 class="text-center titulo font-title">¿Cómo donar?</h3>
+                <br>
+                <br>
+                <h5 class= 'text-center'>El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
+                    agradecer su apoyo a todas aquellas personas que han hecho posible nuestro sueño.</h5>
+                <br>
+                <h5>Súmate a nuestra causa:</h5>
                 <br>
                 <a class="btn button-donar" href="{{ url('donaciones')}}" role="button">Donar</a>
                 
             </div>
         </div>
-        <div class="col-8 text-center">
-            <br>
-
-
-            <br>
-                <img src="{{url('img/24.jpg')}}"  width="80%">
-            <br>
-
-
-        </div>
-    </div>
-
-    <div class="row ">
-        <div class="col-4">
-            <div class="container">
-                <br>
-                <h3 class="text-center">Voluntariado y Servicio Social</h3>
+        <div class="col-4 text-center">
+        <div class="container">
+        <br>
+                <h3 class="text-center titulo-rosa font-title">Voluntariado y Servicio Social</h3>
                 <br>
                 <?php
                             $string= $txt[6]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo $string1 ?>
-            </div>
-        </div>
-        <div class="col-8 text-center">
-
-            <br>
-            <br>
-                <img src="{{url('img/14.jpg')}}" width="80%">
-            <br>
+                <?php echo ' <h5>'.$string1.' <h5>' ?>
+            
 
         </div>
+        </div>
     </div>
-    </div>
+
 </div>
+<br>
+<br>
+<br>
 
 @endsection

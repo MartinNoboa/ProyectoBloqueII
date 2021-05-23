@@ -3,7 +3,7 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'>
+<div class='background'>
 
 <div class="container mb-5">
 <br>
@@ -31,20 +31,19 @@
 </div>
 @endsection
 @section('mainContent')
-<div class="bottom-half">
+<div class="background">
     <div class="container">
-        <div class="grid-2 ">
+        <h1 class="text-center titulo-verde font-title-title">Logros</h1>
+        <div class="grid-2 text-center ">
             <div>
-                <h3 class="text-center">Logros</h3>
-
                 <?php
                             $string= $txt[4]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo $string1 ?>
+                <?php echo ' <h5>'.$string1.'<h5>' ?>
             </div>
             <div class="text-center">
-                <img src="{{url('img/23.png')}}" width="80%">
+                <img src="{{url('img/37.JPG')}}" width="80%" height="80%">
             </div>
 
         </div>

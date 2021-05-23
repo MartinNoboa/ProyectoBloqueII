@@ -3,14 +3,14 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'>
+<div class='background'>
 
 <div class="container mb-5">
 <br>
 <br>
     <div class="container">
         <div class="container">
-            <div class="container bg-light zelda rounded text-center ancho ">
+            <div class="container bg-light zelda rounded text-center ancho rouded shadow ">
                 
                     <div class="row ">
                         <div class="col-sm-12 col-md-4">
@@ -32,17 +32,33 @@
 @endsection
 @section('mainContent')
 
-<div class="bottom-half">
+<div class="background">
     <div class="container">
+        <h1 class='titulo text-center font-title-title'>¿Qué hacemos?</h1>
+        <br>
+        <br>
+        <div class="text-center">
+                <?php
+                            $string= $txt[10]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                ?>
+                <?php echo ' <h5>'.$string1.' <h5>' ?>
+        </div>
+        <br>
+        <br>
         <div class="row mb-5">
             <div class="col-4">
                 <div class="container text-center">
                     <div class="container ">
                         <br>
-                        <h3>Áreas de atención</h3>
+                        <h3 class="titulo-rosa font-title">Áreas de atención</h3>
                         <br>
-                        <p>Atendemos a más de 130 niños, niñas y adolescentes de 4 a 18 años con programas de Educación, Salud, Alimentación 
-                        y capacitación.</p>
+                        <?php
+                            $string= $txt[9]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                        ?>
+                        <?php echo ' <h5>'.$string1.' <h5>' ?>
+                        <br>
                         <br>
                         <table class='content-table'>
                             <?php
@@ -66,41 +82,29 @@
         </div>
 
 
-        <div class="row mb-5">
-            <div class="col-4">
-                <div class="container text-center">
-                        <h3>Programa de Desarrollo Institucional Objetivo</h3>
-                        <br>
-                        <p>Promover el desarrollo y la sustentabilidad institucional.</p>
-                </div>
-            </div>
-            <div class="col-8 text-center">
-                <img src="{{url('img/16.jpg')}}" width="80%">
-            </div>
-        </div>
-
+        
         <div class="row mb-5">
             <div class="col-4">
                 <div class="container text-center">
                     <br>
-                    <h3 class="text-center">Programa de educación</h3>
+                    <h3 class="text-center  titulo-rojo font-title">Programa de educación</h3>
                     <br>
-                    <p>Apoya y fortalece el acceso a alguna modalidad educativa, motiva el interés tanto de los niños como de 
-                    los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
-                    <br>
+                    <h5>Apoya y fortalece el acceso a alguna modalidad educativa, motiva el interés tanto de los niños como de los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</h5>
                     <table class='content-table'>
-                             <?php
+                    <?php
                                 $arrLength= count($educacion);
                                 for ($i = 0; $i < $arrLength; $i++) {
                                     echo '<tr>';
-                                    echo '<td>'.$educacion[$i]['contenido'].'</td>';
+                                    echo '<td><h5>'.$educacion[$i]['contenido'].'</h5></td>';
                                     echo '</tr>';
                                 }
-                            ?>
+                    ?>
                     </table>
                     <br>  
                 </div>
             </div>
+
+            
             <div class="col-8 text-center">
                 <br>
                 <br>
@@ -109,6 +113,24 @@
                 <br>
             </div>
         </div>
+
+        <div class="row mb-5">
+            <div class="col-4">
+                <div class="container text-center ">
+                        <h3 class="titulo-verde font-title">Programa de Desarrollo Institucional Objetivo</h3>
+                        <br>
+                        <?php
+                            $string= $txt[12]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                        ?>
+                        <?php echo ' <h5>'.$string1.' <h5>' ?>
+                </div>
+            </div>
+            <div class="col-8 text-center">
+                <img src="{{url('img/16.jpg')}}" width="80%">
+            </div>
+        </div>
+
         <br>
         <br>
     </div>

@@ -18,7 +18,7 @@
                 <div class="col-12 col-md-6" >
                     <div class="card w-100 h-100 shadow">
                         <div class="card-body">
-                            <h2 class="titles "><strong>Dona vía paypal</strong></h2>
+                            <h2 class="titulo font-title"><strong>Dona vía paypal</strong></h2>
                             <br>
                             <div class="row">
                                 <div class="col-12 col-md-6" >
@@ -30,7 +30,7 @@
                             </div>
                             <hr>
                             
-                            <h2 class="titles "><strong>Regístrate como donador</strong></h2>
+                            <h2 class="titulo font-title"><strong>Regístrate como donador</strong></h2>
                             <br>
                             <div class="row">
                                 <div class="col-12 col-md-6" >
@@ -43,20 +43,15 @@
                             <br>
                             <hr>
 
-                            <h2 class="titles "><strong>Domicilia tu tarjeta</strong></h2>
+                            <h2 class="titulo font-title"><strong>Domicilia tu tarjeta</strong></h2>
                             <br>
-                            <div class="row">
-                                <div class="col-12 col-md-6 text-justify" >
+                                <div class="text-justify" >
                                     <p>Al registrarte como donador puedes domiciliar tu tarjeta con nosotros. Solo selecciona "Tarjeta (Domiciliado)" como metodo de pago.</p>
                                 </div>
-                                <div class="col-12 col-md-6 text-center" >
-                                    <a class=" btn button-donar text-light rounded" href="{{url('/donador')}}" role="button">Regístrate</a>
-                                </div>
-                            </div>
                             <br>
                             <hr>
 
-                            <h2 class="titles "><strong>Dona con transferencia</strong></h2>
+                            <h2 class="titulo font-title "><strong>Dona con transferencia</strong></h2>
                             <br>
                             <?php
                             $string= $txt[8]['contenido'];
@@ -72,7 +67,7 @@
 
                 </div>       
                 <div class="col-12 col-md-6 ">
-                    <img src="{{url('img/23.png')}}" class="shadow" alt="Cinque Terre" width="100%" height="100%"> 
+                    <img src="{{url('img/36.jpg')}}" class="shadow" alt="Cinque Terre" width="100%" height="100%"> 
                 </div>
             </div>
 

@@ -95,7 +95,7 @@ Route::get('/calendario', function(){
 
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
-Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
+Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
 use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
