@@ -59,12 +59,14 @@
 
     </div>
     
-
+    <br>
+    <br>
     <div class="row">
         <div class="col-4">
         <div class="container text-center">
                 <br>
                 <h3 class="text-center titulo-verde">En especie</h3>
+                <br>
                 <br>
                 <?php
                             $string= $txt[11]['contenido'];
@@ -79,6 +81,7 @@
         <div class="container">
                 <br>
                 <h3 class="text-center titulo">¿Cómo donar?</h3>
+                <br>
                 <br>
                 <p class= 'text-center'>El funcionamiento de Niños y Niñas de México A.C. no sería posible sin nuestros benefactores. Queremos 
                     agradecer su apoyo a todas aquellas personas que han hecho posible nuestro sueño.</p>

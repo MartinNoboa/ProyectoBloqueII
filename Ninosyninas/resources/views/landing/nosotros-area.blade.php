@@ -89,18 +89,16 @@
                     <br>
                     <h3 class="text-center  titulo-rojo">Programa de educación</h3>
                     <br>
-                    <p>Apoya y fortalece el acceso a alguna modalidad educativa, motiva el interés tanto de los niños como de 
-                    los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
-                    <br>
+                    <p>Apoya y fortalece el acceso a alguna modalidad educativa, motiva el interés tanto de los niños como de los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
                     <table class='content-table'>
-                             <?php
+                    <?php
                                 $arrLength= count($educacion);
                                 for ($i = 0; $i < $arrLength; $i++) {
                                     echo '<tr>';
                                     echo '<td>'.$educacion[$i]['contenido'].'</td>';
                                     echo '</tr>';
                                 }
-                            ?>
+                    ?>
                     </table>
                     <br>  
                 </div>
@@ -121,7 +119,11 @@
                 <div class="container text-center ">
                         <h3 class="titulo-verde">Programa de Desarrollo Institucional Objetivo</h3>
                         <br>
-                        <p>Promover el desarrollo y la sustentabilidad institucional.</p>
+                        <?php
+                            $string= $txt[12]['contenido'];
+                            $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
+                        ?>
+                        <?php echo $string1 ?>
                 </div>
             </div>
             <div class="col-8 text-center">

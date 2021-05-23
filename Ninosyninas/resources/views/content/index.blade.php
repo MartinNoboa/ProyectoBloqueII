@@ -89,7 +89,7 @@
             </thead>
             <tbody>
                 <tr scope="row ">
-                    <td>Acerca de nosotros</td>
+                    <td>¿Quiénes somos?</td>
                     <td class="pull-right">      
                     <a href="{{ url('contenido/edit/4') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
@@ -109,16 +109,6 @@
                     </td>
                 </tr>
                 <tr scope="row ">
-                    <td>Registrar áreas de atención</td>
-                    <td class="pull-right">      
-                    <a href="{{ url('atencion') }}">
-                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
-                        <i class="bi bi-pencil-square"></i>
-                    </button>      
-                    </a>
-                    </td>
-                </tr>
-                <tr scope="row ">
                     <td>Áreas de atención texto</td>
                     <td class="pull-right">      
                     <a href="{{ url('atencion') }}">
@@ -129,7 +119,17 @@
                     </td>
                 </tr>
                 <tr scope="row ">
-                    <td>Programa de educación</td>
+                    <td>Registrar áreas de atención</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('atencion') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>Registrar programa de educación</td>
                     <td class="pull-right">      
                     <a href="{{ url('educacion') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
@@ -152,6 +152,16 @@
                     <td>¿Qué necesitamos?</td>
                     <td class="pull-right">      
                     <a href="{{ url('contenido/edit/6') }}">
+                    <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>      
+                    </a>
+                    </td>
+                </tr>
+                <tr scope="row ">
+                    <td>En especie</td>
+                    <td class="pull-right">      
+                    <a href="{{ url('contenido/edit/5') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                         <i class="bi bi-pencil-square"></i>
                     </button>      

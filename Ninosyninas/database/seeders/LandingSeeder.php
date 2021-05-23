@@ -45,11 +45,21 @@ class LandingSeeder extends Seeder
             [
                 "id" => 6,
                 "apartado" => "nosotros_necesitamos",
-                "contenido" => "COMO TRABAJAMOS EN CONTINGENCIA POR PANDEMIA
+                "contenido" => "
+                -->Dinero para cubrir los siguientes gastos:
 
-                Debido a la contingencia sanitaria suspendimos actividades con los niños de marzo a junio, durante ese tiempo aprovechamos para capacitarnos en línea el equipo de trabajo en diferentes temas, para seguir atendiendo con calidad a nuestros beneficiarios. Además, entregamos dos despensas al mes a las familias de los niños, ya que ellos tampoco tuvieron la oportunidad de trabajar por la contingencia.
+                  Solario del personal
+                 Servicios
+                 Alimentos
                 
-                Reanudamos la atención a puerta abierta a partir de Julio alternando la asistencia de los niños (en promedio 30 por día) para respetar las recomendaciones de sana distancia además de trabajar todos con cubre boca, lavado de manos y control de temperatura. Atendemos a 75 Niños, Niñas y Adolescentes, de preescolar a preparatoria. Trabajamos con la nueva modalidad en línea aprendiendo juntos niños, papás y maestros, proporcionamos computadora e internet ya que los niños no cuentan con estas herramientas, y enseñamos a hacer uso de ellas. Apoyamos en la realización de tareas, así como en la entrega de las mismas vía internet y en las video clases.
+                -->Donaciones en especie
+                
+                 Alimentos 
+                 Material didáctico 
+                 Material para mantenimiento del inmueble
+                       
+                -->Donación de tiempo como voluntario.
+                 
                 
                 ",
             ], 
@@ -106,6 +116,21 @@ class LandingSeeder extends Seeder
                 -> Cobijas
                 -> Libros
                 -> Cuadernos
+                ",
+            ], 
+            [
+                "id" => 13,
+                "apartado" => "desarollo_institucional",
+                "contenido" => "Promover el desarrollo y la sustentabilidad institucional.
+                
+                ->Difusión y Publicidad:
+
+                ->Relación con Fundaciones, Instituciones Gubernamentales y Civiles
+                
+                ->Fortalecimiento Institucional:
+                
+                ->Transparencia Institución
+                
                 ",
             ], 
         ]);

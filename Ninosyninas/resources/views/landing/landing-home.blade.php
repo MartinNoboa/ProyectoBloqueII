@@ -37,24 +37,29 @@
 
 
 
-<div class=''>  
+<div class='upper-half'>  
     <img src="{{url('img/16.jpg')}}" alt="home photo" class="img-fluid">
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
                 <div class="card text-center rounded shadow">
                     <div class="card-body  rounded">
-                        
+                        <br>
+                        <img src="{{url('img/34.jpg')}}" width="90%" height="40%">
+                        <br>
                         <br>
                         <br>
                         <h5 class="card-title text-center titulo-rosa">{{$textos["cardt1"]}}</h5>
+                        <br>
                         <br>
                         <p class="card-text text-center">{{$textos["card1"]}}</p>
                     </div>
                 </div>
                 <div class="card text-center shadow">
                     <div class="card-body">
-                        
+                    <br>
+                        <img src="{{url('img/35.jpg')}}" width="70%" height="40%">
+                        <br>
                         <br>
                         <br>
                         <h5 class="card-title titulo-rojo">{{$textos["cardt2"]}}</h5>
@@ -64,7 +69,9 @@
                 </div>
                 <div class="card text-center ">
                     <div class="card-body shadow" width="100" height="70">
-                        
+                    <br>
+                        <img src="{{url('img/36.png')}}" width="70%" height="40%">
+                        <br>
                         <br>
                         <br>
                         <h5 class="card-title titulo-verde">{{$textos["cardt3"]}}</h5>
@@ -83,11 +90,11 @@
 <br>
 <br>
 
-    <div class="">
+    <div class="bottom-half">
         <div class="text-center center">
             <h1 class='titulo-azul'>Acerca de nosotros</h1>
             <br>
-            <p>{{$txt[0]['contenido']}}</p>
+        <h5>{{$txt[0]['contenido']}}</h5>
             <a class="btn btn-primary" href="{{ url('/nosotros')}}" role="button">Conoce más</a>
             <br>
             <br>
@@ -106,27 +113,27 @@
                 <i class="far fa-clipboard fa-4x titulo-rosa"></i>
                 <br>
                 <br>
+               
                 <?php
                             $string= $txt[1]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo $string1 ?>
-               
-            </div>
-
-            <div class="text-center">
+                <?php echo ' <h5>'.$string1.'</h5>' ?>
                 
+            </div>
+            <div class="text-center">
+                <img src="{{url('img/30.jpg')}}" width="70%" height="80%">
             </div>
         </div>
         <div class="grid-2">
             <div class="text-center">
                 <br>
-                
+                <img src="{{url('img/14.jpg')}}" width="80%" height="90%">
             </div>
             <div class="text-center">
-                <h2 class='titulo-rojo'>Visión</h2>
+                <h2 class='titulo-verde'>Visión</h2>
                 <br>
-                <i class="far fa-eye fa-4x titulo-rojo"></i>
+                <i class="far fa-eye fa-4x titulo-verde"></i>
                 <br>
                 <br>
                 <?php

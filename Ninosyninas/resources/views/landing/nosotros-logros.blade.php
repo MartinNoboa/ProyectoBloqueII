@@ -43,7 +43,7 @@
                 <?php echo $string1 ?>
             </div>
             <div class="text-center">
-                <img src="{{url('img/23.png')}}" width="80%">
+                <img src="{{url('img/37.JPG')}}" width="80%" height="80%">
             </div>
 
         </div>
