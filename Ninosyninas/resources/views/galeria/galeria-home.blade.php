@@ -1,4 +1,8 @@
 @extends('layouts.main-landing')
 @section('content')
-    aqui va las imagenes de galeria de manera random
+    <div class="">
+        @foreach ($galleries as $galleriesItem)
+            <img src="{{asset($galleriesItem->image->url)}} " alt="no se encontro la imagen" srcset="">
+        @endforeach
+    </div>
 @endsection
