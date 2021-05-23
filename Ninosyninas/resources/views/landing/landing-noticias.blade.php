@@ -3,12 +3,12 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'> 
+<div class='background'> 
 <br>
 <br>
 <hgroup class="text-center">
-    <h1 class='text-center titulo'>Noticias</h1>
-    <h4>Ve nuestras más recientes noticias</h4>
+    <h1 class='text-center titulo font-title-title'>Noticias</h1>
+    <h4 class="font-title">Ve nuestras más recientes noticias</h4>
 </hgroup>
 @endsection
 

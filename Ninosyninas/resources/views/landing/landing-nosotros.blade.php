@@ -4,7 +4,7 @@
 
 
 @section('mainContent')
-<div class='upper-half'>
+<div class='background'>
 
 <div class="container-fluid">
 <br>
@@ -36,14 +36,14 @@
 
     
     <div class="text-center center">
-        <h1 class='titulo-azul'>¿Quiénes somos?</h1>
+        <h1 class='titulo-azul font-title-title'>¿Quiénes somos?</h1>
         <br>
         <br>
             <?php
                             $string= $txt[3]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-            <?php echo $string1 ?>
+            <?php echo ' <h5>'.$string1.' <h5>' ?>
     </div>
     <br>
     <br>

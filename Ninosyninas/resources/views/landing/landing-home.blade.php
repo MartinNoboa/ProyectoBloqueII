@@ -37,7 +37,7 @@
 
 
 
-<div class='upper-half'>  
+<div class='background'>  
     <img src="{{url('img/16.jpg')}}" alt="home photo" class="img-fluid">
     <div class="container mt-5">
         <div class="">
@@ -86,15 +86,17 @@
 @endsection
 
 @section('mainContent')
-<br>
-<br>
-<br>
 
-    <div class="bottom-half">
+
+    <div class="background">
+    <br>
+<br>
+<br>
         <div class="text-center center">
-            <h1 class='titulo-azul'>Acerca de nosotros</h1>
+            <h1 class='titulo-azul font-title-title'>Acerca de nosotros</h1>
             <br>
         <h5>{{$txt[0]['contenido']}}</h5>
+        <br>
             <a class="btn btn-primary" href="{{ url('/nosotros')}}" role="button">Conoce más</a>
             <br>
             <br>
@@ -108,7 +110,7 @@
 
         <div class="grid-2">
             <div class="text-center">
-                <h2 class='titulo-rosa'>Misión  </h2>
+                <h2 class='titulo-rosa font-title-title'>Misión  </h2>
                 
                 <i class="far fa-clipboard fa-4x titulo-rosa"></i>
                 <br>
@@ -131,7 +133,7 @@
                 <img src="{{url('img/14.jpg')}}" width="80%" height="90%">
             </div>
             <div class="text-center">
-                <h2 class='titulo-verde'>Visión</h2>
+                <h2 class='titulo-verde font-title-title'>Visión</h2>
                 <br>
                 <i class="far fa-eye fa-4x titulo-verde"></i>
                 <br>
@@ -140,7 +142,7 @@
                             $string= $txt[2]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo $string1 ?>
+                <?php echo ' <h5>'.$string1.' <h5>' ?>
                 <br>
             </div>
         </div>
@@ -150,7 +152,7 @@
                 <table class="text-center">
                     <tr>
                         <th>
-                            <h1 class='titulo'>Noticias recientes</h1>
+                            <h1 class='titulo font-title-title'>Noticias recientes</h1>
                         </th>
                         <th>
                             <a class="btn button-donar" href="{{ url('/noticias')}}" role="button">Ver más</a>

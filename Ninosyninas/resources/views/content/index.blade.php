@@ -101,7 +101,7 @@
                 <tr scope="row ">
                     <td>¿Qué hacemos?</td>
                     <td class="pull-right">      
-                    <a href="{{ url('atencion') }}">
+                    <a href="{{ url('contenido/edit/11') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                         <i class="bi bi-pencil-square"></i>
                     </button>      
@@ -111,7 +111,7 @@
                 <tr scope="row ">
                     <td>Áreas de atención texto</td>
                     <td class="pull-right">      
-                    <a href="{{ url('atencion') }}">
+                    <a href="{{ url('contenido/edit/10') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                         <i class="bi bi-pencil-square"></i>
                     </button>      
@@ -161,7 +161,7 @@
                 <tr scope="row ">
                     <td>En especie</td>
                     <td class="pull-right">      
-                    <a href="{{ url('contenido/edit/5') }}">
+                    <a href="{{ url('contenido/edit/12') }}">
                     <button type="button" class="btn btn-success my-1 d-flex justify-content-center align-items-center">
                         <i class="bi bi-pencil-square"></i>
                     </button>      

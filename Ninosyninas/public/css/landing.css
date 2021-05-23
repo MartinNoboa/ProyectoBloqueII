@@ -253,3 +253,17 @@ CSS para donaciones
     color: var(--rosa);
     font-weight: bold;
 }
+
+.background{
+    background-color: #ccebff ;
+}
+
+.font-title{
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 40px;
+}
+
+.font-title-title{
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 50px;
+}

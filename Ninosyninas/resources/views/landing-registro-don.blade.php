@@ -9,8 +9,8 @@
 
 <div class='upper-half'> 
     <div class=" pt-5">
-        <h1 class='text-center titulo'>Donaciones</h1>
-        <h3 class='text-center titulo mb-5'>Regístrate como donador</h3>
+        <h1 class='text-center titulo font-title-title'>Donaciones</h1>
+        <h3 class='text-center titulo mb-5 font-title'>Regístrate como donador</h3>
 
     </div>
     <div class="container">

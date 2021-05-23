@@ -3,10 +3,10 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'> 
+<div class='background'> 
 <br>
 <br>
-<h1 class='text-center titulo'>Descubre nuestros próximos eventos</h1>
+<h1 class='text-center titulo-rosa font-title-title'>Descubre nuestros próximos eventos</h1>
 <br>
 <br>
 @endsection
