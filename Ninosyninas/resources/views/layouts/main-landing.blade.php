@@ -68,7 +68,7 @@
                     <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Galería</a>
+                    <a class="nav-link" href="{{route('galeria')}}">Galería</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>

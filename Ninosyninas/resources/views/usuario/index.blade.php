@@ -10,33 +10,28 @@
 <div class="container">
     
     <div class="alert alert-success alert-dismissible" role="alert">
-                {{ Session::get('mensaje')}}
-                <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true" class="btn pull-right" >&times;</span>
-                </button>
-                </div>
+        {{ Session::get('mensaje')}}
+        <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" class="btn pull-right">&times;</span>
+        </button>
     </div>
     
 </div>
 @endif
 
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
-    
-    <h3 class="text-center mb-3">Usuarios </h3>       
-    <div class="align-self-center p-2">
-        <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
-        <br>
-        </div>
-    <div class="table-responsive">
+    <h3 class="text-center my-3">Usuarios </h3>
+    <div class="d-flex justify-content-start my-3">
+        <a href="{{url('/panel')}}">
+            <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+        </a>
+    </div>
 
-        
-    <br>
-
-
-
-    <div class="d-flex border-bottom mb-3">
+    <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Lista de Usuarios Registrados</h3>
+            <h1 class="text-left fs-4">Lista de Usuarios Registrados </h3>
         </div>
         <div class="align-self-center p-2">
         <a href="{{url('usuario/create')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
@@ -143,8 +138,14 @@
                 
 
             </tbody>
-            
+
         </table>
+        @else
+        <div>
+            <h4 class="text-center my-3">No hay usuarios disponibles</h4>
+        </div>
+        @endif
+    </div>
 
 
 </div>

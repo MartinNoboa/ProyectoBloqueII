@@ -12,6 +12,9 @@ use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\NosotrosController;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\DonadoresController;
+use App\Http\Controllers\Galeria\GaleriaHomeController;
+use App\Http\Controllers\Galeria\GaleriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,13 +100,13 @@ Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middlewar
 
 Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
-use App\Http\Controllers\DonadoresController;
 Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
 
 
 
 
 //rutas para el controlador de login y logout
+
 
 //use App\Http\Controllers\Auth\UserAuthController;
 
@@ -170,6 +173,12 @@ Route::get('educacion', [NosotrosController::class,'indexed'])->middleware('sesi
 Route::delete('/educacion/eliminar/{id}', [NosotrosController::class,'eliminaredu'])->middleware('sesionYaIniciada');
 Route::get('educacion/registrar-nuevo', [NosotrosController::class,'createedu'])->middleware('sesionYaIniciada');
 Route::post('educacion/registrar', [NosotrosController::class,'storeedu'])->middleware('sesionYaIniciada');
+Route::get('/panel/galeria',[GaleriaController::class,'index'])->name('galeria-panel');
+Route::get('/panel/galeria/publicar-imagen',[GaleriaController::class,'displayForm']);
+Route::post('/panel/galeria/publicar-imagen',[GaleriaController::class,'publicarForm']);
+Route::any('/panel/galeria/delete/{id}',[GaleriaController::class,'delete']);
+
+Route::get('/galeria',GaleriaHomeController::class)->name('galeria');
 
 
 /*

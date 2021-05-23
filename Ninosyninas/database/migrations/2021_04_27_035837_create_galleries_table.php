@@ -15,9 +15,14 @@ class CreateGalleriesTable extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('image_id')
+                ->nullable()
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('set null');
             $table->string("evento");
             $table->text("comentario")->nullable();
-            $table->date("fecha");
+            $table->timestamps();
         });
     }
 
