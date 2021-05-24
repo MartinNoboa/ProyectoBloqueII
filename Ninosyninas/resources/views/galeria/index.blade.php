@@ -65,13 +65,53 @@
                 more_vert
             </span>
             <div class="dropdown-content-img">
-                <a href="{{url('/panel/galeria/delete/'.$galleriesItem->id) }}">Borrar</a>
+                <form action="" method="post">
+                    <a data-toggle="modal" data-target="#exampleModal" >Borrar</a>
+                    <!---
+                    <button type="button" data-toggle="modal" data-target="#exampleModal"
+                            class="btn btn-danger my-1 d-flex justify-content-center align-items-center"
+                            value="Borrar"><i class="bi bi-trash"></i>
+
+                        </button>
+                    --->
+                    </form>
             </div>
         </div>
+
+         <!-- Modal desaprobados-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar?</h5>
+                                        
+                                        <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url('/panel/galeria/delete/'.$galleriesItem->id)}}'">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+
+
+
         <div class="cnt mb-5">
             <img src="{{asset($galleriesItem->image->url)}} " alt="no se encontró la imagen" srcset="" class="img">
             {{-- <p class="overlay-text">{{$galleriesItem->titulo}} </p> --}}
         </div>
+
+        
+
+
+
+
+
     </div>
     @endforeach
     @else
