@@ -274,11 +274,11 @@ CSS para donaciones
 }
 
 .cont {
-    min-height: 40em; /* Will be AT LEAST 20em tall */
+    min-height: 40em;
 }
 
 .login {
-    min-height: 35em; /* Will be AT LEAST 20em tall */
+    min-height: 35em; 
 }
 
 .img-home {
