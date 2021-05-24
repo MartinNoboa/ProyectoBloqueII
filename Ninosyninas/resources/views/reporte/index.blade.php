@@ -21,35 +21,39 @@
     
 </div>
 @endif
-<div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
-
-
-    <h3 class="text-center mb-3">Reportes </h3>
-    <div class="align-self-center p-2">
-        <a href="{{url('/panel')}}"  class="btn btn-success "> <span class="material-icons-outlined">keyboard_backspace</span></a>
-        <br>
-        </div>
-    <div class="table-responsive">
-
-   
-     <br>
-
-  
-     <div class="d-flex border-bottom mb-3">
-        <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Lista de reportes creados</h3>
-        </div>
-        <div class="align-self-center p-2">
-        <a href="{{url('reporte/create')}}"  class="btn btn-success "> <span class="material-icons-outlined">add_circle</span></a>
-        <br>
-        </div>
-       
+<div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
+    <h3 class="text-center my-3">Reportes</h3>
+    <div class="d-flex justify-content-start my-3">
+        <a href="{{url('/panel')}}">
+            <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+        </a>
     </div>
 
 
+
+    <div class="d-flex justify-content-between align-items-center border-bottom">
+        <div class="me-auto p-2">
+            <h1 class="text-left fs-4">Lista de reportes</h3>
+        </div>
+        <div class="p-2">
+
+            <a href="{{url('reporte/create')}}" class="btn btn-success ">
+                <button type="button" class="btn btn-success m-0 p-0 d-flex justify-content-center align-items-center">
+                    <span class="material-icons-outlined">
+                        add_circle
+                    </span>
+                </button>
+            </a>
+
+        </div>
+    </div>
+
+
+    @if ($reportes->count())
     <table class="table table-hover px-3 " >
         
-        @if ($reportes->count())
         <thead >
             <tr>
                 <th scope="col">Nombre del niño</th>
@@ -139,12 +143,16 @@
                 </td>
             </tr>
             @endforeach
-            @else
-                <h2>No hay reportes disponibles</h2>
-            @endif
-        
+            
         </tbody>
     </table>
+    @else
+    <div class="empty-space">
+        <h2 class="my-5 text-center">
+            No hay reportes disponibles 
+        </h2>
+    </div>
+    @endif
 
     </div>
     </div>

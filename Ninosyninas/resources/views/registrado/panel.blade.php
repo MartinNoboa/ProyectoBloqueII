@@ -54,7 +54,7 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <a type="button"  href="{{url('/panel')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/panel/galeria')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
                 <h3>Galeria</h3>
                 <h5>Colección de imagenes que se deaean mostrar en la pagina web</h5>
                

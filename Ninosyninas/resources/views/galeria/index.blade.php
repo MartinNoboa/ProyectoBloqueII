@@ -15,12 +15,12 @@
     @endif
 </div>
 
-<div class="container p-3 bg-white">
+<div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
 
 
     <h1 class="text-center my-3">Galeria</h1>
     <div class="d-flex justify-content-start my-3">
-        <a href="{{url('/home')}}">
+        <a href="{{url('/panel')}}">
             <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
                 <i class="bi bi-arrow-left"></i>
             </button>
@@ -31,7 +31,7 @@
 
     <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Listado galeria </h3>
+            <h1 class="text-left fs-4">Listado galeria </h1>
         </div>
         <div class="p-2">
 
@@ -75,7 +75,12 @@
     </div>
     @endforeach
     @else
-    <h4 class="my-3 text-center">No hay fotos en la galeria disponibles</h2>
-        @endif
+    <div class="empty-space">
+        <h2 class="my-3 text-center">
+            No hay fotos en la disponibles galeria 
+        </h2>
+    </div>
+    
+    @endif
 </div>
 @endsection

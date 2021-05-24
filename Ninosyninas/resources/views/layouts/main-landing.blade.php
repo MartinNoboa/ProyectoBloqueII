@@ -20,21 +20,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    
-    
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+
+
     <!-- Prueba-->
 
     <!-- jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-        <!-- bootstrap -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-    
-    
+
+
+
 
     <!-- Google Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,7 +49,7 @@
     <?php
     $message="";
     ?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 shadow-sm">
         <a class="navbar-brand mx-3" href="{{url('/')}}"> <img src="{{asset('img/logos.JPG')}}" class="img-fluid"
                 alt="cuadro responsive" width="100"> </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
@@ -55,7 +57,7 @@
         </button>
         <div class="collapse navbar-collapse" id="collapse_target">
             <ul class="navbar-nav">
-            <li class="nav-item px-2">
+                <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/')}}">Inicio</a>
                 </li>
                 <li class="nav-item px-2">
@@ -82,6 +84,9 @@
 
         </div>
         <!-- Revisar para poner iconos -->
+        <div class="nav-item mx-3">
+            <a class="nav-link text-secondary" href="{{url('/panel')}}">Panel</a>
+        </div>
         @if (session()->has('sesionUsuario'))
         <span id="loginIcon"><a id="linkLogin" href="{{ url('logout') }}"><i class="fas fa-user fa-2x"></i></a></span>
         @else
