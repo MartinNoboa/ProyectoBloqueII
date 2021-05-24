@@ -32,7 +32,7 @@
 @endsection
 @section('mainContent')
 
-<div class="background">
+<div class="background cont">
     <div class="container">
         <h1 class='titulo text-center font-title-title'>¿Qué hacemos?</h1>
         <br>
@@ -42,7 +42,7 @@
                             $string= $txt[10]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo ' <h5>'.$string1.' <h5>' ?>
+                <?php echo ' <h5 data-aos="zoom-out-left">'.$string1.' <h5>' ?>
         </div>
         <br>
         <br>

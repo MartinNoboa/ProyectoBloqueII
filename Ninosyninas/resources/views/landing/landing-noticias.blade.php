@@ -13,7 +13,9 @@
 @endsection
 
 @section('mainContent')
-<div class="container center">
+
+<div class="container center cont">
+    @if ($noticias->count())   
     <div class="row">
         @foreach($noticias as $noticia)
         <div class="col-sm-6">
@@ -29,5 +31,13 @@
         @endforeach
        
     </div>
+    @else
+    <div class="text-center">
+        <br>
+         <h3>No hay noticias por el momento</h3>
+    </div>
+                
+    @endif
+
 </div>
 @endsection
