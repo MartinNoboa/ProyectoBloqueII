@@ -276,3 +276,7 @@ CSS para donaciones
 .cont {
     min-height: 40em; /* Will be AT LEAST 20em tall */
 }
+
+.login {
+    min-height: 35em; /* Will be AT LEAST 20em tall */
+}
