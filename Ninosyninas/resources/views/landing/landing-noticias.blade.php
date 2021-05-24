@@ -36,5 +36,13 @@
         </div>
         @endif
     </div>
+    @else
+    <div class="text-center">
+        <br>
+         <h3>No hay noticias por el momento</h3>
+    </div>
+                
+    @endif
+
 </div>
 @endsection

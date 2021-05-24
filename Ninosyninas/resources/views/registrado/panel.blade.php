@@ -3,16 +3,16 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'> 
+<div class='background'> 
 <br>
 <br>
-<h1 class='text-center'>¡Bienvenid@!</h1>
+<h1 class='text-center font-title-title titulo'>¡Bienvenid@!</h1>
 <br>
 <br>
 @endsection
 
 @section('mainContent')
-    <div class="container">
+    <div class="container background">
     <div class="row">
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">

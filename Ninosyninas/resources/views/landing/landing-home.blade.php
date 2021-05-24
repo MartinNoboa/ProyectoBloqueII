@@ -42,39 +42,40 @@
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
-                <div class="card text-center rounded shadow">
-                    <div class="card-body  rounded">
+                <div class="card text-center rounded shadow " data-aos="flip-left">
+                    <div class="card-body  rounded ">
                         <br>
                         <img src="{{url('img/34.jpg')}}" width="90%" height="40%">
                         <br>
                         <br>
                         <br>
-                        <h5 class="card-title text-center titulo-rosa">{{$textos["cardt1"]}}</h5>
+                        <h5 class="card-title text-center titulo-rosa font-card">{{$textos["cardt1"]}}</h5>
                         <br>
                         <br>
-                        <p class="card-text text-center">{{$textos["card1"]}}</p>
+                        <p class="card-text text-center ">{{$textos["card1"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center shadow">
+                <div class="card text-center shadow" data-aos="flip-up">
                     <div class="card-body">
                     <br>
                         <img src="{{url('img/35.jpg')}}" width="70%" height="40%">
                         <br>
                         <br>
                         <br>
-                        <h5 class="card-title titulo-rojo">{{$textos["cardt2"]}}</h5>
+                        <h5 class="card-title titulo-rojo font-card">{{$textos["cardt2"]}}</h5>
+                        <br>
                         <br>
                         <p class="card-text">{{$textos["card2"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center ">
+                <div class="card text-center " data-aos="flip-right">
                     <div class="card-body shadow" width="100" height="70">
                     <br>
                         <img src="{{url('img/36.png')}}" width="70%" height="40%">
                         <br>
                         <br>
                         <br>
-                        <h5 class="card-title titulo-verde">{{$textos["cardt3"]}}</h5>
+                        <h5 class="card-title titulo-verde font-card">{{$textos["cardt3"]}}</h5>
                         <br>
                         <p class="card-text">{{$textos["card3"]}}</p>
                     </div>
@@ -88,14 +89,14 @@
 @section('mainContent')
 
 
-    <div class="background">
+    <div class="background wrapper">
     <br>
 <br>
 <br>
         <div class="text-center center">
-            <h1 class='titulo-azul font-title-title'>Acerca de nosotros</h1>
+            <h1 class='titulo-azul font-title-title' >Acerca de nosotros</h1>
             <br>
-        <h5>{{$txt[0]['contenido']}}</h5>
+        <h5 data-aos="fade-down">{{$txt[0]['contenido']}}</h5>
         <br>
             <a class="btn btn-primary" href="{{ url('/nosotros')}}" role="button">Conoce más</a>
             <br>
@@ -120,7 +121,7 @@
                             $string= $txt[1]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo ' <h5>'.$string1.'</h5>' ?>
+                <?php echo ' <h5 data-aos="fade-right">'.$string1.'</h5>' ?>
                 
             </div>
             <div class="text-center">
@@ -142,7 +143,7 @@
                             $string= $txt[2]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo ' <h5>'.$string1.' <h5>' ?>
+                <?php echo ' <h5 data-aos="fade-left">'.$string1.' <h5>' ?>
                 <br>
             </div>
         </div>

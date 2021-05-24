@@ -48,23 +48,30 @@
         </div>
     </div>
     <div>
-        <table class="table table-hover px-3">
-            <thead>
-                <tr>
-                    <th class="text-wrap" scope="col">Nombre </th>
-                    <th class="text-wrap" scope="col">Apellido Paterno </th>
-                    <th class="text-wrap" scope="col">Apellido Materno </th>
-                    <th class="text-wrap" scope="col">Fecha Nacimiento</th>
-                    <th class="text-wrap" scope="col">Grado</th>
-                    <!-- Campo calculable (?) -->
-                    <th class="text-wrap" scope="col">Calificación</th>
-                </tr>
-            </thead>
-            <tbody id = "ninos">
-                @include('ninos.data.data_ninos')
-            </tbody>
+        @if ($children->count())
+            <table class="table table-hover px-3">
+                <thead>
+                    <tr>
+                        <th class="text-wrap" scope="col">Nombre </th>
+                        <th class="text-wrap" scope="col">Apellido Paterno </th>
+                        <th class="text-wrap" scope="col">Apellido Materno </th>
+                        <th class="text-wrap" scope="col">Fecha Nacimiento</th>
+                        <th class="text-wrap" scope="col">Grado</th>
+                        <!-- Campo calculable (?) -->
+                        <th class="text-wrap" scope="col">Calificación</th>
+                    </tr>
+                </thead>
+                <tbody id = "ninos">
+                    @include('ninos.data.data_ninos')
+                </tbody>
+                
+            </table>
+        @else
+            <div>
+            <h3>No hay ninos disponibles</h3>
+            </div>
             
-        </table>
+        @endif
     </div>
 
 </div>

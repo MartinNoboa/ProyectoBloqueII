@@ -7,7 +7,7 @@
 
 @section('header')
 
-<div class='upper-half'> 
+<div class='background'> 
     <div class=" pt-5">
         <h1 class='text-center titulo font-title-title'>Donaciones</h1>
         <h3 class='text-center titulo mb-5 font-title'>Regístrate como donador</h3>
@@ -29,11 +29,10 @@
 
 
 
-<div class="bottom-half">
+<div class="background cont">
 
     <div class="container text-justify">
         <p class="text-center"> ¡Hola! Dejanos tu contacto y nosotros  nos contactaremos contigo</p>
-        <p class="text-center"> Texto de privacidad No editable</p>
         <form method="POST" action= "{{ url('/donador') }}">
             @csrf
         <br>

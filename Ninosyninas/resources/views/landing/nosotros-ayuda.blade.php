@@ -31,7 +31,7 @@
 </div>
 @endsection
 @section('mainContent')
-<div class="background">
+<div class="background cont">
             
     <div class="container">
     <h1 class="text-center titulo-rojo font-title-title">¿Qué necesitamos?</h1>
@@ -45,7 +45,7 @@
                             $string= $txt[5]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo ' <h5>'.$string1.' <h5>' ?>
+                <?php echo ' <h5 data-aos="fade-up">'.$string1.' <h5>' ?>
                 <br>
                 
             </div>

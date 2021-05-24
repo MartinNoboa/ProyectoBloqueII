@@ -4,7 +4,7 @@
 
 
 @section('mainContent')
-<div class='background'>
+<div class='background cont' >
 
 <div class="container-fluid">
 <br>
@@ -43,7 +43,7 @@
                             $string= $txt[3]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-            <?php echo ' <h5>'.$string1.' <h5>' ?>
+            <?php echo ' <h5 data-aos="zoom-in">'.$string1.' <h5>' ?>
     </div>
     <br>
     <br>
