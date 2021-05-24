@@ -97,9 +97,9 @@ Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middlewar
 Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
 
 
-// Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
+Route::resource('donadores',DonadoresController::class);
 Route::get('/donadores',[DonadoresController::class,'index'])->middleware('sesionIniciada');
-Route::get('/donadores/aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('Aprobados');
+Route::get('/donadores/aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('aprobados');
 Route::get('/donadores/noAprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('noAprobados');
 
 

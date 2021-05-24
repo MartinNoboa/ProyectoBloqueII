@@ -45,16 +45,16 @@ class DonadoresController extends Controller
     public function recuperarDonadoresAprobados(Request $request) {
         $query = $request->search_query;
         if($request->ajax()) {
-            $donadores = Donadores::donadoresAprobados($query);
-                return view('donadores.index', compact('aprobados'))->render();
+            $aprobados = Donadores::donadoresAprobados($query);
+                return view('donadores.data.desaprobados', compact('aprobados'))->render();
         }
     }
 
     public function recuperarDonadoresNoAprobados(Request $request) {
         $query = $request->search_query;
         if($request->ajax()) {
-            $donadores = Donadores::donadoresNoAprobados($query);
-                return view('donadores.index', compact('desaprobados'))->render();
+            $desaprobados = Donadores::donadoresNoAprobados($query);
+                return view('donadores.data.desaprobados', compact('desaprobados'))->render();
         }
     }
 
