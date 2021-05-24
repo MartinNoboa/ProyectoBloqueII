@@ -280,3 +280,7 @@ CSS para donaciones
 .login {
     min-height: 35em; /* Will be AT LEAST 20em tall */
 }
+
+.img {
+    height: 35em;
+  }
