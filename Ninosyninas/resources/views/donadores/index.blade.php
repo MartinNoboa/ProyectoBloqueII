@@ -269,7 +269,7 @@
             data: {
                 'search_query':search,
             },
-            url: "{{ route('Aprobados') }}",
+            url: "{{ url('/donadores/aprobados') }}",
             success:function(data) {
                 $('#donadoresAprobados').html(data);
                 console.log(data);
@@ -286,7 +286,7 @@
             data: {
                 'search_query':search,
             },
-            url: "{{ route('noAprobados') }}",
+            url: "{{ url('donadores/noAprobados') }}",
             success:function(data) {
                 console.log(data);
                 $('#donadoresNoAprobados').html(data);
