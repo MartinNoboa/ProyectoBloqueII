@@ -38,7 +38,7 @@
 
 
 <div class='background'>  
-    <img src="{{url('img/38.jpg')}}" alt="home photo" class="img-fluid "  style=" width:100%; height:500px;" >
+    <img src="{{url('img/38.jpg')}}" alt="home photo" class="img-fluid img-home"  >
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
