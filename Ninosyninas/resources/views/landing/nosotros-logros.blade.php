@@ -31,16 +31,16 @@
 </div>
 @endsection
 @section('mainContent')
-<div class="background">
+<div class="background cont">
     <div class="container">
-        <h1 class="text-center titulo-verde font-title-title">Logros</h1>
+        <h1 class="text-center titulo-verde font-title-title" >Logros</h1>
         <div class="grid-2 text-center ">
             <div>
                 <?php
                             $string= $txt[4]['contenido'];
                             $string1 = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $string);
                 ?>
-                <?php echo ' <h5>'.$string1.'<h5>' ?>
+                <?php echo ' <h5 data-aos="zoom-in">'.$string1.'<h5>' ?>
             </div>
             <div class="text-center">
                 <img src="{{url('img/37.JPG')}}" width="80%" height="80%">

@@ -4,7 +4,7 @@
 
 @section('header')
 
-<div class='background ' > 
+<div class='background cont' > 
 
 <h1 class='text-center titulo-verde pb-5 pt-5 font-title-title' >¡Ponte en contacto con nosotros!</h1>
 

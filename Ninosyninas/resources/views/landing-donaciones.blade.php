@@ -6,12 +6,12 @@
 
 
 @section('header')
-<div class='upper-half '> 
+<div class='background '> 
 <br>
 <br>
 @endsection
 
-<div class=" bottom-half">
+<div class=" background">
 
         <div class="container ">
             <div class="row ">
