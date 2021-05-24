@@ -32,7 +32,7 @@
     @else
     <div class="text-center">
         <br>
-         <h3>No hay noticias por el momento</h3>
+         <h3 class="font-title">No hay noticias por el momento</h3>
     </div>
     </div>
                 
