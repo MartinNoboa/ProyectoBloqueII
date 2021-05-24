@@ -67,18 +67,46 @@
             <div class="dropdown-content-img">
                 <a href="{{url('/noticias/view/'.$newsItem->id) }}">Ver</a>
                 <a href="{{url('/noticias/edit/'.$newsItem->id)}}">Editar</a>
-                <a href="{{url('/noticias/delete/'.$newsItem->id) }}">Borrar</a>
+                <form action="" method="post">
+                    <a data-toggle="modal" data-target="#exampleModal" >Borrar</a>
+                </form>
+                
             </div>
         </div>
         <div class="cnt mb-5">
             <img src="{{asset($newsItem->image->url)}} " alt="no se encontró la imagen" srcset="" class="img">
             <p class="overlay-text">{{$newsItem->titulo}} </p>
         </div>
+
+        <!-- Modal eliminar-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar?</h5>
+                                        
+                                        <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url('/noticias/delete/'.$newsItem->id)}}'">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+
+
+
     </div>
+
     @endforeach
     @else
     <div class="empty-space">
-        <h2 class="my-3 text-center">
+        <h2 class="my-3 text-center pt-5">
             No hay noticias disponibles 
         </h2>
     </div>

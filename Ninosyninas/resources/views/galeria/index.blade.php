@@ -67,18 +67,11 @@
             <div class="dropdown-content-img">
                 <form action="" method="post">
                     <a data-toggle="modal" data-target="#exampleModal" >Borrar</a>
-                    <!---
-                    <button type="button" data-toggle="modal" data-target="#exampleModal"
-                            class="btn btn-danger my-1 d-flex justify-content-center align-items-center"
-                            value="Borrar"><i class="bi bi-trash"></i>
-
-                        </button>
-                    --->
                     </form>
             </div>
         </div>
 
-         <!-- Modal desaprobados-->
+         <!-- Modal eliminar-->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -116,7 +109,7 @@
     @endforeach
     @else
     <div class="empty-space">
-        <h2 class="my-3 text-center">
+        <h2 class="my-3 text-center pt-5">
             No hay fotos en la disponibles galeria 
         </h2>
     </div>
