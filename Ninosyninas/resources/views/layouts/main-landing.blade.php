@@ -104,7 +104,7 @@
         @yield('mainContent')
     </main>
     <footer class="bg-light container-footer">
-        <h3 class="grid-item-3">Aviso de privacidad</h3>
+        <h3 class="grid-item-3 aviso"> <a href="https://drive.google.com/file/d/1F00PYqvwcOdK4gLlHf6ciLDn0rV_9j9Z/view?usp=sharing" target="_blank" class=" btn btn-light  aviso">Aviso de privacidad</a></h3>
         <p class="grid-item-2">Calle Francisco González de Cosío 110, 76058 Santiago de Querétaro, Qro.,
             México</p>
         <a class="grid-item-fb" href="https://www.facebook.com/ninosyninasdemexicoqro" target="_blank">
@@ -121,7 +121,7 @@
             <div class="col-8">
                 <div class="container footer">
                     <br>
-                    <h3>Aviso de privacidad</h3>
+                    <a href="https://drive.google.com/file/d/1F00PYqvwcOdK4gLlHf6ciLDn0rV_9j9Z/view?usp=sharing"><h3>Aviso de privacidad</h3></a>
                     <br>
                     <p>Calle Francisco González de Cosío 110, Plaza de las Americas, 76050 Santiago de Querétaro, Qro.,
                     México</p>
