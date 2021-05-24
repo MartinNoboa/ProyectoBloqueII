@@ -83,10 +83,13 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    <?php
+                                    $url= '/panel/galeria/delete/';
+                                    ?>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url('/panel/galeria/delete/'.$galleriesItem->id)}}'">Eliminar</button>
+                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url($url.$galleriesItem->id)}}'">Eliminar</button>
                                     </div>
                                 </div>
                             </div>

@@ -4,13 +4,13 @@
 
 
 @section('content')
-<div class='background'>
+<div class='background pt-5'>
     <div class="text-center">
-        <h1 class='text-center titulo font-title-title'>Noticias</h1>
+        <h1 class='text-center titulo font-title-title '>Noticias</h1>
         <h4 class="font-title">Ve nuestras más recientes noticias</h4>
     </div>
 
-    <div class="container">
+    <div class="container cont">
         @if ($noticias->count())
         <div class="row">
             @foreach($noticias as $noticia)
@@ -28,18 +28,12 @@
             @endforeach
 
         </div>
-        @else
-        <div class="empty-space">
-            <h2 class="my-3 text-center">
-                No hay noticias disponibles
-            </h2>
-        </div>
-        @endif
-    </div>
+    
     @else
     <div class="text-center">
         <br>
          <h3>No hay noticias por el momento</h3>
+    </div>
     </div>
                 
     @endif

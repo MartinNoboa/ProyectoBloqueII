@@ -76,8 +76,9 @@ class LandingController extends Controller{
         //$datos['donadores']=Donadores::paginate(10);
 
         $noticias = news::all();
-
+        //return dd($noticias);
         return view('landing.landing-noticias',['noticias' => $noticias]);
+    
     }
 
     public function aNosotros()

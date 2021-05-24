@@ -90,10 +90,13 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    <?php
+                                    $url= '/noticias/delete/';
+                                    ?>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url('/noticias/delete/'.$newsItem->id)}}'">Eliminar</button>
+                                        <button type="submit" class="btn button-donar" onclick="location.href='{{url($url.$newsItem->id)}}'">Eliminar</button>
                                     </div>
                                 </div>
                             </div>

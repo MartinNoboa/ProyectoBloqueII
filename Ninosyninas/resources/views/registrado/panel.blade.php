@@ -37,7 +37,7 @@
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <a type="button"  href="{{url('/calendario')}}" class="btn"><i class="fas fa-calendar-alt fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/calendario/panel')}}" class="btn"><i class="fas fa-calendar-alt fa-6x pb-3 titulo"></i></a>
             <h3>Calendario</h3>
             <h5>Eventos que hubo o habrá en Niños y Niñas de México</h5>
         </div>

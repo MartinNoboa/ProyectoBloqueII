@@ -94,7 +94,9 @@ Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 Route::get('/calendario', function(){
     return view("landing.landing-calendario");
 });
-
+Route::get('/calendario/panel', function(){
+    return view("landing.landing-calendario-panel");
+});
 
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
