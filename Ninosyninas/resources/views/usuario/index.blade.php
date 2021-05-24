@@ -38,7 +38,7 @@
                 </button>
             </a>
 
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user"
+            <input type="text" class="search-box" name="search-user" id="search"
                 autocomplete="off">
             <label for="search-box" title="Buscar">
                 <span class="material-icons-outlined search-icon">
@@ -61,7 +61,7 @@
                 <th class="text-wrap" scope="col">Email</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id = "usuarios">
 
             @foreach($users as $item)
             <tr scope="row">
@@ -167,7 +167,7 @@
         function recuperarUsuarios(page) {
             //
             var search = $('#search').val();
-
+            console.log(search);
             $.ajax({
                 type: "GET",
                 data: {
