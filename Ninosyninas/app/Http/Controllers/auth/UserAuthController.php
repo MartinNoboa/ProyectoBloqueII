@@ -66,4 +66,10 @@ class UserAuthController extends Controller
             return redirect('login');
         }
     }
+
+    function getRole(){
+        $role = DB::table("roles_users")
+        ->where($this->id ,'=','role_users.id');
+        return $role;
+    }
 }
