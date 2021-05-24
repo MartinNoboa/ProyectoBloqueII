@@ -18,13 +18,13 @@
                 <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Galería</a>
+                <a class="nav-link" href="{{url('/galeria')}}">Galería</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Noticias</a>
+                <a class="nav-link" href="{{url('/noticias')}}">Noticias</a>
             </li>
         </ul>
 
@@ -38,7 +38,7 @@
 
 
 <div class='background'>  
-    <img src="{{url('img/16.jpg')}}" alt="home photo" class="img-fluid">
+    <img src="{{url('img/38.jpg')}}" alt="home photo" class="img-fluid img-home"  >
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
