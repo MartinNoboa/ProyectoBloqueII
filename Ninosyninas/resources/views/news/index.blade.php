@@ -16,7 +16,7 @@
 @endif
 </div>
 
-<div class="container p-3 bg-white">
+<div class="container p-3 bg-white cont">
 
 
     <h3 class="text-center my-3">Noticias </h3>

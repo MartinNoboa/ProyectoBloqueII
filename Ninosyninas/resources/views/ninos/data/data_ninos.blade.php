@@ -1,6 +1,6 @@
 
 
-@if ($children->count())
+
     
     @foreach($children as $key)
         <tr scope="row">
@@ -66,11 +66,6 @@
             </td>
         </tr>
     @endforeach
-@else
-    <div>
-    <h3>No hay ninos disponibles</h3>
-    </div>
-    
-@endif
+
 
 
