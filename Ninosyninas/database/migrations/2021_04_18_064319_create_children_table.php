@@ -19,6 +19,9 @@ class CreateChildrenTable extends Migration
             $table->string("apellido_paterno");
             $table->string("apellido_materno");
             $table->date("fecha_nacimiento");
+            $table->string('mail',255)->nullable();
+            $table->string("nombre_tutor")->nullable();
+            $table->string("telefono")->nullable();
             $table->unsignedInteger("grado");
 
             $table->timestamps();
