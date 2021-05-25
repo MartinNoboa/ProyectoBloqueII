@@ -1,8 +1,5 @@
 <!--<h1>{{($modo)}} Reporte </h1> -->
 @section('pageTitle', "$modo Reporte")
-
-
-<div class='container'><a class="btn btn-outline-primary p-2 m-2" href="{{url('/reporte')}}">Regresar a reportes</a></div>
  
 <div class="d-flex align-items-center justify-content-center flex-column">
     <div class="p-4 w-50 bg-light container my-5 shadow p-3 mb-5 bg-body rounded">
@@ -77,7 +74,7 @@
         <div class="form-group pb-4" >
 
         <label for="nombre" class="px-0" >Comentarios</label>
-            <input type="text" class="form-control" name="comentarios" id="comentarios" height="400rem" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->comentarios}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
+            <textarea class="form-control" name="comentarios" id="comentarios" height="400rem" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->comentarios}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> > </textarea>
             
         </div>
 
