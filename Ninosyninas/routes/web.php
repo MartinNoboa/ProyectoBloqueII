@@ -9,9 +9,11 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\DonadoresController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\Galeria\GaleriaController;
+use App\Http\Controllers\Galeria\GaleriaHomeController;
 
 /*
 |--------------------------------------------------------------------------
