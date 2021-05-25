@@ -53,7 +53,6 @@
             <label for="area_id" class="px-0">Area desde la que se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
             <select class="form-control" id="area_id" name="area_id"<?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un area</option>
-                <option value="0">Terapia de Lenguaje</option>
                 @foreach($areasList as $item)
                     <option value="{{$item -> id}}" @if($modo != 'Crear') @if($item->id == $reporte->area_id) selected @else @endif @endif >{{$item -> area}}</option>
                 @endforeach
