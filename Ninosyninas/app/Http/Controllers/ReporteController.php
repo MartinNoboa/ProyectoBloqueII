@@ -19,7 +19,7 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        $reportes = Reporte::all();
+        $reportes = Reporte::paginate(5);
         
         return view('reporte.index',['reportes' => $reportes]);
     }
@@ -37,20 +37,6 @@ class ReporteController extends Controller
 
     return view('reporte.create', compact('userList', 'childList', 'areasList'));
     }
-
-    public static function getNombreUsuario($id){
-        $consulta = users::where('id', '=', $id)->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
-        return $consulta;
-    }
-
-    public static function getNombreNino($id){
-        $consulta = Children::where('id', '=', $id)->select('nombre', 'apellido_paterno', 'apellido_materno')->get();
-        $response = $consulta;
-        return $response;
-    } 
-
-
-
 
     /**
      * Store a newly created resource in storage.

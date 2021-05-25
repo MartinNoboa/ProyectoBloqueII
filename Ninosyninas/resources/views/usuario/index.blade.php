@@ -61,7 +61,7 @@
                 <th class="text-wrap" scope="col">Email</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id='usuarios'>
 
             @foreach($users as $item)
             <tr scope="row">
@@ -143,6 +143,7 @@
         <h4 class="text-center my-3">No hay usuarios disponibles</h4>
     </div>
     @endif
+ 
 </div>
 
 
