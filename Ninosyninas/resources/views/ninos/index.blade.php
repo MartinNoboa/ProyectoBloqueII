@@ -112,7 +112,7 @@
 
         function recuperarNinos(page) {
             var search = $('#search').val();
-            //console.log(search);
+            console.log(search);
       
             $.ajax({
             type: "GET",
