@@ -85,10 +85,10 @@
 
         </div>
         <!-- Revisar para poner iconos -->
+        @if (session()->has('sesionUsuario'))
         <div class="nav-item mx-3">
             <a class="nav-link text-secondary" href="{{url('/panel')}}">Panel</a>
         </div>
-        @if (session()->has('sesionUsuario'))
         <span id="loginIcon"><a id="linkLogin" href="{{ url('logout') }}"><i class="fas fa-user fa-2x"></i></a></span>
         @else
         <span id="loginIcon"><a id="linkLogin" href="{{ url('login') }}"><i class="fas fa-user fa-2x"></i></a></span>
