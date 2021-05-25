@@ -20,23 +20,16 @@ class DonadoresController extends Controller
     public function eloquent(){
 
 
-        //$consulta = Donadores::where('nombre')->get();
 
         $consulta = Donadores::where('aprobado',"=",'2')->get();
 
-        //$aprobados = Donadores::all();
-
-        //return view('',['consulta' => $consulta]);
-
-        //return $consulta;
-
+   
 
     }
 
     public function index()
     {
-        //para pasar infor directamente al index
-        //$datos['donadores']=Donadores::paginate(10);
+        
 
         $aprobados = Donadores::where('aprobado',"=",'1')->paginate(5);
 
