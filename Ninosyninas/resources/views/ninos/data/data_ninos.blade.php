@@ -5,8 +5,6 @@
     @foreach($children as $key)
         <tr scope="row">
             @php
-                  
-
                 $nombre= App\Models\Children::find($key->id);
             @endphp
             <td class="fs-6 text-wrap">{{ $key->nombre }}</td>
