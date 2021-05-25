@@ -64,9 +64,9 @@ class ReporteController extends Controller
 
          $campos=[
 
-            'users_id'=>'required|numeric|max:20',
-            'child_id'=>'required|numeric|max:20',
-            'area_id'=>'required|numeric|max:20',
+            'users_id'=>'required|numeric',
+            'child_id'=>'required|numeric',
+            'area_id'=>'required|numeric',
             'calificacion'=>'required|integer|max:10',
 
     ];
@@ -99,7 +99,8 @@ class ReporteController extends Controller
      */
     public function show($id)
     {
-        $reporte = Reporte::findOrFail($id);$userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
+        $reporte = Reporte::findOrFail($id);
+        $userList = users::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $childList = Children::select('id', 'nombre', 'apellido_paterno', 'apellido_materno') -> get();
         $areasList = areas::select('id', 'area') -> get();
 

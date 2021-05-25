@@ -1,18 +1,18 @@
 
 
 
-@if ($children->count())
     
     @foreach($children as $key)
         <tr scope="row">
             @php
                 $nombre= App\Models\Children::find($key->id);
             @endphp
-            <td class="fs-6 text-wrap">{{ $key->nombre }}</td>
-            <td class="fs-6 text-wrap">{{ $key->apellido_materno }}</td>
-            <td class="fs-6 text-wrap">{{ $key->apellido_paterno }}</td>
+            <td class="fs-6 text-wrap">{{ $nombre['nombreCompleto'] }}</td>
             <td class="fs-6 text-wrap">{{ $key->fecha_nacimiento}}</td>
             <td class="fs-6 text-wrap">{{ $key->grado}}</td>
+            <td class="fs-6 text-wrap">{{ round($key->promedio,2)}}</td>
+
+           
             <td>
 
                 <a href="{{ url('/registrar-ninos/'.$key->id.'/see ') }}">
@@ -60,14 +60,17 @@
                     </div>
                 
                 </form>
+              
             </td>
+                    
+                
+
         </tr>
     @endforeach
-@else
-    <div>
-    <h3>No hay ninos disponibles</h3>
+
+    <div class="container">
+        {{ $children->onEachSide(10)->links() }}
     </div>
-    
-@endif
+
 
 

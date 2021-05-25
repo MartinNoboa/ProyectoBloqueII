@@ -2,7 +2,12 @@
     --purple: purple;
     --white: white;
     --black: black;
-    --background-color:#4eb3f1
+    --background-color:#4eb3f1;
+    --rojo: #fc0703 ;
+    --verde: #008000;
+    --azul: #0000ff;
+    --rosa: #ff0080;
+
 }
 
 
@@ -224,4 +229,63 @@ CSS para donaciones
     width: 70%;
 }
 
+
+.largo{
+
+    height: 50%;
+}
+
+/* Títulos colores*/
+.titulo-azul{
+    color: var(--azul);
+    font-weight: bold;
+}
+
+.titulo-verde{
+    color: var(--verde);
+    font-weight: bold;
+}
+.titulo-rojo{
+    color: var(--rojo);
+    font-weight: bold;
+}
+.titulo-rosa{
+    color: var(--rosa);
+    font-weight: bold;
+}
+
+.background{
+    background-color: #ccebff ;
+}
+
+.font-title{
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 40px;
+}
+
+.font-title-title{
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 50px;
+}
+
+.font-card{
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 25px;
+}
+
+.cont {
+    min-height: 40em;
+}
+
+.login {
+    min-height: 35em; 
+}
+
+.img-home {
+    width:100%; height:500px;
+}
+
+.aviso{
+    font-size: 30px;
+}
 

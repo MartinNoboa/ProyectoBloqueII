@@ -3,16 +3,16 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='upper-half'> 
+<div class='background'> 
 <br>
 <br>
-<h1 class='text-center'>¡Bienvenid@!</h1>
+<h1 class='text-center font-title-title titulo'>¡Bienvenid@!</h1>
 <br>
 <br>
 @endsection
 
 @section('mainContent')
-    <div class="container">
+    <div class="container background">
     <div class="row">
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
@@ -37,7 +37,7 @@
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
-            <a type="button"  href="{{url('/calendario')}}" class="btn"><i class="fas fa-calendar-alt fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/calendario/panel')}}" class="btn"><i class="fas fa-calendar-alt fa-6x pb-3 titulo"></i></a>
             <h3>Calendario</h3>
             <h5>Eventos que hubo o habrá en Niños y Niñas de México</h5>
         </div>
@@ -54,7 +54,7 @@
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
-            <a type="button"  href="{{url('/panel')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
+            <a type="button"  href="{{url('/panel/galeria')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
                 <h3>Galeria</h3>
                 <h5>Colección de imagenes que se deaean mostrar en la pagina web</h5>
                

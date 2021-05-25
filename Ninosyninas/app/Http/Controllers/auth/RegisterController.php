@@ -14,7 +14,8 @@ class RegisterController extends Controller
         return view('auth.registrar-usuario');
     }
     public function store(Request $request){
-        $this->validate($request,[
+        
+        $campos = [
             'name'=>'required|max:255',
             'apellido_paterno'=>'required|max:255',
             'apellido_materno'=>'max:255',
@@ -24,20 +25,25 @@ class RegisterController extends Controller
             'phone'=>'required|numeric',
             'email'=>'required|email|max:255',
             'password'=>'required|confirmed|min:6',
+            'role'=>'required|numeric'
 
-        ]);
-        users::create([
-            'nombre'=>$request->name,
-            'apellido_paterno'=>$request->apellido_paterno, 
-            'apellido_materno'=>$request->apellido_materno,
-            'fecha_nacimiento'=>$request->birthday,
-            'fecha_inicio'=>$request->contratacion,
-            'ocupacion'=>$request->ocupacion,
-            'telefono'=>$request->phone,
-            'mail'=>$request->email,
-            'contrasenia'=>Hash::make($request->password),
-        ]);
-        return redirect()->route('lista_usuarios')->with('mensaje','Usuario registrado con éxito');
+        ];
+
+        $mensaje=[
+
+            'required'=>'El :attribute es requerido'
+    
+        ];
+        
+        $this->validate($request, $campos, $mensaje);
+
+        $datosUsuario = request()->except('_token', 'role');
+
+        users::insert($datosUsuario);
+
+        return response()->json($datosUsuario);
+
+        //return redirect('usuarios')->with('mensaje','Usuario registrado con éxito');
     }
 
     

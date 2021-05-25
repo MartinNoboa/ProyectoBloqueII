@@ -18,4 +18,8 @@ class images extends Model
     {
         return $this->hasMany(news::class,'id');
     }
+    public function gallery()
+    {
+        return $this->hasMany(galleries::class,'id');
+    }
 }

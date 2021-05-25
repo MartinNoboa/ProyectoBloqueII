@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Children;
+use App\Models\Donator;
 use Illuminate\Http\Request;
+use App\Models\Reporte;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
+
 
 class ChildrenController extends Controller
 {
     public function index()
     {     
         $children=children::ninos('');
-        //$children = children::all();
-
-        //dd($children[3]->id);
         return view('ninos.index',['children'=>$children]);
     }
+
+
 
     public function create()
     {
@@ -39,10 +43,10 @@ class ChildrenController extends Controller
 
     public function destroy($id)
     {
-        dd($id);
+    
         children::destroy($id);
         
-        //return redirect('ninos')->with('mensaje','Eliminado Exitoso');
+        return redirect('ninos')->with('mensaje','Eliminado Exitoso');
     }
 
     public function update(Request $request,  $id)

@@ -7,10 +7,10 @@
 
 @section('header')
 
-<div class='upper-half'> 
+<div class='background'> 
     <div class=" pt-5">
-        <h1 class='text-center titulo'>Donaciones</h1>
-        <h3 class='text-center titulo mb-5'>Regístrate como donador</h3>
+        <h1 class='text-center titulo font-title-title'>Donaciones</h1>
+        <h3 class='text-center titulo mb-5 font-title'>Regístrate como donador</h3>
 
     </div>
     <div class="container">
@@ -29,15 +29,10 @@
 
 
 
-<div class="bottom-half">
+<div class="background cont">
 
     <div class="container text-justify">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis placerat nulla. 
-            Vesbulum preum, nisl non posuere varius, lectus massa scelerisque lacus, sed dignissim quam metus eu metus.
-            Donec orci quam, fermentum vitae nibh ac, rutrum congue nisi.
-            Phasellus non tortor enim. Vesbulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
-            Class aptent taci sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos (informacion acerca del registro de donadores).</p>
-        
+        <p class="text-center"> ¡Hola! Dejanos tu contacto y nosotros  nos contactaremos contigo</p>
         <form method="POST" action= "{{ url('/donador') }}">
             @csrf
         <br>
@@ -95,7 +90,7 @@
             <br>
             <br>
 
-            <label for='calle_secundaria' >Calle secuandaria <span aria-hidden="true" class="required text-danger">*</span></label><br>
+            <label for='calle_secundaria' >Calle secundaria <span aria-hidden="true" class="required text-danger">*</span></label><br>
             <input placeholder='Calle cerrito viejo.'  id='calle_secundaria' name='calle_secundaria' class='form-input ' value= "{{old('calle_secundaria')}}" required>
             <br>
             <br>
@@ -143,7 +138,7 @@
             <h4 class="text-center mt-5">Donación</h4>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6" >
+                    <div class="col-12 col-md-12" >
                         <label for='tipo_pago'  >Método de pago <span aria-hidden="true" class="required text-danger">*</span></label><br>
                             <select class='form-input' name="tipo_pago" id="tipo_pago" required>
                                 <option value="Transferencia">Transferencia</option>
@@ -155,12 +150,7 @@
                         <br>
                     </div>
 
-                    <div class="col-12 col-md-6 ">
-                        <label for='uso_cfdi'>Uso CFDI</label><br>
-                        <input placeholder='5445 ' id='uso_cfdi' name='uso_cfdi' class='form-input' value= "{{old('usoCFDI')}}" >
-                        <br>
-                        <br>
-                    </div>
+                    
                     <br>
                 </div>
             </div>

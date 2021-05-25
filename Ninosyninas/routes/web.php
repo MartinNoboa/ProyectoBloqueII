@@ -11,11 +11,10 @@ use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\NosotrosController;
-use App\Http\Controllers\DonadoresController;
+use App\Http\Controllers\Galeria\GaleriaController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -78,6 +77,7 @@ Route::get('/reporte/{id}/show',[ReporteController::class, 'show'])->middleware(
 Route::get('/registrar-usuario',[RegisterController::class,'index'])->middleware('sesionIniciada')->name('register');
 Route::post('/registrar-usuario',[RegisterController::class,'store']);
 Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
+Route::get('/usuario/{id}/show',[UsuariosController::class, 'show'])->middleware('sesionIniciada');
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
 Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('buscarUsuarios');
@@ -90,11 +90,13 @@ Route::patch('/usuario/{id}/edit',[UsuariosController::class,'update']);
 Route::get('/calendario', function(){
     return view("landing.landing-calendario");
 });
-
+Route::get('/calendario/panel', function(){
+    return view("landing.landing-calendario-panel");
+});
 
 Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 
-Route::get('/donaciones',[LandingController::class, 'donaTexts'])->middleware('sesionIniciada');
+Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
 
 Route::resource('donadores',DonadoresController::class);
@@ -105,7 +107,9 @@ Route::get('/donadores/noAprobados',[DonadoresController::class,'recuperarDonado
 
 
 
+
 //rutas para el controlador de login y logout
+
 
 //use App\Http\Controllers\Auth\UserAuthController;
 
@@ -172,6 +176,12 @@ Route::get('educacion', [NosotrosController::class,'indexed'])->middleware('sesi
 Route::delete('/educacion/eliminar/{id}', [NosotrosController::class,'eliminaredu'])->middleware('sesionYaIniciada');
 Route::get('educacion/registrar-nuevo', [NosotrosController::class,'createedu'])->middleware('sesionYaIniciada');
 Route::post('educacion/registrar', [NosotrosController::class,'storeedu'])->middleware('sesionYaIniciada');
+Route::get('/panel/galeria',[GaleriaController::class,'index'])->name('galeria-panel');
+Route::get('/panel/galeria/publicar-imagen',[GaleriaController::class,'displayForm']);
+Route::post('/panel/galeria/publicar-imagen',[GaleriaController::class,'publicarForm']);
+Route::any('/panel/galeria/delete/{id}',[GaleriaController::class,'delete']);
+
+Route::get('/galeria',GaleriaHomeController::class)->name('galeria');
 
 
 /*

@@ -3,12 +3,22 @@
 @section('pageTitle', "Niños y niñas de Mexico")
 
 @section('header')
-<div class='background cont'> 
+<div class=' cont'> 
 <br>
 <br>
-<h1 class='text-center titulo-rosa font-title-title'>Descubre nuestros próximos eventos</h1>
+<h1 class='text-center titulo-rosa font-title-title'>Calendario</h1>
 <br>
 <br>
+<div class="container  pb-5 ">
+    <div class="d-flex justify-content-start my-3 ">
+            <a href="{{url('/panel')}}">
+                <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+            </a>
+        </div>
+</div>
+
 @endsection
 
 @section('mainContent')

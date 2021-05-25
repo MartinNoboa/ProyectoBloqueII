@@ -1,8 +1,5 @@
 <!--<h1>{{($modo)}} Reporte </h1> -->
 @section('pageTitle', "$modo Reporte")
-
-
-<div class='container'><a class="btn btn-outline-primary p-2 m-2" href="{{url('/reporte')}}">Regresar a reportes</a></div>
  
 <div class="d-flex align-items-center justify-content-center flex-column">
     <div class="p-4 w-50 bg-light container my-5 shadow p-3 mb-5 bg-body rounded">
@@ -35,7 +32,7 @@
 
             @endforeach
                 
-                <option>Juanito</option>
+                
             </select>
         </div>
 
@@ -53,7 +50,6 @@
             <label for="area_id" class="px-0">Area desde la que se reporta: <span aria-hidden="true" class="required text-danger" >*</span></label>
             <select class="form-control" id="area_id" name="area_id"<?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
                 <option selected>Selecciona a un area</option>
-                <option value="1">Psicologia</option>
                 @foreach($areasList as $item)
                     <option value="{{$item -> id}}" @if($modo != 'Crear') @if($item->id == $reporte->area_id) selected @else @endif @endif >{{$item -> area}}</option>
                 @endforeach
@@ -78,7 +74,7 @@
         <div class="form-group pb-4" >
 
         <label for="nombre" class="px-0" >Comentarios</label>
-            <input type="text" class="form-control" name="comentarios" id="comentarios" height="400rem" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->comentarios}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> >
+            <textarea class="form-control" name="comentarios" id="comentarios" height="400rem" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$reporte->comentarios}}" @else @endif  <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?> > </textarea>
             
         </div>
 

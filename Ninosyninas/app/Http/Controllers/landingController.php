@@ -17,12 +17,12 @@ class LandingController extends Controller{
         
         $txt=Landing::all()->toArray();       
         $textos = [
-            "card1" => "Nos acompañamos en la bella tarea de vivir la vida",
-            "cardt1" => "Título de la tarjeta1",
-            "card2" => "Para que en la calle no sea su futuro acompáñanos a hacer la diferencia",
-            "cardt2" => "Título de la tarjeta2",
-            "card3" => "Niños resilientes aprendiendo a vivir, enfrentando retos en la vida",
-            "cardt3" => "Título de la tarjeta3",
+            "card1" => "Los acompañamos en la bella tarea de vivir la vida",
+            "cardt1" => "Acompañamiento",
+            "card2" => "Para que la calle no sea su futuro acompáñanos a hacer la diferencia",
+            "cardt2" => "Educación",
+            "card3" => "Niños resilientes aprendiendo a vivir, enfrentando retos en la crecer",
+            "cardt3" => "Desarollo de habilidades",
         ];
         return view("landing.landing-home", ["textos" => $textos, "txt" => $txt]);
 
@@ -39,7 +39,8 @@ class LandingController extends Controller{
     public function areasTexts(){
         $atencion=Atencion::all()->toArray();
         $educacion=Educacion::all()->toArray();
-        return view("landing.nosotros-area", ["atencion" => $atencion , "educacion" => $educacion]);
+        $txt=Landing::all()->toArray();
+        return view("landing.nosotros-area", ["atencion" => $atencion , "educacion" => $educacion, "txt" => $txt]);
     }
     
     public function logroText(){
@@ -75,8 +76,9 @@ class LandingController extends Controller{
         //$datos['donadores']=Donadores::paginate(10);
 
         $noticias = news::all();
-
+        //return dd($noticias);
         return view('landing.landing-noticias',['noticias' => $noticias]);
+    
     }
 
     public function aNosotros()

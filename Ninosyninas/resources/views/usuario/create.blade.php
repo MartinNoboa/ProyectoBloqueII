@@ -1,6 +1,3 @@
-formulario de creacion de usuario
-
-
 @extends('layouts.main-landing')
 
 @section('header')

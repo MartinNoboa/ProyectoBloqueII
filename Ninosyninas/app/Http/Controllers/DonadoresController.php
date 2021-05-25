@@ -20,16 +20,10 @@ class DonadoresController extends Controller
     public function eloquent(){
 
 
-        //$consulta = Donadores::where('nombre')->get();
 
         $consulta = Donadores::where('aprobado',"=",'2')->get();
 
-        //$aprobados = Donadores::all();
-
-        //return view('',['consulta' => $consulta]);
-
-        //return $consulta;
-
+   
 
     }
 
