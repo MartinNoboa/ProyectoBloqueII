@@ -14,13 +14,7 @@ class ChildrenController extends Controller
 {
     public function index()
     {     
-        //$children=children::ninos('');
-        //$children = children::all();
-
-
-        $children=Children::getPromedio();
-                                
-        
+        $children=children::ninos('');
         return view('ninos.index',['children'=>$children]);
     }
 

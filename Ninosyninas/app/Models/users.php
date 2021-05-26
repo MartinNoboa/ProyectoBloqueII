@@ -30,6 +30,17 @@ class users extends Model
 
     ];
 
+
+    public function condicion(){
+
+
+        return[
+
+            'mail' => 'required|unique:user,mail'
+
+        ];
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

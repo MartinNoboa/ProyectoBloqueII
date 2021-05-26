@@ -1,7 +1,7 @@
 @extends('layouts.main-landing')
 @section('content')
+@if(Session::has('mensaje'))
 <div class="container">
-    @if(Session::has('mensaje'))
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
 
@@ -12,8 +12,8 @@
             <span aria-hidden="true" class="btn pull-right">&times;</span>
         </button>
     </div>
-    @endif
 </div>
+@endif
 
 <div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
 
@@ -43,14 +43,6 @@
                 </button>
             </a>
 
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user"
-                autocomplete="off">
-            {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
-            <label for="search-box" title="Buscar">
-                <span class="material-icons-outlined search-icon">
-                    search
-                </span>
-            </label>
 
         </div>
     </div>
@@ -113,7 +105,7 @@
     @else
     <div class="empty-space">
         <h2 class="my-3 text-center pt-5">
-            No hay fotos en la disponibles galeria 
+            No hay fotos en la disponibles en la galeria 
         </h2>
     </div>
     

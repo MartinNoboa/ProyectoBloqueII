@@ -47,7 +47,7 @@ class UsuariosController extends Controller
             'fecha_inicio'=>'required|date',
             'ocupacion'=>'required|max:255',
             'telefono'=>'required|numeric',
-            'mail'=>'required|email|max:255',
+            'mail'=>'required|email|unique:users,mail',
             'contrasenia'=>'required|confirmed|min:6',
             'roles_id'=>'required|numeric'
 

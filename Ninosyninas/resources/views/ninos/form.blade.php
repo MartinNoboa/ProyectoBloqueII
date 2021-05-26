@@ -54,6 +54,19 @@
             <label for="grado" class="px-0">Grado <span aria-hidden="true" class="required text-danger" >*</span></label>
             <input type="number" class="form-control"  name="grado" value="{{ isset($ninos->grado)?$ninos->grado:'' }}" id="grado" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
         </div>
+
+        <div class="form-field  pb-4">
+            <label for="mail" class="px-0">Email </label>
+            <input type="email" class="form-control"  name="mail" value="{{ isset($ninos->mail)?$ninos->mail:'' }}" id="mail" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+        </div>
+        <div class="form-field  pb-4">
+            <label for="nombre_tutor" class="px-0">Nombre completo del padre o tutor </label>
+            <input type="text" class="form-control"  name="nombre_tutor" value="{{ isset($ninos->nombre_tutor)?$ninos->nombre_tutor:'' }}" id="nombre_tutor" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+        </div>
+        <div class="form-field  pb-4">
+            <label for="telefono" class="px-0">Teléfono </label>
+            <input type="text" class="form-control"  name="telefono" value="{{ isset($ninos->telefono)?$ninos->telefono:'' }}" id="telefono" <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+        </div>
         
 
         @if ($modo != 'Consultar')

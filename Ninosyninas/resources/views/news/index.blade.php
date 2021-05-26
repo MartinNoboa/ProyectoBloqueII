@@ -1,7 +1,7 @@
 @extends('layouts.main-landing')
 @section('content')
+@if(Session::has('mensaje'))
 <div class="container">
-    @if(Session::has('mensaje'))
     <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
 
@@ -42,15 +42,6 @@
                     </span>
                 </button>
             </a>
-
-            <input id="search-box" type="text" class="search-box" name="search-user" id="search-user"
-                autocomplete="off">
-            {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
-            <label for="search-box" title="Buscar">
-                <span class="material-icons-outlined search-icon">
-                    search
-                </span>
-            </label>
 
         </div>
     </div>
