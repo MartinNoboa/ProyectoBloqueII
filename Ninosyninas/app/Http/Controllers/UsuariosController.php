@@ -23,7 +23,7 @@ class UsuariosController extends Controller
         */        
         /* $users=users::usuarios('');
         return view('usuario.index')->with('users',$users); */
-        $users = users::all();
+        $users = users::paginate(5);
         
         return view('usuario.index',['users' => $users]);
 
