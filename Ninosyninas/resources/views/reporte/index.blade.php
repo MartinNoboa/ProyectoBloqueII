@@ -22,6 +22,7 @@
 </div>
 @endif
 <div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
+    
     <h3 class="text-center my-3">Reportes</h3>
     <div class="d-flex justify-content-start my-3">
         <a href="{{url('/panel')}}">
@@ -153,7 +154,9 @@
         </h2>
     </div>
     @endif
-
+    <div class="container">
+                {{ $reportes->onEachSide(5)->links() }}
+    </div>
     </div>
     </div>
 @endsection

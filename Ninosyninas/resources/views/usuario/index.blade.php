@@ -143,6 +143,9 @@
         <h4 class="text-center my-3">No hay usuarios disponibles</h4>
     </div>
     @endif
+    <div class="container">
+            {{ $users->onEachSide(5)->links() }}
+    </div>
 </div>
 
 
