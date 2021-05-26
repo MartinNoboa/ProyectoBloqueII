@@ -64,8 +64,6 @@
                     <thead>
                         <tr>
                             <th class="text-wrap" scope="col">Nombre </th>
-                            <th class="text-wrap" scope="col">Apellido Paterno </th>
-                            <th class="text-wrap" scope="col">Apellido Materno </th>
                             <th class="text-wrap" scope="col">Fecha Nacimiento</th>
                             <th class="text-wrap" scope="col">Grado</th>
                             <!-- Campo calculable (?) -->
@@ -83,6 +81,7 @@
                 </div>
                 
             @endif
+            
         </div>
 
     </div>

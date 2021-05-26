@@ -82,7 +82,7 @@ class GaleriaController extends Controller
                 ]);
             } 
         }
-        return redirect()->route('galeria-panel');
+        return redirect()->route('galeria-panel')->with('mensaje','La imagen se ha  registrado con éxito');;
     }
     public function delete($id)
     {
