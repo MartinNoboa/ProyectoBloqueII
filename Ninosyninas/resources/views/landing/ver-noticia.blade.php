@@ -1,6 +1,6 @@
 @extends('layouts.main-landing')
 @section('mainContent')
-<div class=''>
+<div class='pt-3'>
 <div class='container background'><div class="d-flex justify-content-start my-3">
         <a href="{{url('/noticias')}}">
             <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
