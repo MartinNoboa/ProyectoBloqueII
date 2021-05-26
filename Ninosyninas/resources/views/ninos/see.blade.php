@@ -6,7 +6,10 @@
 <form action="{{ url('/ninos/')}}" method="post">
 
 @csrf
+
+
 @include('ninos.form',['modo'=>'Consultar']);
+
 
 
 </form>

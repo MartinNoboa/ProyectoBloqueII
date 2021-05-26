@@ -30,6 +30,19 @@ class Children extends Model
         $nombreCompleto = ucfirst($this->nombre) . ' ' . ucfirst($this->apellido_paterno) . ' ' . ucfirst($this->apellido_materno);
         return $nombreCompleto;
     }
+
+    public static function getPromedio(){
+
+
+        $children=DB::table('children')
+                    ->select('children.id','children.nombre','children.apellido_paterno','children.apellido_materno', 'children.fecha_nacimiento', 'children.grado', DB::raw('round(AVG(reportes.calificacion),0) as promedio'))
+                    ->leftJoin('reportes','reportes.child_id',"=",'children.id')
+                    ->groupBy('id','nombre' , 'apellido_paterno','apellido_materno', 'fecha_nacimiento', 'grado')  ;
+
+                
+
+        return $children->paginate(10);
+    }
     
     /** 
      * Funcion para recuperar los datos de la tabla children

@@ -8,6 +8,7 @@
                   
 
                 $nombre= App\Models\Children::find($key->id);
+                
             @endphp
             <td class="fs-6 text-wrap">{{ $key->nombre }}</td>
             <td class="fs-6 text-wrap">{{ $key->apellido_materno }}</td>
@@ -63,9 +64,17 @@
                     </div>
                 
                 </form>
+              
             </td>
+                    
+                
+
         </tr>
     @endforeach
+
+    <div class="container">
+        {{ $children->onEachSide(10)->links() }}
+    </div>
 
 
 

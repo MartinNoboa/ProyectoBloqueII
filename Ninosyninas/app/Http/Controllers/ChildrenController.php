@@ -18,15 +18,7 @@ class ChildrenController extends Controller
         //$children = children::all();
 
 
-        $children=DB::table('children')
-                    ->select('children.id','children.nombre','children.apellido_paterno','children.apellido_materno', 'children.fecha_nacimiento', 'children.grado', DB::raw('round(AVG(reportes.calificacion),0) as promedio'))
-                    ->join('reportes','reportes.child_id',"=",'children.id')
-                    ->groupBy('id','nombre' , 'apellido_paterno','apellido_materno', 'fecha_nacimiento', 'grado')  
-
-                    ->get();
-
-  
-
+        $children=Children::getPromedio();
                                 
         
         return view('ninos.index',['children'=>$children]);
