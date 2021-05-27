@@ -57,7 +57,9 @@ class UserAuthController extends Controller
     
     
     function panel(){
+        dd(auth()->user());
         return view('registrado.panel');
+
     }
     
     function logout(){
