@@ -23,9 +23,7 @@
 }
 
 
-.noticia{
-    padding: 20px 20px 20px 20px;
-}
+
 
 .img-noticia{
     max-width: 95%;
@@ -135,8 +133,12 @@ label{
 }
 
 .card{
-    width: 250px;
+    width: 500px;
     height: 450px;
+}
+
+.noticia{
+    width:25rem;
 }
 
 
@@ -147,6 +149,10 @@ th, td {
 .footer{
     background-color: #F2F2F2;
     width: 100%;
+}
+
+.responsive-container{
+    width: 50%;
 }
 
 @media only screen and (max-width: 988px) {
@@ -163,8 +169,12 @@ th, td {
     .calendar {
         height: 400px;
     }
-    .noticia {
-        width: 200px;
+    .card {
+        width: 300px;
+        height: 400px;
+    }
+    .responsive-container{
+        width: 80%;
     }
 }
 
