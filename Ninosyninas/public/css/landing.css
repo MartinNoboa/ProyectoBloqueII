@@ -41,9 +41,9 @@
 .table-wt th, tr{
     color: #000;
     width: 800px;
-}
+} 
 
-.form-input{
+.form-input{ 
     width: 95%;
     position: auto;
     padding: 7px 7px 7px 7px;
@@ -157,6 +157,9 @@ th, td {
     }
     .calendar {
         height: 400px;
+    }
+    .noticia {
+        width: 200px;
     }
 }
 
