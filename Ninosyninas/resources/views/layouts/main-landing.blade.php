@@ -100,7 +100,7 @@
     @yield('login')
     @yield('content')
 
-    <main class="containers-fluid background ">
+    <main class="containers-fluid background overflow-hidden">
         @yield('mainContent')
     </main>
     <footer class="bg-light container-footer">
