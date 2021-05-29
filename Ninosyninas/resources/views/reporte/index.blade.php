@@ -32,7 +32,9 @@
         </a>
     </div>
 
-
+    <div class="table-responsive">
+                <div class="table-responsive">    
+                <br>
 
     <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
