@@ -9,7 +9,7 @@
     @csrf 
         <div class="d-flex align-items-center justify-content-center flex-column">
             <div class="p-4 w-50 bg-light container my-5 shadow p-3 mb-5 bg-body rounded">
-                <h1 class="fs-1 my-3 d-flex align-items-center justify-content-center"><h1>Registrar área de atención</h1></h1>
+                <h1 class="fs-1 my-3 d-flex align-items-center justify-content-center"><h1>Registrar programa de educación</h1></h1>
                 <hr>
                 @if(count($errors)>0)
                     <div class="alert alert-danger" role="alert">
@@ -28,7 +28,7 @@
                             
                     </div>
                     <div class="px-4">
-                            <input type="submit" class="btn btn-primary w-100 mt-4" value="Registrar área">
+                            <input type="submit" class="btn btn-primary w-100 mt-4" value="Registrar programa">
                     </div>
                     <div class="px-4">
                             <a href="{{url('/educacion')}}" class="btn bg-danger w-100 mt-4 text-white">Regresar</a>

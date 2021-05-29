@@ -17,6 +17,7 @@
 
 <div class="bg-white container mt-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" id="table-usr">
     <h3 class="text-center my-3">Usuarios</h3>
+
     <div class="d-flex justify-content-start my-3">
         <a href="{{url('/panel')}}">
             <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
@@ -24,6 +25,11 @@
             </button>
         </a>
     </div>
+
+    <div class="table-responsive">
+                <div class="table-responsive">    
+                <br>
+
     <div class="d-flex justify-content-between align-items-center border-bottom my-3">
         <div class="me-auto p-2">
             <h1 class="text-left fs-4">Lista de usuarios</h1>
@@ -155,12 +161,7 @@
 @push('scripts')
 <script>
     //script para poder usar busqueda ajax
-    $(document).ready(function () {
-        $(document).on('click', '.pagination a', function (event) {
-            event.preventDefault();
-            var page = $(this).attr('href').split('page=')[1];
-            recuperarUsuarios(page);
-        });
+    
 
         $('#search').on('keyup', function () {
             $value = $(this).val();

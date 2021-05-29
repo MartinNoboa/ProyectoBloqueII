@@ -13,7 +13,7 @@
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
-                <div class="card text-center rounded shadow " data-aos="flip-left">
+                <div class="card text-center rounded shadow " data-aos="flip-left" style="width: 250px; height: 450px;">
                     <div class="card-body  rounded ">
                         <br>
                         <img src="{{url('img/34.jpg')}}" width="90%" height="40%">
@@ -26,7 +26,7 @@
                         <p class="card-text text-center ">{{$textos["card1"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center shadow" data-aos="flip-up">
+                <div class="card text-center shadow" data-aos="flip-up" style="width: 250px; height: 450px;">
                     <div class="card-body">
                         <br>
                         <img src="{{url('img/35.jpg')}}" width="70%" height="40%">
@@ -39,7 +39,7 @@
                         <p class="card-text">{{$textos["card2"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center " data-aos="flip-right">
+                <div class="card text-center " data-aos="flip-right" style="width: 250px; height: 450px;">
                     <div class="card-body shadow" width="100" height="70">
                         <br>
                         <img src="{{url('img/36.png')}}" width="70%" height="40%">

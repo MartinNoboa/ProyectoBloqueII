@@ -68,10 +68,10 @@
                     <a class="nav-link" href="{{url('/noticias')}}">Noticias</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
+                    <a class="nav-link" href="{{route('galeria')}}">Galería</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="{{route('galeria')}}">Galería</a>
+                    <a class="nav-link" href="{{url('/calendario')}}">Calendario</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
@@ -100,7 +100,7 @@
     @yield('login')
     @yield('content')
 
-    <main class="containers-fluid background ">
+    <main class="containers-fluid background overflow-hidden">
         @yield('mainContent')
     </main>
     <footer class="bg-light container-footer">
