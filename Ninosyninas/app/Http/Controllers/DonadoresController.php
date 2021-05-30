@@ -18,13 +18,7 @@ class DonadoresController extends Controller
      */
 
     public function eloquent(){
-
-
-
         $consulta = Donadores::where('aprobado',"=",'2')->get();
-
-   
-
     }
 
     public function index()
@@ -43,6 +37,8 @@ class DonadoresController extends Controller
                 return view('donadores.data.aprobados', compact('aprobados'))->render();
         }
     }
+
+ 
 
     public function recuperarDonadoresNoAprobados(Request $request) {
         $query = $request->search_query;

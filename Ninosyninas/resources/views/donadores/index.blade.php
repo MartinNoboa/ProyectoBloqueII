@@ -136,26 +136,25 @@
         $(document).on('click', '.pagination a', function(event) {
         event.preventDefault();
         var page = $(this).attr('href').split('page=')[1];
-        //recuperarDonadoresAprobados(page);
+        recuperarDonadoresAprobados(page);
         recuperarDonadoresNoAprobados(page);
         });
 
         $('#search').on('keyup', function() {
             $value = $(this).val();
-            //recuperarDonadoresAprobados(1);
+            recuperarDonadoresAprobados(1);
             recuperarDonadoresNoAprobados(1);
         });
 
         function recuperarDonadoresNoAprobados(page) {
         //
             var search = $('#search').val();
-            //console.log(search);
             $.ajax({
             type: "GET",
             data: {
                 'search_query':search,
             },
-            url: "{{ url('donadores/desaprobados') }}",
+            url: "{{route('desaprobados')}}",
             success:function(data) {
                 $('#desaprobados').html(data);
             }
@@ -164,6 +163,8 @@
 
         function recuperarDonadoresAprobados(page) {
             var search = $('#search').val();
+            console.log("Aprobados query: " + search);
+
             $.ajax({
             type: "GET",
             data: {
@@ -171,7 +172,7 @@
             },
             url: "{{ route('aprobados') }}",
             success:function(data) {
-                $('#donadoresAprobados').html(data);
+                $('#aprobados').html(data);
             }
             });
         }
