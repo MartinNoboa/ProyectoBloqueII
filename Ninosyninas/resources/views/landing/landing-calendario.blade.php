@@ -6,7 +6,7 @@
 <div class='background cont'> 
 <br>
 <br>
-<h1 class='text-center titulo-rosa font-title-title'>Descubre nuestros próximos eventos</h1>
+<h1 class='text-center titulo-rosa font-title-title'><strong>Descubre nuestros próximos eventos</strong></h1>
 <br>
 <br>
 @endsection

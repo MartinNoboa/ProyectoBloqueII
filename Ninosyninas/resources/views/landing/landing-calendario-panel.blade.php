@@ -6,7 +6,7 @@
 <div class=''> 
 <br>
 <br>
-<h1 class='text-center titulo-rosa font-title-title'>Calendario</h1>
+<h1 class='text-center titulo-rosa font-title-title'><strong>Calendario</strong></h1>
 <br>
 <br>
 <div class="container  pb-5 ">
