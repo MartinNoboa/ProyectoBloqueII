@@ -103,9 +103,8 @@ Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
 Route::resource('donadores',DonadoresController::class);
 Route::get('/donadores',[DonadoresController::class,'index'])->middleware('sesionIniciada');
-Route::get('/donadores/searchAprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('aprobados');
-
-Route::get('/donadores/searchDesaprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('desaprobados');
+Route::get('/donadores/desaprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('desaprobados');
+Route::get('/donadores/aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('aprobados');
 
 
 

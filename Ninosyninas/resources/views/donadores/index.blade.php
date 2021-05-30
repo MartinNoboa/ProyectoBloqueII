@@ -155,7 +155,7 @@
             data: {
                 'search_query':search,
             },
-            url: "{{ route('desaprobados') }}",
+            url: "{{ url('donadores/desaprobados') }}",
             success:function(data) {
                 $('#desaprobados').html(data);
             }
