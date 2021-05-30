@@ -43,7 +43,7 @@
                 <?php echo ' <h5 data-aos="zoom-in">'.$string1.'<h5>' ?>
             </div>
             <div class="text-center">
-                <img src="{{url('img/37.JPG')}}" width="80%" height="80%">
+                <img src="{{url('img/28.png')}}" width="100%">
             </div>
 
         </div>
@@ -52,4 +52,4 @@
 </div>
 
 
-@endsection
+@endsection     

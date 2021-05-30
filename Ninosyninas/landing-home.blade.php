@@ -13,24 +13,41 @@
     <div class="container mt-5">
         <div class="">
             <div class="grid-3 center">
-                <div class="card text-center rounded shadow " data-aos="flip-left" style="width: 250px; height: 450px;">
+                <div class="card text-center rounded shadow " data-aos="flip-left">
                     <div class="card-body  rounded ">
-                        <img src="{{url('img/34.jpg')}}" width="90%" height="40%" class="px-2 my-3">
+                        <br>
+                        <img src="{{url('img/34.jpg')}}" width="90%" height="40%">
+                        <br>
+                        <br>
+                        <br>
                         <h5 class="card-title text-center titulo-rosa font-card">{{$textos["cardt1"]}}</h5>
+                        <br>
+                        <br>
                         <p class="card-text text-center ">{{$textos["card1"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center shadow" data-aos="flip-up" style="width: 250px; height: 450px;">
+                <div class="card text-center shadow" data-aos="flip-up">
                     <div class="card-body">
-                        <img src="{{url('img/35.jpg')}}" width="70%" height="40%" class="px-2 my-3">
-                        <h5 class="card-title titulo-rojo font-card px-2 mb-3">{{$textos["cardt2"]}}</h5>
+                        <br>
+                        <img src="{{url('img/35.jpg')}}" width="70%" height="40%">
+                        <br>
+                        <br>
+                        <br>
+                        <h5 class="card-title titulo-rojo font-card">{{$textos["cardt2"]}}</h5>
+                        <br>
+                        <br>
                         <p class="card-text">{{$textos["card2"]}}</p>
                     </div>
                 </div>
-                <div class="card text-center " data-aos="flip-right" style="width: 250px; height: 450px;">
+                <div class="card text-center " data-aos="flip-right">
                     <div class="card-body shadow" width="100" height="70">
-                        <img src="{{url('img/36.png')}}" width="70%" height="40%"  class="px-2 my-3">
-                        <h5 class="card-title titulo-verde font-card px-2 mb-3">{{$textos["cardt3"]}}</h5>
+                        <br>
+                        <img src="{{url('img/36.png')}}" width="70%" height="40%">
+                        <br>
+                        <br>
+                        <br>
+                        <h5 class="card-title titulo-verde font-card">{{$textos["cardt3"]}}</h5>
+                        <br>
                         <p class="card-text">{{$textos["card3"]}}</p>
                     </div>
                 </div>
@@ -74,12 +91,12 @@
 
         </div>
         <div class="text-center">
-            <img src="{{url('img/30.jpg')}}" width="90%">
+            <img src="{{url('img/30.jpg')}}" width="70%" height="80%">
         </div>
     </div>
     <div class="grid-2 my-5">
         <div class="text-center">
-            <img src="{{url('img/14.jpg')}}" width="90%">
+            <img src="{{url('img/14.jpg')}}" width="80%" height="90%">
         </div>
         <div class="text-center">
             <h2 class='titulo-verde font-title-title'>Visión</h2>

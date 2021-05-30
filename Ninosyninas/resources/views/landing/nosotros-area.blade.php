@@ -106,11 +106,10 @@
 
             
             <div class="col-8 text-center">
-                <br>
-                <br>
-                <img src="{{url('img/30.jpg')}}"  width="80%">
-                <br>
-                <br>
+                
+                <img src="{{url('img/26.png')}}"  width="80%" class="px-2 m-3">
+                <img src="{{url('img/32.jpg')}}"  width="80%" class="px-2 m-3">
+                
             </div>
         </div>
 
