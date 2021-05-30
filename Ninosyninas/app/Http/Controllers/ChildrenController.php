@@ -46,7 +46,7 @@ class ChildrenController extends Controller
     
         children::destroy($id);
         
-        return redirect('ninos')->with('mensaje','Eliminado Exitoso');
+        return redirect('ninos')->with('mensaje','Niño eliminado con éxito');
     }
 
     public function update(Request $request,  $id)

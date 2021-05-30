@@ -157,7 +157,7 @@ class DonadoresController extends Controller
 
         //return redirect('/donadores');
 
-        return redirect('donadores')->with('mensaje','Eliminado Exitoso');
+        return redirect('donadores')->with('mensaje','Donador eliminado con éxito');
         
     }
   

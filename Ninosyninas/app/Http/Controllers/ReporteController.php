@@ -135,7 +135,7 @@ class ReporteController extends Controller
         
         Reporte::destroy($id);
 
-        return redirect('reporte')->with('mensaje','Eliminado Exitoso');
+        return redirect('reporte')->with('mensaje','Reporte eliminado con éxito');
     }
 
 }

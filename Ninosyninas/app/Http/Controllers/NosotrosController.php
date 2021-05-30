@@ -49,7 +49,7 @@ class NosotrosController extends Controller
     public function eliminar($id)
     {
         Patronato::destroy($id);
-        return redirect('patronato')->with('mensaje','Eliminado Exitoso');
+        return redirect('patronato')->with('mensaje','Eliminado exitoso');
     }
     /**
      * Remove the specified resource from storage.
@@ -60,7 +60,7 @@ class NosotrosController extends Controller
     public function eliminarat(Request $request,$id)
     {
         Atencion::destroy($id);
-        return redirect('atencion')->with('mensaje','Eliminado Exitoso');
+        return redirect('atencion')->with('mensaje','Eliminado exitoso');
        // return $request->id + $id;
     }
     /**
@@ -72,7 +72,7 @@ class NosotrosController extends Controller
     public function eliminaredu($id)
     {
         Educacion::destroy($id);
-        return redirect('educacion')->with('mensaje','Eliminado Exitoso');
+        return redirect('educacion')->with('mensaje','Eliminado exitoso');
     }
 
     
