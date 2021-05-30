@@ -40,7 +40,7 @@ class DonadoresController extends Controller
         $query = $request->search_query;
         if($request->ajax()) {
             $aprobados = Donadores::donadoresAprobados($query);
-                return view('donadores.data.desaprobados', compact('aprobados'))->render();
+                return view('donadores.data.aprobados', compact('aprobados'))->render();
         }
     }
 

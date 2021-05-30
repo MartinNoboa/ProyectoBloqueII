@@ -1,14 +1,4 @@
-@if ($desaprobados->count())
-        <br>
-        <thead >
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">email</th>
-                <th scope="col">Telefono</th>
-                
-            </tr>
-        </thead>
-        <tbody id = "donadoresNoAprobados">
+
             @foreach($desaprobados as $donador)
             <tr scope="row">
                 @php
@@ -72,8 +62,4 @@
             </tr>
 
             @endforeach
-        </tbody>
-    </table>
-    @else
-                <h2>No hay donadores disponibles</h2>
-    @endif
+   

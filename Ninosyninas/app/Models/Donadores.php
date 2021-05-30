@@ -11,7 +11,7 @@ class Donadores extends Model
     use HasFactory;
 
     protected $primaryKey = 'id';
-
+    protected $table = "donadores";
     protected $fillable = 
     [
         'id',  

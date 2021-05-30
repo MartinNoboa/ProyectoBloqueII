@@ -48,9 +48,8 @@
                             </button>
                         </a>
 
-                        <input id="search-box" type="text" class="search-box" name="search-user" id="search-user"
+                        <input  type="text" class="search-box" name="search-user" id="search"
                             autocomplete="off">
-                        {{-- data-href="{{URL::to('/usuarios.search')}}" --}}
                         <label for="search-box" title="Buscar">
                             <span class="material-icons-outlined search-icon">
                                 search
@@ -68,82 +67,15 @@
                     <thead>
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Apellido Paterno</th>
-                            <th scope="col">Apellido Materno</th>
                             <th scope="col">email</th>
                             <th scope="col">Telefono</th>
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id = "desaprobados">
+                    @include('donadores.data.desaprobados')
 
-                        @foreach($desaprobados as $donador)
-                        <tr scope="row">
-
-                            <td>{{ $donador->nombre }}</td>
-                            <td>{{ $donador->apellido_paterno }}</td>
-                            <td>{{ $donador->apellido_materno }}</td>
-                            <td>{{ $donador->email }}</td>
-                            <td>{{ $donador->telefono }}</td>
-                            <td>
-                                <a href="{{ url('/donadores/'.$donador->id.'/show') }}">
-
-                                    <button type="button"
-                                        class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
-                                        <i class="far fa-eye"></i>
-                                    </button>
-                                </a>
-                                <a href="{{ url('/donadores/'.$donador->id.'/edit') }}">
-
-                                    <button type="button"
-                                        class="btn btn-success my-1 d-flex justify-content-center align-items-center">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                </a>
-
-
-                                <form action="{{ url('/donadores/'.$donador->id) }}" method="post">
-                                    @csrf
-                                    {{ method_field('DELETE')}}
-
-                                    <!--<button type="submit" class="btn btn-danger" onclick="return confirm('¿Quieres borrar?')" value="Borrar">Borrar</button>-->
-
-                                    <button type="button" data-toggle="modal" data-target="#exampleModal"
-                                        class="btn btn-danger my-1 d-flex justify-content-center align-items-center"
-                                        value="Borrar"><i class="bi bi-trash"></i>
-
-                                    </button>
-
-                                    <!-- Modal desaprobados-->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar?</h5>
-                                                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger"
-                                                        data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn button-donar">Eliminar</button>
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </td>
-                        </tr>
-
-                        @endforeach
+                        
 
                         <!-- segunda tabla para aprobados-->
 
@@ -170,90 +102,13 @@
                     <thead>
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Apellido Paterno</th>
-                            <th scope="col">Apellido Materno</th>
                             <th scope="col">email</th>
                             <th scope="col">Telefono</th>
 
                         </tr>
                     </thead>
-                    <tbody>
-
-                        @foreach($aprobados as $donador)
-                        <tr scope="row">
-
-                            <td>{{ $donador->nombre }}</td>
-                            <td>{{ $donador->apellido_paterno }}</td>
-                            <td>{{ $donador->apellido_materno }}</td>
-                            <td>{{ $donador->email }}</td>
-                            <td>{{ $donador->telefono }}</td>
-
-
-
-                            <td>
-                                <a href="{{ url('/donadores/'.$donador->id.'/show') }}">
-
-                                    <button type="button"
-                                        class="btn btn-primary my-1 d-flex justify-content-center align-items-center">
-                                        <i class="far fa-eye"></i>
-                                    </button>
-                                </a>
-                                <a href="{{ url('/donadores/'.$donador->id.'/edit') }}">
-
-                                    <button type="button"
-                                        class="btn btn-success my-1 d-flex justify-content-center align-items-center">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                </a>
-
-
-
-                                <form action="{{ url('/donadores/'.$donador->id) }}" method="post">
-                                    @csrf
-                                    {{ method_field('DELETE')}}
-
-
-
-                                    <!--<button type="submit" class="btn btn-danger" onclick="return confirm('¿Quieres borrar?')" value="Borrar">Borrar</button>-->
-
-
-                                    <button type="button" data-toggle="modal" data-target="#exampleModal"
-                                        class="btn btn-danger my-1 d-flex justify-content-center align-items-center"
-                                        value="Borrar"><i class="bi bi-trash"></i>
-
-                                    </button>
-
-                                    <!-- Modal desaprobados-->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar?</h5>
-                                                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger"
-                                                        data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn button-donar">Eliminar</button>
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </td>
-                        </tr>
-                        @endforeach
-                        
-
+                    <tbody id = "aprobados">
+                       @include('donadores.data.aprobados')
                     </tbody>
                 </table>
                 @else
@@ -291,6 +146,22 @@
             recuperarDonadoresNoAprobados(1);
         });
 
+        function recuperarDonadoresNoAprobados(page) {
+        //
+            var search = $('#search').val();
+            //console.log(search);
+            $.ajax({
+            type: "GET",
+            data: {
+                'search_query':search,
+            },
+            url: "{{ route('desaprobados') }}",
+            success:function(data) {
+                $('#desaprobados').html(data);
+            }
+            });
+        }
+
         function recuperarDonadoresAprobados(page) {
             var search = $('#search').val();
             $.ajax({
@@ -301,21 +172,6 @@
             url: "{{ route('aprobados') }}",
             success:function(data) {
                 $('#donadoresAprobados').html(data);
-            }
-            });
-        }
-
-        function recuperarDonadoresNoAprobados(page) {
-        //
-            var search = $('#search').val();
-            $.ajax({
-            type: "GET",
-            data: {
-                'search_query':search,
-            },
-            url: "{{ route('noAprobados') }}",
-            success:function(data) {
-                $('#donadoresNoAprobados').html(data);
             }
             });
         }
