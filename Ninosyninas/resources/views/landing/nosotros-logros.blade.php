@@ -43,7 +43,7 @@
                 <?php echo ' <h5 data-aos="zoom-in">'.$string1.'<h5>' ?>
             </div>
             <div class="text-center">
-                <img src="{{url('img/28.png')}}" width="90%" >
+                <img src="{{url('img/28.png')}}" width="100%">
             </div>
 
         </div>
