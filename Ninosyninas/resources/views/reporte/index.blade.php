@@ -1,27 +1,24 @@
 @extends('layouts.main-landing')
 
-@section('pageTitle', "Niños y niñas de Mexico")
+@section('pageTitle', "NNM - Reportes")
 
 @section('content')
 
 @if(Session::has('mensaje'))
 <div class="container">
 
-    <!--<div class="alert alert-success alert-dismissible" role="alert">-->
     <div class="alert alert-success alert-dismissible" role="alert">
-
-
         {{ Session::get('mensaje')}}
-
         <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true" class="btn pull-right">&times;</span>
         </button>
     </div>
 </div>
 @endif
-<div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
 
+<div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
     <h3 class="text-center my-3">Reportes</h3>
+    
     <div class="d-flex justify-content-start my-3">
         <a href="{{url('/panel')}}">
             <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
