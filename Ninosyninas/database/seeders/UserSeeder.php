@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-//Importar la base de datos
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
                 "ocupacion"=>"2020-11-10",
                 "telefono"=>"4431231234",
                 "mail"=> "martinnoboa@gmail.com",
-                "contrasenia"=> "admin",
+                "contrasenia"=> Hash::make("admin"),
             ], 
             [
                 "nombre" => "Adrian", 
@@ -37,7 +37,9 @@ class UserSeeder extends Seeder
                 "ocupacion"=>"2019-7-03",
                 "telefono"=>"2000-10-15",
                 "mail"=> "adrianmonar@gmail.com",
+                //"contrasenia"=> Hash::make("admin"),
                 "contrasenia"=> "admin",
+
             ], 
         ]);
     }

@@ -101,7 +101,6 @@
         </div>
         </div>
     </div>
-    @can('isSuperAdmin')
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
@@ -112,7 +111,6 @@
         </div>
         </div>
     </div>
-    @endcan
     
 
 
