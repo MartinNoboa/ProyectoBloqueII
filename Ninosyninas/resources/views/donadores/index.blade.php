@@ -70,8 +70,8 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido Paterno</th>
                             <th scope="col">Apellido Materno</th>
-                            <th scope="col">email</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Teléfono</th>
 
                         </tr>
                     </thead>

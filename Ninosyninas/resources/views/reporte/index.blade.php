@@ -56,9 +56,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Nombre del niño</th>
-                        <th scope="col">Quien reporta</th>
-                        <th scope="col">Area</th>
-                        <th scope="col">Calificacion</th>
+                        <th scope="col">Quién reporta</th>
+                        <th scope="col">Área</th>
+                        <th scope="col">Calificación</th>
                         <th scope="col">Documento de drive</th>
 
 

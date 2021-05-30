@@ -31,7 +31,7 @@
 
     <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Lista de noticias Registradas </h3>
+            <h1 class="text-left fs-4">Lista de noticias registradas </h3>
         </div>
         <div class="p-2">
 

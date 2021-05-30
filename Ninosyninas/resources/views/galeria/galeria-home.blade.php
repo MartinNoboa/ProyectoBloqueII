@@ -15,7 +15,7 @@
     @else
         <div class="empty-space">
             <h2 class="my-3 text-center pt-5">
-                No hay fotos en la disponibles en la galeria
+                No hay fotos en la disponibles en la galería
             </h2>
         </div>
     @endif

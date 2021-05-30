@@ -64,8 +64,8 @@
                 <tr>
                     <th class="text-wrap" scope="col">Nombre Completo</th>
                     <th class="text-wrap" scope="col">Fecha Nacimiento</th>
-                    <th class="text-wrap" scope="col">Ocupacion</th>
-                    <th class="text-wrap" scope="col">Telefono</th>
+                    <th class="text-wrap" scope="col">Ocupación</th>
+                    <th class="text-wrap" scope="col">Teléfono</th>
                     <th class="text-wrap" scope="col">Email</th>
                 </tr>
             </thead>

@@ -18,7 +18,7 @@
 <div class="bg-white container my-5 p-3 bg-white shadow-sm  bg-body rounded">
 
 
-    <h1 class="text-center my-3">Galeria</h1>
+    <h1 class="text-center my-3">Galería</h1>
     <div class="d-flex justify-content-start my-3">
         <a href="{{url('/panel')}}">
             <button type="button" class="btn backbtn d-flex justify-content-center align-items-center">
@@ -31,7 +31,7 @@
 
     <div class="d-flex justify-content-between align-items-center border-bottom">
         <div class="me-auto p-2">
-            <h1 class="text-left fs-4">Listado galeria </h1>
+            <h1 class="text-left fs-4">Listado de fotos de galería </h1>
         </div>
         <div class="p-2">
 

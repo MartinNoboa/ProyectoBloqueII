@@ -3,12 +3,12 @@
 
 <div class="d-flex align-items-center justify-content-center flex-column">
     <div class="p-4 responsive-container bg-light container my-2 shadow p-3 mb-5 bg-body rounded">
-        <h1 class="fs-2 my-3 d-flex align-items-center justify-content-center">Publicar imagen en galeria</h1>
+        <h1 class="fs-2 my-3 d-flex align-items-center justify-content-center">Publicar imagen en galería</h1>
         <hr>
         <form action="{{url('/panel/galeria/publicar-imagen')}} " method="POST" enctype="multipart/form-data">
             @csrf
             {{-- <div class="mb-3 form-group form-outline px-4">
-                <label for="titulo" class="form-label fs-4 px-0">Titulo</label>
+                <label for="titulo" class="form-label fs-4 px-0">Título</label>
                 <input type="text"  name="titulo" id="titulo" placeholder="Ingresa el Titulo de tu imagen" class="form-control @error('titulo') border border-danger @enderror" value="{{old('titulo')}}">
                 @error('titulo')
                         <div class="text-danger my-2 fs-6">
