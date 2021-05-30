@@ -89,6 +89,9 @@
         <div class="nav-item mx-3">
             <a class="nav-link text-secondary" href="{{url('/panel')}}">Panel</a>
         </div>
+        <div class="nav-item mx-3">
+            <a class="nav-link text-secondary" href="https://drive.google.com/drive/folders/1d2k6HoxqPIdHs6cPoLdg7ROMdP9sIZGc?usp=sharing" target="_blank" >Ayuda</a>
+        </div>
         <span id="loginIcon"><a id="linkLogin" href="{{ url('logout') }}"><i class="fas fa-user fa-2x"></i></a></span>
         @else
         <span id="loginIcon"><a id="linkLogin" href="{{ url('login') }}"><i class="fas fa-user fa-2x"></i></a></span>
