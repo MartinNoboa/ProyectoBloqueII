@@ -18,25 +18,36 @@ class DonadoresController extends Controller
      */
 
     public function eloquent(){
-
-
-
         $consulta = Donadores::where('aprobado',"=",'2')->get();
-
-   
-
     }
 
     public function index()
     {
-        
-
-        $aprobados = Donadores::where('aprobado',"=",'1')->paginate(5);
-
-        $desaprobados = Donadores::where('aprobado',"=",'2')->paginate(5);
-        
+        //para pasar infor directamente al index
+        //$datos['donadores']=Donadores::paginate(10);
+        $aprobados = Donadores::donadoresAprobados('');
+        $desaprobados = Donadores::donadoresNoAprobados('');
         return view('donadores.index',['desaprobados' => $desaprobados,'aprobados' => $aprobados]);
     }
+
+    public function recuperarDonadoresAprobados(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $aprobados = Donadores::donadoresAprobados($query);
+                return view('donadores.data.aprobados', compact('aprobados'))->render();
+        }
+    }
+
+ 
+
+    public function recuperarDonadoresNoAprobados(Request $request) {
+        $query = $request->search_query;
+        if($request->ajax()) {
+            $desaprobados = Donadores::donadoresNoAprobados($query);
+                return view('donadores.data.desaprobados', compact('desaprobados'))->render();
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.

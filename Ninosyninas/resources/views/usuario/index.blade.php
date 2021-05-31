@@ -175,17 +175,17 @@
             var search = $('#search').val();
             console.log(search);
             $.ajax({
-                type: "GET",
-                data: {
-                    'search_query': search,
-                },
-                url: "{{ route('UsuariosController.search') }}",
-                success: function (data) {
-                    $('#usuarios').html(data);
-                }
+            type: "GET",
+            data: {
+                'search_query':search,
+            },
+            url: "{{ route('buscarUsuarios') }}",
+            success:function(data) {
+                $('#usuarios').html(data);
+            }
             });
         }
-    });
+
 
 </script>
 @endpush

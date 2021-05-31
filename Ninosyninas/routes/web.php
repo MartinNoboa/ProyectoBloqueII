@@ -9,16 +9,14 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DonatorController;
+use App\Http\Controllers\DonadoresController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\NosotrosController;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\DonadoresController;
-use App\Http\Controllers\Galeria\GaleriaHomeController;
 use App\Http\Controllers\Galeria\GaleriaController;
+use App\Http\Controllers\Galeria\GaleriaHomeController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -84,7 +82,7 @@ Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
 Route::get('/usuario/{id}/show',[UsuariosController::class, 'show'])->middleware('sesionIniciada');
 
 Route::get('/usuarios',[UsuariosController::class,'index'])->middleware('sesionIniciada')->name('lista_usuarios');
-Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('UsuariosController.search');
+Route::get('/usuarios/search',[UsuariosController::class,'recuperarUsuarios'])->name('buscarUsuarios');
 
 Route::post('/usuarioadd',[UsuariosController::class,'addUsuario'])->middleware('sesionIniciada');
 Route::resource('usuario',UsuariosController::class);
@@ -102,7 +100,12 @@ Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middlewar
 
 Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
-Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
+
+//Route::resource('donadores',DonadoresController::class);
+Route::get('/donadores',[DonadoresController::class,'index'])->middleware('sesionIniciada');
+Route::get('/donadores/desaprobados',[DonadoresController::class,'recuperarDonadoresNoAprobados'])->name('desaprobados');
+Route::get('/donadores/aprobados',[DonadoresController::class,'recuperarDonadoresAprobados'])->name('aprobados');
+
 
 
 
