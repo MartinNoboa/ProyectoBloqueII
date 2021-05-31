@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('mail',255)->unique();
             $table->timestamp('email_verified_at')->nullable();
             //falta hash
-            $table->string('contrasenia');
+            $table->string('password');
             $table->rememberToken();
         });
     }

@@ -97,16 +97,16 @@
         </div>
 
         <div class="mb-3 form-group form-outline ">
-            <label for="contrasenia" class="form-label fs-5 px-0">Contraseña <span aria-hidden="true" class="required text-danger">*</span></label>
-            <input name="contrasenia" id="contrasenia" placeholder="Ingresa la contraseña"
-                    class="form-control @error('contrasenia') border border-danger @enderror" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$usuario->contrasenia}}" @else type="password" @endif <?php if ($modo == 'Consultar'){ ?> disabled <?php } else {?>  <?php }?> >
+            <label for="password" class="form-label fs-5 px-0">Contraseña <span aria-hidden="true" class="required text-danger">*</span></label>
+            <input name="password" id="password" placeholder="Ingresa la contraseña"
+                    class="form-control @error('password') border border-danger @enderror" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$usuario->password}}" @else type="password" @endif <?php if ($modo == 'Consultar'){ ?> disabled <?php } else {?>  <?php }?> >
             
         </div>
 
         <div class="mb-3 form-group form-outline ">
-            <label for="contrasenia_confirmation" class="form-label fs-5 px-0">Repite la Contraseña <span aria-hidden="true" class="required text-danger">*</span></label>
-            <input name="contrasenia_confirmation" id="contrasenia_confirmation"
-                    placeholder="Repite la contraseña" class="form-control @error('contrasenia_confirmation') border border-danger @enderror" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$usuario->contrasenia}}"  type="text" @else type="password" @endif <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
+            <label for="password_confirmation" class="form-label fs-5 px-0">Repite la Contraseña <span aria-hidden="true" class="required text-danger">*</span></label>
+            <input name="password_confirmation" id="password_confirmation"
+                    placeholder="Repite la contraseña" class="form-control @error('password_confirmation') border border-danger @enderror" @if($modo == 'Editar' || $modo == 'Consultar') value = "{{$usuario->password}}"  type="text" @else type="password" @endif <?php if ($modo == 'Consultar'){ ?> disabled <?php } ?>>
             
         </div>
         

@@ -29,14 +29,21 @@ class AuthServiceProvider extends ServiceProvider
         //
         Gate::define('isSuperAdmin', function($user) {
             $role = DB::table('roles_users')
-            ->where($user->id,'=','roles_users.user_id');
-            dd($user);
+            ->select('role_id')
+            ->where('roles_users.user_id','=',$user->id)
+            ->first();
+            //dd($role);
+            
             return $role->role_id == 1;
         });
 
         Gate::define('isAdmin', function($user) {
             $role = DB::table('roles_users')
-            ->where($user->id,'=','roles_users.user_id');
+            ->select('role_id')
+            ->where('roles_users.user_id','=',$user->id)
+            ->first();
+            //dd($role);
+            
             return $role->role_id == 2;
         });
     }

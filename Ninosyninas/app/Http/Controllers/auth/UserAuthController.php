@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class UserAuthController extends Controller
+class UserAuthController extends Controller 
 {   
     
     /*
@@ -29,9 +29,9 @@ class UserAuthController extends Controller
     function check(Request $request){
         //return $request->input();
         //validar inputs del login
-        $request->validate([
+        $credenciales = $request->validate([
             'email'=>'required|email',
-            'password'=>'required', //puede cambiar de acuerdo a las especificaciones de contraseña
+            'password'=>'required', 
         ]);
         
         //recuperar mail y contraseña
@@ -45,9 +45,10 @@ class UserAuthController extends Controller
         if($usuario){
             //chequear si la contraseña es correcta
             //hay que agregar hash luego
-            //if(Auth::check($pass, $usuario->contrasenia)){
-            if($usuario->mail == $request->email && $usuario->contrasenia == $request->password){
+            //if(Auth::check($pass, $usuario->password)){
+            //if($usuario->mail == $request->email && $usuario->password == $request->password){
             //if(Auth::attempt($credenciales)){
+            if(Auth::attempt(['mail' => $request->email, 'password' => $request->password])){
                 $request->session()->put('sesionUsuario', $usuario->id);
                 return redirect()->intended('panel');
             }else{
@@ -63,7 +64,6 @@ class UserAuthController extends Controller
     
     
     function panel(){
-        dd(auth()->user());
         return view('registrado.panel');
 
     }
