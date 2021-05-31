@@ -24,7 +24,7 @@ class RoleUserSeeder extends Seeder
                 
             ],  
              [
-                "role_id" => 1,//superAdmin
+                "role_id" => 7,//Becario
                 "user_id" => 2, //Adrian Monar
                 "activo" => true, //true
             ], 
