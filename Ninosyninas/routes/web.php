@@ -103,9 +103,13 @@ Route::get('/calendario/panel', function(){
     return view("landing.landing-calendario-panel");
 });
 
-Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
-Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
-
+/**
+ * Rutas para el manejo de donadores
+ */
+Route::middleware('can:isSuperAdmin')->group(function() {
+    Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
+    Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
+});
 
 Route::get('/donaciones',[LandingController::class, 'donaTexts']);
 
