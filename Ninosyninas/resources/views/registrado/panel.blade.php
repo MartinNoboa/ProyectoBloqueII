@@ -23,16 +23,6 @@
         </div>
         </div>
     </div>
-    <br>        
-    <div class="col-12 col-md-4 ">
-        <div class="card w-100 h-100 shadow">
-        <div class="card-body text-center">
-            <a type="button"  href="{{url('/contenido')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
-            <h3>Editar Página web</h3>
-            <h5>Modificar el contenido deseado de la págian web</h5>
-        </div>
-        </div>
-    </div>
     <br>
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
@@ -43,6 +33,17 @@
         </div>
         </div>
     </div>
+    <br>   
+
+    <div class="col-12 col-md-4 ">
+        <div class="card w-100 h-100 shadow">
+        <div class="card-body text-center">
+            <a type="button"  href="{{url('/panel/galeria')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
+            <h3>Galeria</h3>
+            <h5>Colección de imagenes que se deaean mostrar en la pagina web</h5>
+        </div>
+        </div>
+    </div>
     </div>
     <br>
     <br>
@@ -51,19 +52,22 @@
 
 
     <div class="row">
-    <div class="col-12 col-md-4" >
-        <div class="card w-100 h-100 shadow">
-        <div class="card-body text-center ">
-            <a type="button"  href="{{url('/panel/galeria')}}" class="btn"><i class="fas fa-images  fa-6x pb-3 titulo"></i></a>
-                <h3>Galeria</h3>
-                <h5>Colección de imagenes que se deaean mostrar en la pagina web</h5>
-               
+    @can('isSuperAdmin')
+        <div class="col-12 col-md-4" >
+            <div class="card w-100 h-100 shadow">
+            <div class="card-body text-center ">
+                
+                <a type="button"  href="{{url('/contenido')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
+                <h3>Editar Página web</h3>
+                <h5>Modificar el contenido deseado de la págian web</h5>
+            </div>
+            </div>
         </div>
-        </div>
-    </div>
+    @endcan
     <br>       
    
     <br>
+    @can('isSuperAdmin')
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
@@ -73,7 +77,9 @@
         </div>
         </div>
     </div>
+    @endcan
 
+    @can('isSuperAdmin')
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
@@ -84,6 +90,7 @@
         </div>
         </div>
     </div>
+    @endcan
 
     </div>
     <br>
@@ -91,7 +98,8 @@
 
     <div class="row">
     
-    <br>       
+    <br>
+    @can('isSuperAdmin')       
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
@@ -101,6 +109,7 @@
         </div>
         </div>
     </div>
+    @endcan
     @can('isSuperAdmin')
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
