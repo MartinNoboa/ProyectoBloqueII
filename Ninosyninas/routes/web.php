@@ -75,7 +75,7 @@ Route::get('/noticias/view/{id}',[NewsController::class,'view_news']);
 /**
  * Rutas para CRUD de reportes  
  */
-Route::middleware('can:isSuperAdmin')->group(function() {
+Route::middleware('can:mentoria')->group(function() {
     Route::resource('reporte', ReporteController::class)->middleware('sesionIniciada');
     Route::get('/reporte/{id}/show',[ReporteController::class, 'show'])->middleware('sesionIniciada');
 });
@@ -83,7 +83,7 @@ Route::middleware('can:isSuperAdmin')->group(function() {
 /**
  * Rutas para el manejo de usuarios 
 */  
-Route::middleware('can:isSuperAdmin')->group(function() {
+Route::middleware('can:manejoUsuarios')->group(function() {
     Route::get('/registrar-usuario',[RegisterController::class,'index'])->middleware('sesionIniciada')->name('register');
     Route::post('/registrar-usuario',[RegisterController::class,'store']);
     Route::get('/registrar-usuario/{id}/see',[RegisterController::class,'show']);
@@ -106,7 +106,7 @@ Route::get('/calendario/panel', function(){
 /**
  * Rutas para el manejo de donadores
  */
-Route::middleware('can:isSuperAdmin')->group(function() {
+Route::middleware('can:manejarDonadores')->group(function() {
     Route::resource('donadores',DonadoresController::class)->middleware('sesionIniciada');
     Route::get('/donadores/{id}/show',[DonatorController::class, 'show'])->middleware('sesionIniciada');
 });
@@ -128,7 +128,7 @@ Route::get('/donaciones',[LandingController::class, 'donaTexts']);
  * Rutas para el manejo de la seccion de ninos
  */
 //registrar niño
-Route::middleware('can:isSuperAdmin')->group(function() {
+Route::middleware('can:mentoria')->group(function() {
     Route::resource('/registrar-ninos',ChildrenController::class);
     Route::get('/registrar-ninos',[ChildrenController::class,'create'])->middleware('sesionIniciada')->name('register');
     Route::post('/registrar-ninos',[ChildrenController::class,'store']);
@@ -159,7 +159,7 @@ Route::get('logout',[UserAuthController::class,'logout'])->name('logout');
 /*
 Ruta para editar contenido 
 */
-Route::middleware('can:isSuperAdmin')->group(function() {
+Route::middleware('can:editarPagina')->group(function() {
     Route::get('contenido', [ContenidoController::class,'index'])->middleware('sesionYaIniciada');
     Route::get('contenido/edit/{id}', [ContenidoController::class,'edit'])->middleware('sesionYaIniciada');
     Route::post('contenido/{id}', [ContenidoController::class,'update'])->middleware('sesionYaIniciada');
