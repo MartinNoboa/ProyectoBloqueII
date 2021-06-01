@@ -10,7 +10,26 @@
 
 @endsection
 
+
+
+
+
+
 @section('mainContent')
+
+@if(Session::has('mensaje'))
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible" role="alert">
+            {{ Session::get('mensaje')}}
+            <button type="button" class="btn Button_alert" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" class="btn pull-right">&times;</span>
+            </button>
+        </div>
+
+    </div>
+    @endif
+
 <div class='table-wt center'>
     <br>
     <br>
@@ -21,6 +40,8 @@
         </div>
         @endforeach
     @endif
+
+    
 
     <form method="POST" action= "{{ url('landing-contacto') }}"  >
         @csrf

@@ -11,7 +11,7 @@
 
     <p> Recibiste un mensaje de: {{$msg['nombre']}} - {{$msg['email']}}</p>
     <p><strong>Asunto: </strong> {{ $msg['tema']   }}</p> 
-    <p><strong>Conte: </strong> {{ $msg['mensaje']   }}</p> 
+    <p><strong>Contenido: </strong> {{ $msg['mensaje']   }}</p> 
 
 <footer>
 
