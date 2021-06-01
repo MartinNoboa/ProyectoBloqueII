@@ -1,9 +1,13 @@
 $(document).ready(function () {
     $(window).bind("resize", function () {
         if ($(this).width() < 1080) {
-            $('#user-icon').hide();
+            $('.mobile-hidden').hide();
+            $('.mobile-shown').show();
+            
         } else {
-            $('#user-icon').show();
+            $('.mobile-hidden').show();
+            $('.mobile-shown').hide();
+            
         }
         }).trigger('resize');
 

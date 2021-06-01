@@ -76,25 +76,39 @@
                 <li class="nav-item px-2">
                     <a class="nav-link " href="{{url('/contactanos')}}">Contáctanos</a>
                 </li>
+                @if (session()->has('sesionUsuario'))
+                    <li class="nav-item px-2 mobile-shown">
+                        <a class="nav-link text-secondary" href="{{url('/panel')}}">Panel</a>
+                    </li>
+                    <li class="nav-item px-2 my-2 mobile-shown">
+                        <a class="nav-link text-secondary" href="https://drive.google.com/drive/folders/1d2k6HoxqPIdHs6cPoLdg7ROMdP9sIZGc?usp=sharing" target="_blank" >Ayuda</a>
+                    </li>
+                    <li class="nav-item px-2 my-2 mobile-shown">
+                        <a class="nav-link text-secondary" href="{{ url('logout') }}">Salir</a>
+                    </li>
+                @else
+                    <li class="nav-item px-2 my-2 mobile-shown">
+                        <a class="nav-link text-secondary" href="{{ url('login') }}">Entrar</a>
+                    </li>
+                @endif
                 <li class=" mx-2">
                     <a class="button-donar text-light nav-link btn-lg rounded" href="{{url('/donaciones')}}"
                         role="button">Donar</a>
                 </li>
-
             </ul>
 
         </div>
         <!-- Revisar para poner iconos -->
         @if (session()->has('sesionUsuario'))
-        <div class="nav-item mx-3">
-            <a class="nav-link text-secondary" href="{{url('/panel')}}">Panel</a>
+        <div class="nav-item mx-3 mobile-hidden">
+            <a class="nav-link text-secondary mobile-hidden" href="{{url('/panel')}}">Panel</a>
         </div>
-        <div class="nav-item mx-3">
-            <a class="nav-link text-secondary" href="https://drive.google.com/drive/folders/1d2k6HoxqPIdHs6cPoLdg7ROMdP9sIZGc?usp=sharing" target="_blank" >Ayuda</a>
+        <div class="nav-item mx-3 mobile-hidden">
+            <a class="nav-link text-secondary mobile-hidden" href="https://drive.google.com/drive/folders/1d2k6HoxqPIdHs6cPoLdg7ROMdP9sIZGc?usp=sharing" target="_blank" >Ayuda</a>
         </div>
-        <span id="loginIcon"><a id="linkLogin" href="{{ url('logout') }}"><i class="fas fa-user fa-2x"></i></a></span>
+        <span class="loginIcon mobile-hidden"><a class="linkLogin mobile-hidden" href="{{ url('logout') }}"><i class="fas fa-user fa-2x mobile-hidden"></i></a></span>
         @else
-        <span id="loginIcon"><a id="linkLogin" href="{{ url('login') }}"><i class="fas fa-user fa-2x"></i></a></span>
+        <span class="loginIcon mobile-hidden"><a class="linkLogin mobile-hidden" href="{{ url('login') }}"><i class="fas fa-user fa-2x mobile-hidden"></i></a></span>
         @endif
 
     </nav>
