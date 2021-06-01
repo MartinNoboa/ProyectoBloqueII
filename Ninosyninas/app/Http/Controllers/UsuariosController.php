@@ -47,8 +47,8 @@ class UsuariosController extends Controller
             'fecha_inicio'=>'required|date',
             'ocupacion'=>'required|max:255',
             'telefono'=>'required|numeric',
-            'mail'=>'required|email|unique:users,mail',
-            'contrasenia'=>'required|confirmed|min:6',
+            'mail'=>'required|email|max:255',
+            'password'=>'required|confirmed|min:6',
             'roles_id'=>'required|numeric'
 
         ];
@@ -61,7 +61,7 @@ class UsuariosController extends Controller
         
         $this->validate($request, $campos, $mensaje);
     
-        $datosUsuario = request()->except('roles_id','_token', 'contrasenia_confirmation');
+        $datosUsuario = request()->except('roles_id','_token', 'password_confirmation');
 
         $rol = request('roles_id');
 
@@ -98,7 +98,7 @@ class UsuariosController extends Controller
 
     public function update(Request $request, $id)
     {
-        $datosUsuario = request()->except(['roles_id', '_token', 'contrasenia_confirmation', '_method']);
+        $datosUsuario = request()->except(['roles_id', '_token', 'password_confirmation', '_method']);
         users::where('id','=',$id)->update($datosUsuario);
 
         $usuario=users::findOrFail($id);

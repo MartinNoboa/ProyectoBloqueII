@@ -28,12 +28,8 @@ class PermitRoleSeeder extends Seeder
             
             roles
             * 1 - super admin
-            * 2 - admin
-            * 3 - tl
-            * 4 - tf
-            * 5 - prof
-            * 6 - nutricionista
-            * 7 - becario
+            * 2 - maestro
+            * 3 - becario
             */
             
             [
@@ -55,39 +51,15 @@ class PermitRoleSeeder extends Seeder
             [
                 "permit_id" => 5, 
                 "role_id" => 1,
-            ], 
+            ],    
+            [
+                "permit_id" => 5, 
+                "role_id" => 2,
+            ],     
             [
                 "permit_id" => 3, 
-                "role_id" => 2,
-            ],   
-            [
-                "permit_id" => 4, 
-                "role_id" => 2,
-            ],   
-            [
-                "permit_id" => 5, 
-                "role_id" => 2,
-            ],   
-            [
-                "permit_id" => 5, 
                 "role_id" => 3,
             ],   
-            [
-                "permit_id" => 5, 
-                "role_id" => 4,
-            ],    
-            [
-                "permit_id" => 5, 
-                "role_id" => 5,
-            ],   
-            [
-                "permit_id" => 5, 
-                "role_id" => 6,
-            ],    
-            [
-                "permit_id" => 3, 
-                "role_id" => 7,
-            ], 
         ]);
     }
 }
