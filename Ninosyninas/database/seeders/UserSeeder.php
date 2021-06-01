@@ -39,6 +39,18 @@ class UserSeeder extends Seeder
                 "mail"=> "adrianmonar@gmail.com",
                 "password"=> Hash::make("admin"),
 
+            ],  
+            [
+                "nombre" => "Manuel", 
+                "apellido_paterno" => "Jose",
+                "apellido_materno" => "Hyeon",
+                "fecha_nacimiento"=>"1999-05-08",
+                "fecha_inicio"=>"2020-10-15",
+                "ocupacion"=>"2019-7-03",
+                "telefono"=>"2000-10-15",
+                "mail"=> "manuelhyeon@gmail.com",
+                "password"=> Hash::make("admin"),
+
             ], 
         ]);
     }

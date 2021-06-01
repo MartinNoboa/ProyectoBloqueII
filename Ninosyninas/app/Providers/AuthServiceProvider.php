@@ -27,24 +27,68 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
-        Gate::define('isSuperAdmin', function($user) {
-            $role = DB::table('roles_users')
-            ->select('role_id')
-            ->where('roles_users.user_id','=',$user->id)
-            ->first();
+        Gate::define('manejarUsuarios', function($user) {
+            $role = DB::table('permits_roles as pr')
+            ->join('roles as r','pr.role_id','=','r.id')
+            ->join('roles_users as ru','ru.role_id','=','r.id')
+            ->select('permit_id')
+            ->where('ru.user_id','=',$user->id)
+            ->where('permit_id','=', 1);
             //dd($role);
             
-            return $role->role_id == 1;
+            return $role->count();
         });
 
-        Gate::define('isBecario', function($user) {
-            $role = DB::table('roles_users')
-            ->select('role_id')
-            ->where('roles_users.user_id','=',$user->id)
-            ->first();
+        Gate::define('manejarDonadores', function($user) {
+            $role = DB::table('permits_roles as pr')
+            ->join('roles as r','pr.role_id','=','r.id')
+            ->join('roles_users as ru','ru.role_id','=','r.id')
+            ->select('permit_id')
+            ->where('ru.user_id','=',$user->id)
+            ->where('permit_id','=', 2);
             //dd($role);
+           
+            return $role->count();
             
-            return $role->role_id == 7;
+        });
+
+        Gate::define('manejarContenido', function($user) {
+            $role = DB::table('permits_roles as pr')
+            ->join('roles as r','pr.role_id','=','r.id')
+            ->join('roles_users as ru','ru.role_id','=','r.id')
+            ->select('permit_id')
+            ->where('ru.user_id','=',$user->id)
+            ->where('permit_id','=', 3);
+            //dd($role);
+           
+            return $role->count();
+            
+        });
+
+        Gate::define('editarPagina', function($user) {
+            $role = DB::table('permits_roles as pr')
+            ->join('roles as r','pr.role_id','=','r.id')
+            ->join('roles_users as ru','ru.role_id','=','r.id')
+            ->select('permit_id')
+            ->where('ru.user_id','=',$user->id)
+            ->where('permit_id','=', 4);
+            //dd($role);
+           
+            return $role->count();
+            
+        });
+
+        Gate::define('mentoria', function($user) {
+            $role = DB::table('permits_roles as pr')
+            ->join('roles as r','pr.role_id','=','r.id')
+            ->join('roles_users as ru','ru.role_id','=','r.id')
+            ->select('permit_id')
+            ->where('ru.user_id','=',$user->id)
+            ->where('permit_id','=', 5);
+            //dd($role);
+           
+            return $role->count();
+            
         });
     }
 }

@@ -52,22 +52,21 @@
 
 
     <div class="row">
-    @can('isSuperAdmin')
-        <div class="col-12 col-md-4" >
-            <div class="card w-100 h-100 shadow">
-            <div class="card-body text-center ">
-                
-                <a type="button"  href="{{url('/contenido')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
-                <h3>Editar Página web</h3>
-                <h5>Modificar el contenido deseado de la págian web</h5>
-            </div>
-            </div>
+    @can('mentoria')       
+    <div class="col-12 col-md-4 ">
+        <div class="card w-100 h-100 shadow">
+        <div class="card-body text-center">
+            <a type="button"  href="{{url('/reporte')}}" class="btn"><i class="fas fa-tasks  fa-6x pb-3 titulo"></i></a>
+            <h3>Reportes</h3>
+            <h5>Reportar cual es el esatus que tiene actualmente un niño</h5>
         </div>
+        </div>
+    </div>
     @endcan
     <br>       
    
     <br>
-    @can('isSuperAdmin')
+    @can('manejarDonadores')
     <div class="col-12 col-md-4">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
@@ -79,7 +78,7 @@
     </div>
     @endcan
 
-    @can('isSuperAdmin')
+    @can('mentoria')
     <div class="col-12 col-md-4" >
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center ">
@@ -99,18 +98,20 @@
     <div class="row">
     
     <br>
-    @can('isSuperAdmin')       
-    <div class="col-12 col-md-4 ">
-        <div class="card w-100 h-100 shadow">
-        <div class="card-body text-center">
-            <a type="button"  href="{{url('/reporte')}}" class="btn"><i class="fas fa-tasks  fa-6x pb-3 titulo"></i></a>
-            <h3>Reportes</h3>
-            <h5>Reportar cual es el esatus que tiene actualmente un niño</h5>
+    @can('editarPagina')
+        <div class="col-12 col-md-4" >
+            <div class="card w-100 h-100 shadow">
+            <div class="card-body text-center ">
+                
+                <a type="button"  href="{{url('/contenido')}}" class="btn"><i class="fas fa-edit  fa-6x pb-3 titulo"></i></a>
+                <h3>Editar Página web</h3>
+                <h5>Modificar el contenido deseado de la págian web</h5>
+            </div>
+            </div>
         </div>
-        </div>
-    </div>
     @endcan
-    @can('isSuperAdmin')
+    
+    @can('manejarUsuarios')
     <div class="col-12 col-md-4 ">
         <div class="card w-100 h-100 shadow">
         <div class="card-body text-center">
