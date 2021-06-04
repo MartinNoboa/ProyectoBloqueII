@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('mail',255)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('contrasenia');
+            //falta hash
+            $table->string('password');
             $table->rememberToken();
         });
     }

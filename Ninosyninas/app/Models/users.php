@@ -26,7 +26,7 @@ class users extends Model
         'ocupacion',
         'telefono',
         'mail',
-        'contrasenia',
+        'password',
 
     ];
 

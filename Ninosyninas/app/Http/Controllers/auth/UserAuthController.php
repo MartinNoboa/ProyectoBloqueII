@@ -9,9 +9,10 @@ use App\Http\Controllers\Controller;
 
 //clase para hashear contraseñas
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class UserAuthController extends Controller
+class UserAuthController extends Controller 
 {   
     
     /*
@@ -28,9 +29,9 @@ class UserAuthController extends Controller
     function check(Request $request){
         //return $request->input();
         //validar inputs del login
-        $request->validate([
+        $credenciales = $request->validate([
             'email'=>'required|email',
-            'password'=>'required', //puede cambiar de acuerdo a las especificaciones de contraseña
+            'password'=>'required', 
         ]);
         
         //recuperar mail y contraseña
@@ -38,26 +39,33 @@ class UserAuthController extends Controller
                 ->where('mail', '=', $request->email)
                 ->first();
         
+        //Metodo manual, funciona pero necesitamos que regrese $user en la sesion
+        
         //verificar si usuario existe en la base de datos
         if($usuario){
             //chequear si la contraseña es correcta
             //hay que agregar hash luego
-            if($request->password == $usuario->contrasenia){
+            //if(Auth::check($pass, $usuario->password)){
+            //if($usuario->mail == $request->email && $usuario->password == $request->password){
+            //if(Auth::attempt($credenciales)){
+            if(Auth::attempt(['mail' => $request->email, 'password' => $request->password])){
                 $request->session()->put('sesionUsuario', $usuario->id);
-                return redirect('panel');
+                return redirect()->intended('panel');
             }else{
                 return back()->with('fail','El usuario o la contraseña están incorrectos.');
             }
-            
         }else{
             return back()->with('fail','El usuario o la contraseña están incorrectos.');
         }
+
+        
         
     }
     
     
     function panel(){
         return view('registrado.panel');
+
     }
     
     function logout(){
@@ -65,5 +73,11 @@ class UserAuthController extends Controller
             session()->pull('sesionUsuario');
             return redirect('login');
         }
+    }
+
+    function getRole(){
+        $role = DB::table("roles_users")
+        ->where($this->id ,'=','role_users.id');
+        return $role;
     }
 }
