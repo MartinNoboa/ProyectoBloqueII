@@ -9,7 +9,8 @@
 </head>
 <body>
 
-    <p> Recibiste un mensaje de: {{$msg['nombre']}} - {{$msg['email']}}</p>
+    <p><strong> Recibiste un mensaje de <strong> : {{$msg['nombre']}}</p>
+    <p><strong>Del correo:</strong>  {{$msg['email']}}</p>
     <p><strong>Asunto: </strong> {{ $msg['tema']   }}</p> 
     <p><strong>Contenido: </strong> {{ $msg['mensaje']   }}</p> 
 

@@ -46,7 +46,7 @@
 <div class="wrapper pt-5">
     
     <div class="text-center center">
-        <h1 class='titulo-azul font-title-title'>Acerca de nosotros</h1>
+        <h1 class='titulo-azul font-title-title'> <b>Acerca de nosotros</b></h1>
         <br>
         <h5 data-aos="fade-down">{{$txt[0]['contenido']}}</h5>
         <br>

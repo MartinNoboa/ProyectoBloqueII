@@ -30,6 +30,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('New contact')->view('emails.message-received');
+        return $this->subject('Contacto página web')->view('emails.message-received');
     }
 }

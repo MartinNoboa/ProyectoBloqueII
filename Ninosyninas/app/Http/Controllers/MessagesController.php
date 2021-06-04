@@ -23,7 +23,8 @@ class MessagesController extends Controller
         /*
        Mail::to('ogva27@hotmail.com')->queue(new MessageReceived($message));
        */
-        Mail::to('ogva27@hotmail.com')->queue(new TestMail($message));
+        Mail::to('ninosyninasdemexico@gmail.com')->queue(new TestMail($message));
+        Mail::to('ninosyninasdemexico@yahoo.com')->queue(new TestMail($message));
 
         //return 'mensaje enviado'; //new MessageReceived($message);
         return redirect('contactanos')->with('mensaje','Mensaje enviado con éxito');
