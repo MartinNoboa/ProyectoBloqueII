@@ -67,7 +67,7 @@
 
                 </div>       
                 <div class="col-12 col-md-6 ">
-                    <img src="{{url('img/36.jpg')}}" class="shadow" alt="Cinque Terre" width="100%" height="100%"> 
+                    <img src="{{url('img/donar.jpg')}}" class="shadow" alt="Cinque Terre" width="100%" height="100%"> 
                 </div>
             </div>
 

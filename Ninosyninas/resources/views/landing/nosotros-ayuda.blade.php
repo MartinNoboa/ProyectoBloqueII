@@ -53,7 +53,7 @@
         <div class="col-8 text-center">
             <br>
             <br>
-                <img src="{{url('img/25.jpeg')}}"  width="80%">
+                <img src="{{url('img/flautas.jpg')}}"  width="100%">
             <br>
         </div>
 
