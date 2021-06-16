@@ -9,7 +9,7 @@
 
 
 <div class='background'>
-    <img src="{{url('img/6.jpg')}}" alt="home photo" class="img-fluid img-home">
+    <img src="{{url('img/foto-inicio.jpg')}}" alt="home photo" class="img-fluid img-home">
     <div class="container center mt-5">
         <div class="grid-3 center">
             <div class="card text-center rounded shadow " data-aos="flip-left" style="width: 250px; height: 450px;">
