@@ -30,6 +30,9 @@ Route::get('/home', function(){
     return view('registrado.panel');
 }); */
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
 
 Route::get('/', [LandingController::class, 'homeTexts']);
 
